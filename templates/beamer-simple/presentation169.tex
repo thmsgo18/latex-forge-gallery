@@ -1,0 +1,20 @@
+% t top-aligned, c centered
+\documentclass[aspectratio=169, professionalfonts, 12pt, t]{beamer}
+
+\input{misc/variables}
+\input{misc/meta}
+\input{misc/preamble}
+
+\begin{document}
+    \begin{frame}[plain, c]
+        \titlepage
+    \end{frame}
+
+    \section*{\contentsname}
+    \begin{frame}[allowframebreaks]{\contentsname}
+        \tableofcontents
+    \end{frame}
+
+    \input{example}
+    %\input{presentation_structure}
+\end{document}

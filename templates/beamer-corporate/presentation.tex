@@ -1,0 +1,63 @@
+% !TeX program = lualatex
+\documentclass[
+	english,
+	sections numbered,
+	xcolor=dvipsnames,
+	aspectratio=169,
+]{beamer}
+
+\usepackage{babel}
+\usepackage[babel]{microtype}
+\usepackage[babel]{csquotes}
+\usepackage[american]{isodate}
+
+\usepackage[T1]{fontenc}
+\usepackage{FiraMono}
+
+\usetheme[progressbar=frametitle]{metropolis}
+
+%%% GRAPHICS %%%
+\usepackage{graphicx}
+\usepackage{pgfplots}
+\usepackage{tikz}
+
+%%% MATH & SCIENCE %%%
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{siunitx}
+\usepackage{bm}
+\usepackage{dsfont}
+\usepackage{mathtools}
+
+%%% FLOATS %%%
+\usepackage{booktabs}
+\usepackage{tabularx}
+
+%\usepackage{biblatex}
+%\bibliography{literature.bib}
+
+
+\input{setup-colors.tex}
+\input{setup-beamer.tex}
+\input{setup-math.tex}
+\input{setup-plots.tex}
+
+
+\title{Title of your Presentation}
+\author{Author 1\inst{1}, Author 2\inst{1}, and Author 3\inst{2}}
+\institute[]{%
+	\inst{1} Institute for Science, University Name, Country\\
+	\inst{2} Department of Science, Different University, Country
+}
+\date{Date or Conference Name}
+
+\titlegraphic{\includegraphics[height=.17\textheight]{logo.png}}
+
+
+\begin{document}
+\maketitle
+
+\input{example-content.tex}
+\end{document}

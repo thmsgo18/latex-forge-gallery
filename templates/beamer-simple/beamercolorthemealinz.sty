@@ -1,0 +1,103 @@
+\mode<presentation>
+
+% -----------------------------------
+% color definitions
+% -----------------------------------
+
+% http://colrd.com/create/palette/?id=24070
+\definecolor{darkblue}{RGB}{26,19,52}
+\definecolor{sea}{RGB}{28,41,74}
+\definecolor{turquoise}{RGB}{1,84,90}
+\definecolor{darkgreen}{RGB}{1,115,81}
+\definecolor{lightgreen}{RGB}{3,195,131}
+\definecolor{grass}{RGB}{170,217,98}
+\definecolor{orange}{RGB}{251,191,69}
+\definecolor{sunset}{RGB}{239,106,50}
+\definecolor{red}{RGB}{237,3,69}
+\definecolor{purple}{RGB}{161,42,94}
+\definecolor{violet}{RGB}{113,1,98}
+\definecolor{stonecoal}{RGB}{57,55,55}
+\definecolor{darkgray}{RGB}{89,87,87}
+\definecolor{lightdark}{RGB}{33,33,33}
+\definecolor{fog}{RGB}{245,245,245}
+
+% https://kuler.adobe.com/Early-Winter-Morning-color-theme-1725919/edit/?copy=true
+\definecolor{granite}{RGB}{47,56,55}
+\definecolor{marble}{RGB}{197,199,182}
+\definecolor{eggshell}{RGB}{255,248,211}
+\definecolor{terra}{RGB}{76,73,62}
+\definecolor{night}{RGB}{34,32,40}
+
+% based on https://kuler.adobe.com/Bras%C3%A3o---Prefeitura-Municipal-de-Itabirito-color-theme-4155415/edit/?copy=true
+\definecolor{slime}{RGB}{35,216,32}
+\definecolor{egg}{RGB}{255,203,4}
+\definecolor{raspberry}{RGB}{205,19,55}
+\definecolor{lake}{RGB}{0,104,168}
+%\definecolor{}{RGB}{}
+
+% -----------------------------------
+% color aliases
+% -----------------------------------
+
+%\colorlet{alias}{existing}
+\colorlet{titlebg}{night}
+\colorlet{titlefg}{fog}
+\colorlet{blocktitlefg}{fog}
+\colorlet{blockbg}{fog!94!black}
+\colorlet{frametitlebg}{marble!50!fog}
+\colorlet{enumfg}{lake}
+\colorlet{itemfg}{lake}
+\colorlet{sectionintocfg}{lake}
+\colorlet{alertfg}{raspberry}
+
+% -----------------------------------
+% color usage
+% -----------------------------------
+
+\setbeamercolor{titlepage-headline}{fg=fog, bg=night}
+
+\setbeamercolor{headline}{fg=titlefg, bg=titlebg}
+\setbeamercolor{frametitle}{fg=stonecoal!50!black, bg=frametitlebg}
+% \setbeamercolor{footline}{fg=grass, bg=titlebg}
+% \setbeamercolor{titlelike}{fg=title}
+% \setbeamercolor{subtitle}{fg=subtitle}
+\setbeamercolor{institute}{fg=stonecoal}
+\setbeamercolor{block title}{fg=blocktitlefg, bg=titlebg}
+\setbeamercolor{block title example}{fg=blocktitlefg, bg=slime}
+\setbeamercolor{block title alerted}{fg=blocktitlefg, bg=raspberry}
+\setbeamercolor{block body}{fg=lightdark, bg=blockbg}
+\setbeamercolor{block body example}{fg=lightdark, bg=blockbg}
+\setbeamercolor{block body alerted}{fg=lightdark, bg=blockbg}
+% \setbeamercolor{section in head/foot}{fg=hilight, bg=background}
+% \setbeamercolor{local structure}{fg=foreground}
+% \setbeamercolor{normal text}{fg=red}
+% \setbeamercolor{item projected}{fg=red,bg=background}
+% \setbeamercolor{section in sidebar}{fg=red}
+% \setbeamercolor{section in sidebar shaded}{fg=red}
+% \setbeamercolor{fine separation line}{}
+% \setbeamercolor{separation line}{fg=red}
+% \setbeamercolor{sidebar}{fg=red}
+% \setbeamercolor{structure}{fg=red}
+% \setbeamercolor{subsection in sidebar}{fg=red}
+% \setbeamercolor{subsection in sidebar shaded}{fg=red}
+% \setbeamercolor{palette primary}{fg=colora, bg=colorc}
+% \setbeamercolor{palette secondary}{fg=colora, bg=colorc}
+% \setbeamercolor{palette tertiary}{fg=colora, bg=colorc}
+% \setbeamercolor{palette quaternary}{fg=colora, bg=colorc}
+\setbeamercolor{alerted text}{fg=alertfg}
+\setbeamercolor{itemize item}{fg=enumfg}
+\setbeamercolor{itemize subitem}{fg=enumfg!65!black}
+\setbeamercolor{itemize subsubitem}{fg=enumfg!30!black}
+\setbeamercolor{enumerate item}{fg=enumfg}
+\setbeamercolor{enumerate subitem}{fg=enumfg!65!black}
+\setbeamercolor{enumerate subsubitem}{fg=enumfg!30!black}
+\setbeamercolor{section in toc}{fg=sectionintocfg}
+\setbeamercolor{subsection in toc}{fg=sectionintocfg!65!black}
+\setbeamercolor{subsubsection in toc}{fg=sectionintocfg!30!black}
+\setbeamercolor{bibliography item}{fg=enumfg}
+\setbeamercolor{bibliography entry author}{fg=sea}
+\setbeamercolor{bibliography entry title}{fg=sea}
+\setbeamercolor{bibliography entry location}{fg=stonecoal}
+\setbeamercolor{bibliography entry note}{fg=stonecoal}
+
+\mode<all>
