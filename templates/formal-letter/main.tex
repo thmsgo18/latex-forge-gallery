@@ -1,0 +1,154 @@
+\documentclass[hidelinks]{jourcl}
+
+% Path to your logo
+\ImagePath{imgs/jourcl-logo.png}
+% You can set custom logo size, where Scale > Width > Height
+% \LogoScale{.3}
+\LogoWidth{5cm}
+\LogoHeight{7cm}
+
+% Path to your signature (if you have one). 
+\signaturePath{imgs/jourcl-signature.png}
+
+% recommended Editors / Reviewers -- change according to your data
+%----------------------------------------------------------------------
+
+% If you have recommended Editors / Reviewers
+% Example 
+
+\FirstRecommended{Reviewer}
+\FirstNameSurname{Name Surname}
+\FirstInstitution{University of City, \\Faculty of Cover Letters}
+\FirstEmail{name@organization.edu}
+\SecondRecommended{Reviewer}
+\SecondNameSurname{Name2 Surname2}
+\SecondInstitution{University of City, \\Faculty of Cover Letters}
+\SecondEmail{name2@organization.edu}
+%\ThirdRecommended{Editor}
+%\ThirdNameSurname{Name3 Surname3}
+%\ThirdInstitution{University of City, \\Faculty of Cover Letters}
+%\ThirdEmail{name3@organization.edu}
+
+% Else - leave blank. If only 2 reviewers, leave Third..{}
+%\FirstRecommended{}\FirstNameSurname{}\FirstInstitution{}\FirstEmail{}
+%\SecondRecommended{}\SecondNameSurname{}\SecondInstitution{}\SecondEmail{}
+\ThirdRecommended{}\ThirdNameSurname{}\ThirdInstitution{}\ThirdEmail{}
+
+%----------------------------------------------------------------------
+% Your data
+%----------------------------------------------------------------------
+% change according to your data
+\NameSurname{Name Surname}
+% Orcid ID of author
+\AuthorOrcid{0000-0000-0000-0000}
+% name of the institution
+\InstitutionName{University of City, \\Faculty of Cover Letters}
+% address 1 - street name and house number
+\StreetNo{RoadName Number 001}
+% address 2 - postal code, city, country
+\CityPostal{Postal City, Country}
+% email of author
+\Email{name.surname@organization.edu}
+% phone of author
+\Phone{00000000000}
+
+%----------------------------------------------------------------------
+% Article data
+%----------------------------------------------------------------------
+% journal name
+\JournalName{JournalName}
+% title of your paper
+\Title{A review of journal name title}
+% name of the EiC
+\Editor{Prof. Name Surname}
+% TODO make this optional
+\SpecialIssue{SI 2022}
+% abstract of the submitted Article
+\abstract{\lipsum[1]}
+
+%----------------------------------------------------------------------
+% Cover letter main part
+%----------------------------------------------------------------------
+% No need to change the following part - here for customization
+
+% Custom "To the editor: Editor Name"
+\toEditor{To the editor: \pEditor}
+
+% Addressing the Person
+\PersonAddressing{Dear Editor}
+
+% introduction
+\Introduction{We submit our paper titled: \pTitle, which we would like to be considered for publication in \pJournalName. Our paper belongs to the special issue \pSpecialIssue}
+
+% ending
+\final{We believe that an interesting new perspective created by our paper would deserve the attention of a broad scientific audience. We hope the manuscript will capture your interest and that you will consider it for publication in \pJournalName.}
+
+% original work declaration
+\declaration{This manuscript is the author's original work and has not been published or submitted simultaneously elsewhere. All authors have reviewed the manuscript and agreed to its submission.}
+
+% no conflicts of interest
+\conflictofinterest{We have no conflicts of interest to disclose.}
+
+% change valediction in \valediction{ \OPTION_HERE } or \valediction{ Custom text }
+% \yoursfaithfully % In case we do not know the name of the Editor
+% \yourssincerely % In case we know the name of the Editor
+% \yourstruly % American version of Yours faithfully
+% \bestregards
+\valediction{\yourssincerely}
+
+\signature{\pNameSurname, on behalf of all authors}
+
+% In this part you can change the position of reviewers
+%----------------------------------------------------------------------
+% Render document
+%----------------------------------------------------------------------
+\begin{document}
+
+\large % Font size
+\aboutme{
+    \pNameSurname \! \orcidlink{\pAuthorOrcid}\\
+    \faIcon{university} \pInstitutionName\\
+    \pStreetNo\\
+    \pCityPostal\\
+    \faIcon{envelope} \pEmail \\
+    \faIcon{phone-square-alt} \pPhone
+    }
+%----------------------------------------------------------------------
+
+\noindent\makebox[\linewidth]{\rule{0.9\paperwidth}{0.4pt}}
+
+% Today's date
+\today
+
+\ptoEditor
+
+\vspace*{1\baselineskip}
+\pPersonAddressing,
+
+\pIntroduction
+
+\begin{framed}
+Abstract: \pabstract
+\end{framed}
+
+% Improved macro to ensure more freedom for the users. Place it in the position where you want the reviewers
+\showreviewers 
+
+\vspace{-.7cm}
+
+\pfinal\newline
+
+\pdeclaration \newline
+
+\pconflictofinterest 
+
+\vfill
+
+\pvalediction\par
+
+\psignature
+
+% Next line shows your signature. Comment it out if you don't have one / plan to use digital on .pdf
+\showSignature{\pSignaturePath}
+
+\end{document}
