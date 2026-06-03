@@ -1,0 +1,226 @@
+% =============================================================================
+% MANUEL D'INSTALLATION — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Manuel d'installation}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Ce manuel vise à fournir une procédure claire, structurée et détaillée pour
+  installer et déployer correctement l'application. Il présente les prérequis,
+  les erreurs fréquentes à éviter et les bonnes pratiques pour une configuration
+  optimale.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+\subsection{Contexte}
+
+[Décrire brièvement l'application et son contexte de déploiement.]
+
+\subsection{Objectif du manuel d'installation}
+
+Ce manuel vise à fournir une procédure claire, structurée et détaillée pour
+installer correctement l'application. Il s'adresse aux utilisateurs souhaitant
+déployer le système dans leur environnement, en garantissant le bon déroulement
+de chaque étape.
+
+\begin{remarque}[Prérequis]
+  \begin{itemize}
+    \item Système d'exploitation : Linux (Ubuntu 22.04+) / macOS / Windows
+    \item Python \(\geq\) 3.10 (ou autre langage selon le projet)
+    \item Git installé
+    \item Accès à Internet
+  \end{itemize}
+\end{remarque}
+
+% =============================================================================
+\section{Installation des dépendances}
+% =============================================================================
+
+\subsection{Installation du langage / runtime}
+
+[Décrire l'installation du langage de programmation et de son gestionnaire
+de paquets.]
+
+\begin{lstlisting}[language=bash, caption=Installation de Python]
+sudo apt update
+sudo apt install python3 python3-pip python3-venv
+python3 --version
+\end{lstlisting}
+
+\subsection{Installation de la base de données}
+
+[Décrire l'installation et la configuration du SGBD.]
+
+\begin{lstlisting}[language=bash, caption=Installation de PostgreSQL]
+sudo apt install postgresql postgresql-contrib
+sudo systemctl start postgresql
+sudo systemctl enable postgresql
+\end{lstlisting}
+
+\subsubsection{Création de la base de données}
+
+\begin{lstlisting}[language=bash, caption=Création de la base de données]
+sudo -u postgres psql
+CREATE USER monprojet WITH PASSWORD 'motdepasse';
+CREATE DATABASE monprojet_db OWNER monprojet;
+\q
+\end{lstlisting}
+
+% =============================================================================
+\section{Installation du logiciel}
+% =============================================================================
+
+\subsection{Récupération du code source}
+
+[Décrire comment cloner ou télécharger le code source du projet.]
+
+\begin{lstlisting}[language=bash, caption=Clonage du dépôt]
+git clone https://github.com/organisation/projet.git
+cd projet
+\end{lstlisting}
+
+\subsection{Configuration de l'environnement virtuel}
+
+\begin{lstlisting}[language=bash, caption=Création et activation de l'environnement]
+python3 -m venv env
+source env/bin/activate   # Linux/macOS
+# ou : env\Scripts\activate  # Windows
+pip install -r requirements.txt
+\end{lstlisting}
+
+\subsection{Configuration des variables d'environnement}
+
+Créer un fichier \texttt{.env} à la racine du projet :
+
+\begin{lstlisting}[language=bash, caption=Exemple de fichier .env]
+SECRET_KEY=votre_cle_secrete
+DEBUG=False
+DATABASE_URL=postgresql://monprojet:motdepasse@localhost/monprojet_db
+ALLOWED_HOSTS=localhost,127.0.0.1
+\end{lstlisting}
+
+\subsection{Initialisation de la base de données}
+
+\begin{lstlisting}[language=bash, caption=Migrations et initialisation]
+python manage.py migrate
+python manage.py collectstatic --noinput
+\end{lstlisting}
+
+% =============================================================================
+\section{Déploiement en production}
+% =============================================================================
+
+\subsection{Objectif}
+
+[Décrire le contexte de déploiement : serveur VPS, hébergement cloud, etc.]
+
+\subsection{Configuration du serveur}
+
+[Expliquer comment configurer le serveur (Nginx, Apache, etc.) pour servir
+l'application.]
+
+\subsubsection{Configuration de Gunicorn (Python/Django)}
+
+\begin{lstlisting}[language=bash, caption=Lancement avec Gunicorn]
+gunicorn --workers 3 --bind 0.0.0.0:8000 monprojet.wsgi:application
+\end{lstlisting}
+
+\subsubsection{Configuration de Nginx}
+
+\begin{lstlisting}[language=bash, caption=Configuration Nginx (/etc/nginx/sites-available/monprojet)]
+server {
+    listen 80;
+    server_name mondomaine.fr;
+
+    location / {
+        proxy_pass http://127.0.0.1:8000;
+        proxy_set_header Host $host;
+        proxy_set_header X-Real-IP $remote_addr;
+    }
+
+    location /static/ {
+        alias /home/user/projet/staticfiles/;
+    }
+}
+\end{lstlisting}
+
+\subsection{Certificat HTTPS}
+
+\begin{lstlisting}[language=bash, caption=Installation de Certbot (Let's Encrypt)]
+sudo apt install certbot python3-certbot-nginx
+sudo certbot --nginx -d mondomaine.fr
+\end{lstlisting}
+
+\subsection{Sécurité serveur}
+
+\begin{itemize}
+  \item Configurer le pare-feu (UFW) : autoriser uniquement les ports 22, 80, 443.
+  \item Désactiver les connexions SSH par mot de passe (clés SSH uniquement).
+  \item Mettre à jour régulièrement le système.
+\end{itemize}
+
+% =============================================================================
+\section{Premier démarrage}
+% =============================================================================
+
+\subsection{Création d'un compte utilisateur}
+
+[Expliquer comment créer le premier compte utilisateur.]
+
+\begin{lstlisting}[language=bash, caption=Création d'un superutilisateur]
+python manage.py createsuperuser
+\end{lstlisting}
+
+\subsection{Vérification}
+
+[Décrire les étapes de vérification post-installation.]
+
+\begin{enumerate}
+  \item Ouvrir un navigateur et accéder à \url{http://localhost:8000}
+  \item Vérifier que la page d'accueil s'affiche correctement.
+  \item Se connecter avec le compte créé précédemment.
+  \item Tester les fonctionnalités principales.
+\end{enumerate}
+
+\begin{remarque}[Problèmes courants]
+  \begin{itemize}
+    \item \textbf{Port déjà utilisé :} vérifier qu'aucun autre service n'occupe
+      le port 8000 (\texttt{lsof -i :8000}).
+    \item \textbf{Erreur de base de données :} vérifier les identifiants dans
+      le fichier \texttt{.env}.
+    \item \textbf{Fichiers statiques manquants :} relancer
+      \texttt{python manage.py collectstatic}.
+  \end{itemize}
+\end{remarque}
+
+% =============================================================================
+\section{Conclusion}
+% =============================================================================
+
+Ce manuel a présenté les étapes nécessaires à l'installation et au déploiement
+de l'application. En cas de problème, se référer à la section précédente ou
+consulter la documentation officielle des outils utilisés.
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+\end{document}

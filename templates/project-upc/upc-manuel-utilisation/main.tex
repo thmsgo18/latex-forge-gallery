@@ -1,0 +1,200 @@
+% =============================================================================
+% MANUEL D'UTILISATION — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Manuel d'utilisation}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Ce manuel d'utilisation décrit l'ensemble des fonctionnalités de l'application
+  et guide l'utilisateur dans leur prise en main. Il couvre l'inscription,
+  la connexion, l'utilisation des fonctionnalités principales et les actions
+  réservées aux administrateurs.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+[Décrire brièvement l'application, son objectif et à qui ce manuel est destiné.]
+
+Ce manuel présente l'ensemble des fonctionnalités de l'application [Nom].
+Il s'adresse à deux types d'utilisateurs :
+\begin{itemize}
+  \item \textbf{Utilisateurs standard} : accèdent aux fonctionnalités
+    principales de l'application.
+  \item \textbf{Administrateurs} : gèrent le contenu, les utilisateurs et
+    la configuration de l'application.
+\end{itemize}
+
+% =============================================================================
+\section{Inscription \& Connexion}
+% =============================================================================
+
+\subsection{Création d'un compte}
+
+[Décrire les étapes pour créer un nouveau compte utilisateur.]
+
+Pour créer un compte :
+\begin{enumerate}
+  \item Accéder à la page d'accueil de l'application.
+  \item Cliquer sur le bouton \textbf{Inscription}.
+  \item Renseigner les informations requises :
+    \begin{itemize}
+      \item Nom d'utilisateur
+      \item Adresse e-mail (doit être valide)
+      \item Mot de passe (minimum 8 caractères)
+      \item Confirmation du mot de passe
+    \end{itemize}
+  \item Cliquer sur \textbf{Créer mon compte}.
+\end{enumerate}
+
+\begin{remarque}
+  Une fois le compte créé, vous serez automatiquement connecté et redirigé
+  vers la page principale.
+\end{remarque}
+
+\subsection{Connexion}
+
+[Décrire les étapes pour se connecter à un compte existant.]
+
+Pour se connecter :
+\begin{enumerate}
+  \item Accéder à la page de connexion.
+  \item Saisir votre adresse e-mail et votre mot de passe.
+  \item Cliquer sur \textbf{Se connecter}.
+\end{enumerate}
+
+% =============================================================================
+\section{Mot de passe oublié}
+% =============================================================================
+
+[Décrire la procédure de récupération de mot de passe.]
+
+En cas d'oubli de votre mot de passe :
+\begin{enumerate}
+  \item Sur la page de connexion, cliquer sur \textbf{Mot de passe oublié ?}
+  \item Saisir l'adresse e-mail associée à votre compte.
+  \item Cliquer sur \textbf{Envoyer le lien de réinitialisation}.
+  \item Consulter votre boîte mail et cliquer sur le lien reçu.
+  \item Définir un nouveau mot de passe et confirmer.
+\end{enumerate}
+
+\begin{remarque}
+  Le lien de réinitialisation est valable 24 heures. Si vous ne recevez pas
+  l'e-mail, vérifiez votre dossier de courrier indésirable.
+\end{remarque}
+
+% =============================================================================
+\section{Fonctionnalités utilisateur}
+% =============================================================================
+
+[Décrire chaque fonctionnalité accessible à l'utilisateur standard, illustrée
+par des captures d'écran si possible.]
+
+\subsection{Fonctionnalité principale}
+
+[Décrire pas à pas comment utiliser la fonctionnalité principale.]
+
+Pour utiliser cette fonctionnalité :
+\begin{enumerate}
+  \item Accéder à la section [Nom de la section] depuis le menu principal.
+  \item [Étape 2]
+  \item [Étape 3]
+\end{enumerate}
+
+\begin{remarque}
+  [Insérer une capture d'écran avec \texttt{\textbackslash includegraphics}.]
+\end{remarque}
+
+\subsection{Fonctionnalité secondaire}
+
+[Décrire la fonctionnalité secondaire.]
+
+\subsection{Profil utilisateur}
+
+[Décrire comment accéder et modifier son profil.]
+
+Pour accéder à votre profil :
+\begin{enumerate}
+  \item Cliquer sur votre nom d'utilisateur en haut à droite.
+  \item Sélectionner \textbf{Mon profil}.
+  \item Modifier les informations souhaitées et enregistrer.
+\end{enumerate}
+
+\subsection{Déconnexion}
+
+Pour se déconnecter, cliquer sur votre nom en haut à droite puis sur
+\textbf{Déconnexion}.
+
+% =============================================================================
+\section{Interface administrateur}
+% =============================================================================
+
+[Décrire les fonctionnalités réservées aux administrateurs.]
+
+\begin{remarque}[Accès administrateur]
+  L'interface d'administration est accessible uniquement aux comptes avec le
+  rôle \textbf{Administrateur}. La connexion redirige automatiquement vers
+  l'interface d'administration.
+\end{remarque}
+
+\subsection{Gestion des utilisateurs}
+
+[Décrire les outils de gestion des utilisateurs.]
+
+L'administrateur peut :
+\begin{itemize}
+  \item Consulter la liste de tous les utilisateurs inscrits.
+  \item Modifier le rôle d'un utilisateur (standard / administrateur).
+  \item Désactiver ou supprimer un compte.
+\end{itemize}
+
+\subsection{Gestion du contenu}
+
+[Décrire comment l'administrateur gère le contenu de l'application.]
+
+\begin{enumerate}
+  \item Accéder à la section \textbf{Gestion du contenu} depuis le menu.
+  \item Ajouter un nouvel élément via le bouton \textbf{Ajouter}.
+  \item Remplir le formulaire et valider.
+\end{enumerate}
+
+\subsection{Création d'un administrateur}
+
+[Expliquer comment créer un nouveau compte administrateur.]
+
+Pour promouvoir un utilisateur au rang d'administrateur :
+\begin{itemize}
+  \item Depuis la liste des utilisateurs, cliquer sur l'utilisateur ciblé.
+  \item Modifier son rôle en \textbf{Administrateur}.
+  \item Enregistrer les modifications.
+\end{itemize}
+
+% =============================================================================
+\section{Conclusion}
+% =============================================================================
+
+Ce manuel a présenté l'ensemble des fonctionnalités de l'application [Nom].
+Pour toute question ou problème, contacter l'équipe de développement à
+l'adresse : \href{mailto:contact@exemple.fr}{contact@exemple.fr}.
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+\end{document}

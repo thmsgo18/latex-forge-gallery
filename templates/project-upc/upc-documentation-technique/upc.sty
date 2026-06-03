@@ -1,0 +1,298 @@
+% =============================================================================
+% upc.sty — Style Université Paris Cité, Projet Informatique L3
+% Inspiré du style des documents ASADI (L3W1), modernisé
+% =============================================================================
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{upc}[2024/01/01 UPC Projet Informatique Style]
+
+% --- Encodage & langue -------------------------------------------------------
+\RequirePackage[T1]{fontenc}
+\RequirePackage[utf8]{inputenc}
+\RequirePackage[french]{babel}
+\RequirePackage{csquotes}
+\RequirePackage{lmodern}
+\RequirePackage{microtype}
+
+% --- Mise en page ------------------------------------------------------------
+\RequirePackage[
+  a4paper,
+  top=2.5cm, bottom=2.5cm,
+  left=2.5cm, right=2.5cm,
+  headheight=42pt
+]{geometry}
+
+% --- Couleurs ----------------------------------------------------------------
+\RequirePackage{xcolor}
+\definecolor{upcred}{RGB}{155, 27, 48}      % Couleur principale UPC
+\definecolor{upclight}{RGB}{248, 240, 242}  % Fond léger crimson
+\definecolor{tabhead}{RGB}{155, 27, 48}     % En-tête de tableau
+\definecolor{codebg}{RGB}{248, 248, 248}    % Fond bloc de code
+\definecolor{coderule}{RGB}{200, 200, 200}
+
+% --- Graphiques & TikZ -------------------------------------------------------
+\RequirePackage{graphicx}
+\RequirePackage{tikz}
+\usetikzlibrary{calc}
+
+% --- Liens -------------------------------------------------------------------
+\RequirePackage{hyperref}
+\hypersetup{
+  colorlinks=true,
+  linkcolor=upcred,
+  urlcolor=upcred,
+  citecolor=upcred,
+  pdfborder={0 0 0},
+}
+
+% --- En-têtes & pieds --------------------------------------------------------
+\RequirePackage{fancyhdr}
+\RequirePackage{lastpage}
+
+% --- Titres de sections -------------------------------------------------------
+\RequirePackage{titlesec}
+
+% --- Listes ------------------------------------------------------------------
+\RequirePackage{enumitem}
+
+% --- Tableaux ----------------------------------------------------------------
+\RequirePackage{booktabs}
+\RequirePackage{array}
+\RequirePackage{tabularx}
+\RequirePackage{longtable}
+\RequirePackage{colortbl}
+\RequirePackage{multirow}
+
+% --- Mathématiques -----------------------------------------------------------
+\RequirePackage{amsmath, amssymb}
+
+% --- Code --------------------------------------------------------------------
+\RequirePackage{listings}
+\lstset{
+  basicstyle   = \ttfamily\small,
+  keywordstyle = \color{upcred}\bfseries,
+  commentstyle = \color{gray}\itshape,
+  stringstyle  = \color{blue!70!black},
+  backgroundcolor = \color{codebg},
+  frame        = single,
+  rulecolor    = \color{coderule},
+  numbers      = left,
+  numberstyle  = \tiny\color{gray},
+  breaklines   = true,
+  tabsize      = 2,
+  showstringspaces = false,
+  captionpos   = b,
+}
+
+% --- Bibliographie -----------------------------------------------------------
+\RequirePackage[backend=biber, style=numeric, sorting=none]{biblatex}
+\addbibresource{references.bib}
+
+% --- Index -------------------------------------------------------------------
+\RequirePackage{imakeidx}
+\makeindex[columns=2, intoc]
+
+% --- Boîtes ------------------------------------------------------------------
+\RequirePackage{tcolorbox}
+\tcbuselibrary{skins, breakable}
+
+\newenvironment{remarque}[1][Remarque]{%
+  \begin{tcolorbox}[
+    title       = #1,
+    colback     = upclight,
+    colframe    = upcred,
+    fonttitle   = \bfseries\small,
+    left=6pt, right=6pt, top=4pt, bottom=4pt,
+    breakable
+  ]
+}{\end{tcolorbox}}
+
+% =============================================================================
+% VARIABLES PROJET — à redéfinir dans main.tex
+% =============================================================================
+\newcommand{\typeDocument}{Document}
+\newcommand{\projetNom}{Nom du projet}
+\newcommand{\projetGroupe}{Groupe}
+\newcommand{\projetEncadrant}{Encadrant}
+\newcommand{\projetAuteurs}{Auteurs}
+\newcommand{\projetVersion}{1.0}
+\newcommand{\projetResume}{Insérer le résumé du projet ici.}
+
+% =============================================================================
+% LOGO UPC (approximation TikZ)
+% Remplacer par \includegraphics{logo-upc} si disponible
+% =============================================================================
+\newcommand{\upclogoshape}{%
+  \begin{tikzpicture}[baseline=-3pt, scale=0.48]
+    % A stylisé : deux jambes + barre
+    \fill[upcred]
+      (0.00, 0.00) -- (0.25, 0.00) -- (0.65, 0.95) -- (1.05, 0.00)
+      -- (1.30, 0.00) -- (0.65, 1.55) -- cycle;
+    % Triangle blanc intérieur
+    \fill[white]
+      (0.40, 0.42) -- (0.65, 0.90) -- (0.90, 0.42) -- cycle;
+  \end{tikzpicture}%
+}
+
+\newcommand{\upclogo}{%
+  \upclogoshape\kern4pt
+  \begin{minipage}[b]{1.9cm}
+    \linespread{1.0}\selectfont
+    \footnotesize\bfseries Université\\[-1pt]Paris Cité
+  \end{minipage}%
+}
+
+% =============================================================================
+% STYLES DE PAGE
+% =============================================================================
+
+% Page de garde
+\fancypagestyle{coverpage}{%
+  \fancyhf{}
+  \fancyhead[L]{\upclogo}
+  \fancyhead[R]{\small\itshape Projet Informatique L3}
+  \renewcommand{\headrulewidth}{0.8pt}
+  \renewcommand{\headrule}{%
+    \color{upcred}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
+  \fancyfoot{}
+}
+
+% Pages normales
+\fancypagestyle{normal}{%
+  \fancyhf{}
+  \fancyhead[R]{\small\itshape\projetGroupe\ --\ \projetNom}
+  \renewcommand{\headrulewidth}{0.8pt}
+  \renewcommand{\headrule}{%
+    \color{upcred}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
+  \fancyfoot[C]{\small\thepage\ /\ \pageref{LastPage}}
+}
+
+\pagestyle{normal}
+
+% =============================================================================
+% PAGE DE GARDE
+% =============================================================================
+\newcommand{\makecoverpage}{%
+  \thispagestyle{coverpage}
+  \begin{center}
+    \vspace*{1.5cm}
+    {\LARGE\bfseries \typeDocument}\\[1.8em]
+    {\fontsize{26}{32}\selectfont \projetNom}\\[3em]
+    {\normalsize
+      \begin{tabular}{c}
+        \textbf{Groupe:}\\[0.25em] \projetGroupe \\[0.9em]
+        \textbf{Encadrant:}\\[0.25em] \projetEncadrant \\
+        \textbf{Auteurs:}\\[0.25em] \projetAuteurs \\[0.9em]
+        \textbf{Version du document:}\\[0.25em] \projetVersion
+      \end{tabular}
+    }\\[2.5em]
+    \begin{minipage}{0.82\textwidth}
+      \centering
+      \textbf{Résumé}\\[0.6em]
+      \small\projetResume
+    \end{minipage}
+  \end{center}
+  \newpage
+  \pagestyle{normal}
+  \setcounter{page}{2}
+}
+
+% =============================================================================
+% FORMATAGE DES SECTIONS (modernisé : numéro en rouge)
+% =============================================================================
+\titleformat{\section}
+  {\large\bfseries}
+  {\textcolor{upcred}{\thesection}}{0.7em}{}
+  [\vspace{2pt}{\color{upcred!40}\hrule height 0.6pt}\vspace{2pt}]
+
+\titleformat{\subsection}
+  {\normalsize\bfseries}
+  {\textcolor{upcred}{\thesubsection}}{0.7em}{}
+
+\titleformat{\subsubsection}
+  {\normalsize\bfseries}
+  {\textbf{\thesubsubsection}}{0.7em}{}
+
+\titlespacing*{\section}{0pt}{1.4em}{0.5em}
+\titlespacing*{\subsection}{0pt}{1.0em}{0.3em}
+\titlespacing*{\subsubsection}{0pt}{0.8em}{0.2em}
+
+% =============================================================================
+% LISTES
+% =============================================================================
+\setlist[itemize,1]{
+  label    = {\textcolor{upcred}{$\blacktriangleright$}},
+  leftmargin = 1.6em,
+  itemsep  = 2pt,
+  topsep   = 4pt,
+}
+\setlist[itemize,2]{
+  label    = {\textbullet},
+  leftmargin = 1.6em,
+  itemsep  = 1pt,
+  topsep   = 2pt,
+}
+\setlist[itemize,3]{
+  label    = {--},
+  leftmargin = 1.6em,
+  itemsep  = 1pt,
+}
+\setlist[enumerate,1]{
+  leftmargin = 1.6em,
+  itemsep  = 2pt,
+  topsep   = 4pt,
+}
+
+% =============================================================================
+% TABLEAUX
+% =============================================================================
+% Type de colonne centré/gauche avec largeur fixe
+\newcolumntype{C}[1]{>{\centering\arraybackslash}p{#1}}
+\newcolumntype{L}[1]{>{\raggedright\arraybackslash}p{#1}}
+
+% Macro pour en-tête de tableau coloré (style rapport de tests)
+\newcommand{\tblhead}[1]{%
+  \rowcolor{tabhead}\color{white}\textbf{#1}%
+}
+
+% Environnement tableau de tests
+\newenvironment{testtable}[4]{%
+  % #1 = caption, #2 = label, #3 = col widths {c|p{...}|p{...}|c}
+  \begin{center}
+  \begin{longtable}{#3}
+    \hline
+    \rowcolor{tabhead}
+    \color{white}\textbf{N°} &
+    \color{white}\textbf{Action} &
+    \color{white}\textbf{Attendu} &
+    \color{white}\textbf{Résultat} \\
+    \hline
+    \endfirsthead
+    \hline
+    \rowcolor{tabhead}
+    \color{white}\textbf{N°} &
+    \color{white}\textbf{Action} &
+    \color{white}\textbf{Attendu} &
+    \color{white}\textbf{Résultat} \\
+    \hline
+    \endhead
+    \hline
+    \endfoot
+    \caption{#1}\label{#2}
+}{%
+  \end{longtable}
+  \end{center}
+}
+
+% =============================================================================
+% SOMMAIRE
+% =============================================================================
+\newcommand{\makesommaire}{%
+  \tableofcontents
+  \newpage
+}
+
+% =============================================================================
+% COMMANDES UTILITAIRES
+% =============================================================================
+\newcommand{\todo}[1]{\textcolor{upcred}{\textbf{[TODO: #1]}}}
+\newcommand{\version}[3]{\textbf{v#1} & #2 & #3 \\}

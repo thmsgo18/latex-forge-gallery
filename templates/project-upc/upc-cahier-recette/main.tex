@@ -1,0 +1,261 @@
+% =============================================================================
+% CAHIER DE RECETTE — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Cahier de recette}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Le cahier de recette vise à s'assurer de la conformité de l'application avec
+  le cahier des charges. Il établit les objectifs et méthodes du projet, les
+  concepts de base, le matériel utilisé et un ensemble de tests de validation.
+  Il sert de référence pour l'ensemble des phases de validation.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+\subsection{Contexte et enjeux}
+
+[Rappeler le contexte du projet et les enjeux de la phase de recette.]
+
+Le cahier de recette est un document clé dans le cycle de développement d'un
+logiciel. Il permet de vérifier que l'application développée est conforme aux
+exigences définies dans le cahier des charges, avant sa livraison finale.
+
+\subsection{Objectifs du cahier de recette}
+
+Le cahier de recette vise à :
+\begin{itemize}
+  \item Vérifier la conformité de l'application avec le cahier des charges.
+  \item Valider les fonctionnalités définies par l'encadrant et l'équipe.
+  \item Identifier les éventuelles non-conformités avant la mise en production.
+\end{itemize}
+
+Ce document servira de référence pour l'ensemble des phases de validation,
+depuis les tests unitaires jusqu'à la recette finale.
+
+% =============================================================================
+\section{Objectif et méthodes}
+% =============================================================================
+
+\subsection{Objectifs des tests}
+
+[Définir les objectifs de la campagne de tests.]
+
+\begin{itemize}
+  \item Valider que chaque fonctionnalité fonctionne conformément aux
+    spécifications.
+  \item Vérifier la robustesse de l'application face aux entrées incorrectes.
+  \item S'assurer que les performances répondent aux attentes.
+  \item Tester la sécurité : authentification, autorisation, protection des données.
+\end{itemize}
+
+\subsection{Planning des tests}
+
+[Planifier la campagne de tests dans le temps.]
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Phase} &
+  \color{white}\textbf{Période} &
+  \color{white}\textbf{Responsable} \\
+  \hline
+  Tests unitaires    & Semaine X & Développeurs \\
+  \hline
+  Tests d'intégration & Semaine X+1 & Toute l'équipe \\
+  \hline
+  Tests fonctionnels & Semaine X+2 & Testeurs \\
+  \hline
+  Recette finale     & Semaine X+3 & Encadrant + équipe \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Méthodes}
+
+[Décrire les méthodes de test retenues.]
+
+\begin{itemize}
+  \item \textbf{Tests manuels :} exécution des scénarios par un testeur humain
+    en suivant ce cahier de recette.
+  \item \textbf{Tests automatisés :} utilisation de [framework de test] pour
+    les tests unitaires et d'intégration.
+  \item \textbf{Tests de non-régression :} exécution systématique de l'ensemble
+    des tests après chaque modification majeure.
+\end{itemize}
+
+% =============================================================================
+\section{Concepts de base}
+% =============================================================================
+
+[Définir les concepts clés à maîtriser pour réaliser les tests.]
+
+\begin{description}
+  \item[Cas de test] Scénario décrivant une situation à tester, avec les
+    actions à réaliser et le résultat attendu.
+  \item[Critère d'acceptation] Condition que l'application doit remplir pour
+    qu'un test soit considéré comme réussi.
+  \item[Régression] Apparition d'un défaut dans une fonctionnalité
+    précédemment validée suite à une modification.
+  \item[Recette] Phase finale de validation par le client/encadrant avant
+    la mise en production.
+\end{description}
+
+% =============================================================================
+\section{Logiciel utilisé}
+% =============================================================================
+
+[Lister le matériel et les logiciels nécessaires pour réaliser les tests.]
+
+\begin{itemize}
+  \item \textbf{Système d'exploitation :} Windows 10/11, macOS, Linux
+  \item \textbf{Navigateur :} Chrome (v120+), Firefox (v120+), Edge
+  \item \textbf{Outil de test :} [pytest / unittest / autre]
+  \item \textbf{Accès réseau :} connexion internet requise
+  \item \textbf{Compte test :} un compte utilisateur et un compte administrateur
+    de test doivent être disponibles
+\end{itemize}
+
+% =============================================================================
+\section{Tests}
+% =============================================================================
+
+[Décrire l'ensemble des cas de test organisés par fonctionnalité.]
+
+\subsection{Tests côté utilisateur}
+
+\subsubsection{Authentification}
+
+\noindent\textbf{Objectif :} Valider le fonctionnement de l'inscription et de la connexion.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Résultat attendu} &
+  \color{white}\textbf{Statut} \\
+  \hline
+  T01 & Inscription avec données valides &
+        Compte créé, connexion automatique & $\square$ \\
+  \hline
+  T02 & Inscription avec e-mail invalide &
+        Message d'erreur de validation & $\square$ \\
+  \hline
+  T03 & Connexion avec identifiants corrects &
+        Accès à l'espace personnel & $\square$ \\
+  \hline
+  T04 & Connexion avec mot de passe erroné &
+        Message d'erreur d'authentification & $\square$ \\
+  \hline
+  T05 & Réinitialisation du mot de passe &
+        E-mail de réinitialisation reçu & $\square$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Fonctionnalité principale}
+
+\noindent\textbf{Objectif :} Valider [la fonctionnalité principale].
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Résultat attendu} &
+  \color{white}\textbf{Statut} \\
+  \hline
+  T10 & [Action 1] & [Résultat attendu] & $\square$ \\
+  \hline
+  T11 & [Action 2] & [Résultat attendu] & $\square$ \\
+  \hline
+  T12 & [Action 3] & [Résultat attendu] & $\square$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Tests côté administrateur}
+
+\noindent\textbf{Objectif :} Valider les fonctionnalités d'administration.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Résultat attendu} &
+  \color{white}\textbf{Statut} \\
+  \hline
+  A01 & Accès à la liste des utilisateurs &
+        Liste affichée correctement & $\square$ \\
+  \hline
+  A02 & Modification d'un compte utilisateur &
+        Modification enregistrée & $\square$ \\
+  \hline
+  A03 & Ajout d'un élément de contenu &
+        Contenu visible pour les utilisateurs & $\square$ \\
+  \hline
+  A04 & Suppression d'un élément de contenu &
+        Contenu supprimé et inaccessible & $\square$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Autres tests}
+
+\subsubsection{Tests de sécurité}
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Scénario} &
+  \color{white}\textbf{Résultat attendu} &
+  \color{white}\textbf{Statut} \\
+  \hline
+  S01 & Accès à une URL protégée sans connexion &
+        Redirection vers la page de connexion & $\square$ \\
+  \hline
+  S02 & Tentative d'accès admin en tant qu'utilisateur &
+        Accès refusé (403) & $\square$ \\
+  \hline
+  S03 & Injection SQL dans un champ de formulaire &
+        Requête rejetée, pas d'erreur serveur & $\square$ \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+% =============================================================================
+\section{Index}
+% =============================================================================
+
+\printindex
+
+\end{document}

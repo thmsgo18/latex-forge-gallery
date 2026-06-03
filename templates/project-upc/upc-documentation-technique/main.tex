@@ -1,0 +1,276 @@
+% =============================================================================
+% DOCUMENTATION TECHNIQUE — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Documentation interne}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Ce document constitue la documentation technique interne du projet. Il décrit
+  l'architecture du système, les choix techniques, les mécanismes d'intégration
+  des composants, ainsi que les aspects de sécurité et de maintenance.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+\subsection{Objectifs fonctionnels et techniques}
+
+[Décrire ce que le système doit faire du point de vue fonctionnel et technique.]
+
+\subsubsection{Objectifs fonctionnels}
+
+L'application vise à fournir les fonctionnalités suivantes :
+
+\begin{enumerate}
+  \item \textbf{Fonctionnalité principale :}
+    \begin{itemize}
+      \item [Description sous-objectif 1]
+      \item [Description sous-objectif 2]
+    \end{itemize}
+
+  \item \textbf{Fonctionnalité secondaire :}
+    \begin{itemize}
+      \item [Description sous-objectif 1]
+      \item [Description sous-objectif 2]
+    \end{itemize}
+
+  \item \textbf{Gestion des comptes :}
+    \begin{itemize}
+      \item Inscription, connexion, réinitialisation de mot de passe.
+      \item Distinction entre utilisateurs standard et administrateurs.
+    \end{itemize}
+\end{enumerate}
+
+\subsubsection{Objectifs techniques}
+
+\begin{itemize}
+  \item \textbf{Performance :} temps de réponse inférieur à [N] secondes.
+  \item \textbf{Scalabilité :} architecture permettant de gérer la montée en charge.
+  \item \textbf{Sécurité :} authentification sécurisée, chiffrement des données.
+  \item \textbf{Maintenabilité :} code modulaire, commenté et versionné.
+\end{itemize}
+
+\subsection{Architecture du projet}
+
+[Décrire l'architecture globale du projet : couches applicatives, composants
+principaux et leurs interactions.]
+
+\begin{remarque}[Diagramme d'architecture]
+  Insérer ici un diagramme d'architecture via
+  \texttt{\textbackslash includegraphics[width=\textwidth]\{architecture.pdf\}}.
+\end{remarque}
+
+L'architecture repose sur les composants suivants :
+\begin{itemize}
+  \item \textbf{Front-end :} interface utilisateur en HTML/CSS/JavaScript.
+  \item \textbf{Back-end :} serveur applicatif exposant une API REST.
+  \item \textbf{Base de données :} stockage persistant des données.
+  \item \textbf{Services externes :} [API tierces, services mail, etc.]
+\end{itemize}
+
+% =============================================================================
+\section{Description des composants applicatifs}
+% =============================================================================
+
+\subsection{Composant 1 : [Nom]}
+
+[Décrire le premier composant majeur de l'application.]
+
+\begin{itemize}
+  \item \textbf{Rôle :} [description du rôle]
+  \item \textbf{Technologies :} [technologies utilisées]
+  \item \textbf{Interfaces :} [points d'entrée/sortie]
+\end{itemize}
+
+\subsection{Composant 2 : [Nom]}
+
+[Décrire le second composant majeur.]
+
+% =============================================================================
+\section{Architecture back-end}
+% =============================================================================
+
+\subsection{Structure du projet}
+
+[Décrire l'organisation des fichiers et répertoires du projet back-end.]
+
+\begin{lstlisting}[caption=Structure du projet]
+projet/
+├── app/
+│   ├── models.py       # Modèles de données
+│   ├── views.py        # Logique métier / contrôleurs
+│   ├── urls.py         # Routage des URL
+│   ├── serializers.py  # Sérialisation (API REST)
+│   └── tests.py        # Tests unitaires
+├── config/
+│   ├── settings.py     # Configuration générale
+│   └── wsgi.py
+├── requirements.txt
+└── manage.py
+\end{lstlisting}
+
+\subsection{Modèles de données}
+
+[Décrire les principaux modèles de données.]
+
+\begin{lstlisting}[language=Python, caption=Exemple de modèle utilisateur]
+class Utilisateur(AbstractUser):
+    email = models.EmailField(unique=True)
+    role  = models.CharField(
+        max_length=20,
+        choices=[('user', 'Utilisateur'), ('admin', 'Administrateur')],
+        default='user'
+    )
+    date_inscription = models.DateTimeField(auto_now_add=True)
+
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['username']
+\end{lstlisting}
+
+\subsection{API REST}
+
+[Décrire les endpoints principaux de l'API.]
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{5cm}|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Méthode} &
+  \color{white}\textbf{Endpoint} &
+  \color{white}\textbf{Description} \\
+  \hline
+  POST & \texttt{/api/auth/login/}     & Connexion utilisateur \\
+  \hline
+  POST & \texttt{/api/auth/register/}  & Inscription utilisateur \\
+  \hline
+  GET  & \texttt{/api/utilisateurs/}   & Liste des utilisateurs (admin) \\
+  \hline
+  GET  & \texttt{/api/[ressource]/}    & Lister les ressources \\
+  \hline
+  POST & \texttt{/api/[ressource]/}    & Créer une ressource \\
+  \hline
+  PUT  & \texttt{/api/[ressource]/\{id\}/} & Modifier une ressource \\
+  \hline
+  DELETE & \texttt{/api/[ressource]/\{id\}/} & Supprimer une ressource \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Intégration des services externes}
+% =============================================================================
+
+[Décrire comment les services externes sont intégrés dans l'application :
+API tierces, services d'e-mail, stockage, etc.]
+
+\subsection{Service de messagerie}
+
+[Décrire la configuration du service d'envoi d'e-mails.]
+
+\begin{lstlisting}[language=Python, caption=Configuration e-mail (settings.py)]
+EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
+EMAIL_HOST    = 'smtp.gmail.com'
+EMAIL_PORT    = 587
+EMAIL_USE_TLS = True
+EMAIL_HOST_USER     = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
+\end{lstlisting}
+
+\subsection{Intégration d'un service tiers}
+
+[Décrire l'intégration d'un service tiers spécifique au projet.]
+
+% =============================================================================
+\section{Traitement des données}
+% =============================================================================
+
+[Décrire comment les données sont traitées, stockées et sécurisées.]
+
+\subsection{Formats pris en charge}
+
+\begin{itemize}
+  \item Format 1 : [description]
+  \item Format 2 : [description]
+\end{itemize}
+
+\subsection{Pipeline de traitement}
+
+[Décrire le pipeline de traitement des données si applicable.]
+
+\begin{enumerate}
+  \item \textbf{Étape 1 :} Réception des données.
+  \item \textbf{Étape 2 :} Validation et nettoyage.
+  \item \textbf{Étape 3 :} Traitement métier.
+  \item \textbf{Étape 4 :} Stockage en base de données.
+\end{enumerate}
+
+% =============================================================================
+\section{Fonctionnalités additionnelles}
+% =============================================================================
+
+\subsection{Historique et journalisation}
+
+[Décrire les mécanismes de journalisation des actions.]
+
+\subsection{Accessibilité}
+
+[Décrire les mesures d'accessibilité mises en place.]
+
+% =============================================================================
+\section{Sécurité de l'application}
+% =============================================================================
+
+\subsection{Authentification et gestion des sessions}
+
+\begin{itemize}
+  \item Authentification par token JWT / cookies de session.
+  \item Expiration des sessions après [N] minutes d'inactivité.
+  \item Hachage des mots de passe avec \texttt{bcrypt} / \texttt{PBKDF2}.
+\end{itemize}
+
+\subsection{Contrôle d'accès}
+
+\begin{itemize}
+  \item Vérification des permissions à chaque requête.
+  \item Séparation des rôles : utilisateur standard / administrateur.
+\end{itemize}
+
+\subsection{Sécurité des données}
+
+\begin{itemize}
+  \item Protection contre les injections SQL via l'ORM.
+  \item Protection CSRF sur les formulaires.
+  \item Validation stricte des entrées utilisateur.
+  \item Conformité RGPD : droit d'accès, modification et suppression des données.
+\end{itemize}
+
+\subsection{Tests de sécurité}
+
+[Décrire les tests de sécurité réalisés.]
+
+% =============================================================================
+\section{Conclusion}
+% =============================================================================
+
+[Synthétiser les choix techniques principaux et les perspectives d'évolution
+de l'architecture.]
+
+Ce document a présenté l'ensemble des choix techniques du projet [Nom].
+L'architecture mise en place permet [résumé des avantages]. Les perspectives
+d'évolution incluent [amélioration 1] et [amélioration 2].
+
+\end{document}

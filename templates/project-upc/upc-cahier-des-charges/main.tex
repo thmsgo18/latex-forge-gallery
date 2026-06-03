@@ -1,0 +1,203 @@
+% =============================================================================
+% CAHIER DES CHARGES — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet (à modifier) -------------------------------------
+\renewcommand{\typeDocument}{Cahier des charges}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Dans le cadre de l'UE Projet Informatique à l'Université Paris Cité, nous devons
+  par équipes de quatre tenir un projet tout au long du semestre sous la tutelle
+  d'un encadrant. Le présent cahier des charges rédigé en accord avec l'encadrant
+  pose les bases du projet. Il se veut descriptif des objectifs et ambitions de
+  l'application et explique la démarche et le déroulement prévu pour la réalisation
+  du projet.
+}
+
+\begin{document}
+
+% --- Page de garde -----------------------------------------------------------
+\makecoverpage
+
+% --- Sommaire ----------------------------------------------------------------
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+\subsection{Contexte}
+
+[Décrire le contexte dans lequel s'inscrit le projet : domaine d'application,
+problèmes existants que le projet vise à résoudre, public cible, etc.]
+
+Ce projet s'inscrit dans le cadre de l'UE Projet Informatique de Licence 3 à
+l'Université Paris Cité. Il vise à concevoir et développer une application
+répondant aux besoins identifiés ci-dessous.
+
+\subsection{Technologies}
+
+[Lister et décrire les technologies envisagées pour la réalisation du projet.]
+
+\subsubsection{Back-end}
+
+\begin{itemize}
+  \item \textbf{Langage :} Python / Java / \ldots
+  \item \textbf{Framework :} Django / Spring / \ldots
+  \item \textbf{Base de données :} PostgreSQL / MySQL / \ldots
+\end{itemize}
+
+\subsubsection{Front-end}
+
+\begin{itemize}
+  \item HTML/CSS, JavaScript
+  \item Framework : React / Vue / \ldots
+\end{itemize}
+
+\subsection{Historique}
+
+[Présenter le contexte historique ou technologique pertinent pour comprendre
+les enjeux du projet.]
+
+% =============================================================================
+\section{Description de la demande}
+% =============================================================================
+
+\subsection{Objectifs}
+
+[Décrire les objectifs principaux du projet, ce que l'application doit être
+capable de faire.]
+
+L'objectif du projet est de concevoir une application capable de :
+\begin{itemize}
+  \item Objectif fonctionnel 1
+  \item Objectif fonctionnel 2
+  \item Objectif fonctionnel 3
+\end{itemize}
+
+\subsection{Produit du projet}
+
+[Décrire le produit attendu à l'issue du projet : type d'application,
+principales fonctionnalités.]
+
+\subsection{Fonctions du projet}
+
+[Détailler les fonctionnalités prévues, organisées par module ou par rôle
+utilisateur si pertinent.]
+
+\subsubsection{Fonctionnalité 1}
+
+Description de la fonctionnalité 1.
+
+\subsubsection{Fonctionnalité 2}
+
+Description de la fonctionnalité 2.
+
+\subsection{Critères d'acceptabilité et de réception}
+
+[Définir les critères qui permettront de valider que le produit est conforme
+aux attentes. Ces critères seront repris dans le cahier de recette.]
+
+\begin{itemize}
+  \item Critère 1 : [description]
+  \item Critère 2 : [description]
+  \item Critère 3 : [description]
+\end{itemize}
+
+% =============================================================================
+\section{Contraintes}
+% =============================================================================
+
+[Lister les contraintes techniques, organisationnelles, temporelles et légales
+auxquelles le projet est soumis.]
+
+\begin{itemize}
+  \item \textbf{Contraintes techniques :} [ex. langage imposé, OS cible, etc.]
+  \item \textbf{Contraintes organisationnelles :} Équipe de 4 personnes, travail
+    en mode agile, réunions hebdomadaires.
+  \item \textbf{Contraintes temporelles :} Le projet doit être livré avant la
+    fin du semestre.
+  \item \textbf{Contraintes légales :} Respect du RGPD pour les données
+    personnelles des utilisateurs.
+\end{itemize}
+
+% =============================================================================
+\section{Déroulement du projet}
+% =============================================================================
+
+\subsection{Planification}
+
+[Présenter les grandes phases du projet et leur calendrier prévisionnel.
+Un diagramme de Gantt peut être inclus ici ou en annexe.]
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Phase} &
+  \color{white}\textbf{Semaines} &
+  \color{white}\textbf{Responsable(s)} \\
+  \hline
+  Analyse des besoins & S1 -- S2 & Toute l'équipe \\
+  \hline
+  Conception           & S3 -- S4 & Auteur1, Auteur2 \\
+  \hline
+  Développement        & S5 -- S10 & Toute l'équipe \\
+  \hline
+  Tests                & S11 -- S12 & Auteur3, Auteur4 \\
+  \hline
+  Livraison finale     & S13      & Toute l'équipe \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Ressources}
+
+[Lister les ressources humaines et matérielles disponibles pour la réalisation
+du projet.]
+
+\begin{itemize}
+  \item \textbf{Humaines :} 4 développeurs étudiants
+  \item \textbf{Matérielles :} Ordinateurs personnels, accès internet
+  \item \textbf{Logicielles :} IDE (VS Code, IntelliJ...), Git, \ldots
+  \item \textbf{Services :} GitHub / GitLab, \ldots
+\end{itemize}
+
+% =============================================================================
+\section{Annexes}
+% =============================================================================
+
+[Insérer ici tout document complémentaire : maquettes, diagrammes UML,
+captures d'écran, etc.]
+
+% =============================================================================
+\section{Glossaire}
+% =============================================================================
+
+\begin{description}
+  \item[Terme 1] Définition du terme 1.
+  \item[Terme 2] Définition du terme 2.
+  \item[API] Application Programming Interface --- interface permettant à des
+    applications de communiquer entre elles.
+\end{description}
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+% =============================================================================
+\section{Index}
+% =============================================================================
+
+\printindex
+
+\end{document}

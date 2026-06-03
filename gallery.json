@@ -512,7 +512,7 @@
     },
     {
       "name": "legrand-orange-book",
-      "description": "The Legrand Orange Book \u2014 a structured book template with color-coded chapters",
+      "description": "The Legrand Orange Book — a structured book template with color-coded chapters",
       "category": "book",
       "source_url": "https://www.latextemplates.com/template/the-legrand-orange-book",
       "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/legrand-orange-book",
@@ -838,6 +838,134 @@
         "pdflatex"
       ],
       "engine": "xelatex"
+    },
+    {
+      "name": "upc-cahier-des-charges",
+      "description": "Cahier des charges pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-cahier-des-charges",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "specification"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-rapport-final",
+      "description": "Rapport final de projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-rapport-final",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "final-report"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-conception-detaillee",
+      "description": "Conception détaillée pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-conception-detaillee",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "design"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-manuel-installation",
+      "description": "Manuel d'installation pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-manuel-installation",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "installation"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-manuel-utilisation",
+      "description": "Manuel d'utilisation pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-manuel-utilisation",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "user-manual"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-rapport-tests",
+      "description": "Rapport de tests pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-rapport-tests",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "testing"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-documentation-technique",
+      "description": "Documentation technique interne pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-documentation-technique",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "technical"
+      ],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "upc-cahier-recette",
+      "description": "Cahier de recette pour projet informatique L3 (Université Paris Cité)",
+      "category": "project-upc",
+      "source_url": "",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-cahier-recette",
+      "tags": [
+        "report",
+        "french",
+        "university",
+        "upc",
+        "l3",
+        "acceptance-testing"
+      ],
+      "engine": "pdflatex"
     }
   ]
 }

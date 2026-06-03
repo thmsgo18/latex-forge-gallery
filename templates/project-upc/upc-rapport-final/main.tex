@@ -1,0 +1,265 @@
+% =============================================================================
+% RAPPORT FINAL — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Rapport final}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Dans le cadre de l'UE Projet Informatique à l'Université Paris Cité, notre équipe
+  a été chargée de concevoir et développer une application. Ce rapport présente
+  l'ensemble du travail réalisé, depuis la définition des besoins jusqu'à
+  l'implémentation finale. Il détaille les fonctionnalités proposées, les choix
+  technologiques effectués, les obstacles rencontrés et les compétences acquises.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+[Présenter brièvement le contexte du projet, son objectif général et la
+structure du présent rapport.]
+
+Dans le cadre du cours Projet Informatique de l'Université Paris Cité, notre
+équipe a été chargée de concevoir et de développer une application. Ce projet,
+nommé [Nom], a pour ambition de [objectif principal].
+
+Ce rapport présente l'ensemble du travail réalisé, depuis la définition des
+besoins jusqu'à l'implémentation finale.
+
+% =============================================================================
+\section{Produit}
+% =============================================================================
+
+[Décrire le produit développé, ses fonctionnalités principales, illustrées
+si possible par des captures d'écran.]
+
+\subsection{Inscription \& Connexion}
+
+[Décrire le mécanisme d'inscription et de connexion des utilisateurs, avec
+captures d'écran à l'appui.]
+
+\subsection{Mot de passe oublié}
+
+[Décrire la procédure de récupération de mot de passe.]
+
+\subsection{Utilisateur}
+
+[Décrire les fonctionnalités accessibles à un utilisateur standard.]
+
+\subsubsection{Fonctionnalité A}
+
+Description de la fonctionnalité A côté utilisateur.
+
+\subsubsection{Fonctionnalité B}
+
+Description de la fonctionnalité B côté utilisateur.
+
+\subsection{Administrateur}
+
+[Décrire les fonctionnalités réservées aux administrateurs.]
+
+\subsubsection{Gestion des utilisateurs}
+
+Description des outils d'administration.
+
+\subsubsection{Gestion du contenu}
+
+Description de la gestion du contenu par les administrateurs.
+
+% =============================================================================
+\section{Respect du cahier des charges}
+% =============================================================================
+
+[Évaluer dans quelle mesure les fonctionnalités définies dans le cahier des
+charges ont été réalisées. Utiliser un tableau récapitulatif.]
+
+\begin{center}
+\begin{tabular}{|L{6cm}|C{2.5cm}|L{4cm}|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Fonctionnalité} &
+  \color{white}\textbf{Statut} &
+  \color{white}\textbf{Commentaire} \\
+  \hline
+  Fonctionnalité 1 & \textcolor{green!60!black}{Réalisée} & --- \\
+  \hline
+  Fonctionnalité 2 & \textcolor{orange}{Partielle} & Explication \\
+  \hline
+  Fonctionnalité 3 & \textcolor{red}{Non réalisée} & Raison \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Logiciel}
+% =============================================================================
+
+[Présenter la stack technique retenue : langages, frameworks, outils de
+développement, services externes.]
+
+\begin{itemize}
+  \item \textbf{Back-end :} [langage + framework]
+  \item \textbf{Front-end :} [technologies]
+  \item \textbf{Base de données :} [SGBD]
+  \item \textbf{Versionnement :} Git / GitHub
+  \item \textbf{Déploiement :} [serveur, conteneurs, etc.]
+\end{itemize}
+
+% =============================================================================
+\section{Difficultés rencontrées}
+% =============================================================================
+
+[Décrire les principales difficultés rencontrées pendant le projet et les
+solutions apportées.]
+
+\subsection{Compréhension et gestion du projet}
+
+[Difficultés liées à l'organisation de l'équipe, à la compréhension des
+besoins, à la communication, etc.]
+
+\subsection{Difficultés techniques}
+
+[Difficultés liées à la mise en \oe{}uvre technique : bibliothèques, API,
+performance, etc.]
+
+\subsection{Front-end}
+
+[Difficultés spécifiques à l'interface utilisateur.]
+
+% =============================================================================
+\section{Implémentation}
+% =============================================================================
+
+\subsection{Cas d'utilisation}
+
+[Présenter les principaux cas d'utilisation sous forme de diagramme
+ou de description textuelle.]
+
+\begin{remarque}[Diagramme de cas d'utilisation]
+  Insérer ici le diagramme UML de cas d'utilisation via
+  \texttt{\textbackslash includegraphics\{use-case.pdf\}}.
+\end{remarque}
+
+\subsection{Base de données}
+
+[Présenter le schéma de la base de données (MCD ou schéma relationnel).]
+
+\subsection{Diagramme de classes}
+
+[Présenter le diagramme de classes de l'application.]
+
+% =============================================================================
+\section{Organisation}
+% =============================================================================
+
+[Décrire l'organisation de l'équipe : rôles, méthode de travail, outils de
+collaboration (Trello, Discord, etc.).]
+
+\begin{center}
+\begin{tabular}{|l|l|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Membre} &
+  \color{white}\textbf{Rôle principal} \\
+  \hline
+  Auteur1 & Chef de projet, Back-end \\
+  \hline
+  Auteur2 & Back-end, Base de données \\
+  \hline
+  Auteur3 & Front-end \\
+  \hline
+  Auteur4 & Tests, Documentation \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Planification}
+% =============================================================================
+
+\subsection{Diagramme de Gantt}
+
+[Insérer le diagramme de Gantt représentant le déroulement effectif du projet
+(prévu vs réalisé).]
+
+\begin{remarque}[Diagramme de Gantt]
+  Insérer ici le diagramme de Gantt via
+  \texttt{\textbackslash includegraphics\{gantt.pdf\}}.
+\end{remarque}
+
+% =============================================================================
+\section{Compétences acquises}
+% =============================================================================
+
+\subsection{Concepts et technologies}
+
+[Lister les concepts et technologies maîtrisés à l'issue du projet.]
+
+\begin{itemize}
+  \item Technologie 1 : [description de ce qui a été appris]
+  \item Technologie 2 : [description]
+  \item Technologie 3 : [description]
+\end{itemize}
+
+\subsection{Compétences transversales}
+
+[Lister les compétences non techniques développées : gestion de projet,
+travail en équipe, communication, etc.]
+
+\begin{itemize}
+  \item Gestion de projet agile
+  \item Communication en équipe
+  \item Rédaction de documentation technique
+\end{itemize}
+
+% =============================================================================
+\section{Pistes d'amélioration}
+% =============================================================================
+
+[Identifier les axes d'amélioration possibles pour une version future du projet.]
+
+\begin{itemize}
+  \item Amélioration 1 : [description]
+  \item Amélioration 2 : [description]
+  \item Amélioration 3 : [description]
+\end{itemize}
+
+% =============================================================================
+\section{Conclusion}
+% =============================================================================
+
+[Conclure sur les apports du projet, ce qui a été réalisé et les perspectives.]
+
+Ce projet nous a permis de mettre en pratique les connaissances acquises durant
+notre formation et de développer des compétences nouvelles, tant techniques que
+transversales. [Bilan général du projet et perspectives.]
+
+% =============================================================================
+\section{Glossaire}
+% =============================================================================
+
+\begin{description}
+  \item[Terme 1] Définition du terme 1.
+  \item[Terme 2] Définition du terme 2.
+\end{description}
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+\end{document}

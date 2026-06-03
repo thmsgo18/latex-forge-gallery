@@ -1,0 +1,250 @@
+% =============================================================================
+% CONCEPTION DÉTAILLÉE — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Conception détaillée}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Ce document présente la conception détaillée du projet. Il se base sur les
+  fonctionnalités définies dans le cahier des charges et le cahier de recette
+  afin d'en détailler les solutions techniques, clarifier la structure du projet
+  et assurer la cohérence entre les besoins et le développement.
+}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+\subsection{Contexte}
+
+[Rappeler brièvement le contexte du projet et l'objectif de ce document de
+conception détaillée.]
+
+L'objectif de la conception détaillée est de fournir les détails nécessaires
+à la réalisation technique et fonctionnelle du projet. Elle se base sur les
+fonctionnalités mentionnées dans le cahier de recette ainsi que les besoins
+du cahier des charges.
+
+\subsection{Objectif}
+
+[Préciser ce que ce document apporte : détail des modules, architecture
+technique, diagrammes, etc.]
+
+Ce document permet :
+\begin{itemize}
+  \item de simplifier la phase de développement en clarifiant les attentes
+    techniques ;
+  \item de planifier le projet grâce à un diagramme de Gantt ;
+  \item de retrouver et corriger plus facilement l'origine des problèmes
+    rencontrés pendant le développement.
+\end{itemize}
+
+% =============================================================================
+\section{Logiciel}
+% =============================================================================
+
+[Présenter les choix logiciels retenus : langages, frameworks, bibliothèques,
+outils de développement et de versionnement.]
+
+\begin{itemize}
+  \item \textbf{Langage back-end :} Python / Java / \ldots
+  \item \textbf{Framework :} Django / Spring / \ldots
+  \item \textbf{Base de données :} PostgreSQL / MySQL / SQLite
+  \item \textbf{Langage front-end :} HTML, CSS, JavaScript
+  \item \textbf{Versionnement :} Git, hébergé sur GitHub/GitLab
+  \item \textbf{IDE :} Visual Studio Code / IntelliJ IDEA
+\end{itemize}
+
+% =============================================================================
+\section{Contraintes}
+% =============================================================================
+
+[Rappeler et préciser les contraintes techniques et non-techniques qui
+influencent les choix de conception.]
+
+\begin{itemize}
+  \item \textbf{Performances :} temps de réponse inférieur à [N] secondes.
+  \item \textbf{Sécurité :} authentification sécurisée, hachage des mots de
+    passe, protection contre les injections SQL.
+  \item \textbf{Compatibilité :} application accessible depuis un navigateur
+    web moderne (Chrome, Firefox, Edge).
+  \item \textbf{Maintenabilité :} code commenté, structuré en modules.
+\end{itemize}
+
+% =============================================================================
+\section{Description des modules}
+% =============================================================================
+
+[Décrire chaque module applicatif en détail : fonctionnalités, interfaces,
+règles métier, écrans associés.]
+
+\subsection{Module Utilisateur}
+
+[Décrire les écrans et fonctionnalités accessibles aux utilisateurs standard.]
+
+\subsubsection{Authentification}
+
+\begin{itemize}
+  \item Inscription avec email et mot de passe.
+  \item Connexion avec redirection selon le rôle (utilisateur/administrateur).
+  \item Déconnexion sécurisée.
+  \item Réinitialisation du mot de passe par email.
+\end{itemize}
+
+\subsubsection{Fonctionnalité principale}
+
+[Décrire en détail la fonctionnalité principale accessible à l'utilisateur.]
+
+\subsubsection{Fonctionnalité secondaire}
+
+[Décrire les fonctionnalités secondaires.]
+
+\subsection{Module Administrateur}
+
+[Décrire les fonctionnalités réservées aux administrateurs.]
+
+\subsubsection{Gestion des utilisateurs}
+
+\begin{itemize}
+  \item Consulter la liste des utilisateurs inscrits.
+  \item Modifier le statut d'un utilisateur (actif/inactif, rôle).
+  \item Supprimer un compte utilisateur.
+\end{itemize}
+
+\subsubsection{Gestion du contenu}
+
+\begin{itemize}
+  \item Ajouter, modifier et supprimer des éléments de contenu.
+  \item Organiser le contenu par catégories.
+\end{itemize}
+
+% =============================================================================
+\section{Implémentation}
+% =============================================================================
+
+\subsection{Cas d'utilisation}
+
+[Présenter les diagrammes de cas d'utilisation (UML) pour les différents acteurs
+du système.]
+
+\begin{remarque}[Diagramme de cas d'utilisation]
+  Insérer ici le diagramme UML via
+  \texttt{\textbackslash includegraphics\{use-case.pdf\}}.
+\end{remarque}
+
+Les principaux acteurs sont :
+\begin{itemize}
+  \item \textbf{Utilisateur} : accède aux fonctionnalités de base.
+  \item \textbf{Administrateur} : gère le contenu et les utilisateurs.
+\end{itemize}
+
+\subsection{Base de données}
+
+[Décrire le schéma de la base de données : tables, attributs, relations,
+clés primaires et étrangères.]
+
+\begin{remarque}[Schéma de base de données]
+  Insérer ici le schéma relationnel via
+  \texttt{\textbackslash includegraphics\{schema-bdd.pdf\}}.
+\end{remarque}
+
+\noindent Principales entités :
+\begin{itemize}
+  \item \textbf{Utilisateur} (\underline{id}, email, nom, prénom, mot\_de\_passe, rôle,
+    date\_inscription)
+  \item \textbf{Entité2} (\underline{id}, attribut1, attribut2, \#id\_utilisateur)
+  \item \textbf{Entité3} (\underline{id}, attribut1, attribut2)
+\end{itemize}
+
+\subsection{Diagramme de classes}
+
+[Présenter le diagramme de classes UML de l'application.]
+
+\begin{remarque}[Diagramme de classes]
+  Insérer ici le diagramme de classes via
+  \texttt{\textbackslash includegraphics\{class-diagram.pdf\}}.
+\end{remarque}
+
+% =============================================================================
+\section{Organisation}
+% =============================================================================
+
+[Décrire l'organisation de l'équipe : répartition des tâches, méthode de
+gestion de projet utilisée.]
+
+\begin{center}
+\begin{tabular}{|l|l|l|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Membre} &
+  \color{white}\textbf{Rôle} &
+  \color{white}\textbf{Responsabilités} \\
+  \hline
+  Auteur1 & Chef de projet & Coordination, back-end \\
+  \hline
+  Auteur2 & Développeur    & Base de données, API \\
+  \hline
+  Auteur3 & Développeur    & Front-end \\
+  \hline
+  Auteur4 & QA / Docs      & Tests, documentation \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Planification}
+% =============================================================================
+
+\subsection{Diagramme de Gantt}
+
+[Présenter le planning prévisionnel du projet sous forme de diagramme de Gantt.]
+
+\begin{remarque}[Diagramme de Gantt]
+  Insérer ici le diagramme de Gantt via
+  \texttt{\textbackslash includegraphics[width=\textwidth]\{gantt.pdf\}}.
+\end{remarque}
+
+% =============================================================================
+\section{Annexes}
+% =============================================================================
+
+[Joindre ici tout document complémentaire : maquettes, prototypes, captures
+d'écran, etc.]
+
+% =============================================================================
+\section{Glossaire}
+% =============================================================================
+
+\begin{description}
+  \item[API] Application Programming Interface.
+  \item[MCD] Modèle Conceptuel de Données.
+  \item[UML] Unified Modeling Language.
+  \item[SGBD] Système de Gestion de Bases de Données.
+\end{description}
+
+% =============================================================================
+\section{Références}
+% =============================================================================
+
+\printbibliography[heading=none]
+
+% =============================================================================
+\section{Index}
+% =============================================================================
+
+\printindex
+
+\end{document}

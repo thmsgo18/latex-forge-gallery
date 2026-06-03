@@ -1,0 +1,278 @@
+% =============================================================================
+% RAPPORT DE TESTS — Template UPC Projet Informatique L3
+% Compiler avec : pdflatex > biber > pdflatex > pdflatex
+% =============================================================================
+\documentclass[12pt, a4paper]{article}
+\usepackage{upc}
+
+% --- Informations du projet --------------------------------------------------
+\renewcommand{\typeDocument}{Rapport de Tests}
+\renewcommand{\projetNom}{Nom du projet}
+\renewcommand{\projetGroupe}{L3Wx}
+\renewcommand{\projetEncadrant}{Prénom Nom}
+\renewcommand{\projetAuteurs}{Auteur1, Auteur2, Auteur3, Auteur4}
+\renewcommand{\projetVersion}{1.0}
+\renewcommand{\projetResume}{%
+  Ce document présente la campagne de tests menée dans le cadre du développement
+  du projet. Il détaille l'ensemble des tests fonctionnels et techniques effectués
+  afin de vérifier le bon fonctionnement de l'application, tant du point de vue
+  des utilisateurs que des administrateurs.
+}
+
+% Commandes utiles pour les tableaux de tests
+\newcommand{\valide}{\textcolor{green!60!black}{\textbf{Validé}}}
+\newcommand{\echec}{\textcolor{red}{\textbf{Échoué}}}
+\newcommand{\partiel}{\textcolor{orange}{\textbf{Partiel}}}
+
+\begin{document}
+
+\makecoverpage
+\makesommaire
+
+% =============================================================================
+\section{Introduction}
+% =============================================================================
+
+Ce document présente la campagne de tests menée dans le cadre du développement
+du projet, réalisé dans le cadre de l'UE Projet Informatique de L3 à l'Université
+Paris Cité.
+
+Le rapport détaille l'ensemble des tests fonctionnels et techniques effectués
+afin de vérifier le bon fonctionnement de l'application, aussi bien du point de
+vue des utilisateurs que des administrateurs. Il inclut également une évaluation
+des performances du système.
+
+Ces tests ont permis d'identifier les points forts de l'application et les axes
+d'amélioration à envisager.
+
+% =============================================================================
+\section{Tests généraux}
+% =============================================================================
+
+Les tests constituent une étape essentielle du processus de validation du projet.
+L'objectif de cette section est de décrire les différents tests réalisés, leurs
+objectifs, ainsi que les critères d'acceptation permettant de valider chaque
+fonctionnalité.
+
+\subsection{Tests côté utilisateur}
+
+\subsubsection{Création d'un compte}
+
+\noindent\textbf{Objectif :} Vérifier le bon fonctionnement de la création d'un compte utilisateur.\\
+\textbf{Pré-requis :} Disposer d'un ordinateur avec accès à internet.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4.5cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Attendu} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  UA1 & Cliquer sur ``Créer un compte'' &
+        Ouverture de la page d'inscription & \valide \\
+  \hline
+  UA2 & Saisir une adresse e-mail invalide &
+        Message d'erreur de format & \valide \\
+  \hline
+  UA3 & Saisir un e-mail valide sans mot de passe &
+        Message ``Veuillez saisir un mot de passe'' & \valide \\
+  \hline
+  UA4 & Saisir un e-mail valide et un mot de passe trop court &
+        Message d'erreur de mot de passe & \valide \\
+  \hline
+  UA5 & Saisir un e-mail valide et un mot de passe valide &
+        Création du compte et connexion automatique & \valide \\
+  \hline
+  UA6 & Saisir un e-mail déjà utilisé &
+        Message ``Compte déjà existant'' & \valide \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Connexion}
+
+\noindent\textbf{Objectif :} Vérifier le bon fonctionnement de la connexion.\\
+\textbf{Pré-requis :} Posséder un compte existant.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4.5cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Attendu} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  UB1 & Saisir des identifiants corrects &
+        Connexion et redirection vers la page principale & \valide \\
+  \hline
+  UB2 & Saisir un mot de passe incorrect &
+        Message d'erreur d'authentification & \valide \\
+  \hline
+  UB3 & Laisser les champs vides &
+        Message ``Champs requis'' & \valide \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Fonctionnalité principale}
+
+\noindent\textbf{Objectif :} Vérifier le bon fonctionnement de [fonctionnalité].\\
+\textbf{Pré-requis :} Être connecté en tant qu'utilisateur.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4.5cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Attendu} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  UC1 & [Action 1] & [Résultat attendu] & \valide \\
+  \hline
+  UC2 & [Action 2] & [Résultat attendu] & \valide \\
+  \hline
+  UC3 & [Action 3] & [Résultat attendu] & \partiel \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Tests côté administrateur}
+
+\subsubsection{Gestion des utilisateurs}
+
+\noindent\textbf{Objectif :} Vérifier les fonctionnalités d'administration des comptes.\\
+\textbf{Pré-requis :} Être connecté en tant qu'administrateur.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4.5cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Attendu} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  AA1 & Accéder à la liste des utilisateurs &
+        Affichage de tous les comptes & \valide \\
+  \hline
+  AA2 & Modifier le rôle d'un utilisateur &
+        Modification enregistrée & \valide \\
+  \hline
+  AA3 & Supprimer un compte utilisateur &
+        Compte supprimé, confirmation affichée & \valide \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsubsection{Gestion du contenu}
+
+\noindent\textbf{Objectif :} Vérifier la gestion du contenu par l'administrateur.
+
+\begin{center}
+\begin{tabular}{|c|L{4cm}|L{4.5cm}|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Action} &
+  \color{white}\textbf{Attendu} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  AB1 & Ajouter un nouvel élément de contenu &
+        Élément ajouté et visible & \valide \\
+  \hline
+  AB2 & Modifier un élément existant &
+        Modifications sauvegardées & \valide \\
+  \hline
+  AB3 & Supprimer un élément &
+        Élément supprimé et inaccessible & \valide \\
+  \hline
+\end{tabular}
+\end{center}
+
+\subsection{Tests de performance}
+
+\noindent\textbf{Objectif :} Évaluer les performances de l'application sous charge.
+
+\begin{center}
+\begin{tabular}{|L{4cm}|c|c|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{Scénario} &
+  \color{white}\textbf{Utilisateurs} &
+  \color{white}\textbf{Temps moyen} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  Chargement page accueil & 1   & < 1\,s   & \valide \\
+  \hline
+  Chargement page accueil & 10  & < 2\,s   & \valide \\
+  \hline
+  Requête API principale  & 1   & < 3\,s   & \valide \\
+  \hline
+  Requête API principale  & 10  & < 5\,s   & \partiel \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Tests qualitatifs}
+% =============================================================================
+
+[Décrire ici des tests qualitatifs spécifiques à votre application : qualité
+des réponses générées, pertinence du contenu, etc.]
+
+\subsection{Objectif}
+
+[Décrire l'objectif de ces tests qualitatifs.]
+
+\subsection{Structure de test}
+
+Chaque test est structuré comme suit :
+\begin{itemize}
+  \item \textbf{Entrée :} [description de l'entrée testée]
+  \item \textbf{Sortie attendue :} [critère de qualité]
+  \item \textbf{Évaluation :} [méthode d'évaluation]
+\end{itemize}
+
+\subsection{Résultats}
+
+[Présenter les résultats des tests qualitatifs sous forme de tableau ou
+de description.]
+
+\begin{center}
+\begin{tabular}{|c|L{5cm}|c|c|}
+  \hline
+  \rowcolor{tabhead}
+  \color{white}\textbf{N°} &
+  \color{white}\textbf{Cas de test} &
+  \color{white}\textbf{Score} &
+  \color{white}\textbf{Résultat} \\
+  \hline
+  Q1 & [Description du cas de test 1] & [4/5] & \valide \\
+  \hline
+  Q2 & [Description du cas de test 2] & [3/5] & \partiel \\
+  \hline
+  Q3 & [Description du cas de test 3] & [5/5] & \valide \\
+  \hline
+\end{tabular}
+\end{center}
+
+% =============================================================================
+\section{Conclusion}
+% =============================================================================
+
+[Synthétiser les résultats des tests : nombre de tests réussis/échoués,
+points forts et points d'amélioration identifiés.]
+
+Les tests réalisés ont permis de valider le bon fonctionnement de l'application
+dans la majorité des cas. Les points d'amélioration identifiés sont les suivants :
+
+\begin{itemize}
+  \item [Point d'amélioration 1]
+  \item [Point d'amélioration 2]
+\end{itemize}
+
+\end{document}
