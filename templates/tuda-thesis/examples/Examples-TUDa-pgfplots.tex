@@ -1,0 +1,208 @@
+%% This is file `Examples-TUDa-pgfplots-de.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The Current Maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development respository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	german,%globale Übergabe der Hauptsprache
+	design=2008,% altes Folienlayout
+	aspectratio=169,%Beamer eigene Option zum Umschalten des Formates
+	accentcolor=2d,
+	logo=false,%Kein Logo auf Folgeseiten
+	colorframetitle=true,%Akzentfarbe auch im Frametitle
+%	logofile=example-image, %Falls die Logo Dateien nicht vorliegen
+]{tudabeamer}
+\usepackage[main=german]{babel}
+
+% Der folgende Block ist nur bei pdfTeX auf Versionen vor April 2018 notwendig
+\usepackage{iftex}
+\ifPDFTeX
+	\usepackage[utf8]{inputenc}% Kompatibilität mit TeX Versionen vor April 2018
+\fi
+
+
+%Makros für Formatierungen der Doku
+%Im Allgemeinen nicht notwendig!
+\let\code\texttt
+
+\usepackage{tuda-pgfplots}
+
+\begin{document}
+
+\title{Beispiele für tuda-pgfplots}
+\subtitle{Farbschemata unter Verwendung der CD-Farben (altes Design)}
+\author{Sebastian Schöps \& Marei Peischl}
+
+%Fremdlogo
+%Logo macro mit sternchen skaliert automatisch, sodass das logo in die Fußzeile passt
+\logo*{\includegraphics{example-image-16x9}}
+
+% Da das Bild frei wählbar nach Breite und/oder Höhe skaliert werden kann, werden \width/\height entsprechend gesetzt. So kann die Fläche optimal gefüllt werden.
+%Sternchenversion skaliert automatisch und beschneidet das Bild, um die Fläche zu füllen.
+\titlegraphic*{\includegraphics{example-image}}
+
+
+\date{07. November 2019}
+
+\maketitle
+
+\begin{frame}
+
+	The package tuda-pgfplots provides color settings for pgfplots to use to the Corporate Design colors of TU Darmstadt. It is part of the tuda-ci bundle.
+
+	It's usage requires knowlege of the pgfplots package, see the documentation using texdoc or via \url{https://ctan.org/tex-archive/graphics/pgf/contrib/pgfplots/}.
+
+	The rest of this documents shows some easy exambles of usage.
+
+\end{frame}
+
+%thanks to  Daniel Thiem @Tyde
+\begin{frame}{TUDaColors naming scheme}
+	All TUDa colors are provided by tudacolors.sty. That package defines all colors described in the design guideline for internal use. Since the usage of TikZ and pgfplots might require direct access they have been named to be accessible.
+
+	The color names receive a prefix. So the color called 1a by the design guideline is accessible as \code{TUDa-1a}
+\end{frame}
+
+\begin{frame}{Bar charts: tudabarplot}
+	\begin{figure}
+		\begin{tikzpicture}
+			\begin{axis}[tudabarplot,xlabel={Foo},ylabel={Bar},width=0.9\textwidth,height=0.7\textheight,xtick={1,2,3,4}]
+				\addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+				\addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+				\addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+				\addplot plot coordinates {(1, 20) (2, 25) (3, 22.4) (4, 12.4)};
+				\addplot plot coordinates {(1, 18) (2, 24) (3, 23.5) (4, 13.2)};
+				\addplot plot coordinates {(1, 10) (2, 19) (3, 25) (4, 15.2)};
+				\legend{lorem, ipsum, dolor,lorem, ipsum, dolor}
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+	\tiny \texttt{tudabarplot} uses automatically the TU colors, e.g. \texttt{{\textbackslash}tud1a}, \texttt{{\textbackslash}tud1b}, from the corporate guide, \url{https://www.tu-darmstadt.de/media/medien_stabsstelle_km/services/medien_cd/das_bild_der_tu_darmstadt.pdf}
+\end{frame}
+
+\begin{frame}{Line plots}
+	\begin{figure}
+		\begin{tikzpicture}
+			\begin{axis}[tudalineplot,width=0.9\textwidth,height=6cm,xlabel={Foo},ylabel={Bar}]
+				\addplot {sin(deg(x))};
+				\addplot+[samples=100] {sin(deg(2*x))};
+				\addplot+[samples=30] {tan(0.2*deg(x))};
+				\addplot {x};
+				\addplot table [x=a, y=c,row sep=\\] {
+					a 	b 	c 	d\\
+					-5 	4 	5 	1\\
+					-3 	3 	-3 	5\\
+					0 	5 	-2 	1\\
+					3 	1 	-2 	9\\
+					5 	3 	-4 	7\\
+				};
+				\legend{sin(x),sin(2x),tan(0.2x),x,csv}
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{More plots: 3d visualization with colormar viridis}
+	\begin{figure}
+		\begin{tikzpicture}
+			\begin{axis}[tuda3dplot,xlabel={Foo},ylabel={Bar},width=0.9\textwidth,height=6cm,
+					colormap name=tudab,
+				]
+				\addplot3[surf,samples=30,domain=0:1]{5*x*sin(2*deg(x)) * y};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{More plots: 3d visualization with colormar viridis}
+	\begin{figure}
+		\begin{tikzpicture}
+			\begin{axis}[tuda3dplot,xlabel={Foo},ylabel={Bar},width=0.9\textwidth,height=6cm,
+				]
+				\addplot3[surf,samples=30,domain=0:1]{5*x*sin(2*deg(x)) * y};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}
+	\frametitle{More plots: 3d visualization with colormar viridis}
+	\begin{figure}
+		\begin{tikzpicture}
+			\begin{axis}[tuda3dplot,xlabel={Foo},ylabel={Bar},width=0.9\textwidth,height=6cm,
+				]
+				\addplot3[surf,samples=30,domain=0:1]{5*x*sin(2*deg(x)) * y};
+			\end{axis}
+		\end{tikzpicture}
+	\end{figure}
+\end{frame}
+
+\begin{frame}{Colormaps}
+	\pgfplotscolorbardrawstandalone[
+		colormap={example}{
+			samples of colormap=(10 of tudaa)
+		},
+		colorbar horizontal,
+		colormap access=map,
+	]
+
+	\pgfplotscolorbardrawstandalone[
+		colormap={example}{
+			samples of colormap=(4 of tudab)
+		},
+		colorbar horizontal,
+		colormap access=map,
+	]
+
+	\pgfplotscolorbardrawstandalone[
+		colormap name=tudac,
+		colorbar horizontal,
+		colormap access=map,
+	]
+
+	\pgfplotscolorbardrawstandalone[
+		colormap name=tudad,
+		colorbar horizontal,
+		colormap access=map,
+	]
+
+	\pgfplotscolorbardrawstandalone[
+		colormap name=tuda,
+		colorbar horizontal,
+		colormap access=map,
+	]
+
+\end{frame}
+
+\end{document}

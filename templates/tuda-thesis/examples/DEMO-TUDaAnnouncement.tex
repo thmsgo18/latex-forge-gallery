@@ -1,0 +1,95 @@
+%% This is file `DEMO-TUDaAnnouncement.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	english,% Main language as global option
+	paper=a4,% The default paper format is a4
+	accentcolor=9c,% Choose accent color: For a list of available colors see the full tudapub documentation
+	type=announcement,
+	footer=true,
+%	accept-missing-logos=true,% No error in case logo files are not available
+%	logofile=example-image,% In case logo should be replaced
+]{tudaposter}
+
+%%%%%%%%%%%%%%%%%%%
+% Language setup
+%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}% \enquote, to simplify use of quotation marks
+
+%%%%%%%%%%%%%%%%%%%
+% Document specific setup for demonstration, generally not needed!
+%%%%%%%%%%%%%%%%%%%
+\newcommand*{\file}[1]{\texttt{#1}}
+\newcommand*{\code}[1]{\texttt{#1}}
+\usepackage{url}
+%%%%%%%%%%%%%%%%%%%
+% End of demo specific setup
+%%%%%%%%%%%%%%%%%%%
+
+% Will place a text Box within the margin.
+\SetMarginpar{
+	\begin{flushright}
+		\infofont
+		Graduate School of Computational Engineering\\
+		\includegraphics[width=5\baselineskip]{example-image}\\
+		Prof. Dr. X\\[\baselineskip]
+		\url{www.peitex.de}
+	\end{flushright}
+	\vfill
+	\minisec{Requirements}
+	Description
+}
+
+\title{\LaTeX{} using TU Darmstadt's Corporate Design}
+\subtitle{Poster with tudaposter}
+\titleinfo{Additional information can be added below the subtitle.}
+% \addTitleBoxLogo*{\includegraphics[width=.5\linewidth]{example-image}}
+\footerqrcode{https://peitex.de}
+\footer{Footer content}% If activated
+
+\begin{document}
+
+\maketitle
+
+\section*{General information}
+
+The document class tudaposter is part of the TUDa-CI bundle. It is for posters and non-scientific posters using TU Darmstadts Corporate Design.
+
+This document is based on DEMO-TUDaPoster with the addition \code{type=announcement}.
+It is mainly for notices announcing final theses and consists of the individual options: \code{marginpar=true}, \code{title=small}, \code{indenttext=false}, \code{logo=head}, \code{colorsubtitle=true}
+
+
+\end{document}
+%% End of file `DEMO-TUDaAnnouncement.tex'.

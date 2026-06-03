@@ -1,0 +1,657 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse% no documentation on this
+% \iffalse^^A Preparation for real docstrip documentation
+%<*driver>
+\ProvidesFile{tudasciposter.dtx}
+  [2025-11-13 v4.05 Scientific Poster Layout for TUDa-CI]
+\typeout{***********************************************************}
+\typeout{No documentation included in this file! Please see tuda-ci.pdf for more information and DEMO-TUDaSciPoster.tex/.pdf for an example of use.}
+\typeout{***********************************************************}
+\stop
+%</driver>
+%<@@=ptxcd>
+%<*class&initialization>
+\NeedsTeXFormat{LaTeX2e}[2022/06/01]
+\ProvidesExplClass{tudasciposter}{2025-11-13}{4.05}{Scientific Poster Layout for TU Darmstadt}
+%</class&initialization>
+%
+%<*driver>^^A Preparation for real docstrip documentation
+\providecommand*{\TUDaDocDTXfiles}{tudasciposter.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+%
+% \changes{v4.00}{2025-01-26}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+%
+% \DescribeMacro{\title}
+%
+%
+% \DescribeMacro{\footergraphics}
+%
+%
+% \DescribeMacro{\footer}
+%
+%
+% \DescribeMacro{\footerqrcode}
+%
+%
+% \DescribeMacro{\Metadata}
+%
+%
+% \DescribeMacro{\author}
+%
+%
+% \DescribeMacro{\authorandname}
+%
+%
+% \DescribeMacro{\titlegraphic}
+%
+%
+% \DescribeMacro{\institute}
+%
+%
+% \MaybeStop{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*class&initialization>
+% \fi
+%    \begin{macrocode}
+\prop_new:N \g_ptxcd_clsopts_prop
+\tl_new:N \g_ptxcd_boxstyle_tl
+\int_new:N \g_ptxcd_paper_int
+\str_new:N \g_ptxcd_department_str
+\str_const:Nn \c_@@_base_str {sciposter}
+\keys_define:nn {ptxcd/poster} {
+  titletext .code:n = {\PassOptionsToPackage{text =#1}{tudacolors}},
+  footer .bool_gset:N = \g_ptxcd_poster_foot_bool,
+  footer .default:n = true,
+  footer .initial:n = true,
+  thanks .tl_gset:N = \g_ptxcd_footnote_label_tl,
+  thanks .initial:n = arabic*,
+  boxstyle .choice:,
+  boxstyle / official .code:n = \tl_gset:Nn \g_ptxcd_boxstyle_tl {TUDa},
+  boxstyle / colored .code:n= \tl_gset:Nn \g_ptxcd_boxstyle_tl {TUDa-colored},
+  boxstyle / boxed .code:n= \tl_gset:Nn \g_ptxcd_boxstyle_tl {TUDa-boxed},
+  boxstyle /default .meta:n = {boxstyle=official},
+  boxstyle .initial:n = default,
+  unknown .code:n = {\prop_gput:NVn \g_ptxcd_clsopts_prop \l_keys_key_tl {#1}},
+  fontsize .tl_gset:N = \g_ptxcd_fontsize_tl,
+  titlesepline .bool_gset:N = \g_ptxcd_titlesepline_bool,
+  titlesepline .initial:n = true,
+%</class&initialization>
+%<gobble>}
+%<*class&packages>
+\ProcessKeyOptions[ptxcd/poster]
+\dim_new:N \g_ptxcd_margin_dim
+\bool_if:NTF \g_ptxcd_smalltitle_bool {
+  \file_input:n {tuda-a\int_use:N \g_ptxcd_paper_int paper.clo}
+  \ptxcd_setup_title_sizes:
+  \file_input:n {tuda-a\int_use:N \g_ptxcd_paper_int paper.clo}
+  \ptxcd_setup_base_sizes:
+}{
+  \int_gdecr:N \g_ptxcd_paper_int
+  \file_input:n {tuda-a\int_use:N \g_ptxcd_paper_int paper.clo}
+  \ptxcd_setup_title_sizes:
+  \ptxcd_setup_base_sizes:
+}
+\prop_gput:NnV \g_ptxcd_clsopts_prop {fontsize} \g_ptxcd_fontsize_tl
+\prop_map_inline:Nn \g_ptxcd_clsopts_prop {
+  \tl_if_empty:nTF {#2}
+  {\PassOptionsToClass{#1}{scrartcl}}
+  {\clist_map_inline:nn {#2} {\PassOptionsToClass{#1=##1}{scrartcl}}}
+}
+\ExplSyntaxOff
+\PassOptionsToPackage{typeareawarninfolimit=-1,DIV=10}{typearea}
+\LoadClass[parskip=full-]{scrartcl}
+\ExplSyntaxOn
+%    \end{macrocode}
+% \iffalse
+%</class&packages>
+%<*class&body>
+% \fi
+%    \begin{macrocode}
+\ExplSyntaxOff
+\RequirePackage{tudafonts}
+\RequirePackage{tudacolors}
+\RequirePackage[margin=0pt]{geometry}
+\RequirePackage{tcolorbox}
+\tcbuselibrary{poster}
+\RequirePackage[mode=tikz]{tudarules}
+\RequirePackage{qrcode}
+\ExplSyntaxOn
+
+\renewcommand*{\familydefault}{\sfdefault}
+\setkomafont{title}{
+  \color{titlefgcolor}
+  \expandafter\fontsize\ptxcd_title_fontsize:\selectfont
+  \bfseries
+}
+\setkomafont{author}{\bfseries}
+\setkomafont{captionlabel}{\bfseries}
+\setkomafont{disposition}{\sffamily\bfseries}
+%    \end{macrocode}
+% end of font adjustments
+%
+%    \begin{macrocode}
+\dim_const:Nn \c_ptxcd_headrule_ht_dim {\c_ptxcd_rulesep_dim +\c_ptxcd_largerule_dim + \c_ptxcd_smallrule_dim}
+%    \end{macrocode}
+% Setup title
+%    \begin{macrocode}
+\box_new:N \l_ptxcd_tmpa_box
+\box_new:N \g_ptxcd_titlegraphic_box
+\box_new:N \g_ptxcd_title_box
+\box_new:N \g_ptxcd_author_box
+\box_new:N \g_ptxcd_credit_box
+\tl_new:N \g_ptxcd_thanks_tl
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\ptxcd_title@footnote}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\ptxcd_title@footnote}
+%    \begin{macrocode}
+\newcommand*{\ptxcd_title@footnote}[2][1]{
+  \begingroup
+  \ptxcd_def_footnotelabel:
+  \footnotemark[#1]\,#2\quad
+  \endgroup
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\tl_greplace_all:Nnn \g_ptxcd_footnote_label_tl {*} {{footnote}}
+\clist_map_inline:nn {alph, arabic, fnsymbol, Alph, roman, Roman} {
+  \tl_greplace_all:Nnn \g_ptxcd_footnote_label_tl {#1} {\use:c {#1}}
+}
+\cs_set:Nn \ptxcd_def_footnotelabel: {
+  \renewcommand*{\thefootnote}{\g_ptxcd_footnote_label_tl}
+}
+\pagestyle{empty}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\title}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\title}
+%    \begin{macrocode}
+\renewcommand*{\title}[1]{\gdef \@title {#1}}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\dim_new:N \g_ptxcd_footheight_dim
+\dim_gset:Nn \g_ptxcd_footheight_dim {0.06\paperwidth}%
+\box_new:N \g_ptxcd_footergraphics_box
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\footergraphics}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\footergraphics}
+%    \begin{macrocode}
+\newcommand*{\footergraphics}[1]{
+  \begingroup
+  \let\height\g_ptxcd_footheight_dim
+  \hbox_gset:Nn \g_ptxcd_footergraphics_box {#1}
+  \endgroup
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\tl_new:N \g_ptxcd_poster_foot_tl
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\footer}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\footer}
+%    \begin{macrocode}
+\newcommand{\footer}[1]{
+  \tl_gset:Nn \g_ptxcd_poster_foot_tl {#1}
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\tl_new:N \g_ptxcd_poster_qrcode_tl
+\msg_new:nnnn {tudapub} {biblatex-required}{
+  You~tried~to~use~#1.\\
+  This~feature~requires~the~biblatex~package.
+} {
+  Try~to~remove~the~star~or~load~biblatex.
+}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\footerqrcode}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\footerqrcode}
+%    \begin{macrocode}
+\NewDocumentCommand{\footerqrcode}{sm}{
+  \IfBooleanTF {#1} {
+    \cs_if_exist:NTF \blx@blxinit {
+      \begingroup
+      \blx@blxinit
+      \entrydata{#2}{
+        \tl_gset:Nx \g_ptxcd_poster_qrcode_tl{\thefield{url}}
+      }
+      \endgroup
+    }{
+      \msg_error:nnx {tudapub} {biblatex-required} {\use:c{footerqrcode*}}
+    }
+  }{
+    \tl_gset:Nn \g_ptxcd_poster_qrcode_tl {#2}
+  }
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}%
+% redefine \author to manage \and and \thanks
+%
+%    \begin{macrocode}
+\seq_new:N \g_ptxcd_author_seq
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\author}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\author}
+%    \begin{macrocode}
+\renewcommand*\author[1]{
+  \seq_gset_split:Nnn \g_ptxcd_author_seq {\and} {#1}
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\msg_new:nnn{tudasciposter} {unknown-language} {
+  You~selected~an~unknown~language~#1.\\
+  The~Variable~#2~does~not~have~a~predefined~value.\\
+  Ensure~to~redefine~#2~to~match~your~language.\\
+  Otherwise~the~ngerman~vaue~#3~will~be~used.
+}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\authorandname}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\authorandname}
+%    \begin{macrocode}
+\providecommand*\authorandname{
+  \msg_warning:nnxxx{tudasciposter} {unknown-language}
+  {\languagename} {\exp_not:N \authorandname} {und}
+  und
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\defcaptionname{ngerman, german}{\authorandname}{und}
+\defcaptionname{english, USenglish, american, UKenglish, british}{\authorandname}{and}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\@author}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\@author}
+%    \begin{macrocode}
+\renewcommand*{\@author}{
+  \seq_use:Nnnn \g_ptxcd_author_seq {~\authorandname{}~} {,~} {~\&~}
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+% \begin{documentation}
+% \DescribeMacro{\titlegraphic}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\titlegraphic}
+%    \begin{macrocode}
+\newcommand\titlegraphic[1]{\def\@titlegraphic{#1}}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\titlegraphic{}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\institute}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\institute}
+%    \begin{macrocode}
+\newcommand{\institute}[1]{\def\@institute{#1}}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\institute{}
+%    \end{macrocode}
+% Language dependent configuration
+%    \begin{macrocode}
+\AtBeginDocument{
+  \@ifpackageloaded{babel}{
+    \addto\extrasngerman{\def\authorandname{und}}
+    \addto\extrasgerman{\def\authorandname{und}}
+    \addto\extrasenglish{\def\authorandname{and}}
+    \addto\extrasbritish{\def\authorandname{and}}
+    \addto\captionsngerman{\renewcommand{\figurename}{Abb.}}
+    \addto\captionsgerman{\renewcommand{\figurename}{Abb.}}
+    \addto\captionsenglish{\renewcommand{\figurename}{Fig.}}
+    \addto\captionsbritish{\renewcommand{\figurename}{Fig.}}
+  }{}
+}
+\newlength{\contentwidth}
+\setlength{\contentwidth}{\dimexpr\paperwidth-2\g_ptxcd_margin_dim\relax}
+\newlength{\contentheight}
+\cs_new:Nn \_@@_logo_code:n {
+  \node[anchor=north~east,inner~sep=0pt,minimum~width=\dim_eval:n {\_@@_logowidth: + \_@@_logosep:}](#1) at ([xshift=\_@@_logosep:,yshift=-.5\c_ptxcd_logoheight_dim]identbar.south~east){
+    \_@@_insert_logo:
+  };
+}
+\tcbposterset{
+  coverage =
+    {
+      spread,
+      parbox=false,
+      bottom=\dim_eval:n {\g_ptxcd_margin_dim
+        \bool_if:NT \g_ptxcd_poster_foot_bool {+\g_ptxcd_footheight_dim + 3\c_ptxcd_rulesep_dim}
+      },
+      left=\g_ptxcd_margin_dim,
+      right=\g_ptxcd_margin_dim,
+      before= {\ptxcd_poster_setup_title_box:},
+      top= \dim_eval:n {
+        \bool_if:NF \g_ptxcd_colorback_bool {1.5}
+        \g_ptxcd_margin_dim
+        +\box_ht:N \ptxcd_headrule_box
+        +\box_dp:N \ptxcd_headrule_box
+        +\g_ptxcd_titleblock_dim
+        +4\c_ptxcd_rulesep_dim
+        +\box_ht:N \g_ptxcd_author_box
+        +\box_dp:N \g_ptxcd_author_box
+      },
+      overlay={%
+          \coordinate(topleft) at ([xshift=\g_ptxcd_margin_dim, yshift=-\g_ptxcd_margin_dim]current~page.north~ west);
+          \coordinate(topright) at ([xshift=-\g_ptxcd_margin_dim, yshift=-\g_ptxcd_margin_dim]current~page.north~ east);
+          \coordinate(bottomleft) at ([xshift=\g_ptxcd_margin_dim, yshift=\g_ptxcd_margin_dim]current~page.south~ west);
+          \coordinate(bottomright) at ([xshift=-\g_ptxcd_margin_dim, yshift=\g_ptxcd_margin_dim]current~page.south~ east);
+          \dim_gset:Nn \g_ptxcd_titleindent_dim {\bool_if:NTF \g_ptxcd_colorback_bool {3\c_ptxcd_rulesep_dim} {\c_zero_dim}}
+          \node[inner~sep=0pt, anchor=north~west](identbar) at (topleft){\ptxcd_headrule};
+          \bool_if:NTF \g_ptxcd_colorback_bool
+          \fill \path [identbarcolor]
+          (identbar.south~east)rectangle([yshift=-\g_ptxcd_titleblock_dim]identbar.south~west) coordinate(bottomlefttitleblock);
+          \_@@_logo_code:n {TUDalogo}
+          \node[inner~sep=0pt,text~width=\_@@_logowidth:,align=right,anchor=north~west,](titlegraphic) at ([yshift=-\c_ptxcd_rulesep_dim]TUDalogo.south~west){\box_use:N \g_ptxcd_titlegraphic_box};
+          \node[anchor=north~west,inner~sep=0pt,]  (title) at ([
+            xshift=\g_ptxcd_titleindent_dim,yshift=-.5\c_ptxcd_logoheight_dim]identbar.south~west) {\box_use:N \g_ptxcd_title_box};
+          \bool_if:NT \g_ptxcd_titlesepline_bool
+          {\draw[line~ width=.5\c_ptxcd_smallrule_dim](bottomlefttitleblock)--++(\contentwidth,0);}
+          \node[anchor=north~west, inner~xsep=0pt, inner~ ysep=\c_ptxcd_rulesep_dim] (author) at ([xshift=\g_ptxcd_titleindent_dim]bottomlefttitleblock) {\box_use:N \g_ptxcd_author_box};
+          \draw[line~ width=.5\c_ptxcd_smallrule_dim](author.south-|identbar.west)--++(\contentwidth,0);
+          \bool_if:NT \g_ptxcd_poster_foot_bool {\_@@_typeset_footer:}
+        }}
+}
+\cs_new:Nn \_@@_typeset_footer: {
+  \coordinate(lastpos) at (bottomright);
+  \tl_if_empty:NF \g_ptxcd_poster_qrcode_tl
+  {
+    \node[anchor=south~east, inner~sep=\z@] (qrcode)at (lastpos)
+    {
+      \exp_args:NnV \use:n {\qrcode[height=\dim_use:N \g_ptxcd_footheight_dim]}\g_ptxcd_poster_qrcode_tl
+    };
+    \coordinate (lastpos) at (qrcode.south~west);
+  }
+  \box_if_empty:NF \g_ptxcd_footergraphics_box {
+    \node[anchor=south~east, inner~sep=\z@] at (lastpos) {
+      \accentfont
+      \box_use:N \g_ptxcd_footergraphics_box
+    };
+  }
+  \node[anchor=north~ west, inner~ sep=\z@] (infofooter) at ([yshift=\g_ptxcd_footheight_dim]bottomleft) {
+    \parbox{\dim_eval:n {\contentwidth
+        -\box_wd:N \g_ptxcd_footergraphics_box
+        \tl_if_empty:NF \g_ptxcd_poster_qrcode_tl {-\g_ptxcd_footheight_dim-\c_ptxcd_rulesep_dim}
+      }}{
+      \rule{\linewidth}{.5\c_ptxcd_smallrule_dim}\\
+      \accentfont\small\g_ptxcd_poster_foot_tl
+      \par\medskip
+      \let\footnotetext\ptxcd_title@footnote
+      \g_ptxcd_thanks_tl}
+  };
+}
+\hook_gput_code:nnn {ptxcd/init-colors} {tudasciposter} {
+\bool_if:NTF \g_ptxcd_colorback_bool
+{\colorlet{titlefgcolor}{textonaccentcolor}}
+{\colorlet{titlefgcolor}{black}}
+\colorlet{titlebgcolor}{accentcolor}
+%    \end{macrocode}
+% Block Colors
+%    \begin{macrocode}
+\colorlet{blocktitlebgcolor}{accentcolor}
+\colorlet{blocktitlefgcolor}{textonaccentcolor}
+%    \end{macrocode}
+% Innerblock Colors
+%    \begin{macrocode}
+\colorlet{innerblockbodybgcolor}{textonaccentcolor}
+}
+%    \end{macrocode}
+% Background Colors
+%    \begin{macrocode}
+\colorlet{backgroundcolor}{white}
+\colorlet{framecolor}{white}
+%    \end{macrocode}
+% Block Colors
+%    \begin{macrocode}
+\colorlet{blockbodybgcolor}{white}
+\colorlet{blockbodyfgcolor}{black}
+%    \end{macrocode}
+% Innerblock Colors
+%    \begin{macrocode}
+\colorlet{innerblocktitlebgcolor}{black!15}
+\colorlet{innerblocktitlefgcolor}{black}
+\colorlet{innerblockbodyfgcolor}{black}
+\dim_new:N \g_ptxcd_titleblock_dim
+\dim_new:N \g_ptxcd_titleindent_dim
+\cs_new:Nn \_@@_inst:n {\textsuperscript{#1}}
+\cs_new:Nn \ptxcd_poster_setup_title_box: {
+  \hbox_gset:Nn \g_ptxcd_title_box {
+    \parbox{.65\paperwidth}{
+      \raggedright
+      \usekomafont{disposition}\usekomafont{title}\leavevmode\@title \par
+    }
+  }
+  \hbox_gset:Nn \g_ptxcd_author_box {
+    \parbox{\dimexpr\contentwidth-6\c_ptxcd_rulesep_dim\relax}{
+      \ptxcd_def_footnotelabel:
+      \cs_set_eq:NN \inst\_@@_inst:n
+      {\usekomafont{author}\@author\\}
+      \tl_gset:No \g_ptxcd_thanks_tl {\@thanks}
+      \@institute
+    }
+  }
+  \tl_if_empty:NF \@titlegraphic {
+    \hbox_gset:Nn \g_ptxcd_titlegraphic_box {
+      \parbox{\_@@_logowidth:}{
+        \raggedleft
+        \@titlegraphic
+      }
+    }
+  }
+  \dim_gset:Nn \g_ptxcd_titleblock_dim {
+    \dim_max:nn
+    {
+      +\box_ht:N \g_ptxcd_titlegraphic_box +\box_dp:N \g_ptxcd_titlegraphic_box+ 2\c_ptxcd_logoheight_dim
+    }
+    {\box_ht:N \g_ptxcd_title_box+ \box_dp:N \g_ptxcd_title_box+\c_ptxcd_logoheight_dim}
+  }
+}
+%    \end{macrocode}
+% %%%%%%%%%%%%%%%%%%%%%
+% Declare TCBstyles for tudaposter
+%    \begin{macrocode}
+\tcbset {
+TUDa/.style =
+{
+enhanced,
+coltitle=black,
+colbacktitle=white,
+coltext=black,
+colback=white,
+size=minimal,
+boxrule=.5\c_ptxcd_smallrule_dim,
+leftrule=\z@,
+rightrule=\z@,
+fonttitle=\usekomafont{disposition}\usekomafont{section},
+before~title={\strut},
+toptitle=.5\c_ptxcd_rulesep_dim,
+bottomtitle=.5\c_ptxcd_rulesep_dim,
+top=\c_ptxcd_rulesep_dim,
+bottom=\c_ptxcd_rulesep_dim,
+frame~code={
+\iftcb@hasTitle
+  \fill[tcbcolframe](frame.north~west)rectangle(title.north~east);
+  \fill[tcbcolframe](title.south~west)rectangle(interior.north~east);
+\else
+  \fill[tcbcolframe](frame.north~west)rectangle(interior.north~east);
+\fi
+\fill[tcbcolframe](interior.south~west)rectangle(frame.south~east);
+},
+parbox=false,
+},
+TUDa-inner/.style =
+  {
+    TUDa,
+    fonttitle=\usekomafont{disposition}\usekomafont{subsubsection}
+  },
+TUDa-colored/.style =
+  {
+    TUDa,
+    left=.5\c_ptxcd_rulesep_dim,
+    right=.5\c_ptxcd_rulesep_dim,
+    colbacktitle=blocktitlebgcolor,
+    coltitle=blocktitlefgcolor,
+    colback=blockbodybgcolor,
+    coltext=blockbodyfgcolor,
+    fonttitle=\usekomafont{disposition}\usekomafont{section},
+    titlerule=\z@,
+  },
+TUDa-colored-inner/.style =
+  {
+    TUDa-colored,
+    colbacktitle=innerblocktitlebgcolor,
+    coltitle=innerblocktitlefgcolor,
+    colback=innerblockbodybgcolor,
+    coltext=innerblockbodyfgcolor,
+    fonttitle=\usekomafont{disposition}\usekomafont{subsubsection}
+  },
+TUDa-boxed/.style =
+{
+enhanced,
+size=minimal,
+colbacktitle=blocktitlebgcolor,
+coltitle=blocktitlefgcolor,
+colback=blockbodybgcolor,
+coltext=blockbodyfgcolor,
+boxsep=\c_ptxcd_rulesep_dim,
+boxrule=.5\c_ptxcd_smallrule_dim,
+titlerule=\z@,
+arc=1ex,
+auto~outer~arc,
+fonttitle=\usekomafont{disposition}\usekomafont{section},
+before~title={\strut},
+parbox=false,
+},
+TUDa-boxed-inner/.style =
+  {
+    TUDa-boxed,
+    colbacktitle=innerblocktitlebgcolor,
+    coltitle=innerblocktitlefgcolor,
+    colback=innerblockbodybgcolor,
+    coltext=innerblockbodyfgcolor,
+    sharp~corners,
+    fonttitle=\usekomafont{disposition}\usekomafont{subsubsection}
+  },
+}
+%    \end{macrocode}
+% Select default box styles according to style option
+%    \begin{macrocode}
+\tcbposterset{boxes ={\g_ptxcd_boxstyle_tl}, poster={spacing=5cm}}
+\tcbset{
+every~ box~ on~ layer~ 3/.style={reset,\g_ptxcd_boxstyle_tl -inner},
+every~ box~ on~ layer~ 4/.style={reset,\g_ptxcd_boxstyle_tl -inner},
+}
+%    \end{macrocode}
+% Adjust caption indent
+%    \begin{macrocode}
+\setcapindent{1em}
+\file_if_exist_input:n {\g_@@_config_prefix_tl\g_ptxcd_department_str.cfg}
+\hook_use:n {ptxcd/init-colors}
+\ptxcd_makeheadrule[
+  width=\paperwidth-2\g_ptxcd_margin_dim,
+  color=identbarcolor
+]{ptxcd_headrule}
+\endinput
+%    \end{macrocode}
+
+%
+% \iffalse
+%</class&body>
+% \fi
+%
+% \Finale
+% \fi^^A No documentation on this
+\endinput

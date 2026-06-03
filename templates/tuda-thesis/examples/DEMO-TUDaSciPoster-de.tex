@@ -1,0 +1,183 @@
+%% This is file `DEMO-TUDaSciPoster-de.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	german,% Hauptsprache als globale Option, früher war ngerman notwendig
+	accentcolor=9c,% Auswahl der Akzentfarbe
+%	boxstyle=boxed,% Boxen mit abgerundeten Ecken, farbigem Titelblock
+%	boxstyle=colored,% Boxen mit farbigen Titelblock, keine vertikalen Linien
+%	boxstyle=default,% Voreinstellung: ohne Farbe, ohne vertikale Linien
+%	accept-missing-logos=true,% Keine Fehlermeldung, falls die Logo Dateien nicht vorliegen
+%	logofile=example-image,% Falls die Logo-Datei ersetzt werden soll
+]{tudasciposter}
+
+%%%%%%%%%%%%%%%%%%%
+% Spracheinstellungen
+%%%%%%%%%%%%%%%%%%%
+\usepackage[german]{babel}
+\usepackage[autostyle]{csquotes}% Sprachabhängige Anführungszeichen mit \enquote
+
+%%%%%%%%%%%%%%%%%%%
+% Literaturverzeichnis
+%%%%%%%%%%%%%%%%%%%
+\usepackage{biblatex}
+\addbibresource{DEMO-TUDaBibliography.bib}% Dateiname der .bib-datei
+
+%%%%%%%%%%%%%%%%%%%
+% Formatierungen für Beispiele in diesem Dokument. Im Allgemeinen nicht notwendig!
+%%%%%%%%%%%%%%%%%%%
+\newcommand*{\file}[1]{\texttt{#1}}
+\newcommand*{\code}[1]{\texttt{#1}}
+\newcommand*{\pkg}[1]{\textsf{#1}}
+\newcommand*{\cls}[1]{\textsf{#1}}
+\newcommand{\tbs}{\textbackslash}
+\newcommand{\repl}[1]{<\textit{#1}>}
+\newcommand*{\macro}[1]{\code{\tbs#1}}
+%%%%%%%%%%%%%%%%%%%
+% Ende der Demo-Formatierungseinstellungen
+%%%%%%%%%%%%%%%%%%%
+
+\title{\pkg{tcolorbox}-Poster im Corporate Design der TU~Darmstadt}
+\author{Marei Peischl\inst{*}\thanks{kontakt@peitex.de} \and der \TeX-Löwe}
+\institute{\inst{*}pei\TeX{} \TeX{}nical Solutions, Hamburg}
+% \inst kann in den Autor und Institutsfeldern genutzt werden, um eine Zuordnung zu ermöglichen. Bei Nummerierung ist der Nutzer dafür verantwortlich Konflikte mit \thanks zu vermeiden.
+\titlegraphic{\includegraphics[width=.5\linewidth]{example-image}}
+\footerqrcode{https://www.peitex.de}
+\footer{Fußzeile: Falls neben den Logos andere Angaben erforderlich sind}
+
+% Instituts/Sponsorenlogos von links nach rechts
+\footergraphics{
+	\includegraphics[height=\height]{example-image}
+	\includegraphics[height=\height]{example-image}
+	\includegraphics[height=\height]{example-image}
+}
+
+\begin{document}
+
+\begin{tcbposter}[
+	poster={
+		columns=4,
+		rows=7,
+		spacing=1cm,
+%		showframe,% Gitter einblenden. Für Platzierung häufig hilfreich
+	},]
+
+\begin{posterboxenv}[title=Zusammenfassung]{name=intro,column=1,row=1,span=4}
+	Die \cls{tudasciposter}-Klasse basiert auf dem \pkg{tcolorbox} Paket von Thomas F. Sturm.
+	Sie versucht einen einfachen Weg zu bieten, wissenschaftliche Poster im Corporate Design der TU Darmstadt zu erstellen. Dieses Dokument dient zur Dokumentation und als Verwendungsbeispiel.
+
+	Dieses Dokument verwendet unterschiedliche Boxentypen. Dies ist selbstverständlich für die praktische Verwendung nicht empfehlenswert. Dieser Modus dient lediglich Demonstrationszwecken.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Titelei]{name=title,row=2,span=2,rowspan=2}
+	Die Definition des Titelblockes lehnt sich an die Standard-\LaTeX{}-Strukturierung mit Hilfe von \macro{maketitle} an.
+
+	Für die Datenübergabe stehen die Makros \macro{title}, \macro{author}, \macro{institute} und \macro{titlegraphic} zur Verfügung. Letztere wird rechtsbündig unterhalb des TUDa-Logos platziert. Der Wert von \macro{linewidth} zu diesem Zeitpunkt entspricht der Breite des TUDa-Logos.
+
+	Zusätzlich zu den Titeldaten stehen über \macro{setqrcode} und \macro{setfoot} Makros zur Verfügung, die die Fußzeile füllen.
+	Ein Beispiel ist in der Datei \file{DEMO"=TUDaSciPoster.tex} gezeigt.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Fußzeile]{name=footer,below=title,span=2,rowspan=2}
+	Die Fußzeile ist grundsätzlich aktiviert, kann jedoch mit Hilfe der Klassenoption \code{footer=false} ausgeschaltet werden. In diesem Fall werden jedoch mit \macro{thanks} übergebene zusätzliche Titeldaten nicht angezeigt.
+
+	Für die Übergabe weiterer Daten stehen die Makros \macro{footer}, \macro{footergraphics} und \macro{footerqrcode} zur Verfügung.
+
+	\macro{footergraphics} ist für die Übergabe von Logos gedacht und \macro{footerqrcode} übernimmt einen URL die anschließend in der rechten unteren Ecke als QRCode platziert wird.
+
+	Die Fußzeile selbst erhält die Daten aus \macro{thanks}, kann jedoch ergänzt werden. Sie hat die Breite des Satzspiegels abzüglich der Logos/QRcode.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Platzierung der Boxen]{name=positioning,below=footer,span=2}
+	Bei der \pkg{poster}-Bibliothek des \pkg{tcolorbox} Paketes, werden die Boxen manuell positioniert.
+
+	Dies benötigt zwar einen zusätzlichen Arbeitsschritt, erlaubt jedoch einer feinere Ausrichtung der Boxen, auch relativ zueinander.
+
+	Diese Mechanismen ermöglichen auch, Querverweise einfacher zu positionieren. Hierfür ist ein Blick in die \pkg{tcolorbox}-Dokumentation hilfreich.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Eine Box im Stil TUDa-boxed,TUDa-boxed]{name=boxed,column=3,row=2,span=2}
+	Die Boxen können in verschiedenen Varianten gestaltet werden. Die Voreinstellung entspricht den offiziellen Vorgaben, jedoch kann es aus unterschiedlichen Gründen notwendig sein, eine klarere Abgrenzung zu setzen (globale Klassenoption \code{boxstyle=boxed} oder lokaler Stil \code{TUDa-boxed}).
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Eine Box im Stil TUDa-colored,TUDa-colored]{name=colored,column=3,row=3,span=2}
+	Boxentyp zwischen dem Stil \code{boxed} und dem Stil \code{official}.
+
+	Einstellung dieser Option ist sowohl über die Nutzung der globalen Klassenoption \code{style=colored} als auch durch die Verwendung des lokalen Stils\code{TUDa-colored} möglich.
+\end{posterboxenv}
+
+% Box ohne Titel mit Abbildung
+\begin{posterboxenv}[TUDa-colored]{name=colored-notitle,column=3,row=4,rowspan=2}
+	\includegraphics[width=\linewidth]{example-image}
+	\captionof{figure}{
+		Ein Beispielbild in einer Box ohne Titel (\code{boxed-notitle}). In diesem Fall sind der Stil \code{TUDa} und TUDa-colored identisch.
+	}
+\end{posterboxenv}
+
+% Box ohne Titel
+\begin{posterboxenv}[TUDa-boxed]{name=notitle,column=4,below=colored}
+	Ein Beispiel für den Stil \code{boxed} ohne einen eigenen Titel.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Box mit Verweis,TUDa-boxed]{name=verweis,column=4,above=row6}
+	Beispielbox mit Pfeil, um zwei Boxen miteinander zu verknüpfen oder Leseabzweigungen zu generieren.
+\end{posterboxenv}
+
+% Zwischen den Boxen kann direkt TikZ-Code eingegeben werden. Das Namensschema der Boxen als Koordinaten lautet
+% TCBPOSTER@<boxname>.ankerpunkt
+% Für genauere Erläuterungen zur Syntax, bietet die tikz-Anleitung genauere Angaben. Weitere benannte Koordinaten finden sich in der tcolorbox-Dokumentation.
+\draw[accentcolor,line width=4pt,->] ([yshift=-1cm]TCBPOSTER@verweis.east) -|  ([xshift=1cm]TCBPOSTER@colored.east) -- (TCBPOSTER@colored.east);
+
+\begin{posterboxenv}[title=Relative Positionierung,TUDa-boxed]{name=relative,column=4,between=notitle and verweis}
+	Diese Box wird zwischen den beiden Boxen \code{notitle} und \code{verweis} platziert.
+\end{posterboxenv}
+
+\begin{posterboxenv}[title=Papierformat]{name=paper,column=3,span=2,below=row5}
+	Die Klasse \cls{tudasciposter} unterstützt die Papierformate A0, A1, A2 und A3. Der Wert wird über die Klassenoption \code{paper} ausgewählt:
+\begin{verbatim}
+paper=a0
+\end{verbatim}
+	Die Voreinstellung entspricht \code{a0}.
+	Die Änderung des Papierformates ist keine Skalierung, da Schriftgrößen nicht direkt skalieren.
+
+	Zusätzlich kann die Option \code{paper} wie bei \KOMAScript{} üblich auch einen Wert für die Ausrichtung verarbeiten. Querformat erhält man somit über \code{paper=landscape}.
+
+	Um eine Skalierung eines größeren auf ein kleineres Design zu erreichen, empfiehlt es sich, das Ausgangsformat beim Druck zu skalieren (Drucken in eine Datei mit Skalierung) oder ggf. die PDF-Datei mit Paketen wie \pkg{pdfpages} umzurechnen.
+\end{posterboxenv}
+
+\end{tcbposter}
+
+
+\end{document}
+%% End of file `DEMO-TUDaSciPoster-de.tex'.

@@ -1,0 +1,116 @@
+%% This is file `DEMO-TUDaPoster-de.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	german,% Hauptsprache als globale Option, früher war ngerman notwendig
+	paper=a0,% Voreingestellt ist Papierformat a0
+	accentcolor=9c,% Auswahl der Akzentfarbe
+	logo=body,% Logo unterhalb der Identitätsleiste
+	footer=true,
+%	accept-missing-logos=true,% Keine Fehlermeldung, falls die Logo Dateien nicht vorliegen
+%	logofile=example-image,% Falls die Logo-Datei ersetzt werden soll
+]{tudaposter}
+
+%%%%%%%%%%%%%%%%%%%
+% Spracheinstellungen
+%%%%%%%%%%%%%%%%%%%
+\usepackage[german]{babel}
+\usepackage[autostyle]{csquotes}% Sprachabhängige Anführungszeichen mit \enquote
+
+%%%%%%%%%%%%%%%%%%%
+% Formatierungen für Beispiele in diesem Dokument. Im Allgemeinen nicht notwendig!
+%%%%%%%%%%%%%%%%%%%
+\newcommand*{\file}[1]{\texttt{#1}}
+\newcommand*{\code}[1]{\texttt{#1}}
+\let\tbs\textbackslash
+\usepackage{multicol}
+%%%%%%%%%%%%%%%%%%%
+% Ende der Demo-Formatierungseinstellungen
+%%%%%%%%%%%%%%%%%%%
+
+\title{\LaTeX{} im Corporate Design der TU~Darmstadt}
+\subtitle{Die Dokumentenklasse tudaposter}
+\author{Marei Peischl\thanks{pei\TeX{} \TeX{}nical Solutions}\and der \TeX-Löwe}
+
+\titlegraphic{\color{red!20}\rule{\contentwidth}{.3\contentheight}}
+
+\addTitleBox{titlebox}
+\addTitleBox{titlebox 2}
+\footerqrcode{https://peitex.de}
+\footer{Inhalt der Fußzeile}% Falls aktiviert
+
+\begin{document}
+
+\maketitle
+
+\section*{Grundlegende Informationen}
+
+Die Dokumentenklasse tudaposter dient der Erstellung von Aushängen und Nicht"=wissenschaftlichen Plakaten im Stil der TU-Darmstadt. Sie ist Teil des TUDa-CI-Bundles.
+
+\begin{multicols}{2}
+	\subsection*{Verwendung}
+	Im Wesentlichen entspricht ihre Verwendung der Klasse tudapub, da die Titel ähnlich aufgebaut sind. Unterhalb des Titels, kann der Anwender normalen Fließtext schreiben oder wie bei Standard-\LaTeX{} formatieren.
+
+	Die tudaposter-Klasse basiert wie auch tudapub auf \KOMAScript{} und bietet daher mehr Mechanismen als für Poster grunsätzlich notwendig sind.
+
+	Im Unterschied zur tudasciposter-Klasse, die auf tikzposter basiert, ermöglicht es tudaposter wie gewohnt Fließtext zu schreiben, um ergänzende Informationen einfach zu platzieren.
+
+	\subsection*{Titelei}
+	Die Titelerzeugung funktioniert wie bei Standard-\LaTeX{} über den maketitle-Mechanismus.
+	Neben der Makros \code{\title}, \code{\subtitle} und \code{\author} stehen noch \code{\titlegraphic}, \code{\addTitleBox}, \code{\footerqrcode} und \code{\footer} zur Verfügung. Bis auf \code{\footerqrcode} wird lediglich der Inhalt entsprechend platziert.
+	Ein Beispiel für die Verwendung ist in der Datei DEMO-TUDaPoster.tex gezeigt.
+
+	\subsection*{Längenangaben}
+	Innerhalb des Posterinhaltes (dazu zählt auch die titlegraphic) sind zwei Längenmaße \texttt{\textbackslash{}contentwidth} und \texttt{\textbackslash{}contentheight} vordefiniert. Die Höhe entspricht dabei dem Abstand zwischen Titelblock und Fußzeile/Trennlinie.
+
+	\subsection*{Dokumentenklassenoptionen}
+	\begin{description}
+		\item[paper=<Papierformat>] Papierformat. Voreingestellt ist a0. Unterstützt werden Formate von A0 bis A4.
+		\item[fontsize=<Schriftgröße/auto>] Basisschriftgröße. Die anderen Größen werden entsprechend skaliert. Für die unterstützten Papierformate sind entsprechende Skalierungsschritte hinterlegt. Diese Voreinstellung entspricht dem Wert \code{auto}.
+		\item[logo=head/body] Das Logo wird in der Idenditätsleiste (head) oder innerhalb des Dokumenteninhalts, ggf. überlappend mit dem Bild gesetzt.
+		\item[color=<Farbkürzel>] Akzentfarbe nach den Corporate Design Richtlinien.
+		\item[colorsubtitle=true/false] Hintergrundfarbe beim Untertitel an-/ausschalten.
+		\item[footer=true/false] Aktivierung/Deaktivierung der Fußzeile. Voreinstellung ist \code{false}.
+		\item[marginpar=true/false] Ermöglicht die Nutzung einer Randnotizspalte. Diese hat die Breite des Logos. Sie wird entweder über das Makro \code{\tbs{}SetMarginpar} oder über das Standard-Makro \code{\tbs{}marginpar} befüllt. Eine Verwendung dieses Modus ist in der zusätzlichen Demo-Datei \file{DEMO-TUDaAnnouncement} gezeigt.
+
+		      Die Randnotizspalte überlappt die Abbildung die zum Titel gehört. Kombinationen von \code{marginpar=true} und \code{\tbs{}titlegraphic} sollten daher nur mit Vorsicht genuzt werden.
+		\item[title=large/small/default] Ermöglicht es die Schriftgrößen um eine Stufe zu verkleinern. Die Option \code{large} entspricht hierbei der Option \code{default}. Im Fall des Wertes \code{small} werden die Titelschriftgrößen des nächsten kleineren Papierformates verwendet. Die Basischriftgröße und die Randeinstellungen bleiben davon unberührt.
+		\item[type=default/announcement] Diese Option liefert die Möglichkeit bestimmte Posterlayouts über einen einzigen Wert zu laden.
+		      Der Wert \code{announcement} setzt die folgenden Optionen: \code{marginpar=true,indenttext=false,logo=head,title=small,colorsubtitle=true} und aktiviert zusätzlich die Ausgabe des Untertitels in fetter Schrift.
+	\end{description}
+\end{multicols}
+
+
+\end{document}
+%% End of file `DEMO-TUDaPoster-de.tex'.

@@ -1,0 +1,326 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse% no documentation on this
+% \iffalse^^A Preparation for real docstrip documentation
+%<*driver>
+\ProvidesFile{tudabeamer.dtx}[2025-11-13 v4.05 Beamer slides using the corporate design of TU Darmstadt]
+\typeout{***********************************************************}
+\typeout{No documentation included in this file! Please see tuda-ci.pdf for more information and DEMO-TUDaBeamer.tex/.pdf for an example of use.}
+\typeout{***********************************************************}
+\stop
+%</driver>
+%<*initialize>
+%<@@=ptxcd>
+%<package|class>\NeedsTeXFormat{LaTeX2e}[2022/06/01]
+%<class>\ProvidesClass{tudabeamer}
+%<*class>
+  [2025-03-03 4.03-dev Beamer wrapper class for TUDa-CI – Corporate Design Templates for TU Darmstadt]
+%</class>
+%<main>\ProvidesExplPackage{beamerthemeTUDa}{2025-11-13}{4.05}{Beamer theme using the Corporate Design of TU Darmstadt}
+%<2023>\ProvidesExplPackage{beamerthemeTUDa2023}{2025-11-13}{4.05}{Beamer theme using the Corporate Design of TU Darmstadt Design of 2023}
+%<2008>\ProvidesPackage{beamerthemeTUDa2008}[2025-11-13 v4.05 beamer theme using the Corporate Design of TU Darmstadt Design of 2008]
+%</initialize>
+%<*driver>^^A Preparation for real docstrip documentation
+\providecommand*{\TUDaDocDTXfiles}{tudabeamer.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+%
+% \changes{v4.00}{2025-01-26}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \GetFileInfo{tudabeamer.dtx}
+% \title{The \textsf{tudabeamer} package}
+% \author{Marei Peischl\thanks{Email: \href{mailto:tuda-ci@peitex.de}{tuda-ci@peitex.de}}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+% \MaybeStop{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*initialize>
+%<*class>
+% \fi
+%    \begin{macrocode}
+\PassOptionsToClass{10pt}{beamer}
+\ExplSyntaxOn
+\str_new:N \g_ptxcd_department_str
+\str_const:Nn \c_@@_base_str {beamer}
+%    \end{macrocode}
+% \iffalse
+%</class>
+%<main>\tl_if_exist:NF \g_@@_design_tl {
+%<*main|class>
+% \fi
+%    \begin{macrocode}
+  \tl_new:N \g_@@_design_tl
+%    \end{macrocode}
+% Because the option passing accross beamer themes is quite annoying and we want to limit the choice of the design to \file{beamerthemeTUDa.sty} and \cls{tudabeamer} the options will be defined to pass to both theme variants.
+% The theme in the end will either do something or send a warning message.
+% \changes{v4.00}{2025-01-26}{Refactor all beamer options to fix passing issues.}
+%    \begin{macrocode}
+  \cs_new:Nn \_@@_beamer_declare_pass_options:nn {
+    \keys_define:nn {ptxcd/beamer} {
+      #1 .code:n = \clist_map_inline:nn {#2}{
+        \PassOptionsToPackage{#1=##1}{beamer####1themeTUDa2008}
+        \PassOptionsToPackage{#1=##1}{beamer####1themeTUDa}
+      },
+      #1 .default:n = true,
+    }
+  }
+
+  \_@@_beamer_declare_pass_options:nn {centerframetitle} {outer}
+  \_@@_beamer_declare_pass_options:nn {headsepline} {outer}
+  \_@@_beamer_declare_pass_options:nn {logo} {outer}
+  \_@@_beamer_declare_pass_options:nn {colortitle} {color}
+  \_@@_beamer_declare_pass_options:nn {colorbacktitle} {color}
+  \_@@_beamer_declare_pass_options:nn {colorback} {color}
+  \_@@_beamer_declare_pass_options:nn {colorframetitle} {outer, color}
+% \iffalse
+%<main>}
+% \fi
+
+\keys_define:nn {ptxcd/beamer} {
+  accentcolor .code:n = \PassOptionsToPackage{accentcolor=#1}{tudacolors},
+%    \end{macrocode}
+% \iffalse
+%</main|class>
+%<*options>
+%<*class>
+% \fi
+%    \begin{macrocode}
+  color .code:n = {
+    \tl_if_in:nnTF {#1} {=} {
+      \msg_new:nnn {tudabeamer} {color-option-warning} {
+        The~color~option~should~no~longer~be~used~to~pass~options~to~the~tudacolors~package.\\
+        Please~use~tudacolors={##1}~instead~of~color={##1}.\\
+        See~the~tudabeamer~documentation~for~more~information.
+      }
+      \msg_warning:nnn {tudabeamer} {color-option-warning} {#1}
+      \PassOptionsToPackage{#1}{tudacolors}
+    } {
+      \PassOptionsToPackage{color=#1}{tudacolors}
+    }
+  },
+  tudacolors .code:n = \PassOptionsToPackage{#1}{tudacolors},
+%    \end{macrocode}
+% \iffalse
+%</class>
+%<*!(2023|2008)>
+% \fi
+%    \begin{macrocode}
+  design .choice:,
+  design / 2023 .code:n = {
+      \tl_gset:Nn  \g_@@_design_tl {2023}
+%<class>      \PassOptionsToClass{aspectratio=169}{beamer}
+    },
+  design / 2008 .code:n = {
+      \tl_gset:Nn  \g_@@_design_tl {2008}
+    },
+  design / default .code:n = {
+    \tl_gset:Nn  \g_@@_design_tl {default}
+   },
+  design .initial:n = default,
+  design2023 .meta:n = {design=2023},
+  design2008 .meta:n = {design=2008},
+  design .usage:n = load,
+%<main>}
+%    \end{macrocode}
+% \iffalse
+%</!(2023|2008)>
+% \fi
+%
+%
+% \iffalse
+%</options>
+%</initialize>
+%<*body>
+%<*class>
+% \fi
+%    \begin{macrocode}
+\ExplSyntaxOff
+\PassOptionsToPackage{
+  hidelinks,
+  unicode,
+  pdfpagelabels=false,
+  plainpages=false,
+  pdfcreator=LaTeX using the TUDa-CI Bundle,
+}{hyperref}
+\PassOptionsToClass{t}{beamer}
+\DeclareOption*{%
+  \PassOptionsToClass{\CurrentOption}{beamer}
+}
+%</class>
+%<main|class|wrapper>\ProcessKeyOptions[ptxcd/beamer]
+%<*class>
+\ProcessOptions*
+\ExplSyntaxOn
+\tl_if_eq:NnT \g_@@_design_tl  {default} {
+  \msg_new:nnn {tudabeamer} {default-design-changed} {
+    With~version~4.0~tudabeamer~switched~to~the~new~corporate~design~layout.\\
+    In~case~this~is~not~intended,~it's~possible~switch~back~using~`design=2008`~option.\\
+    `design=2023`~will~disable~this~warning.
+  }
+  \msg_warning:nn {tudabeamer} {default-design-changed}
+  \keys_set:nn {ptxcd/beamer} {design=2023}
+}
+\ExplSyntaxOff
+\LoadClass{beamer}
+\ExplSyntaxOn
+%
+% \begin{macro}{\department}
+%   \department command
+%    \begin{macrocode}
+\def\department{\@dblarg\ptxcd_beamer_department}
+%    \end{macrocode}
+% \end{macro}
+%
+%
+% \begin{macro}{\ptxcd}
+%    \begin{macrocode}
+\long\def\ptxcd_beamer_department[#1]#2{%
+  \def\beamer@temp{#2}%
+  \ifx\beamer@temp\@empty
+    \def\insertdepartment{}
+  \else
+    \def\insertdepartment{\def\inst{\beamer@instinst}\def\and{\qquad}#2}%
+  \fi
+  \def\beamer@shortdepartment{#1}}
+\department{}
+%    \end{macrocode}
+% \end{macro}
+%
+% \begin{macro}{\insertshortdepartment}
+%    \begin{macrocode}
+\newcommand\insertshortdepartment[1][]{%
+  {%
+      \let\thanks=\@gobble%
+      \beamer@setupshort{#1}%
+      \beamer@insertshort{\beamer@shortdepartment}%
+  }%
+}
+%    \end{macrocode}
+%   end of \department command
+% \changes{v4.00}{2025-01-26}{remove pdfa option}
+% \end{macro}
+%    \end{macrocode}
+% Load the TUDa theme
+%    \begin{macrocode}
+\usetheme{TUDa\g_@@_design_tl}%
+\let\accentfont\normalfont%
+\file_if_exist:nTF {\g_@@_config_prefix_tl beamerthemeTUDa-\g_ptxcd_department_str.sty}
+  {\RequirePackage{\g_@@_config_prefix_tl beamerthemeTUDa-\g_ptxcd_department_str}}
+  {
+    \file_if_exist:nT {beamerthemeTUDa-\g_ptxcd_department_str.sty}
+      {\RequirePackage{beamerthemeTUDa-\g_ptxcd_department_str}}
+  }
+\ExplSyntaxOff
+%    \end{macrocode}
+% \iffalse
+%</class>
+% \fi
+%
+% \iffalse
+%<*package>
+% \fi
+% \iffalse
+%<*main>
+% \fi
+%    \begin{macrocode}
+\RequirePackageWithOptions{beamerthemeTUDa\g_@@_design_tl}
+%    \end{macrocode}
+% \iffalse
+%</main>
+% \fi
+% \subsection{Design specific options}
+% The design for 2023 removed a lot of options as the accentcolor is no longer used within the frames.
+% \iffalse
+%<*2023>
+% \fi
+%    \begin{macrocode}
+\msg_new:nnn {tudabeamer} {option-removed} {
+  The~design~you~selected~doesn't~support~the~option~`#1`.\\
+  It~will~be~ignored.
+}
+%    \end{macrocode}
+% \iffalse
+%</2023>
+%</package>
+%<*options>
+% \fi
+%    \begin{macrocode}
+%<2008>\ExplSyntaxOn
+%<2008|2023>\ProcessKeyOptions[ptxcd/beamer]
+%</options>
+%<*package>
+\mode<presentation>
+%<2008>\ExplSyntaxOff
+%    \end{macrocode}
+% \subsection{Design 2023}
+% \iffalse
+%<*2023>
+% \fi
+%    \begin{macrocode}
+\usefonttheme{TUDa}
+\usecolortheme{TUDa}
+\useoutertheme{TUDa}
+\useinnertheme[design=2023]{TUDa}
+%    \end{macrocode}
+% \iffalse
+%</2023>
+% \fi
+% \subsection{Design 2008}
+% \iffalse
+%<*2008>
+% \fi
+%    \begin{macrocode}
+\usefonttheme{TUDa2008}
+\usecolortheme{TUDa2008}
+\useoutertheme{TUDa2008}
+\useinnertheme[design=2008]{TUDa}
+%    \end{macrocode}
+% \iffalse
+%</2008>
+% \fi
+%    \begin{macrocode}
+\setbeamertemplate{navigation symbols}{}
+\mode<all>
+%    \end{macrocode}
+% \iffalse
+%</package>
+%</body>
+% \fi
+% \Finale
+% \fi^^A No documentation on this
+\endinput

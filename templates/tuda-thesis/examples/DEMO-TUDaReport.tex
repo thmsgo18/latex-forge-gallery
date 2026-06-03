@@ -1,0 +1,72 @@
+%% This is file `DEMO-TUDaReport.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	english,% Main language as global option
+	accentcolor=9c,% Choose accent color: For a list of available colors see the full tudapub documentation
+	type=intern, % Minimal setup without accent color
+	marginpar=false,% Disable marginpar
+%	accept-missing-logos=true,% No error in case logo files are not available
+%	logofile=example-image,% In case logo should be replaced
+]{tudapub}
+
+
+%%%%%%%%%%%%%%%%%%%
+% Language setup
+%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}% \enquote, to simplify use of quotation marks
+
+\title{TUDaReport -- Minimal template for TUDa-CI}
+\author{Marei Peischl}
+%\date{}% If not specified, today's date is automatically inserted
+
+
+\begin{document}
+
+\maketitle
+
+
+\tableofcontents
+% Additional lists like \listoffigures or acronyms might be added here
+
+
+\section{About this file}
+
+\enquote{DEMO-TUDaReport.tex} is a minimal template for using the document class \enquote{tudapub.cls}.
+It is part of TUDa-CI, which is the official template bundle of TU Darmstadt. The original version was inspired by the \enquote{tuddesign} bundle by C.~v.~Loewenich and J.~Werner.
+
+
+\end{document}
+%% End of file `DEMO-TUDaReport.tex'.

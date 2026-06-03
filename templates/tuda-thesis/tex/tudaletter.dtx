@@ -1,0 +1,548 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse% no documentation on this
+% \iffalse^^A Preparation for real docstrip documentation
+%<*driver>
+\ProvidesFile{tudaletter.dtx}[2025-11-13 v4.05 Letters for TUDa-CI, Corporate Design of TU Darmstadt]
+\typeout{***********************************************************}
+\typeout{No documentation included in this file! Please see tuda-ci.pdf for more information and DEMO-TUDaLetter.tex/.pdf for an example of use.}
+\typeout{***********************************************************}
+\stop
+%</driver>
+%<*class&initialization>
+%<@@=ptxcd>
+\NeedsTeXFormat{LaTeX2e}[2020/10/01]
+\ProvidesExplClass{tudaletter}{2025-11-13}{4.05}{Letters for TUDa-CI, Corporate Design of TU Darmstadt}
+%</class&initialization>
+%<*driver>^^A Preparation for real docstrip documentation
+\providecommand*{\TUDaDocDTXfiles}{tudaletter.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+%
+% \changes{v4.00}{2025-01-26}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \GetFileInfo{tudaletter.dtx}
+% \title{The \textsf{tudaletter} package}
+% \author{<+author+>\thanks{Email: \href{mailto:<+email+>}{<+email+>}}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+%
+% \DescribeMacro{\fileversion}
+%
+%
+% \DescribeMacro{\filedate}
+%
+%
+% \DescribeMacro{\opening}
+%
+%
+% \DescribeMacro{\letterpagestyle}
+%
+%
+% \MaybeStop{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*class>
+%<*initialization>
+% \fi
+%
+%
+%    \begin{macrocode}
+\str_const:Nn \c_@@_base_str {letter}
+\str_new:N  \g_ptxcd_department_str
+\bool_new:N \g_@@_adjust_textwidth_bool
+\keys_define:nn {ptxcd/letter} {
+  logo .bool_gset:N = \g_@@_letter_logo_bool,
+  logo .default:n = true,
+  logo .initial:n = true,
+  premium .bool_gset:N = \g_@@_letter_premium_bool,
+  premium .default:n = true,
+  firstpagenumber .bool_gset:N = \g_@@_firstpagenumber_bool,
+  firstpagenumber .initial:n = true,
+  raggedright .bool_gset:N = \g_@@_letter_raggedright_bool,
+  headrule .bool_gset:N = \g_@@_letter_headrule_bool,
+  headrule .initial:n = true,
+  headrule .default:n = true,
+  textwidth .choice:,
+  textwidth / wide .code:n = \bool_gset_true:N \g_@@_adjust_textwidth_bool,
+  textwidth / narrow .code:n = \bool_gset_false:N  \g_@@_adjust_textwidth_bool,
+  textwidth .initial:n = wide,
+%</initialization>
+%<gobble>}
+%    \end{macrocode}
+% \iffalse
+%<*packages>
+% \fi
+%    \begin{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\@fontsizefilebase}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\@fontsizefilebase}
+%    \begin{macrocode}
+\newcommand*{\@fontsizefilebase}{tudalettersize}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\PassOptionsToClass{fontsize=10pt,parskip=full-}{scrletter}
+\PassOptionsToPackage{refline=nodate,addrfield=topaligned,firstfoot=false,pagenumber=botright}{scrletter}
+\LoadClass{scrletter}
+%    \end{macrocode}
+% Load the TUDa-colorscheme
+%    \begin{macrocode}
+\RequirePackage{tudacolors}
+\RequirePackage{tudafonts}
+\RequirePackage{graphicx}
+\RequirePackage{afterpage}
+\RequirePackage{ragged2e}
+\bool_if:NTF \g_@@_letter_premium_bool {
+  \cs_new:Nn \ptxcd_premiumcolor: {accentcolor}
+  \cs_new:Nn \ptxcd_use_premiumcolor: {\color{accentcolor}}
+  \cs_set:Nn \ptxcd_use_premiumcolor_text: {\color{textaccentcolor}}
+}{
+  \cs_new:Nn \ptxcd_premiumcolor: {black}
+  \let\ptxcd_use_premiumcolor:\relax
+  \let\ptxcd_use_premiumcolor_text:\relax
+}
+%    \end{macrocode}
+% %%%%Briefbogen
+% % Spacing:
+%    \begin{macrocode}
+\dim_const:Nn \c_ptxcd_HeadMargin_dim {12.5mm}
+\dim_const:Nn \c_ptxcd_LeftMargin_dim {24.0mm}
+\dim_const:Nn \c_@@_firstpage_extraindent_dim {-\paperwidth+120mm +\c_ptxcd_LeftMargin_dim  +\c_ptxcd_HeadMargin_dim}
+\bool_if:NTF \g_@@_adjust_textwidth_bool
+  {
+    \dim_const:Nn \c_ptxcd_RightMargin_dim  {\c_ptxcd_HeadMargin_dim}
+  }{
+    \dim_const:Nn \c_ptxcd_RightMargin_dim  {\c_ptxcd_HeadMargin_dim-\c_@@_firstpage_extraindent_dim}
+  }
+\dim_const:Nn \c_ptxcd_BottomMargin_dim {20mm}
+\dim_const:Nn \c_ptxcd_Linewidth_dim {\paperwidth-\c_ptxcd_LeftMargin_dim-\c_ptxcd_RightMargin_dim}
+\RequirePackage{geometry}
+\geometry{
+  twoside=false,
+  left=\c_ptxcd_LeftMargin_dim,
+  right=\c_ptxcd_RightMargin_dim,
+  bottom=\c_ptxcd_BottomMargin_dim,
+  footskip=7mm,
+}
+\dim_const:Nn \c_ptxcd_textwidth_dim {\textwidth}
+\bool_if:NTF \g_@@_letter_logo_bool {
+  \geometry{top=64mm}
+} {
+  \geometry{top=30mm}
+}
+%    \end{macrocode}
+% \iffalse
+%</packages>
+%<*pdfx>
+% \fi
+% \changes{v4.00}{2025-01-26}{Unify pdfx/pdfa mechanism structure over all document types}
+%    \begin{macrocode}
+\if_bool:N \g_ptxcd_pdfx_bool
+  \PassOptionsToPackage{a-2b}{pdfx}
+%    \end{macrocode}
+% Workaround posted by David Carlisle on tex.stackexchange
+% Thanks to Ulrike Fischer for mentioning it in #472
+%    \begin{macrocode}
+  \let \_@@_grouplevel_before_pdfx: \currentgrouplevel
+  \chardef\currentgrouplevel0
+  \ExplSyntaxOff
+  \RequirePackage{pdfx}
+  \ExplSyntaxOn
+  \let \currentgrouplevel \_@@_grouplevel_before_pdfx:
+  \cs_undefine:N \_@@_grouplevel_before_pdfx:
+%    \end{macrocode}
+% end of the workaround
+%    \begin{macrocode}
+\else:
+  \PassOptionsToPackage{hidelinks, unicode}{hyperref}
+  \RequirePackage{hyperref}
+\fi:
+%    \end{macrocode}
+% \iffalse
+%</pdfx>
+%<*body>
+% \fi
+% \changes{v4.00}{2025-01-26}{Unify pdfx/pdfa mechanism structure over all document types}
+%    \begin{macrocode}
+\RequirePackage[paper=a4]{tudarules}% might load pgfcore, so it has to be loaded after pdfx
+\setplength{firstheadhpos}{\c_ptxcd_HeadMargin_dim}
+\setplength{firstheadvpos}{\c_ptxcd_HeadMargin_dim}
+\setplength{firstheadwidth}{\dim_eval:n {\paperwidth - 2\c_ptxcd_HeadMargin_dim}}
+\setplength{firstfootvpos}{\dim_eval:n {\paperheight -17mm}}
+\setplength{firstfoothpos}{\useplength{firstheadhpos}}
+\setplength{firstfootwidth}{\useplength{firstheadwidth}}
+\setplength{toaddrhpos}{\c_ptxcd_LeftMargin_dim}
+\setplength{toaddrvpos}{50mm}
+\setplength{backaddrheight}{4mm}
+\setplength{toaddrindent}{0mm}
+\setplength{refhpos}{\c_ptxcd_LeftMargin_dim}
+\setplength{refvpos}{106mm}
+\setplength{subjectaftervskip}{2\baselineskip}
+\setplength{lochpos}{\c_ptxcd_HeadMargin_dim}
+\setplength{locvpos}{\dimexpr\useplength{refvpos}+\useplength{subjectaftervskip}+1.4\baselineskip\relax}
+\setplength{refaftervskip}{0pt}
+\setplength{subjectbeforevskip}{0pt}
+\setplength{locwidth}{\dimexpr\paperwidth-154,5mm -\c_ptxcd_HeadMargin_dim\relax}
+\setplength{locheight}{\dimexpr\paperheight-\useplength{locvpos}-\c_ptxcd_BottomMargin_dim\relax}
+\bool_if:NTF \g_@@_letter_headrule_bool {
+  \ptxcd_makeheadrule[width=\useplength{firstheadwidth},color=identbarcolor]{ptxcd_LetterheadRule}
+} {
+  \box_new:N \ptxcd_LetterheadRule_box
+  \def\ptxcd_LetterheadRule{}
+}
+\ptxcd_makefootrule[width=\useplength{firstheadwidth}]{ptxcd_LetterfootRule}
+\box_new:N \g_TUDaLetter_firsthead_box
+\hbox_gset:Nn \g_TUDaLetter_firsthead_box {
+  \parbox[t]{\useplength{firstheadwidth}}{
+    \raggedleft
+    \smash{\ptxcd_LetterheadRule}
+    \par
+    \vspace{.5\c_ptxcd_logoheight_dim}
+    \makebox[\_@@_logowidth:][l]{\_@@_insert_logo:}
+  }
+}
+\box_gset_dp:Nn \g_TUDaLetter_firsthead_box {\c_zero_dim}
+\setkomavar{firsthead}{
+  \box_use:N \g_TUDaLetter_firsthead_box
+}
+\KOMAoptions{backaddress=plain}
+\setkomavar{backaddressseparator}{\,$\vert$\,}
+%    \end{macrocode}
+% \begin{documentation}
+% \subsection{Additional KOMA Variables defined for TUDa-CI}
+% The letter template requires some additional variables:
+% \begin{description}
+% \item[frominstitution] institute/department/… in German
+% \item[frominstitution-en] institute/department/… in English
+% \item[fromfunction] position or job title of the sender
+% \end{description}
+% \end{documentation}
+% \begin{implementation}
+%    \begin{macrocode}
+\newkomavar{frominstitution}
+\newkomavar{frominstitution-en}
+\newkomavar{fromfunction}
+%    \end{macrocode}
+%    \begin{macrocode}
+\newkomafont{ptxcd_location}{\accentfont\normalcolor}
+\setkomafont{fromname}{\small}
+\newkomafont{ptxcd_frominst}{\small\ptxcd_use_premiumcolor_text: }
+\setkomafont{fromaddress}{\footnotesize}
+\setkomafont{refname}{}
+\setkomafont{refvalue}{}
+\setkomafont{pageheadfoot}{\footnotesize}
+%    \end{macrocode}
+% \end{implementation}
+% \begin{documentation}
+% \DescribeMacro{\TUD@locfield}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\TUD@locfield}
+%    \begin{macrocode}
+\newcommand{\TUD@locfield}{%
+  \usekomafont{ptxcd_location}\usekomafont{fromaddress}
+  \setparsizes{\z@}{\z@}{\z@ plus 1fil}
+  \par@updaterelative
+  \begingroup
+  \int_compare:nT {0 < \@pageat <3} {
+    \ptxcd_letterpagemark:\\[\baselineskip]
+  }
+  \usekomafont{ptxcd_frominst}
+  \Ifkomavarempty{frominstitution}{}{%
+    {\usekomavar[\raggedright]{frominstitution}}
+    \\[\baselineskip]}%
+  \Ifkomavarempty{frominstitution-en}{}{%
+    \usekomavar[\raggedright]{frominstitution-en}
+    \\[\baselineskip]}%
+  \endgroup
+  \Ifkomavarempty{fromlogo}{}{\usekomavar{fromlogo}\\[\baselineskip]}%
+  \Ifkomavarempty{fromname}{}
+  {{\usekomafont{fromname}\usekomavar{fromname}}
+    \Ifkomavarempty{fromfunction}{}{\\\usekomavar{fromfunction}}
+    \\[\baselineskip]}%
+  \Ifkomavarempty{fromaddress}{}{\usekomavar{fromaddress}\\[\baselineskip]}%
+  \@tempswafalse
+  \clist_map_inline:nn {fromphone, fromfax, fromemail, fromurl}{
+    \@tempswatrue
+    \Ifkomavarempty{##1}{}{
+      \Ifkomavarempty*{##1}{}{\makebox[1cm][l]{\usekomavar*{##1}}}\usekomavar{##1}\par
+    }
+  }
+  \if@tempswa
+    \vspace{2\baselineskip}
+  \fi
+  \Ifkomavarempty*{date}{}{\usekomavar*{date}\\\usekomavar{date}}
+  \seq_use:Nn  \g_@@_reffields_seq {}
+  \Ifkomavarempty{frombank}{}{\vfill%
+    \Ifkomavarempty*{frombank}{Bankverbindung}{\usekomavar*{frombank}}\\\usekomavar{frombank}
+  }
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\setkomavar{location}{\parbox[t][.45\paperheight][t]{\useplength{locwidth}}{\TUD@locfield}}
+\tl_const:Nn \ptxcd_reffield_separator_tl {\\}
+\cs_new:Nn \ptxcd_set_reffield:n {
+  \Ifkomavarempty{#1}{}{%
+    \if@tempswa\\[\baselineskip]\fi
+    \parbox[t]{\linewidth}{\noindent\raggedright
+      \usekomafont{refname}
+      \usekomavar*{#1}\ptxcd_reffield_separator_tl
+      \usekomafont{refvalue}
+      \usekomavar{#1}
+    }%
+    \@tempswatrue
+  }%
+}
+\seq_new:N  \g_@@_reffields_seq
+\newlength{\TUD@page@free}
+\newcounter{TUD@page@free@lines}
+\dim_new:N \g_@@_page_free_dim
+\int_new:N \g_@@_free_lines_int
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\opening}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\opening}
+%    \begin{macrocode}
+\renewcommand{\opening}[1]{%
+  \widowpenalty=100
+  \@PapersizeWarning
+  \seq_gclear:N \g_@@_reffields_seq
+  \renewcommand*{\@set@reffield}[1]{
+    \typeout{Field: ##1}%
+    \str_if_eq:nnT {##1}{datemarkerfield}{%
+      \let\scr@datemarkerfield@var=\scr@date@var
+      \let\scr@datemarkerfield@name=\scr@date@name
+      \setkomavar{date}{}%
+    }
+    \Ifkomavarempty{##1}{}{%
+      \seq_gput_right:Nn \g_@@_reffields_seq {%
+        \ptxcd_set_reffield:n {##1}
+      }%
+    }%
+  }
+  \let\do@set@reffield\@set@reffield
+  \@set@reffields
+  \removereffields
+  \@gen@firsthead
+  \@mkboth{\scr@fromname@var}{\scr@subject@var}%
+  \thispagestyle{letter.first}\noindent
+  \Ifkomavarempty{toname}{\setkomavar{toname}{\mbox{}}}{}
+  \@foldmarks\@firstheadfootfield\@addrfield\@locfield
+  \ifdim\useplength{subjectvpos}=\z@\else\@subjfield\fi
+  \@datefield
+  \@makelettertitle
+  \ifdim\useplength{subjectvpos}=\z@\if@subjafter\else\@subjfield\fi\fi
+  {\setparsizes{\z@}{\z@}{\z@ plus 1fil}\par@updaterelative#1\par}%
+  {\setlength{\@tempdima}{\baselineskip}%
+    \addtolength{\@tempdima}{-\parskip}%
+    \ifdim \@tempdima>\z@\vskip\@tempdima\fi}%
+  \ifdim\useplength{subjectvpos}=\z@\if@subjafter\@subjfield\fi\fi
+  \setcounter{equation}{0}%
+  \@afterheading%
+  \@nobreaktrue
+  \@afterindentfalse
+  \bool_if:NT \g_@@_adjust_textwidth_bool {
+    \everypar{%
+      \if@nobreak
+        \@nobreakfalse\clubpenalty\@M
+        \if@afterindent
+          \else{\setbox\z@\lastbox}
+        \fi
+      \else
+        \clubpenalty\@clubpenalty
+      \fi
+      \ifnum\thepage=1%
+        \dim_gset:Nn \g_@@_page_free_dim {-\pagegoal + \pagetotal}
+        \dim_compare:nTF {-\g_@@_page_free_dim>2\baselineskip}
+        {
+          \int_gset:Nn \g_@@_free_lines_int {\fp_eval:n {ceil(\g_@@_page_free_dim/\baselineskip)}}
+          \int_compare:nT {\g_@@_free_lines_int<0} {
+            \hangafter=\g_@@_free_lines_int\hangindent=\c_@@_firstpage_extraindent_dim%
+          }
+        } {
+          \dim_compare:nT {-\TUD@page@free>\baselineskip} {
+            \hangafter=-2\hangindent=\c_@@_firstpage_extraindent_dim%
+          }
+        }
+      \fi%
+    }%
+    \global\setlength{\linewidth}{\dim_eval:n {\c_ptxcd_Linewidth_dim + \c_@@_firstpage_extraindent_dim}}
+    \afterpage{
+      \global\setlength{\linewidth}{\c_ptxcd_Linewidth_dim}
+      \widowpenalty=10000
+    }
+  }
+}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+%    \begin{macrocode}
+\AtBeginDocument{%
+  \raggedbottom%
+}
+\setkomafont{backaddress}{\accentfont\tiny\ptxcd_use_premiumcolor_text:\raisebox{\dimexpr-\totalheight+\ht\strutbox\relax}{\rule{\z@}{4mm}}}
+\raggedbottom
+\int_new:N \l_ptxcd_letter_lastpage_int
+\cs_new:Nn \ptxcd_letterpagemark: {
+  %get lastpage for this letter if not already done
+  \int_compare:nNnTF {\value{page}} = {1} {
+      \bool_if:NTF \g_@@_firstpagenumber_bool
+      {\bool_set_true:N \l_tmpa_bool}
+      {\bool_set_false:N \l_tmpa_bool}
+    }
+    {\bool_set_true:N \l_tmpa_bool}
+  \bool_if:NT \l_tmpa_bool {
+    \int_if_exist:cF {c_ptxcd_letter\thisletter _lastpage_int} {
+      \cs_if_exist:cTF {r@\thisletter.lastpage} {
+        \int_const:cn {c_ptxcd_letter\thisletter _lastpage_int} {
+          \exp_args:NNc \expandafter \@secondoffive { r@\thisletter.lastpage}
+        }
+      } {
+        %warning -> rerun latex
+        \int_const:cn {c_ptxcd_letter\thisletter _lastpage_int} {0}
+      }
+    }
+    \usekomafont{pagenumber}\pagename\nobreakspace\thepage
+    \int_compare:nT {
+      \int_use:c {c_ptxcd_letter\thisletter _lastpage_int}
+      > 1
+    } {/\int_to_arabic:n{\int_use:c {c_ptxcd_letter\thisletter _lastpage_int}}}
+  }
+}
+\setkomavar{firstfoot}{\usekomavar{nextfoot}}
+\setkomavar{nextfoot}{%
+  \ifnum\@pageat>2
+    \parbox[c]{\layerwidth}{%
+      \ifcase\@pageat\or\or\or\raggedright\or\centering\or\raggedleft\fi
+      \strut\pagemark%
+    }%
+  \fi
+}
+\cs_set_eq:NN \letterpagemark \ptxcd_letterpagemark:
+\bool_if:NT \g_@@_letter_headrule_bool {
+  \bool_if:NTF \g_@@_letter_logo_bool {
+    \setkomavar{nexthead}{\raisebox{\topskip}{\box_use:N \g_TUDaLetter_firsthead_box}}
+  }{
+    \setkomavar{nexthead}{\raisebox{\depth}{\ptxcd_LetterheadRule}}
+  }
+}
+\newpairofpagestyles[letter]{TUDaLetter}{
+  \exp_args:Nx \KOMAoptions{
+    footwidth=\dimexpr\paperwidth-2\c_ptxcd_HeadMargin_dim \c_colon_str-\dim_eval:n {\c_ptxcd_HeadMargin_dim -1mm},
+    headwidth=\dimexpr\paperwidth-2\c_ptxcd_HeadMargin_dim \c_colon_str-\dim_eval:n {\c_ptxcd_HeadMargin_dim -1mm},
+    footsepline=.5\c_ptxcd_smallrule_dim,plainfootsepline
+  }
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{TUDaLetter.head.even}
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{TUDaLetter.head.odd}
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{TUDaLetter.head.oneside}
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{plain.TUDaLetter.head.even}
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{plain.TUDaLetter.head.odd}
+  \ModifyLayer[voffset=\c_ptxcd_HeadMargin_dim,align=tl]{plain.TUDaLetter.head.oneside}
+  \lehead{\usekomavar{nexthead}}%
+  \lohead{\usekomavar{nexthead}}%
+  \lefoot{\usekomavar{nextfoot}}%
+  \lofoot{\usekomavar{nextfoot}}%
+}
+\DeclarePageStyleByLayers{TUDaLetter.first}{TUDaLetter.foot.even,TUDaLetter.foot.odd,TUDaLetter.foot.oneside,TUDaLetter.foot.above.line}
+\pagestyle{TUDaLetter}
+\DeclarePageStyleAlias{letter.first}{TUDaLetter.first}
+%    \end{macrocode}
+% \begin{documentation}
+% \DescribeMacro{\letterpagestyle}
+%
+% \end{documentation}
+% \begin{implementation}
+% \begin{macro}{\letterpagestyle}
+%    \begin{macrocode}
+\def\letterpagestyle{TUDaLetter}
+%    \end{macrocode}
+% \end{macro}
+% \end{implementation}
+%
+% Widows and clubs
+%    \begin{macrocode}
+\widowpenalty=10000
+\clubpenalty=10000
+%    \end{macrocode}
+% default values
+%    \begin{macrocode}
+\setkomavar*{fromemail}{}
+\setkomavar*{fromurl}{}
+\setkomavar{backaddress}{Technische~ Universität~ Darmstadt\\Karolinenplatz~ 5\\64289~ Darmstadt}
+%    \end{macrocode}
+% renewcaptions
+%    \begin{macrocode}
+\defcaptionname{german,ngerman,austrian,naustrian,%
+  swissgerman,nswissgerman}\yourmailname{Ihre~ Nachricht}%
+\defcaptionname{german, ngerman,austrian,naustrian,%
+  swissgerman,nswissgerman}\phonename{Tel.}%
+%    \end{macrocode}
+% signature raggedright
+%    \begin{macrocode}
+\let\raggedsignature\raggedright
+\bool_if:NT \g_@@_letter_raggedright_bool {\AtBeginLetter{\RaggedRight}}
+%    \end{macrocode}
+% backwards compatibility for KOMA-Script
+%    \begin{macrocode}
+\cs_if_exist:NF \Ifkomavarempty{
+  \let\Ifkomavarempty\ifkomavarempty
+}
+\file_if_exist_input:n {\g_@@_config_prefix_tl\g_ptxcd_department_str.cfg}
+%    \end{macrocode}
+
+%
+% \iffalse
+%</body>
+%</class>
+% \fi
+% \Finale
+% \fi^^A No documentation on this
+\endinput

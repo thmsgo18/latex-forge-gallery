@@ -1,0 +1,113 @@
+%% This is file `DEMO-TUDaLetter-de.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+% PDF/A über pdfmanagement
+% Vermutlich temporärer Workaround für eine Inkompatibilität mit dem tagging-project  https://github.com/tudace/tuda_latex_templates/issues/521
+\RequirePackage{pdfmanagement}
+\SetKeys[document/metadata]{
+%	\DocumentMetadata{
+	pdfstandard=a-2b,
+	pdfversion=1.7,% 2.0 geht auch, aber dann geht kein PDF/A-2b
+	lang=de,
+}
+
+\documentclass[
+	german,% Hauptsprache als globale Option, früher war ngerman notwendig
+	accentcolor=9c,% Auswahl der Akzentfarbe
+%	logo=false,% Schaltet das Logo für Folgeseiten ab
+	premium=true,% Aktiviert die Färbung der Identitätsleiste
+%	firstpagenumber=false,% Deaktiviert die Anzeige der Seitenzahl auf Seite 1
+%	textwidth=narrow,% Verhindert die Anpassung der Textbreite nach der ersten Seite
+%	accept-missing-logos=true,% Keine Fehlermeldung, falls die Logo Dateien nicht vorliegen
+%	logofile=example-image,% Falls die Logo-Datei ersetzt werden soll
+]{tudaletter}
+
+%%%%%%%%%%%%%%%%%%%
+% Spracheinstellungen
+%%%%%%%%%%%%%%%%%%%
+\usepackage[german]{babel}
+\usepackage[autostyle]{csquotes}% Sprachabhängige Anführungszeichen mit \enquote
+
+
+\LoadLetterOption{DEMO-TUDaFromaddress}% Laden der Datei DEMO-TUDaFromaddress.lco mit hinterlegten Adressdaten
+
+\begin{document}
+
+
+\begin{letter}{%
+	Technische Universität Darmstadt\\%
+	Referat Kommunikation\\%
+	Karolinenplatz 5\\%
+	64289 Darmstadt}
+
+\setkomavar{subject}{\LaTeX-Brieftemplate der TU Darmstadt}
+% \setkomavar{date}{2024-02-26}% Falls kein Datum angegeben ist, wird \today verwendet
+\setkomavar{yourmail}{yyyy-mm-dd}
+\setkomavar{myref}{Demo-xx}
+\setkomavar{frombank}{IBAN: 1234 5678 9123 4567 89}
+
+\opening{Guten Tag,}
+dieses Template dient der Verwendungsdokumentation der tudaletter-Klasse.
+
+Die wichtigsten Optionen sind direkt im Quellcode zu dieser Datei hinterlegt und entsprechend kommentiert.
+Andere Optionen stellen nicht zwangsweise eine Konformität zu den Corporate Design Richtlinien dar.
+Layoutänderungen jeglicher Art sollten daher vermieden werden.
+
+Zusätzliche Optionen sind im Folgenden aufgelistet:\\
+\parbox{\linewidth}{
+	\begin{description}
+		\item[premium=true/false] Aktiviert/deaktiviert farbige Hervorhebungen. Voreinstellung ist false.
+		\item[firstpagenumber=true/false] Aktiviert/deaktiviert die Angabe der Seitenzahl auf der ersten Seite. Voreinstellung ist true.
+		\item[raggedright=true/false] Brieftext linksbündig. Voreinstellung ist false. Dies entspricht Blocksatz.
+		\item[logo=true/false] Logo auf Folgeseiten aktiviert/deaktiviert. Voreinstellung ist true.
+		      Schaltet zwischen der Anpassung der Textbreite nach der ersten Seite um. Voreinstellung ist wide, da dies den Richtlinien entspricht. Die Textbreite der ersten Seite bestimmt auch die Breite der Betreffzeile.
+	\end{description}
+}
+
+Für Wiederverwendung der Absenderadresse wurde die Datei \enquote{DEMO"=TUDaFromaddress.lco} angelegt. Sie wird, wie bei \KOMAScript{} üblich, über \verb+\LoadLetterOption+ geladen. Sämtliche dort gesetzten Werte können innerhalb der Briefdatei überschrieben werden.
+Die Adressdatei wird üblicherweise lokal im System installiert, um sie nicht immer mit allen anderen Dateien kopieren zu müssen. Falls Sie dies durchführen möchten, findet sich eine entsprechende Erklärung am Ende der DEMO"=TUDaFromaddress.lco"=Datei.
+Eine Besonderheit der Klasse tudaletter stellt der Unterschied in der Zeilenlänge zwischen der ersten und den folgenden Seiten dar. Da \LaTeX{} grundsätzlich keine Änderung der Zeilenlänge innerhalb eines Absatzes unterstützt, ist hier eine komplexe Implementierung nötig. In einigen speziellen Fällen kann dieser Mechanismus fehlschlagen. Eine Sammlung an Sonderfällen ist bereits implementiert. Sollten Sie jedoch auf weitere stoßen, werden wir uns um eine Erweiterung der Implementierung bemühen. Der Mechanismus kann bei Problemen auch durch \verb+textwidth=narrow+ abgeschaltet oder mithilfe eines manuellen Seitenumbruchs umgangen werden.
+Der einfachste Fall, um solche Schwierigkeiten zu beheben, ist in diesem Beispiel mithilfe des Befehls parbox bei der Auflistung gezeigt.
+
+\closing{Herzliche Grüße}
+
+\encl{Quelldateien zu diesem Dokument:\\
+	\texttt{DEMO-TUDaLetter-de.tex} (Brieftext),\\
+	\texttt{DEMO-TUDaFromaddress.lco} (Adressdaten)}
+
+\end{letter}
+
+
+\end{document}
+%% End of file `DEMO-TUDaLetter-de.tex'.

@@ -1,0 +1,281 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse
+%<*driver>
+\ProvidesFile{tudacolors.dtx}
+  [2025-11-13 v4.05 Color definition for TU Darmstadt's tuda-ci bundle]
+%</driver>
+%<*package>
+%<@@=ptxcd>
+\NeedsTeXFormat{LaTeX2e}[2020-10-01]
+\ProvidesExplPackage{tudacolors}{2025-11-13}{4.05}{Color definition for TU Darmstadt's tuda-ci bundle}
+%</package>
+%<*driver>
+\providecommand*{\TUDaDocDTXfiles}{tudacolors.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+% \chapter{\pkg{tudacolors} –– Color definitions}
+% \label{sec:color}
+% The \pkg{tudacolors} package provides the general color definitions necessary for the TUDa-CI Templates.
+% It defines the colors according to the design guideline \cite{TUDaGuideline}.
+% The definitions are using the \pkg{xcolor} package \cite{xcolor}.
+% Additionally the \option{mecheng} specific colors (see \autoref{sec:mecheng-color}) but the additional colors used by the new \cls{tudabeamer} layout are provided directly in the color theme.
+% This is because right now these colors are only defined in RGB mode and should not be used in documents using CMYK colors.
+%
+% The colors can be used like within standard \LaTeX.
+% The predefined TUDa-CI specific colors are:
+%
+% \begin{multicols}{4}
+% \raggedright
+% \renewcommand*{\definecolor}[3]{\makebox[5em]{#1}\textcolor{#1}{\rule{1cm}{\ht\strutbox}}\par}
+% \input{tudacolors.def}
+% \end{multicols}
+%
+% \pkg{tudacolors} provides package options to allow color selection or the color mode.
+% Since \pkg{tudacolors} is usually not loaded directly but indirectly using one of the TUDa-CI document classes, the options can be added as class options, as described in \autoref{sec:options}.
+% They will be passed to the package.
+% \begin{implementation}
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+% \fi
+%    \begin{macrocode}
+\str_if_exist:NF \g_ptxcd_department_str {
+	\str_new:N \g_ptxcd_department_str
+	\str_gset:Nn \g_ptxcd_department_str {default}
+}
+\keys_define:nn {ptxcd/colors} {
+%    \end{macrocode}
+% \end{implementation}
+%
+% \begin{documentation}
+% \DescribeKeyOption{accentcolor=\meta{Color}}{0b}*
+% \DescribeOption{accent=}
+%
+% Highlight color used for all highlight elements by default.
+% The options below will reference this color as  default setting meta{accentcolor}.
+% Depending on the documentclass it might be used for the so-called \enquote{identbar} as well as highlighted test elements, e.\,g. within letters if \option{premium} is enabled.
+%
+% |accent| is an alias.
+% We recommend using |accentcolor| to simplify recognizing the purpose of that option.
+% \end{documentation}
+%
+% \begin{implementation}
+% \begin{optionenv}{accent=}
+%    \begin{macrocode}
+	accent .tl_gset:N = \g_ptxcd_color_accent_tl,
+	accent .initial:n = 0b,
+	accentcolor .meta:n = {accent =#1},
+%    \end{macrocode}
+% \end{optionenv}^^A accent
+% \end{implementation}
+%
+% \begin{documentation}
+% \DescribeKeyOption{textaccent=\meta{color}}{\meta{accentcolor}}*
+% The accent color for highlighted text. Usage depends on the document class.
+% \end{documentation}
+%
+% \begin{implementation}
+% \begin{optionenv}{textaccent=\meta{color}}
+%    \begin{macrocode}
+	textaccent .tl_gset:N = \g_ptxcd_color_textaccent_tl,
+	textaccent .initial:n = \g_ptxcd_color_accent_tl,
+	textaccentcolor .meta:n = {textaccent = #1},
+%    \end{macrocode}
+% \end{optionenv}^^A textaccent
+% \end{implementation}
+%
+% \begin{documentation}
+% \DescribeKeyOption{identbar=\meta{color}}{\meta{accentcolor}}*
+% Color of the colored bar on the top of the page or slides using the 2008 layout.
+% \end{documentation}
+%
+% \begin{implementation}
+% \begin{optionenv}{identbar=\meta{color}}
+%    \begin{macrocode}
+	identbar .tl_gset:N = \g_ptxcd_color_identbar_tl,
+	identbar .initial:n = \g_ptxcd_color_accent_tl,
+	identbarcolor .meta:n = {identbar = #1},
+%    \end{macrocode}
+% \end{optionenv}^^A identbar
+% compatibility only
+%    \begin{macrocode}
+	color .code:n = {
+    \keys_set:nn {ptxcd/colors} {
+      accent=#1,
+      textaccent=#1,
+      identbar=#1
+    }
+    \PassOptionsToPackage{color=}{siunitx}
+  },
+%    \end{macrocode}
+% \end{implementation}
+%
+% \begin{documentation}
+% \DescribeKeyOption{text=preferblack/preferwhite}{preferwhite}*
+% The text placed on top a colored area, e.\,g. if the background of the title is set colored is either set to black or white.
+% There are some color combinations forbidded according to the design guideline \cite{TUDaGuideline} and some colors are allowed to use black or white.
+% This option can be used to prefer either black or white for the title in case both variants are allowed.
+% It's not possible to enforce a forbidden setting using this option.
+% \end{documentation}
+%
+% \begin{implementation}
+% \begin{optionenv}{text}
+%    \begin{macrocode}
+	text .choice:,
+	text/preferblack .code:n = \bool_gset_false:N \g_ptxcd_color_whitetext_bool,
+	text/preferwhite .code:n = \bool_gset_true:N  \g_ptxcd_color_whitetext_bool,
+	text .initial:n = {preferwhite},
+	text/black .meta:n = {text=preferblack},
+	text/white .meta:n = {text=preferwhite},
+%    \end{macrocode}
+% \end{optionenv}^^A text
+% \end{implementation}
+% \begin{documentation}
+% \DescribeKeyOption*{colormode=cmyk/RGB}{Depends on document type}*
+% The colormode can be selected to overwrite the default setting.
+% Please be aware, that there is a difference in casing and \code{RGB} has to be used uppercase and \code{cmyk} lowercase.
+% The reason for this is that internally uppercase and lowercase model names slightly differ because of rounding.
+% \end{documentation}
+% \begin{implementation}
+% \begin{optionenv}{cmyk, RGB}
+%    \begin{macrocode}
+	cmyk .code:n = \cs_if_exist:NTF \selectcolormodel
+		{\selectcolormodel{cmyk}}
+		{\PassOptionsToPackage{cmyk}{xcolor}},
+	RGB .code:n = \cs_if_exist:NTF \selectcolormodel
+		{\selectcolormodel{RGB}}
+		{\PassOptionsToPackage{RGB}{xcolor}},
+%    \end{macrocode}
+% \end{optionenv}
+% \end{implementation}
+% \begin{documentation}
+% \DescribeKeyOption{department=default/mecheng/\meta{department}}{default}*
+% Within \pkg{tudacolors} it's only checked if the department was set to \option{mecheng}. In that case the additional color configuration will be enbled (\autoref{sec:mecheng}).
+% \end{documentation}
+% \begin{implementation}
+% \begin{optionenv}{department=}
+%    \begin{macrocode}
+	department .choice:,
+	department / default .code:n = \str_gset:Nn \g_ptxcd_department_str {default},
+	department / mecheng .code:n = {
+	    \str_gset:Nn \g_ptxcd_department_str {mecheng}
+	    \keys_set:nn {ptxcd/colors}{
+	      accent=TUDa-2d,
+	      identbar=TUDa-6b
+	    }
+	 },
+	department / unknown .code:n = {
+		\str_gset:Nx \g_ptxcd_department_str {\l_keys_value_tl}
+	},
+%    \end{macrocode}
+% Necessary to apply the option if it was processed before.
+%    \begin{macrocode}
+	department .initial:V = \g_ptxcd_department_str,
+%    \end{macrocode}
+% \end{optionenv}^^A department
+% \end{implementation}
+% \begin{implementation}
+%    \begin{macrocode}
+	departmentconfigprefix .tl_gset:N = \g_@@_config_prefix_tl,
+	mecheng .meta:n = {department=mecheng},
+}
+\ProcessKeyOptions[ptxcd/colors]
+\RequirePackage{xcolor}
+\input{tudacolors.def}
+\str_if_eq:VnT \g_ptxcd_department_str {mecheng} {
+	\colorlet{TUDa-Primary1}{TUDa-6b}
+	\colorlet{TUDa-Primary2}{TUDa-2d}
+	\colorlet{TUDa-Secondary1}{TUDa-9a}
+	\colorlet{TUDa-Secondary2}{TUDa-8a}
+	\colorlet{TUDa-Secondary3}{TUDa-6a}
+	\colorlet{TUDa-Secondary4}{TUDa-3a}
+	\colorlet{TUDa-Secondary5}{TUDa-4a}
+	\colorlet{TUDa-Secondary6}{TUDa-5a}
+	\colorlet{TUDa-Arrow}{TUDa-Primary2}
+}
+\clist_const:Nn \c_ptxcd_color_forbid_textaccent_clist {TUDa-0a,TUDa-5a,TUDa-6a,TUDa-6b,TUDa-7a}
+\clist_const:Nn \c_ptxcd_color_allow_blacktext_clist {TUDa-0a,TUDa-0b,TUDa-0c,TUDa-1a,TUDa-2a,TUDa-3a,TUDa-4a,TUDa-4b,TUDa-4c,TUDa-5a,TUDa-5b,TUDa-5c,TUDa-6a,TUDa-6b,TUDa-6c,TUDa-7a,TUDa-7b,TUDa-7c,TUDa-8a,TUDa-8b,TUDa-8c,TUDa-9a,TUDa-9b,TUDa-10a}
+\clist_const:Nn \c_ptxcd_color_allow_whitetext_clist {TUDa-0b,TUDa-0c,TUDa-0d,black,TUDa-1a,TUDa-1b,TUDa-1c,TUDa-1d,TUDa-2a,TUDa-2b,TUDa-2c,TUDa-2d,TUDa-3a,TUDa-3b,TUDa-3c,TUDa-3d,TUDa-4b,TUDa-4c,TUDa-4d,TUDa-5b,TUDa-5c,TUDa-5d,TUDa-6c,TUDa-6d,TUDa-7b,TUDa-7c,TUDa-7d,TUDa-8a,TUDa-8b,TUDa-8c,TUDa-8d,TUDa-9a,TUDa-9b,TUDa-9c,TUDa-9d,TUDa-10a,TUDa-10b,TUDa-10c,TUDa-10d,TUDa-11a,TUDa-11b,TUDa-11c,TUDa-11d}
+%    \end{macrocode}
+% messages
+%    \begin{macrocode}
+\msg_new:nnnn{tudacolors} {undefined-color} {The~ color~ #1~ you~ selected~ is~ not~ defined.} {See~ the~ tuda-ci~ manual~ for~ a~ list~ of~ available~ colors.}
+\msg_new:nnnn{tudacolors} {unselectable-color} {The~ color~ you~ selected~ (#1)~ must~ not~ be~ choosen~ for~ #2.} {See~ the~ Corporate~ Design~ Guideline~ for~ further~ information.}
+\hook_new:n {ptxcd/init-colors}
+\hook_gput_code:nnn {ptxcd/init-colors} {tudacolors} {
+  \clist_map_inline:nn {accent, textaccent, identbar} {
+    \cs_if_exist:cF {\string\color@\tl_use:c {g_ptxcd_color_#1_tl}} {
+      \cs_if_exist:cT {\string\color@TUDa-\tl_use:c {g_ptxcd_color_#1_tl}} {
+        \tl_gset:cx {g_ptxcd_color_#1_tl} {TUDa-\tl_use:c {g_ptxcd_color_#1_tl}}
+      }
+    }
+  }
+  \exp_args:Nnx \colorlet{accentcolor}{\g_ptxcd_color_accent_tl}
+  \bool_if:NTF \g_ptxcd_color_whitetext_bool {
+    \clist_if_in:NVTF \c_ptxcd_color_allow_whitetext_clist \g_ptxcd_color_accent_tl {
+      \colorlet{textonaccentcolor}{white}
+    } {
+      \colorlet{textonaccentcolor}{black}
+      \tl_if_in:NnT \g_ptxcd_color_accent_tl {TUDa} {
+        \msg_warning:nnxx{tudacolors} {unselectable-color} {white} {textonaccentcolor}
+      }
+    }
+  } {
+    \clist_if_in:NVTF \c_ptxcd_color_allow_blacktext_clist \g_ptxcd_color_accent_tl {
+      \colorlet{textonaccentcolor}{black}
+    } {
+      \colorlet{textonaccentcolor}{white}
+      \tl_if_in:NnT \g_ptxcd_color_accent_tl {TUDa} {
+        \msg_warning:nnxx{tudacolors} {unselectable-color} {black} {textonaccentcolor}
+      }
+    }
+  }
+  \colorlet{identbarcolor}{\g_ptxcd_color_identbar_tl}
+  \exp_args:NNx \clist_if_in:NnTF \c_ptxcd_color_forbid_textaccent_clist {\g_ptxcd_color_textaccent_tl} {
+    \msg_warning:nnxx{tudacolors} {unselectable-color} {\g_ptxcd_color_textaccent_tl} {textaccentcolor}
+    \colorlet{textaccentcolor}{black}
+  } {
+    \colorlet{textaccentcolor}{\g_ptxcd_color_textaccent_tl}
+  }
+}
+\file_if_exist_input:n {\g_@@_config_prefix_tl\g_ptxcd_department_str-colors.def}
+\hook_use:n {ptxcd/init-colors}
+\colorlet{InfoBox}{white}
+%    \end{macrocode}
+% \end{implementation}
+% \iffalse
+%</package>
+% \fi
+%
+% \Finale
+\endinput

@@ -1,0 +1,166 @@
+%% This is file `DEMO-TUDaBeamer.tex' version 4.05 (2025-11-13),
+%% it is part of
+%% TUDa-CI -- Corporate Design for TU Darmstadt
+%% ----------------------------------------------------------------------------
+%%
+%% Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%%
+%% ============================================================================
+%% This work may be distributed and/or modified under the
+%% conditions of the LaTeX Project Public License, either version 1.3c
+%% of this license or (at your option) any later version.
+%% The latest version of this license is in
+%% http://www.latex-project.org/lppl.txt
+%% and version 1.3c or later is part of all distributions of LaTeX
+%% version 2008/05/04 or later.
+%%
+%% This work has the LPPL maintenance status `maintained'.
+%%
+%% The current maintainer of this work is
+%%   Marei Peischl <tuda-ci@peitex.de>
+%%
+%% The development repository can be found at
+%% https://github.com/tudace/tuda_latex_templates
+%% Please use the issue tracker for feedback!
+%%
+%% If you need a compiled version of this document, have a look at
+%% http://mirror.ctan.org/macros/latex/contrib/tuda-ci/doc
+%% or at the documentation directory of this package (if installed)
+%% <path to your LaTeX distribution>/doc/latex/tuda-ci
+%% ============================================================================
+%%
+% !TeX program = lualatex
+%%
+
+\documentclass[
+	english,% Main language as global option
+	accentcolor=9c,% Choose accent color: For a list of available colors see the full tudapub documentation
+%	accept-missing-logos=true,% No error in case logo files are not available
+%	logofile=example-image,% In case logo should be replaced
+]{tudabeamer}
+
+%%%%%%%%%%%%%%%%%%%
+% Language setup
+%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage[autostyle]{csquotes}% \enquote, to simplify use of quotation marks
+
+%%%%%%%%%%%%%%%%%%%
+% Document specific setup for demonstration, generally not needed!
+%%%%%%%%%%%%%%%%%%%
+\newcommand*{\code}[1]{\texttt{#1}}
+%%%%%%%%%%%%%%%%%%%
+% End of demo specific setup
+%%%%%%%%%%%%%%%%%%%
+
+\title[TUDaBeamer2023]{\LaTeX~beamer using TU Darmstadts Corporate Design}
+\subtitle{Design2023-beta}
+\author[M. Peischl]{Marei Peischl}
+\department{\TeX/\LaTeX}
+\institute{pei\TeX}
+
+% Scaling for additional logos and titlegraphic is described on slide “Scaling logos/titlegraphic”
+% Sublogo/partnerlogo will be placed in the headline/sidebar
+
+\sublogo{\color{blue!50}\rule{\width}{\height}}
+\partnerlogo*{\includegraphics{example-image}}
+
+% Titlegraphic will be placed behind the title
+% \titlegraphic*{\includegraphics{example-image}}
+
+\date{2023-10-02}% In case \today should not be used
+
+\AtBeginSection{\sectionpage}% Enable section pages
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\section{Documentation}
+
+\begin{frame}{The tudabeamer class}
+	\begin{itemize}
+		\item Basic usage identical to beamer
+		\item No special syntax required
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Additional Features for titlegraphic/logos}
+	\begin{itemize}
+		\item \code{\textbackslash{}partnerlogo} additional logo next to TUDa logo
+		\item \code{\textbackslash{}sublogo} additional logo below TUDa logo
+		\item \code{\textbackslash{}titlegraphic} place image as a background for title slide
+	\end{itemize}
+	The additional option \code{authorontitle=true/false} allows to place author/institue below the title.
+\end{frame}
+
+\begin{frame}{Scaling logos/titlegraphic}
+	\begin{itemize}
+		\item The commands shown on previous slide support \code{\textbackslash{}height}/\code{\textbackslash{}width} to adjust the size to be used for graphic scaling.
+		\item All have a starred variant (e.\,g. \code{\textbackslash{}sublogo*\{\textbackslash{}includegraphics\{example-image\}\}}). This will automatically scale/clip the logo/image to desired size.
+
+		      To align the sublogo together with the visible part of the TUDa logo there also exists the possibility to add a second star behind the mandatory argument. This will move the logo to the left to match. This variant is only available for the sublogo.
+	\end{itemize}
+\end{frame}
+
+\begin{frame}{Table of Contents}
+	By design the toc is structured in two columns. This layout doesn't really support subsections or subsubsections.
+
+	To be able to use the new design with old content, the mechanism was extended to support those. This will automatically switch to a single columns toc.
+
+	In case you want to disable that mechanism there is the class option \code{toc-columns=one/two/auto} which can also be adjusted locally be directly setting it with the command:
+	\code{\textbackslash{}tableofcontents[columns=two]}.
+
+	Please be also aware of beamer's mechanism to filter the toc, e.\,g. by \code{\textbackslash{}tableofcontents[hideallsubsections]}, see the beamer documentation for details.
+\end{frame}
+
+\section{Slide examples}
+
+\begin{frame}{Frame with a subtitle}
+	\framesubtitle{Subtitle}
+	An example.
+\end{frame}
+
+\begin{frame}[fragile,uppercase=false]{Please be aware of uppercase frametitles}
+	The mechanism to provide uppercase frame titles might have unexpected side effects.
+	It's aware of macros in general, but there are issues with arguments. e.\,g. using \verb+\color{dark2}+ will create an error.
+
+	To avoid that issue one can disable the case change locally
+\begin{verbatim}
+\frameztitle{Test \NoCaseChange{\textcolor{dark2}{\MakeUppercase{Test}}}}
+\end{verbatim}
+	or use the frame option \verb+uppercase=false+ like it as been done for this frame.
+	For a global change tudabeamer is also providing the class option \verb+uppercase-frametitle=false+.
+\end{frame}
+
+\begin{frame}{Color Scheme}
+	The new design introduced new colors to be used to highlight specific content.
+
+	The additional colors are:
+
+	\renewcommand*{\do}[1]{TUDa-####1: \textcolor{TUDa-####1}{\rule{1cm}{\ht\strutbox}}\par}
+	\docsvlist{dark1,dark2,light1,light2,accent1,accent2,accent3,accent4,accent5,accent5,hyperlink}
+\end{frame}
+
+\begin{frame}{Remark on vertical alignment (especially columns)}
+	The vertical alignment has been changed from \code{c} to \code{t} in contrast to beamers default setup.
+	Therefore frame content will be top aligned as required by the design guideline.
+	This is leading to some side effects,  e\,g. with the columns environment.
+
+	To resolve this one can either globally add the \code{c} option to restore beamer's default or pass it to the environment itself.
+
+	\begin{columns}[onlytextwidth,c]
+		\column{.8\linewidth}
+		\begin{itemize}
+			\item one
+			\item two
+		\end{itemize}
+		\column{.2\linewidth}
+		\includegraphics[width=\linewidth]{example-image}
+	\end{columns}
+\end{frame}
+
+\end{document}
+%% End of file `DEMO-TUDaBeamer.tex'.

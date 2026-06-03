@@ -1,0 +1,214 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse% no documentation on this
+% \iffalse^^A Preparation for real docstrip documentation
+%<*driver>
+\ProvidesFile{beamerthemeTUDa2008.dtx}[2025-11-13 v4.05 Compatibility mode for the design=2008 of tudabeamer]
+\typeout{***********************************************************}
+\typeout{No documentation included in this file! Please see tuda-ci.pdf for more information and DEMO-TUDaBeamer.tex/.pdf for an example of use of the current theme as well as DEMO-TUDaBeamer2008-de for the compatibility example.}
+\typeout{***********************************************************}
+\stop
+%</driver>
+%<*driver>^^A Preparation for real docstrip documentation
+\providecommand*{\TUDaDocDTXfiles}{beamerthemeTUDa2008.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+%<*outer>
+%<@@=ptxcd>
+% \fi
+%    \begin{macrocode}
+\ptxcd_makeheadrule[color=identbarcolor,width=\paperwidth-2\g_@@_beamer_sep_dim]{ptxcd_beamer_headrule}
+\ptxcd_makefootrule[width=\paperwidth-2\g_@@_beamer_sep_dim]{ptxcd_beamer_rule}
+%    \end{macrocode}
+%    \begin{macrocode}
+\defbeamertemplate*{sidebar~left}{TUDa}{}
+\defbeamertemplate*{sidebar~right}{TUDa}{}
+\bool_if_exist:NF \l_ptxcd_tmpa_bool {\bool_new:N \l_ptxcd_tmpa_bool}
+\defbeamertemplate*{footline}{TUDa}
+{
+	\begin{beamercolorbox}[leftskip=\g_@@_beamer_sep_dim,rightskip=\g_@@_beamer_sep_dim,
+		ht=\csname c_ptxcd_smallrule_dim\endcsname,dp=1mm]{footline}
+	\ptxcd_beamer_rule
+	\end{beamercolorbox}
+	\begin{beamercolorbox}[
+	leftskip=\g_@@_beamer_sep_dim,
+	rightskip=\g_@@_beamer_sep_dim, ht=2.75mm,dp=2.75mm]{footline}
+	\usebeamerfont{author~ in~ head/foot}%
+	\bool_set_false:N \l_ptxcd_tmpa_bool
+	\clist_map_variable:nNn {date, department, institute, author} \l_tmpa_tl {
+		\tl_if_empty:cF {beamer@short\l_tmpa_tl} {
+			\bool_if:NTF \l_ptxcd_tmpa_bool {~|~}
+			{\bool_set_true:N \l_ptxcd_tmpa_bool}
+			\use:c {insertshort\l_tmpa_tl}
+		}
+	}
+	\bool_if:NT \l_ptxcd_tmpa_bool {~|~}
+	\insertframenumber
+	\hfill\raisebox{\dimexpr-.5\height+\dp\strutbox\relax}{\insertlogo}
+	\end{beamercolorbox}
+}
+
+\defbeamertemplate{headline}{TUDa.logo} {%
+	\begin{beamercolorbox}[
+		leftskip=\g_@@_beamer_sep_dim,rightskip=\g_@@_beamer_sep_dim,
+		ht=.75\g_@@_beamer_sep_dim,dp=\box_dp:N \ptxcd_beamer_headrule_box]{headline}
+		\ptxcd_beamer_headrule
+	\end{beamercolorbox}
+}
+\box_new:N \l_@@_frametitle_box
+\defbeamertemplate{frametitle}{TUDa.logo}{%
+\nointerlineskip%
+\begin{beamercolorbox}[
+  sep=\g_@@_beamer_logosep_dim,
+  wd=\dim_eval:n {\_@@_beamer_linewidth:+2\l_@@_beamer_extraindent_dim},
+  rightskip=-\g_@@_beamer_logosep_dim,
+  leftskip=\dim_eval:n {-\g_@@_beamer_logosep_dim+\l_@@_beamer_extraindent_dim},
+	]{frametitle}
+	\hbox_set:Nn \l_@@_frametitle_box {
+	\parbox[t]
+		{\dim_eval:n {\linewidth- \box_wd:N \g_@@_logo_box-1em}}{%
+		\usebeamerfont{frametitle}\strut\insertframetitle
+		\ifx\insertframesubtitle\@empty
+		\else
+		\par
+		\usebeamercolor[fg]{framesubtitle}
+		\usebeamerfont{framesubtitle}
+		\insertframesubtitle
+		\fi
+	}}
+	\leavevmode
+	\bool_if:NTF \g_ptxcd_centerframetitle_bool
+		{\raisebox{\dimexpr-.5\height+.5\depth}}
+		{\use:n}
+			{\box_use:N \l_@@_frametitle_box}
+	\hfill%
+	\bool_if:NTF \g_ptxcd_centerframetitle_bool
+		{\raisebox{\dimexpr-.5\height+.5\depth}}
+		{\raisebox{\dimexpr-\height+\ht\strutbox}}
+		{\box_use:N \g_@@_logo_box}
+\end{beamercolorbox}%
+\bool_if:NT \g_ptxcd_headsepline_bool {
+	\nointerlineskip
+	\begin{beamercolorbox}[
+		wd=\dim_eval:n {\textwidth+2\l_@@_beamer_extraindent_dim},
+		ht=\c_ptxcd_smallrule_dim,
+		dp=0pt
+		]{smallrule}
+	\end{beamercolorbox}
+}
+}
+\defbeamertemplate*{headline}{TUDa.nologo}
+{%
+	\vspace{.75\g_@@_beamer_sep_dim}
+	\begin{beamercolorbox}[
+		leftskip=\g_@@_beamer_sep_dim,rightskip=\g_@@_beamer_sep_dim]{headline}
+		\ptxcd_beamer_headrule
+	\end{beamercolorbox}
+	}
+\defbeamertemplate*{headline}{TUDa.simple}
+{
+	\ifbeamercolorempty[bg]{background~canvas}{
+		\vspace{\dimexpr.5\c_ptxcd_logoheight_dim-\c_ptxcd_rulesep_dim}
+		\skip_horizontal:n {\beamer@leftmargin}
+		\color{identbarcolor}
+		\vrule width\dimexpr\textwidth-\beamer@leftmargin-\beamer@rightmargin height\c_ptxcd_rulesep_dim
+	}{
+		\vspace{\dimexpr.5\c_ptxcd_logoheight_dim}
+	}
+}
+\defbeamertemplate*{frametitle}{TUDa.nologo}{%
+	\nointerlineskip%
+\begin{beamercolorbox}[
+  sep=\g_@@_beamer_logosep_dim,
+  wd=\dim_eval:n {\_@@_beamer_linewidth:+2\l_@@_beamer_extraindent_dim},
+  leftskip=\dim_eval:n {-\g_@@_beamer_logosep_dim+\l_@@_beamer_extraindent_dim},
+	]{frametitle}
+	\hbox_set:Nn \l_@@_frametitle_box {
+	\parbox[t]
+	{\dimexpr\linewidth- \box_wd:N \g_@@_logo_box-1em\relax\relax}{%
+		\usebeamerfont{frametitle}\strut\insertframetitle
+		\ifx\insertframesubtitle\@empty
+		\else
+		\par
+		\usebeamercolor[fg]{framesubtitle}
+		\usebeamerfont{framesubtitle}
+		\insertframesubtitle
+		\fi
+}}
+\leavevmode
+\bool_if:NTF \g_ptxcd_centerframetitle_bool
+{\raisebox{\dimexpr-.5\height+.5\depth}}
+{\use:n}
+{\box_use:N \l_@@_frametitle_box}
+%    \end{macrocode}
+%	Rule for voffset similar to logo
+%    \begin{macrocode}
+	\rule[\dim_eval:n {
+		\bool_if:NTF \g_ptxcd_centerframetitle_bool
+			{-.5\box_ht:N \g_@@_logo_box+.5\box_dp:N \g_@@_logo_box}
+			{-\box_ht:N \g_@@_logo_box+\ht\strutbox}
+	}]{0pt}{\dim_eval:n {
+		\box_ht:N \g_@@_logo_box+\box_dp:N \g_@@_logo_box
+	}}
+\end{beamercolorbox}
+\bool_if:NT \g_ptxcd_headsepline_bool {
+	\nointerlineskip
+	\begin{beamercolorbox}[
+		wd=\dimexpr\linewidth+2\l_@@_beamer_extraindent_dim \relax,
+		ht=\c_ptxcd_smallrule_dim,
+		dp=0pt
+		]{smallrule}
+	\end{beamercolorbox}
+}
+}
+\cs_new:Nn \ptxcd_setup_frame: {
+	\bool_if:NTF \g_ptxcd_headlinelogo_bool {
+		\setbeamertemplate{frametitle}[TUDa.logo]
+		\setbeamertemplate{headline}[TUDa.logo]
+	}{
+		\setbeamertemplate{frametitle}[TUDa.nologo]
+		\setbeamertemplate{headline}[TUDa.nologo]
+	}
+}
+\ptxcd_setup_frame:
+%    \end{macrocode}
+%
+%
+%    \begin{macrocode}
+\mode
+<all>
+%    \end{macrocode}
+% \iffalse
+%</outer>
+% \fi
+% \Finale
+% \fi^^A No documentation on this
+\endinput

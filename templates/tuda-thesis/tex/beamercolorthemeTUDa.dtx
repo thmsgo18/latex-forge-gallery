@@ -1,0 +1,214 @@
+% \iffalse meta-comment
+%
+% TUDa-CI -- Corporate Design for TU Darmstadt
+% ----------------------------------------------------------------------------
+%
+%  Copyright (C) 2018--2025 by Marei Peischl <marei@peitex.de>
+%
+% ============================================================================
+% This work may be distributed and/or modified under the
+% conditions of the LaTeX Project Public License, either version 1.3c
+% of this license or (at your option) any later version.
+% The latest version of this license is in
+% http://www.latex-project.org/lppl.txt
+% and version 1.3c or later is part of all distributions of LaTeX
+% version 2008/05/04 or later.
+%
+% This work has the LPPL maintenance status `maintained'.
+%
+% The Current Maintainer of this work is
+%   Marei Peischl <tuda-ci@peitex.de>
+%
+% The development repository can be found at
+% https://github.com/tudace/tuda_latex_templates
+% Please use the issue tracker for feedback!
+%
+% ============================================================================
+%
+% \fi
+%
+% \iffalse% no documentation on this
+% \iffalse^^A Preparation for real docstrip documentation
+%<*driver>
+\ProvidesFile{beamercolorthemeTUDa.dtx}[2025-11-13 v4.05 Beamer color theme of tuda-ci]
+\typeout{***********************************************************}
+\typeout{No documentation included in this file! Please see tuda-ci.pdf for more information and DEMO-TUDaBeamer.tex/.pdf for an example of use.}
+\typeout{***********************************************************}
+\stop
+%</driver>
+%<*package>
+%<@@=ptxcd>
+\NeedsTeXFormat{LaTeX2e}[2022/06/01]
+%</package>
+%<!2008>\ProvidesExplPackage{beamercolorthemeTUDa}{2025-11-13}{4.05}{Beamer color theme of tuda-ci}
+%<2008>\ProvidesExplPackage{beamercolorthemeTUDa2008}{2025-11-13}{4.05}{Beamer color theme of tuda-ci, compatibility for design of 2008}
+%<*driver>^^A Preparation for real docstrip documentation
+\providecommand*{\TUDaDocDTXfiles}{beamercolorthemeTUDa.dtx}
+\input{tuda-ci.dtx}
+%</driver>
+% \fi
+%
+% \changes{v4.00}{2025-01-26}{Converted to DTX file}
+%
+% \DoNotIndex{\newcommand,\newenvironment}
+%
+% \GetFileInfo{beamercolorthemeTUDa.dtx}
+% \title{The \textsf{beamercolorthemeTUDa} package}
+% \author{Marei Peischl\thanks{Email: \href{mailto:tuda-ci@peitex.de}{tuda-ci@peitex.de}}}
+% \date{\fileversion~from \filedate}
+%
+% \maketitle
+%
+
+%
+% \MaybeStop{}
+%
+% \section{Implementation}
+%
+% \iffalse
+%<*package>
+%<*main>
+% \fi
+%    \begin{macrocode}
+\clist_map_inline:nn {
+	colortitle,
+	colorbacktitle,
+	colorframetitle,
+	colorback
+} {
+	\keys_define:nn {ptxcd/beamer/color} {#1 .code:n = \msg_warning:nnn {tudabeamer} {option-removed} {#1}}
+}
+%    \end{macrocode}
+% \iffalse
+%</main>
+%<*2008>
+% \fi
+%    \begin{macrocode}
+\bool_if_exist:NF \g_@@_colorframetitle_bool {\bool_new:N \g_@@_colorframetitle_bool}
+\keys_define:nn {ptxcd/beamer/color} {
+	colortitle .bool_gset:N = \g_ptxcd_beamer_colortitle_bool,
+	colortitle .default:n = true,
+	colortitle .initial:n = true,
+	colorbacktitle .meta:n = {colortitle=#1},
+  colorframetitle .choices:nn = {true, false} {
+    \use:c {bool_gset_ \l_keys_choice_tl :N} \g_@@_colorframetitle_bool
+    \cs_if_exist_use:N  \_@@_setup_frametitle_color:
+  },
+	colorframetitle .default:n = true,
+	colorback .meta:n = {colorframetitle=#1}
+}
+%</2008>
+\ExplSyntaxOff
+\ProcessKeyOptions[ptxcd/beamer/color]
+\mode<presentation>{\PassOptionsToPackage{RGB}{tudacolors}}
+\RequirePackage{tudacolors}
+%    \end{macrocode}
+% \iffalse
+%<*main>
+% \fi
+%    \begin{macrocode}
+\definecolorset{HTML}{TUDa-}{}{%
+	dark1,000000;%
+	dark2,44546A;%
+	light1,FFFFFF;%
+	light2,E7E6E6;%
+	accent1,E6001A;%
+	accent2,004E8A;%
+	accent3,009CDA;%
+	accent4,00689D;%
+	accent5,B5B5B5;%
+	accent5,535353;%
+	hyperlink,243572%
+}
+\mode<presentation>
+\setbeamercolor*{title}{parent=normal text}
+\setbeamercolor{subtitle}{parent=title}
+\setbeamercolor{author}{parent=title}
+\setbeamercolor{institute}{parent=title}
+\setbeamercolor{date}{parent=title}
+\setbeamercolor{titlelike}{parent=title}
+%    \end{macrocode}
+% \iffalse
+%</main>
+% \fi
+%    \begin{macrocode}
+%<2008>\setbeamercolor{titlelike}{fg=textaccentcolor,bg=white}
+\setbeamercolor*{author}{parent=title}
+\setbeamercolor*{institute}{parent=title}
+\setbeamercolor*{normal text}{bg=,fg=black}
+\setbeamercolor*{background canvas}{parent=normal text}
+\setbeamercolor*{section in toc}{parent=normal text}
+\setbeamercolor*{footline}{
+%<2008>parent=normal text
+%<main>fg=black!50
+}
+\setbeamercolor*{alerted text}{fg=textaccentcolor}
+%<main>\setbeamercolor*{structure}{fg=black}
+%<2008>\setbeamercolor*{structure}{fg=textaccentcolor}
+\setbeamercolor{bibliography item}{parent=item}
+\setbeamercolor{bibliography entry author}{use=structure,fg=structure.fg}
+\setbeamercolor{bibliography entry title}{use=normal text,fg=normal text.fg}
+\setbeamercolor{bibliography entry location}{use=structure,fg=structure.fg}
+\setbeamercolor{bibliography entry note}{use=structure,fg=normal text.fg}
+\setbeamercolor*{block title}{fg=textonaccentcolor,bg=accentcolor}
+\setbeamercolor*{block body}{fg=black,bg=black!15}
+\setbeamercolor*{block title alerted}{
+%<main>fg=TUDa-accent1,bg=TUDa-light2
+%<2008>fg=TUDa-9b,bg=black!15
+}
+\setbeamercolor*{block body alerted}{use=normal text, bg=white}
+\setbeamercolor*{block frame alerted}{
+%<main>bg=TUDa-accent1
+%<2008>bg=TUDa-9b
+}
+\setbeamercolor*{block title example}{
+%<main>fg=TUDa-accent2,bg=TUDa-light2
+%<2008>fg=TUDa-4d,bg=black!15
+}
+\setbeamercolor*{block body example}{use=normal text, bg=white}
+\setbeamercolor*{block frame example}{
+%<main>bg=TUDa-accent2
+%<2008>bg=TUDa-4d
+}
+%    \end{macrocode}
+% \iffalse
+%<*2008>
+% \fi
+%    \begin{macrocode}
+\setbeamercolor*{smallrule}{bg=black}
+\setbeamercolor*{identbar}{bg=identbarcolor}
+%    \end{macrocode}
+% \iffalse
+%</2008>
+% \fi
+%    \begin{macrocode}
+\ExplSyntaxOn
+%    \end{macrocode}
+% \iffalse
+%<*2008>
+% \fi
+%    \begin{macrocode}
+\bool_if:NTF \g_ptxcd_beamer_colortitle_bool {
+	\setbeamercolor*{title}{fg=textonaccentcolor,bg=accentcolor}
+}{
+	\setbeamercolor*{title}{parent=normal~text}
+}
+\cs_new:Nn \_@@_setup_frametitle_color: {
+	\bool_if:NTF \g_@@_colorframetitle_bool {
+		\setbeamercolor*{frametitle}{fg=textonaccentcolor,bg=accentcolor}
+	} {
+		\setbeamercolor*{frametitle}{use=normal~text,fg=normal~text.fg,bg=}
+	}
+}
+\_@@_setup_frametitle_color:
+%    \end{macrocode}
+%
+% \iffalse
+%</2008>
+\mode<all>
+%</package>
+% \fi
+%
+% \Finale
+% \fi^^A No documentation on this
+\endinput
