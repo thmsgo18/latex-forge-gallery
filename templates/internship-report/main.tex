@@ -1,0 +1,113 @@
+%!TEX program = xelatex
+
+\documentclass[12pt, a4paper]{report}
+\usepackage[legalpaper, a4paper, margin=2cm]{geometry}
+\usepackage[english]{babel}
+\usepackage{hyperref}
+\usepackage{libs/utbmcovers}
+\usepackage{lipsum}
+\usepackage{sectsty}
+\usepackage{csquotes}
+
+\usepackage[
+	backend=biber,
+	style=authortitle,
+	citestyle=verbose-ibid,
+	abbreviate=false,
+	language=french,
+	datamodel=ISO690UTBM
+]{biblatex} % ISO 690 Utbm
+
+\input{biblatex.cfg}
+
+%----------------------------------------
+% Use Arial as base font
+%----------------------------------------
+
+\setmainfont{Arial.ttf}[
+	Path=./assets/fonts/, 
+	Extension=.ttf, 
+	BoldFont = *Bold, 
+	ItalicFont = *Italic, 
+	BoldItalicFont = *BoldItalic,
+]
+
+\chapterfont{\arialfont\fontseries{b}\fontsize{28pt}{36pt}}
+\sectionfont{\arialfont\fontseries{b}\fontsize{24pt}{28pt}}
+\subsectionfont{\arialfont\fontseries{b}\fontsize{20pt}{22pt}}
+\subsubsectionfont{\arialfont\fontseries{b}\fontsize{20pt}{22pt}}
+
+%----------------------------------------
+% UTBM covers configuration
+%----------------------------------------
+
+% \setutbmfrontillustration{}
+% \setutbmtitle{}
+% \setutbmsubtitle{}
+% \setutbmstudent{}
+% \setutbmstudentdepartment{}
+% \setutbmstudentpathway{}
+% \setutbmcompany{}
+% \setutbmcompanyaddress{}
+% \setutbmcompanywebsite{}
+% \setutbmcompanytutor{}
+% \setutbmschooltutor{}
+% \setutbmabstract{}
+
+%----------------------------------------
+% Document configuration
+% Notes:
+% - '\graphicspath' refers to the path where images are stored.
+% - '\addbibresource' refers to the bibliography file(s), separated by commas.
+%----------------------------------------
+
+\graphicspath{{./assets/images/}}
+\addbibresource{bibliography.bib}
+
+%----------------------------------------
+% Document
+% Notes:
+% - Usually, the abstract is not referenced in the table of contents
+%	  nor the greetings section, so we use the '*' option to avoid it.
+% - Non-cited references are not shown in the bibliography, so we use the
+%	  '\nocite{*}' command to show them.
+% - Everything below '\subsubsection' is not shown in the table of contents,
+%----------------------------------------
+
+\begin{document}
+	\arialfont
+
+	\makeutbmfrontcover{}
+ 
+	\section*{Abstract}
+	\lipsum[1-3]
+	
+	\newpage
+
+	\section*{Greetings}
+	\lipsum[1-2] 
+
+	\tableofcontents
+	\newpage
+
+	\chapter{Lorem Ipsum}
+	\section{Section of Lorem Ipsum}
+	\lipsum[1-1]\footnote{Footnote of Lorem Ipsum}
+
+	\subsection{Sub Section of Lorem Ipsum}
+	\lipsum[1-1]
+
+	\subsubsection{Sub Sub Section of Lorem Ipsum}
+	\paragraph{title of paragraph}
+	\lipsum[1-1]
+
+	\paragraph{}
+	\lipsum[1-1]
+
+	\newpage
+
+	\nocite{*}
+	\printbibliography{}
+
+	\makeutbmbackcover{}
+\end{document}

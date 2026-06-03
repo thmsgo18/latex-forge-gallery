@@ -1,0 +1,46 @@
+% !TeX program = pdflatex
+% !BIB program = biber
+
+
+\title{\sffamily\bfseries%
+	\papertitle%
+	\thanks{\protect\input{0_1_Titlepage_paper/Acknowledgments}}%
+}
+
+\author[a]{Adam Smith}
+\author[b]{Janet Smith\thanks{Corresponding author (\email{janet.smith@example.org}).}}
+\author[a,\,c]{Jeremiah Smith}
+
+\affil[a]{Bonn Graduate School of Economics, University of Bonn}
+\affil[b]{Institute for Applied Microeconomics, University of Bonn}
+\affil[c]{Collaborative Research Center Transregio~224}
+
+\date{%
+	\vfill%
+	February 2016 \\
+	This version: \today%
+}
+
+\maketitle
+
+\vfill
+
+\begin{abstract}%
+	\input{0_1_Titlepage_paper/Abstract}%
+	\!\todo{%
+		\textbf{Commenting is on!} \\
+		To~switch it off, activate
+		\mbox{\texttt{\textbackslash PassOptionsToPackage}}\\
+		\mbox{\texttt{\{final\}\{changes\}}} and \\
+		\mbox{\texttt{\textbackslash PassOptionsToPackage}}\\
+		\mbox{\texttt{\{disable\}\{todonotes\}}} \\
+		in the master file.%
+	}
+\end{abstract}
+
+\vfill
+
+\thispagestyle{empty}
+% Remove the previous line if you want a page number to be printed on the title page.
+
+\clearpage
