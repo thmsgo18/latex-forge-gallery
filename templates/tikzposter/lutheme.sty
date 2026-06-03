@@ -1,0 +1,114 @@
+
+\RequirePackage{silence}
+\WarningFilter{latexfont}{Font shape}
+\WarningFilter{latexfont}{Some font}
+
+\definecolorstyle{LU}{
+\definecolor{LUblue}{cmyk}{1.0,0.85,0.05,0.22}
+\definecolor{LUbronze}{cmyk}{0.09,0.57,1.0,0.41}
+\definecolor{LUpink}{cmyk}{0.0,0.15,0.05,0.0}
+\definecolor{LUlightblue}{cmyk}{0.24,0.03,0.07,0.02}
+\definecolor{LUlightgreen}{cmyk}{0.29,0.02,0.24,0.03}
+\definecolor{LUcream}{cmyk}{0.03,0.04,0.14,0.08}
+\definecolor{LUgrey}{cmyk}{0.09,0.11,0.13,0.20}
+}{
+\colorlet{backgroundcolor}{LUgrey}
+\colorlet{framecolor}{LUblue}
+\colorlet{titlebgcolor}{white}
+\colorlet{titlefgcolor}{LUbronze}
+\colorlet{blocktitlebgcolor}{LUcream!50} %Use shaded version for text background
+\colorlet{blocktitlefgcolor}{LUbronze}
+\colorlet{blockbodybgcolor}{white}
+\colorlet{blockbodyfgcolor}{black}
+\colorlet{innerblocktitlebgcolor}{white}
+\colorlet{innerblocktitlefgcolor}{LUbronze}
+\colorlet{innerblockbodybgcolor}{LUlightgreen}
+\colorlet{innerblockbodyfgcolor}{black}
+\colorlet{notefgcolor}{black}
+\colorlet{notebgcolor}{LUlightgreen}
+\colorlet{notefrcolor}{LUlightgreen}
+}
+
+%Block style is essentially basic but with less rounded corners.
+\defineblockstyle{LU}{
+titlewidthscale=1, bodywidthscale=1, titleleft,
+titleoffsetx=0pt, titleoffsety=0pt, bodyoffsetx=0pt, bodyoffsety=0pt,
+bodyverticalshift=0pt, roundedcorners=5, linewidth=0.4cm,
+titleinnersep=1cm, bodyinnersep=1cm
+}{
+\begin{scope}[line width=\blocklinewidth, rounded corners=\blockroundedcorners]
+\ifBlockHasTitle %
+  \draw[color=blocktitlebgcolor, fill=blocktitlebgcolor] (blockbody.south west) rectangle (blocktitle.north east);
+  \draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+\else
+  \draw[color=blocktitlebgcolor, fill=blockbodybgcolor] (blockbody.south west) rectangle (blockbody.north east);
+\fi
+\end{scope}
+}
+
+\definelayouttheme{LU}{
+\usecolorstyle{LU}
+\usebackgroundstyle{Default}
+\usetitlestyle{Filled}
+\useblockstyle{LU}
+\useinnerblockstyle{Table}
+\usenotestyle{Corner}
+}
+
+%% Hack for figure and table environment
+\makeatletter % Start of posterfigure hack
+\newenvironment{posterfigure}{\minipage{\linewidth}\vspace{8mm}\def\@captype{figure}}{\endminipage}
+\newenvironment{postertable}{\minipage{\linewidth}\vspace{8mm}\def\@captype{table}}{\endminipage}
+\makeatother % End of posterfigure hack
+
+%Set LU fonts
+\RequirePackage[T1]{fontenc}
+\RequirePackage{mathtools}
+\RequirePackage{mathspec}
+\RequirePackage{fontspec}
+\setmathfont(Digits,Latin,Symbols)[Path=fonts/]{AGaramondPro-Regular.otf}
+\setmathrm[Path=fonts/, BoldFont=AGaramondPro-Semibold]{AGaramondPro-Regular.otf}
+\setmainfont{AGaramondPro-Regular.otf}[
+  Scale=MatchLowercase,
+  ItalicFont=AGaramondPro-Italic.otf,
+  BoldFont=AGaramondPro-Semibold.otf,
+  Path=fonts/
+  ]
+\setsansfont{FrutigerLTStd-Light.otf}[
+  Scale=MatchLowercase,
+  ItalicFont=FrutigerLTStd-LightItalic.otf,
+  Path=fonts/
+  ]
+\newfontfamily\titlefont{AGaramondPro-Semibold.otf}[
+  BoldFont=AGaramondPro-Semibold.otf,
+  Scale=1.2,
+  Path=fonts/
+  ]
+\newfontfamily\subtitlefont{FrutigerLTStd-Bold.otf}[Scale=1.0, Path=fonts/]
+
+%%Hack to use specific fonts
+\makeatletter
+\renewcommand\TP@maketitle{
+\centering
+\vbox{
+\ifTP@titlegraphicTop
+\TP@titlegraphicAlignment\@titlegraphic
+\\[\TP@titlegraphictotitledistance]
+\fi
+\centering
+\color{titlefgcolor}
+{\titlefont \Huge \scshape {\@title} \par}
+\vspace*{1em}
+{ \subtitlefont \bfseries \LARGE  \@author \par}
+\vspace*{1em}
+{\subtitlefont \Large \@institute}
+\ifTP@titlegraphicTop\else
+\vspace*{\TP@titlegraphictotitledistance}
+\TP@titlegraphicAlignment\@titlegraphic
+\fi
+}}
+%
+\renewcommand\TP@blocktitlefont{\titlefont}
+\renewcommand\TP@blockbodyfont{\rmfamily} %Change to sffamily for Frutiger Sans Serif in text body
+%
+\makeatother

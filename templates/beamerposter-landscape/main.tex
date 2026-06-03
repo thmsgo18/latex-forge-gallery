@@ -1,0 +1,462 @@
+% !TeX program = pdflatex
+% !TeX TS-program = pdflatex
+% !TeX TXS-program:compile = txs:///pdflatex/
+
+% !BIB program = biber
+% !BIB TS-program = biber
+% !TeX TXS-program:bibliography = txs:///biber
+
+
+
+
+\documentclass{beamer}
+
+
+\usepackage{import}
+\input    {0_0_Preamble/Preamble_Poster}
+\input    {0_0_Preamble/Preamble_BibLaTeX_AER}  %\input{0_0_Preamble/Preamble_BibLaTeX_APA}
+\subimport{0_0_Preamble/}{Preamble_Fonts_Charter_FiraSans}
+\input    {0_0_Preamble/Preamble_Sansserif_math}
+
+% Set up desired deviations from the default bibliography settings here:
+\ExecuteBibliographyOptions{
+	backref = false, giveninits = true,
+	uniquename = false, uniquelist = false
+}
+\AtEveryBibitem{\clearfield{doi}}
+\AtEveryBibitem{\clearfield{url}}
+\AtEveryBibitem{\clearfield{eprint}}
+
+\bibliography{Library}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  DOCUMENT-SPECIFIC ADDITIONS TO THE PREAMBLE  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newlength{\blockOne}
+\newlength{\blockTwo}
+\newlength{\blockThree}
+\newlength{\blockFour}
+
+% Vertical positions
+\setlength{\blockOne}  {12.75cm}
+\setlength{\blockTwo}  {44.00cm}
+\setlength{\blockThree}{71.00cm}
+\setlength{\blockFour} {99.50cm}
+
+\title{The Title of This Poster Can Be Rather Long}
+\author{%
+	Adam Smith,\affilindicator{a,\,c}
+	% Set the name of the presenting coauthor in boldface:
+	{\bfseries Janet Smith},\affilindicator{b,\,c} and
+	Jeremiah Smith\affilindicator{a}
+} % Author(s)
+\institute{%
+	\affilindicator{a}\,University of Bonn, Germany;
+	\affilindicator{b}\,University of Cologne, Germany (\email{janet.smith@example.org});
+	\affilindicator{c}\,Cluster of Excellence ECONtribute%
+} % Institution(s)
+\date{}
+
+\usepackage{xspace}
+\newcommand{\balA}[1][1]{BAL$^\mathup{I}_{#1:#1}$\xspace}
+\newcommand{\unbalA}[1][n]{UNBAL$^\mathup{I}_{1:#1}$\xspace}
+\newcommand{\balB}[1][1]{BAL$^\mathup{II}_{#1:#1}$\xspace}
+\newcommand{\unbalB}[1][n]{UNBAL$^\mathup{II}_{#1:1}$\xspace}
+
+\newcommand{\mynum}[1]{\scalebox{1.075}{\firasemibold#1}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%  DOCUMENT BODY  %%
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+%\displaygrid
+%\displaymargins
+
+
+\begin{frame}[t]	% Entire poster is one large frame
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FIGURES  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Recommendation:
+% Place figures and tables at the top of the poster.
+% This way they will be at eye level.
+% You will mostly be talking about your figures and tables, while
+% the body text is largely supplementary and can thus be placed
+% in the bottom half of your poster (at hip level ...).
+
+% Surround figures by frame
+\TPshowboxestrue
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Box 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{3\colwidth + 2\colsep}(\leftmargin, \blockOne)
+
+\begin{alertblock}{%
+	\begin{minipage}[b]{60pt}
+		\RaggedRight
+		\noindent\hspace{-10pt}\VeryHuge 1
+	\end{minipage}%
+	\begin{minipage}[b]{3\colwidth+2\colsep-125pt}\strut%
+		Study design.\;
+		{\mdseries Laying out the poster: Placement of all elements is done via \code{\textbackslash begin\{textblock*\} ... \textbackslash end\{textblock*\}} as the outer environment. For figures, use \code{\textbackslash begin\{alertblock\}\{\textit{caption}\} ... \textbackslash end\{alertblock\}} as the inner environment.}
+	\end{minipage}%
+}
+	\vspace{-0.25cm}
+	\begin{minipage}{0.49\textwidth}
+		\begin{beamercolorbox}[ht = 23.5cm, wd = \linewidth, left]{block body}
+			\centering\textbf{\boldmath Example~1.\; BAL$^{\mathbfup{I}}_{1{:}1}$ vs. UNBAL$^{\mathbfup{I}}_{1{:}8}$}\par
+			\vspace{15pt}
+			\raggedright\hspace*{100pt}%
+			\color{CMYKGray}\fbox{\includegraphics[width = 0.66\textwidth]{1_Example_Content/Images/Screenshots/BS_inc_conc_2third.png}}\par
+			\vspace{-10.25cm}
+			\raggedleft%
+			\color{CMYKGray}\fbox{\includegraphics[width = 0.66\textwidth]{1_Example_Content/Images/Screenshots/BS_inc_disp_2third.png}}%
+			\hspace*{100pt}
+		\end{beamercolorbox}
+	\end{minipage}%
+	\hfill%
+	\begin{minipage}{0.49\textwidth}
+		\begin{beamercolorbox}[ht = 23.5cm, wd = \linewidth, left]{block body}
+			\centering\textbf{\boldmath Example~2.\; BAL$^{\mathbfup{II}}_{1:1}$ vs. UNBAL$^{\mathbfup{II}}_{8:1}$}\par
+			\vspace{15pt}
+			\raggedright\hspace*{100pt}%
+			\color{CMYKGray}\fbox{\includegraphics[width = 0.66\textwidth]{1_Example_Content/Images/Screenshots/BS_dec_conc_2third.png}}\par
+			\vspace{-10.25cm}
+			\raggedleft%
+			\color{CMYKGray}\fbox{\includegraphics[width = 0.66\textwidth]{1_Example_Content/Images/Screenshots/BS_dec_disp_2third.png}}%
+			\hspace*{100pt}
+		\end{beamercolorbox}
+	\end{minipage}
+	\vspace{0.5cm}
+\end{alertblock}
+
+\end{textblock*}
+
+% Textblocks can be placed at arbitrary positions and with arbitrary dimensions
+\TPshowboxesfalse
+\begin{textblock*}{\colwidth+0.4cm}(\leftmargin+\colwidth+\colsep-0.2cm, \blockOne+18.75cm)
+	\setbeamercolor{highlight}{bg = UBonnYellow, fg = white}
+	\begin{beamercolorbox}[sep = 25pt, center]{highlight}
+		\sffamily\bfseries\small%\\
+		Recommendation: \\
+		Place figures and tables at the top of the poster. \\[\medskipamount]
+		\mdseries
+		You will be primarily talking about your figures and tables. \\
+		Hence, these are the most important elements of your poster. \\
+		Placing them at the top puts them at eye level. \\
+		The body text is largely supplementary and can thus \\
+		be placed in the bottom half.
+	\end{beamercolorbox}
+\end{textblock*}
+\TPshowboxestrue
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Box 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{2\colwidth + \colsep}(\leftmargin, \blockTwo)
+
+\begin{alertblock}{%
+	\begin{minipage}[b]{60pt}
+		\RaggedRight
+		\noindent\hspace{-10pt}\VeryHuge 2
+	\end{minipage}%
+	\begin{minipage}[b]{2\colwidth+\colsep-125pt}\strut%
+		Main result.\;
+		(A)~{\mdseries Fonts: We use \raisebox{0mm}[0mm][0mm]{\textrm{\href{https://ctan.org/pkg/xcharter}{Charter}}} as the text font, \raisebox{0mm}[0mm][0mm]{\textsf{\href{https://ctan.org/pkg/fira}{Fira Sans}}} for headings and \raisebox{0mm}[0mm][0mm]{\texttt{\href{https://ctan.org/pkg/fira}{Fira Mono}}} for code.}\;
+		(B)~{\mdseries The font packages must be available as part of your TeX installation.}
+	\end{minipage}%
+}
+	\begin{beamercolorbox}[ht = 19.75cm, wd = 0.9\linewidth, center]{block body}
+		%~\\[-7cm]
+		\alert{Absolute and relative measure of concentration bias ($\tilde{d}$ and $\tilde{d}^{\textup{rel}}$, respectively) in \textsc{Main-Treat\-ment}}
+		\par\bigskip\bigskip
+		\begin{booktabs}{
+			cell{1}{2} = {r=1, c=3}{c},
+			colspec = {
+				X[l] *{4}{T[table-column-width = 0.145\textwidth, round-mode = places, round-precision = 3]{2.3}}
+			},
+			column{1} = {leftsep = 0pt},
+			column{Z} = {rightsep = 0pt},
+			hborder{1} = {abovespace = \abovetopsep, belowspace = \belowrulesep},
+			hborder{Z} = {abovespace = \aboverulesep, belowspace = \belowbottomsep},
+			hborder{2, 4, 6, 8} = {abovespace = \aboverulesep, belowspace = \belowrulesep},
+			hline{1} = {\heavyrulewidth, solid},
+			hline{2, 4, 6, 8} = solid,
+			hline{Z} = {\heavyrulewidth, solid},
+			row{1} = {guard},
+			width = 0.9\textwidth,
+		}
+			& OLS & OLS & OLS & {Tobit}  \\
+			& {Lower bound} & {Midpoint} & {Upper bound} &  \\
+			& {(1)} & {(2)} & {(3)} & {(4)} \\
+			\smash{\(\tilde{d}\)} in \textsc{Main-Treat\-ment} &     31.64\ensuremath{^{***}} &    37.61\ensuremath{^{***}} &    43.58\ensuremath{^{***}} &    37.094\ensuremath{^{***}} \\
+			&  (2.685)         &  (3.575)         &  (4.683)         &  (3.658)         \\
+			\smash{\(\tilde{d}^{\textup{rel}}\)} in \textsc{Main-Treat\-ment} &    0.190\ensuremath{^{***}} &    0.224\ensuremath{^{***}} &    0.259\ensuremath{^{***}} &  \\
+			&  (0.016)         &  (0.021)         &  (0.027)         &         \\
+			Observations    &    {100}         &    {100}         &    {100}         &    {100}         \\
+		\end{booktabs}%
+		\par\bigskip\bigskip
+		\justifying\small%
+		\textit{Notes:}
+		This table presents estimates of the average absolute and relative measure of concentration bias, $\tilde{d}$ and $\tilde{d}^{\textup{rel}}$, respectively.
+		Robust standard errors in parentheses. Sample includes all observations from \textsc{Main-Treat\-ment}.
+		\ensuremath{^{*}}\,\({p < 0.1}\), \ensuremath{^{**}}\,\({p < 0.05}\), \ensuremath{^{***}}\,\({p < 0.01}\).\\[15pt]
+	\end{beamercolorbox}
+\end{alertblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Box 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + 2\colwidth + 2\colsep, \blockTwo)
+
+\begin{alertblock}{%
+	\begin{minipage}[b]{60pt}
+		\RaggedRight
+		\noindent\hspace{-10pt}\VeryHuge 3
+	\end{minipage}%
+	\begin{minipage}[b]{\colwidth-125pt}\strut%
+		Additional result.\;
+		{\mdseries Say, evidence on the mechanism or alternative explanations.}
+	\end{minipage}%
+}
+	\begin{beamercolorbox}[ht = 19.75cm, wd = 0.975\linewidth, center]{block body}
+		\textcolor{SpotColor}{\textbf{Comparison average effect, present and future bias}}\\[46pt]
+		\includegraphics[width = 0.975\linewidth, trim = {9.5cm 4.5cm 9.5cm 5cm}, clip]
+			{1_Example_Content/Images/average_pb_fb.png}\hspace{0.5cm}\null\\[25pt]
+	\end{beamercolorbox}
+\end{alertblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  BODY TEXT  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Coumn 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Switch drawing of frame borders off for the body text
+
+\TPshowboxesfalse
+
+\begin{textblock*}{\colwidth}(\leftmargin, \blockThree)
+
+\begin{parblock}{Introduction}
+	\alert{Align elements both horizontally and vertically!}
+
+	\vspace{0.333333\baselineskip}
+	\noindent We define various lengths and commands to facilitate both horizontal and vertical alignment of all elements.
+
+	\vspace{0.666667\baselineskip}
+	\noindent\alert{Horizontal alignment}
+
+	\begin{description}
+		\item[\code{\textbackslash leftmargin}] Horizontal position of the left border of the left-most text column: \code{40.5mm} by default.
+		\item[\code{\textbackslash rightmargin}] Horizontal position of the right border of the right-most text column: \code{40.5mm} by default.
+		\item[\code{\textbackslash numcols}] Number of columns on poster: \code{3}~by default (increase to \code{4} or \code{5} for poster in landscape orientation).
+		\item[\code{\textbackslash colsep}] Space between columns (so-called ``gutter''): \code{15.5mm} by default.
+		\item[\code{\textbackslash colwidth}] Column width: paper width (841~mm for A0 portrait) minus margins (${2 \times 40.5}$~mm) minus gutters (${2 \times 15.5}$~mm), by default 243~mm.
+	\end{description}
+	\sidenote{Test citations: \cite{Lisi1995}, \cite{Koszegi2013}.}
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + \colwidth + \colsep, \blockThree)
+
+\begin{parblock}{Methods {\mdseries(see Box~1)}}
+\alert{Vertical alignment} %is achieved via the following lengths:
+	\begin{description}
+		\item[\code{\textbackslash blockOne}] Vertical position of upper border of first figure or block of text: \code{19.50cm} by default.
+		\item[\code{\textbackslash blockTwo}] Vertical position of upper border of second figure or block of text: \code{48.25cm} in this document.
+		\item[\code{\textbackslash blockThree}] Vertical position of upper border of third figure or block of text.
+	\end{description}
+
+	\newcommand{\testgreek}{\epsilon\varepsilon \theta\vartheta \kappa\varkappa \pi\varpi \rho\varrho \sigma\varsigma \phi\varphi\, \Theta\varTheta}
+	\vspace{0.333333\baselineskip}
+	\sidenote{
+		\noindent\textsf{\textbf{Math test}}
+
+		\vspace{0.333333\baselineskip}
+		\centering
+		$\testgreek;$\;%
+		$\mathup{\testgreek;}$
+		$\mathbf{\testgreek;}$\;%
+		$\mathbfup{\testgreek.}$
+
+		\vspace{-24pt}
+		$$
+			\hat{\bm{\beta}} = (\bm{X}'\,\bm{X})^{-1} \bm{X}'\,\bm{y};\
+			\varepsilon \sim \mathup{N}(0, \sigma_{\kern-0.15em \varepsilon});\
+			\partial \kern-0.025em u(c) \divslash \partial \kern-0.125em \rho = c^{-\rho};\
+			n \in \mathbb{N}_0.
+		$$
+
+		\vspace{-24pt}
+		$$
+			\mathup{E}[X \kern0.075em|\kern0.075em \bm{\Upsilon}] \coloneq \!\int_{-\infty}^{\infty}\! x\,f(x \kern0.075em|\kern0.075em \bm{\Upsilon})\,\mathup{d}x
+			\to \max_{\bm{\Upsilon}}.
+		$$
+		{\boldmath
+		$$
+			\mathup{E}[X] = \frac{1}{N} \cdot\! \sum_{i=1}^{N} x_i \Pr(x_i).
+		$$
+		}
+	}
+
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + 2\colwidth + 2\colsep, \blockThree)
+
+\begin{parblock}{Control experiment}
+	%\vspace{-0.666667\baselineskip}
+	\alert{Body text}
+	\begin{itemize}
+		\item Use \code{\textbackslash begin\{parblock\} ... \textbackslash end\{parblock\}} for body text as the inner environment.
+		\item As any other element, enclose this inner environment in \code{\textbackslash begin\{textblock*\} ... \textbackslash end\{textblock*\}}.
+	\end{itemize}
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 3 cont.  %%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + 2\colwidth + 2\colsep, \blockThree + 336pt)
+
+\begin{parblock}{Results {\mdseries(see Boxes 2 and~3)}}
+	\vspace{-1.333333\baselineskip}  % Include this negative \vspace if starting a parblock with a list.
+	\begin{enumerate}
+		\item \alert{Text font:} \textrm{Charter}. This font is provided via the \href{https://ctan.org/pkg/xcharter}{XCharter} package, with the mathematical symbols provided by the \href{https://ctan.org/pkg/mathdesign}{mathdesign} package. \sidenote{\cite{Bierbrauer2022}.}
+		\item \alert{Sans-serif font:} \textsf{Fira Sans}. In particular used for the headings, provided via the \href{https://ctan.org/pkg/fira}{FiraSans} package.
+		\item \alert{Monospaced font:} \texttt{Fira Mono}. In particular used to indicate source code, provided via the \href{https://ctan.org/pkg/fira}{FiraMono} package.
+	\end{enumerate}
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%  Columns 1 + 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{2\colwidth + \colsep}(\leftmargin, \blockFour)
+
+\begin{parblock}{Discussion}
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin, \blockFour)
+
+\begin{parblock}{~}  % Include nonbreaking space (~) for empty heading
+	\alert{Widths and positions of elements spanning one column or multiple columns}\vspace{0.333333\baselineskip}
+
+	\noindent Placement of \emph{all} elements is done via the \code{textblock*} environment which takes two arguments: width in~\code{\{\}} and $(x, y)$-position of the upper left corner in~\code{()}.
+
+	\vspace{0.666667\baselineskip}\noindent%
+	\alert{Width values} \sidenote{\citep{Dertwinkel-Kalt2022}}:
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\item 1-column box: \code{\textbackslash colwidth}.
+		\item 2-column box: \code{2\textbackslash colwidth + \textbackslash colsep}.
+		\item 3-column box: \code{3\textbackslash colwidth + 2\textbackslash colsep}.
+	\end{itemize}
+
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + \colwidth + \colsep, \blockFour)
+
+\begin{parblock}{~}
+	\alert{Horizontal ($x$) values} \sidenote{\citep{Dohmen2012}}:
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\item Box starting in column~1: \code{\textbackslash leftmargin}.
+		\item Box starting in column~2: \\
+			\code{\textbackslash leftmargin + \textbackslash colwidth + \textbackslash colsep}.
+		\item Box starting in column~3: \\
+			\code{\textbackslash leftmargin + 2\textbackslash colwidth + 2\textbackslash colsep}.
+	\end{itemize}
+
+	\vspace{0.333333\baselineskip}\noindent%
+	\alert{Vertical ($y$) values:}
+	\begin{itemize}
+		\setlength{\itemsep}{0pt}
+		\item \code{\textbackslash blockOne},
+		\item \code{\textbackslash blockTwo}, etc.
+	\end{itemize}
+\end{parblock}
+
+\end{textblock*}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  Column 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{textblock*}{\colwidth}(\leftmargin + 2\colwidth + 2\colsep, \blockFour)
+
+\begin{parblock}{\textmd{\refname}}
+	\vspace{-1.333333\baselineskip}  % Include this negative \vspace if starting a parblock with a list.
+	\setlength{\bibhang}{0pt}
+	\setlength{\bibsep}{0\baselineskip}
+	\renewcommand*{\bibfont}{\sffamily\small\setlength{\baselineskip}{28.8pt}}
+	%\renewcommand*{\bibfont}{\fontsize{23.5pt}{27.65pt}\sffamily}  % Adjust freely if necessary
+	\renewcommand*{\bf}{\bfseries}
+	\begin{refcontext}[sorting = nyt]
+		% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+	\printbibliography[heading = none]
+	\end{refcontext}
+	%% Only when using BibTeX instead of BibLaTeX ==>
+	%\bibliographystyle{0_0_Preamble/aea_doi_initials}
+	%\renewcommand{\harvardand}{\&}
+	%\bibliography{Library}
+	%% <==
+\end{parblock}
+
+\end{textblock*}
+
+
+\end{frame}
+
+
+\end{document}
