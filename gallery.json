@@ -6,8 +6,14 @@
       "description": "Elegant CV template with colored sections and FontAwesome icons",
       "category": "cv",
       "source_url": "https://github.com/posquit0/Awesome-CV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/awesome-cv",
-      "tags": ["cv", "resume", "modern", "xelatex", "fontawesome"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/awesome-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "modern",
+        "xelatex",
+        "fontawesome"
+      ],
       "engine": "xelatex"
     },
     {
@@ -15,8 +21,13 @@
       "description": "Two-column resume template with a clean, professional layout",
       "category": "cv",
       "source_url": "https://github.com/deedy/Deedy-Resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/deedy-resume",
-      "tags": ["cv", "resume", "two-column", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/deedy-resume",
+      "tags": [
+        "cv",
+        "resume",
+        "two-column",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -24,8 +35,14 @@
       "description": "Another LaTeX CV template using TikZ for visual skill bars and timeline",
       "category": "cv",
       "source_url": "https://github.com/liantze/AltaCV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/altacv",
-      "tags": ["cv", "resume", "tikz", "timeline", "lualatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/altacv",
+      "tags": [
+        "cv",
+        "resume",
+        "tikz",
+        "timeline",
+        "lualatex"
+      ],
       "engine": "lualatex"
     },
     {
@@ -33,8 +50,13 @@
       "description": "A modern and highly customizable CV template with multiple styles",
       "category": "cv",
       "source_url": "https://github.com/moderncv/moderncv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/moderncv",
-      "tags": ["cv", "resume", "modern", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/moderncv",
+      "tags": [
+        "cv",
+        "resume",
+        "modern",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -42,8 +64,14 @@
       "description": "A hip and modern CV template with colorful sidebar design",
       "category": "cv",
       "source_url": "https://github.com/latex-ninja/hipster-cv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/hipster-cv",
-      "tags": ["cv", "resume", "hipster", "sidebar", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/hipster-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "hipster",
+        "sidebar",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -51,8 +79,14 @@
       "description": "CV template with a sidebar and skills display, designed to be skimmed in 20 seconds",
       "category": "cv",
       "source_url": "https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/twenty-seconds-cv",
-      "tags": ["cv", "resume", "sidebar", "skills", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/twenty-seconds-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "sidebar",
+        "skills",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -60,8 +94,14 @@
       "description": "Clean academic CV template with automatic publication list from BibTeX",
       "category": "cv",
       "source_url": "https://github.com/jitinnair1/autoCV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/developer-cv",
-      "tags": ["cv", "resume", "academic", "bibtex", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/developer-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "academic",
+        "bibtex",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -69,8 +109,14 @@
       "description": "Modern CV with a styled sidebar, based on the latexcv collection",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/sidebar-cv",
-      "tags": ["cv", "resume", "sidebar", "modern", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/sidebar-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "sidebar",
+        "modern",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -78,8 +124,13 @@
       "description": "A clean, simple, and elegant LaTeX style for thesis documents",
       "category": "thesis",
       "source_url": "https://github.com/derric/cleanthesis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/clean-thesis",
-      "tags": ["thesis", "dissertation", "clean", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/clean-thesis",
+      "tags": [
+        "thesis",
+        "dissertation",
+        "clean",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -87,8 +138,15 @@
       "description": "PhD thesis template for Cambridge University with extensive formatting options",
       "category": "thesis",
       "source_url": "https://github.com/kks32/phd-thesis-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cambridge-thesis",
-      "tags": ["thesis", "phd", "cambridge", "pdflatex", "xelatex", "lualatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/cambridge-thesis",
+      "tags": [
+        "thesis",
+        "phd",
+        "cambridge",
+        "pdflatex",
+        "xelatex",
+        "lualatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -96,8 +154,13 @@
       "description": "Professional dissertation template with polished typography and layout",
       "category": "thesis",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/memoir-thesis",
-      "tags": ["thesis", "dissertation", "professional", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/memoir-thesis",
+      "tags": [
+        "thesis",
+        "dissertation",
+        "professional",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -105,8 +168,13 @@
       "description": "Beautiful, pre-formatted templates for dissertations at Harvard, Princeton, and NYU",
       "category": "thesis",
       "source_url": "https://github.com/suchow/Dissertate",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/dissertate",
-      "tags": ["thesis", "dissertation", "harvard", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/dissertate",
+      "tags": [
+        "thesis",
+        "dissertation",
+        "harvard",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -114,8 +182,14 @@
       "description": "Book-style thesis template inspired by the elegant typography of Edward Tufte",
       "category": "thesis",
       "source_url": "https://github.com/Tufte-LaTeX/tufte-latex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tufte-thesis",
-      "tags": ["thesis", "book", "tufte", "typography", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/tufte-thesis",
+      "tags": [
+        "thesis",
+        "book",
+        "tufte",
+        "typography",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -123,8 +197,14 @@
       "description": "Scientific paper template following modern academic conference standards",
       "category": "article",
       "source_url": "https://github.com/latextemplates/scientific-thesis-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/neurips-paper",
-      "tags": ["article", "paper", "academic", "conference", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/neurips-paper",
+      "tags": [
+        "article",
+        "paper",
+        "academic",
+        "conference",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -132,8 +212,13 @@
       "description": "IEEE-style article template using the IEEEtran document class",
       "category": "article",
       "source_url": "https://github.com/latextemplates/IEEE",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/ieee-article",
-      "tags": ["article", "ieee", "engineering", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/ieee-article",
+      "tags": [
+        "article",
+        "ieee",
+        "engineering",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -141,8 +226,15 @@
       "description": "LNCS/Springer-style academic article template for computer science conferences",
       "category": "article",
       "source_url": "https://github.com/latextemplates/LNCS",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/acm-article",
-      "tags": ["article", "acm", "lncs", "springer", "computer-science", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/acm-article",
+      "tags": [
+        "article",
+        "acm",
+        "lncs",
+        "springer",
+        "computer-science",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -150,8 +242,14 @@
       "description": "CVPR/ICCV conference paper template, up-to-date for CVPR 2026",
       "category": "article",
       "source_url": "https://github.com/apoorvkh/cvpr-latex-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cvpr-paper",
-      "tags": ["article", "cvpr", "iccv", "computer-vision", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/cvpr-paper",
+      "tags": [
+        "article",
+        "cvpr",
+        "iccv",
+        "computer-vision",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -159,8 +257,13 @@
       "description": "Clean arXiv-style preprint template with a modern look",
       "category": "article",
       "source_url": "https://github.com/kourgeorge/arxiv-style",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/arxiv-template",
-      "tags": ["article", "arxiv", "preprint", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/arxiv-template",
+      "tags": [
+        "article",
+        "arxiv",
+        "preprint",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -168,8 +271,13 @@
       "description": "Elsevier CAS journal article template for submitting to Elsevier publications",
       "category": "article",
       "source_url": "https://github.com/oyoycr/els-cas-templates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elsarticle",
-      "tags": ["article", "elsevier", "journal", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/elsarticle",
+      "tags": [
+        "article",
+        "elsevier",
+        "journal",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -177,8 +285,13 @@
       "description": "Clean and elegant report template with bibliography support",
       "category": "report",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegant-report",
-      "tags": ["report", "elegant", "academic", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/elegant-report",
+      "tags": [
+        "report",
+        "elegant",
+        "academic",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -186,8 +299,13 @@
       "description": "Professional technical/term paper template suitable for bachelor and master theses",
       "category": "report",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/technical-report",
-      "tags": ["report", "technical", "professional", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/technical-report",
+      "tags": [
+        "report",
+        "technical",
+        "professional",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -195,8 +313,13 @@
       "description": "UTBM-style internship report template with professional formatting",
       "category": "report",
       "source_url": "https://github.com/Juknum/UTBM-Internship-Report",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/internship-report",
-      "tags": ["report", "internship", "stage", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/internship-report",
+      "tags": [
+        "report",
+        "internship",
+        "stage",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -204,8 +327,13 @@
       "description": "Academic project report template with certificate and acknowledgement pages",
       "category": "report",
       "source_url": "https://github.com/k4rtik/latex-project-report-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-report",
-      "tags": ["report", "project", "academic", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/project-report",
+      "tags": [
+        "report",
+        "project",
+        "academic",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -213,8 +341,14 @@
       "description": "A modern, minimal Beamer theme with a clean aesthetic (CC BY-SA 4.0)",
       "category": "presentation",
       "source_url": "https://github.com/matze/mtheme",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-metropolis",
-      "tags": ["presentation", "beamer", "metropolis", "modern", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-metropolis",
+      "tags": [
+        "presentation",
+        "beamer",
+        "metropolis",
+        "modern",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -222,8 +356,14 @@
       "description": "Minimalist Beamer presentation theme with an elegant dark color scheme (MIT)",
       "category": "presentation",
       "source_url": "https://github.com/anishathalye/auriga",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-focus",
-      "tags": ["presentation", "beamer", "minimal", "dark-theme", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-focus",
+      "tags": [
+        "presentation",
+        "beamer",
+        "minimal",
+        "dark-theme",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -231,8 +371,13 @@
       "description": "Elegant Beamer presentation template with clean slides and figure support",
       "category": "presentation",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-elegant",
-      "tags": ["presentation", "beamer", "elegant", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-elegant",
+      "tags": [
+        "presentation",
+        "beamer",
+        "elegant",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -240,8 +385,14 @@
       "description": "Professional Beamer presentation template with configurable colors and plots",
       "category": "presentation",
       "source_url": "https://github.com/klb2/beamer-presentation-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-corporate",
-      "tags": ["presentation", "beamer", "corporate", "professional", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-corporate",
+      "tags": [
+        "presentation",
+        "beamer",
+        "corporate",
+        "professional",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -249,8 +400,14 @@
       "description": "Simple, straightforward Beamer template with a focus on content",
       "category": "presentation",
       "source_url": "https://github.com/klingtnet/beamer-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-simple",
-      "tags": ["presentation", "beamer", "simple", "minimal", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-simple",
+      "tags": [
+        "presentation",
+        "beamer",
+        "simple",
+        "minimal",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -258,8 +415,13 @@
       "description": "Modern cover letter template with clean typography",
       "category": "letter",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cover-letter-modern",
-      "tags": ["letter", "cover-letter", "modern", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/cover-letter-modern",
+      "tags": [
+        "letter",
+        "cover-letter",
+        "modern",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -267,8 +429,14 @@
       "description": "Journal-style cover letter template with professional formatting (CC BY-SA 4.0)",
       "category": "letter",
       "source_url": "https://github.com/firefly-cpp/cover-letter-latex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/formal-letter",
-      "tags": ["letter", "formal", "journal", "cover-letter", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/formal-letter",
+      "tags": [
+        "letter",
+        "formal",
+        "journal",
+        "cover-letter",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -276,8 +444,13 @@
       "description": "Motivation letter template with LPPL license for academic and job applications",
       "category": "letter",
       "source_url": "https://github.com/MiraiKami/MotivationLetterLatexTemplate",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/motivation-letter",
-      "tags": ["letter", "motivation", "application", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/motivation-letter",
+      "tags": [
+        "letter",
+        "motivation",
+        "application",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -285,8 +458,14 @@
       "description": "Landscape academic poster template built with Beamer",
       "category": "poster",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamerposter-landscape",
-      "tags": ["poster", "beamer", "landscape", "academic", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/beamerposter-landscape",
+      "tags": [
+        "poster",
+        "beamer",
+        "landscape",
+        "academic",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -294,8 +473,13 @@
       "description": "Academic poster template using TikZposter with Lund University styling",
       "category": "poster",
       "source_url": "https://github.com/DavidGillsjo/LU-tikzposter",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tikzposter",
-      "tags": ["poster", "tikz", "academic", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/tikzposter",
+      "tags": [
+        "poster",
+        "tikz",
+        "academic",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -303,8 +487,14 @@
       "description": "Gemini-themed academic conference poster with modern design",
       "category": "poster",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/academic-poster",
-      "tags": ["poster", "gemini", "academic", "conference", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/academic-poster",
+      "tags": [
+        "poster",
+        "gemini",
+        "academic",
+        "conference",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -312,8 +502,12 @@
       "description": "Elegant LaTeX book template with beautiful typography and chapter styling",
       "category": "book",
       "source_url": "https://github.com/ElegantLaTeX/ElegantBook",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegantbook",
-      "tags": ["book", "elegant", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/elegantbook",
+      "tags": [
+        "book",
+        "elegant",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -321,8 +515,13 @@
       "description": "The Legrand Orange Book — a structured book template with color-coded chapters",
       "category": "book",
       "source_url": "https://www.latextemplates.com/template/the-legrand-orange-book",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/legrand-orange-book",
-      "tags": ["book", "orange", "structured", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/legrand-orange-book",
+      "tags": [
+        "book",
+        "orange",
+        "structured",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -330,8 +529,14 @@
       "description": "Minimalist math notes template with theorem environments and custom macros",
       "category": "report",
       "source_url": "https://github.com/kcajc/math-notes-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/math-notes",
-      "tags": ["notes", "math", "theorem", "minimal", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/math-notes",
+      "tags": [
+        "notes",
+        "math",
+        "theorem",
+        "minimal",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -339,8 +544,14 @@
       "description": "A4 version of the stylish Friggeri CV template with colored section bars and BibTeX publication support",
       "category": "cv",
       "source_url": "https://github.com/depressiveRobot/friggeri-cv-a4",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/friggeri-cv",
-      "tags": ["cv", "resume", "colored", "bibtex", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/friggeri-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "colored",
+        "bibtex",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -348,8 +559,14 @@
       "description": "A single-page, minimalist resume template using open-source fonts (MIT)",
       "category": "cv",
       "source_url": "https://github.com/sb2nov/resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/resume-openfont",
-      "tags": ["cv", "resume", "minimal", "single-page", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/resume-openfont",
+      "tags": [
+        "cv",
+        "resume",
+        "minimal",
+        "single-page",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -357,8 +574,14 @@
       "description": "Elegant bilingual (English/Chinese) resume template with FontAwesome icons (MIT, 10k+ stars)",
       "category": "cv",
       "source_url": "https://github.com/billryan/resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/billryan-resume",
-      "tags": ["cv", "resume", "bilingual", "fontawesome", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/billryan-resume",
+      "tags": [
+        "cv",
+        "resume",
+        "bilingual",
+        "fontawesome",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -366,8 +589,14 @@
       "description": "McDowell-style CV template inspired by the book Cracking the Coding Interview (MIT, 2.6k stars)",
       "category": "cv",
       "source_url": "https://github.com/dnl-blkv/mcdowell-cv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mcdowell-cv",
-      "tags": ["cv", "resume", "clean", "ats-friendly", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/mcdowell-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "clean",
+        "ats-friendly",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -375,8 +604,14 @@
       "description": "ATS-friendly resume template with a unique look, built from scratch (CC BY 4.0)",
       "category": "cv",
       "source_url": "https://github.com/subidit/rover-resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/rover-resume",
-      "tags": ["cv", "resume", "ats-friendly", "modern", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/rover-resume",
+      "tags": [
+        "cv",
+        "resume",
+        "ats-friendly",
+        "modern",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -384,8 +619,14 @@
       "description": "Traditional single-column CV layout with a classic professional style (from latexcv, MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/classic-cv",
-      "tags": ["cv", "resume", "classic", "professional", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/classic-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "classic",
+        "professional",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -393,8 +634,14 @@
       "description": "Two-column CV with photo support and QR code, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/two-column-cv",
-      "tags": ["cv", "resume", "two-column", "photo", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/two-column-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "two-column",
+        "photo",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -402,8 +649,14 @@
       "description": "Infographic-style CV with visual skill bars and icons, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/infographic-cv",
-      "tags": ["cv", "resume", "infographic", "skills", "xelatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/infographic-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "infographic",
+        "skills",
+        "xelatex"
+      ],
       "engine": "xelatex"
     },
     {
@@ -411,8 +664,14 @@
       "description": "Ultra-minimalist single-page CV with clean typography, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/minimalist-cv",
-      "tags": ["cv", "resume", "minimalist", "clean", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/minimalist-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "minimalist",
+        "clean",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -420,8 +679,14 @@
       "description": "Beautiful minimalist thesis template with elegant typography (MIT, 1.2k stars)",
       "category": "thesis",
       "source_url": "https://github.com/Pseudomanifold/latex-mimosis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mimosis-thesis",
-      "tags": ["thesis", "dissertation", "minimalist", "elegant", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/mimosis-thesis",
+      "tags": [
+        "thesis",
+        "dissertation",
+        "minimalist",
+        "elegant",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -429,8 +694,14 @@
       "description": "PhD thesis template for the University of Oxford with ociamthesis class (MIT)",
       "category": "thesis",
       "source_url": "https://github.com/mcmanigle/OxThesis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/oxford-thesis",
-      "tags": ["thesis", "phd", "oxford", "university", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/oxford-thesis",
+      "tags": [
+        "thesis",
+        "phd",
+        "oxford",
+        "university",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -438,8 +709,13 @@
       "description": "Official TU Darmstadt thesis and report templates following corporate design (LPPL-1.3c)",
       "category": "thesis",
       "source_url": "https://github.com/tudace/tuda_latex_templates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tuda-thesis",
-      "tags": ["thesis", "university", "corporate", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/tuda-thesis",
+      "tags": [
+        "thesis",
+        "university",
+        "corporate",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -447,8 +723,15 @@
       "description": "Enhanced Springer Lecture Notes in Computer Science (LNCS) article template (0BSD)",
       "category": "article",
       "source_url": "https://github.com/latextemplates/lncs-enhanced",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/springer-lncs",
-      "tags": ["article", "springer", "lncs", "conference", "computer-science", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/springer-lncs",
+      "tags": [
+        "article",
+        "springer",
+        "lncs",
+        "conference",
+        "computer-science",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -456,8 +739,14 @@
       "description": "Elegant working paper and preprint template with theorem support (LPPL-1.3c)",
       "category": "article",
       "source_url": "https://github.com/ElegantLaTeX/ElegantPaper",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegantpaper",
-      "tags": ["article", "paper", "elegant", "preprint", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/elegantpaper",
+      "tags": [
+        "article",
+        "paper",
+        "elegant",
+        "preprint",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -465,8 +754,13 @@
       "description": "Beautiful note-taking template from ElegantLaTeX with theorem environments (LPPL-1.3c)",
       "category": "report",
       "source_url": "https://github.com/ElegantLaTeX/ElegantNote",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegant-notes",
-      "tags": ["notes", "elegant", "theorem", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/elegant-notes",
+      "tags": [
+        "notes",
+        "elegant",
+        "theorem",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -474,8 +768,14 @@
       "description": "Clean university homework and assignment template with problem/solution environments (MIT, 1.2k stars)",
       "category": "report",
       "source_url": "https://github.com/jdavis/latex-homework-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/homework-template",
-      "tags": ["report", "homework", "assignment", "academic", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/homework-template",
+      "tags": [
+        "report",
+        "homework",
+        "assignment",
+        "academic",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -483,8 +783,14 @@
       "description": "Laboratory report template in article style for physics and engineering courses (MIT)",
       "category": "report",
       "source_url": "https://github.com/Sneaker679/lab-report-latex-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/lab-report",
-      "tags": ["report", "lab", "physics", "science", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/lab-report",
+      "tags": [
+        "report",
+        "lab",
+        "physics",
+        "science",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -492,8 +798,14 @@
       "description": "Dark-themed Beamer presentation template with a modern, polished look (MIT, 400 stars)",
       "category": "presentation",
       "source_url": "https://github.com/anishathalye/auriga",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-auriga",
-      "tags": ["presentation", "beamer", "dark-theme", "modern", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-auriga",
+      "tags": [
+        "presentation",
+        "beamer",
+        "dark-theme",
+        "modern",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -501,8 +813,14 @@
       "description": "Cover letter template using the moderncv class with classic style and professional formatting (LPPL)",
       "category": "letter",
       "source_url": "https://github.com/moderncv/moderncv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/moderncv-letter",
-      "tags": ["letter", "cover-letter", "moderncv", "professional", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/moderncv-letter",
+      "tags": [
+        "letter",
+        "cover-letter",
+        "moderncv",
+        "professional",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     },
     {
@@ -510,8 +828,15 @@
       "description": "Gemini-themed LaTeX poster template with beamerposter, clean and modern design (MIT, 1.2k stars)",
       "category": "poster",
       "source_url": "https://github.com/anishathalye/gemini",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/gemini-poster",
-      "tags": ["poster", "beamer", "gemini", "academic", "modern", "pdflatex"],
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/gemini-poster",
+      "tags": [
+        "poster",
+        "beamer",
+        "gemini",
+        "academic",
+        "modern",
+        "pdflatex"
+      ],
       "engine": "pdflatex"
     }
   ]
