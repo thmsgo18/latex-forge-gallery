@@ -1,6 +1,6 @@
 # LaTeX Toolbox Gallery
 
-A curated collection of 37 high-quality LaTeX templates, ready to install with [latex-toolbox](https://github.com/thmsgo18/latex-toolbox).
+A curated collection of 57 high-quality LaTeX templates, ready to install with [latex-toolbox](https://github.com/thmsgo18/latex-toolbox).
 
 ## Installation
 
@@ -28,6 +28,15 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `twenty-seconds-cv` | Sidebar CV designed to be skimmed in 20 seconds | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/twenty-seconds-cv` |
 | `developer-cv` | Academic CV with automatic BibTeX publication list | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/developer-cv` |
 | `sidebar-cv` | Modern CV with styled sidebar | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/sidebar-cv` |
+| `friggeri-cv` | Stylish A4 CV with colored section bars and BibTeX publications | XeLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/friggeri-cv` |
+| `resume-openfont` | Minimalist single-page resume using open-source fonts (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/resume-openfont` |
+| `billryan-resume` | Elegant bilingual (English/Chinese) resume with FontAwesome (10k+ stars) | XeLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/billryan-resume` |
+| `mcdowell-cv` | McDowell-style ATS-friendly CV inspired by Cracking the Coding Interview | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mcdowell-cv` |
+| `rover-resume` | ATS-friendly resume with unique styling from scratch (CC BY 4.0) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/rover-resume` |
+| `classic-cv` | Traditional single-column CV from the latexcv collection (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/classic-cv` |
+| `two-column-cv` | Two-column CV with photo and QR code from the latexcv collection (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/two-column-cv` |
+| `infographic-cv` | Infographic-style CV with visual skill bars from the latexcv collection | XeLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/infographic-cv` |
+| `minimalist-cv` | Ultra-minimalist single-page CV from the latexcv collection (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/minimalist-cv` |
 
 ### Thesis / Dissertation
 
@@ -38,6 +47,9 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `memoir-thesis` | Professional dissertation with polished typography | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/memoir-thesis` |
 | `dissertate` | Pre-formatted templates for Harvard, Princeton, and NYU | XeLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/dissertate` |
 | `tufte-thesis` | Elegant book-style thesis inspired by Edward Tufte | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tufte-thesis` |
+| `mimosis-thesis` | Beautiful minimalist thesis with elegant typography (MIT, 1.2k stars) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mimosis-thesis` |
+| `oxford-thesis` | PhD thesis template for the University of Oxford (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/oxford-thesis` |
+| `tuda-thesis` | Official TU Darmstadt thesis following university corporate design (LPPL) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tuda-thesis` |
 
 ### Academic Article / Paper
 
@@ -49,6 +61,8 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `cvpr-paper` | CVPR/ICCV paper template, up-to-date for 2026 | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cvpr-paper` |
 | `arxiv-template` | Clean arXiv-style preprint template | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/arxiv-template` |
 | `elsarticle` | Elsevier CAS journal article template | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elsarticle` |
+| `springer-lncs` | Enhanced Springer LNCS article template for CS conferences (0BSD) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/springer-lncs` |
+| `elegantpaper` | Elegant working paper and preprint template (LPPL-1.3c, 1.4k stars) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegantpaper` |
 
 ### Report
 
@@ -59,6 +73,9 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `internship-report` | UTBM-style internship report with professional formatting | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/internship-report` |
 | `project-report` | Academic project report with certificate pages | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-report` |
 | `math-notes` | Minimalist math notes with theorem environments | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/math-notes` |
+| `elegant-notes` | Beautiful note-taking template from ElegantLaTeX with theorem environments (LPPL) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegant-notes` |
+| `homework-template` | Clean university homework template with problem/solution environments (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/homework-template` |
+| `lab-report` | Laboratory report template in article style for physics courses (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/lab-report` |
 
 ### Beamer Presentation
 
@@ -69,6 +86,7 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `beamer-elegant` | Elegant Beamer slides with figure support | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-elegant` |
 | `beamer-corporate` | Professional Beamer slides with configurable colors | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-corporate` |
 | `beamer-simple` | Simple Beamer template focused on content | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-simple` |
+| `beamer-auriga` | Dark-themed Beamer presentation with a modern, polished look (MIT) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-auriga` |
 
 ### Letter
 
@@ -77,6 +95,7 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `cover-letter-modern` | Modern cover letter with clean typography | XeLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cover-letter-modern` |
 | `formal-letter` | Journal-style cover letter with professional formatting | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/formal-letter` |
 | `motivation-letter` | Motivation letter for academic and job applications | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/motivation-letter` |
+| `moderncv-letter` | Cover letter using the moderncv class with classic professional style (LPPL) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/moderncv-letter` |
 
 ### Academic Poster
 
@@ -85,6 +104,7 @@ latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery
 | `beamerposter-landscape` | Landscape academic poster built with Beamer | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamerposter-landscape` |
 | `tikzposter` | Academic poster using TikZposter | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tikzposter` |
 | `academic-poster` | Gemini-themed academic conference poster | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/academic-poster` |
+| `gemini-poster` | Gemini beamerposter template with clean, modern design (MIT, 1.2k stars) | pdfLaTeX | `latex-toolbox template install https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/gemini-poster` |
 
 ### Book
 

@@ -333,6 +333,186 @@
       "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/math-notes",
       "tags": ["notes", "math", "theorem", "minimal", "pdflatex"],
       "engine": "pdflatex"
+    },
+    {
+      "name": "friggeri-cv",
+      "description": "A4 version of the stylish Friggeri CV template with colored section bars and BibTeX publication support",
+      "category": "cv",
+      "source_url": "https://github.com/depressiveRobot/friggeri-cv-a4",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/friggeri-cv",
+      "tags": ["cv", "resume", "colored", "bibtex", "xelatex"],
+      "engine": "xelatex"
+    },
+    {
+      "name": "resume-openfont",
+      "description": "A single-page, minimalist resume template using open-source fonts (MIT)",
+      "category": "cv",
+      "source_url": "https://github.com/sb2nov/resume",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/resume-openfont",
+      "tags": ["cv", "resume", "minimal", "single-page", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "billryan-resume",
+      "description": "Elegant bilingual (English/Chinese) resume template with FontAwesome icons (MIT, 10k+ stars)",
+      "category": "cv",
+      "source_url": "https://github.com/billryan/resume",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/billryan-resume",
+      "tags": ["cv", "resume", "bilingual", "fontawesome", "xelatex"],
+      "engine": "xelatex"
+    },
+    {
+      "name": "mcdowell-cv",
+      "description": "McDowell-style CV template inspired by the book Cracking the Coding Interview (MIT, 2.6k stars)",
+      "category": "cv",
+      "source_url": "https://github.com/dnl-blkv/mcdowell-cv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mcdowell-cv",
+      "tags": ["cv", "resume", "clean", "ats-friendly", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "rover-resume",
+      "description": "ATS-friendly resume template with a unique look, built from scratch (CC BY 4.0)",
+      "category": "cv",
+      "source_url": "https://github.com/subidit/rover-resume",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/rover-resume",
+      "tags": ["cv", "resume", "ats-friendly", "modern", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "classic-cv",
+      "description": "Traditional single-column CV layout with a classic professional style (from latexcv, MIT)",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/classic-cv",
+      "tags": ["cv", "resume", "classic", "professional", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "two-column-cv",
+      "description": "Two-column CV with photo support and QR code, from the latexcv collection (MIT)",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/two-column-cv",
+      "tags": ["cv", "resume", "two-column", "photo", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "infographic-cv",
+      "description": "Infographic-style CV with visual skill bars and icons, from the latexcv collection (MIT)",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/infographic-cv",
+      "tags": ["cv", "resume", "infographic", "skills", "xelatex"],
+      "engine": "xelatex"
+    },
+    {
+      "name": "minimalist-cv",
+      "description": "Ultra-minimalist single-page CV with clean typography, from the latexcv collection (MIT)",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/minimalist-cv",
+      "tags": ["cv", "resume", "minimalist", "clean", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "mimosis-thesis",
+      "description": "Beautiful minimalist thesis template with elegant typography (MIT, 1.2k stars)",
+      "category": "thesis",
+      "source_url": "https://github.com/Pseudomanifold/latex-mimosis",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/mimosis-thesis",
+      "tags": ["thesis", "dissertation", "minimalist", "elegant", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "oxford-thesis",
+      "description": "PhD thesis template for the University of Oxford with ociamthesis class (MIT)",
+      "category": "thesis",
+      "source_url": "https://github.com/mcmanigle/OxThesis",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/oxford-thesis",
+      "tags": ["thesis", "phd", "oxford", "university", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "tuda-thesis",
+      "description": "Official TU Darmstadt thesis and report templates following corporate design (LPPL-1.3c)",
+      "category": "thesis",
+      "source_url": "https://github.com/tudace/tuda_latex_templates",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/tuda-thesis",
+      "tags": ["thesis", "university", "corporate", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "springer-lncs",
+      "description": "Enhanced Springer Lecture Notes in Computer Science (LNCS) article template (0BSD)",
+      "category": "article",
+      "source_url": "https://github.com/latextemplates/lncs-enhanced",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/springer-lncs",
+      "tags": ["article", "springer", "lncs", "conference", "computer-science", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "elegantpaper",
+      "description": "Elegant working paper and preprint template with theorem support (LPPL-1.3c)",
+      "category": "article",
+      "source_url": "https://github.com/ElegantLaTeX/ElegantPaper",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegantpaper",
+      "tags": ["article", "paper", "elegant", "preprint", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "elegant-notes",
+      "description": "Beautiful note-taking template from ElegantLaTeX with theorem environments (LPPL-1.3c)",
+      "category": "report",
+      "source_url": "https://github.com/ElegantLaTeX/ElegantNote",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/elegant-notes",
+      "tags": ["notes", "elegant", "theorem", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "homework-template",
+      "description": "Clean university homework and assignment template with problem/solution environments (MIT, 1.2k stars)",
+      "category": "report",
+      "source_url": "https://github.com/jdavis/latex-homework-template",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/homework-template",
+      "tags": ["report", "homework", "assignment", "academic", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "lab-report",
+      "description": "Laboratory report template in article style for physics and engineering courses (MIT)",
+      "category": "report",
+      "source_url": "https://github.com/Sneaker679/lab-report-latex-template",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/lab-report",
+      "tags": ["report", "lab", "physics", "science", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "beamer-auriga",
+      "description": "Dark-themed Beamer presentation template with a modern, polished look (MIT, 400 stars)",
+      "category": "presentation",
+      "source_url": "https://github.com/anishathalye/auriga",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/beamer-auriga",
+      "tags": ["presentation", "beamer", "dark-theme", "modern", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "moderncv-letter",
+      "description": "Cover letter template using the moderncv class with classic style and professional formatting (LPPL)",
+      "category": "letter",
+      "source_url": "https://github.com/moderncv/moderncv",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/moderncv-letter",
+      "tags": ["letter", "cover-letter", "moderncv", "professional", "pdflatex"],
+      "engine": "pdflatex"
+    },
+    {
+      "name": "gemini-poster",
+      "description": "Gemini-themed LaTeX poster template with beamerposter, clean and modern design (MIT, 1.2k stars)",
+      "category": "poster",
+      "source_url": "https://github.com/anishathalye/gemini",
+      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/gemini-poster",
+      "tags": ["poster", "beamer", "gemini", "academic", "modern", "pdflatex"],
+      "engine": "pdflatex"
     }
   ]
 }
