@@ -1,0 +1,367 @@
+% !TeX program = pdflatex
+% !TeX TXS-program:compile = txs:///pdflatex/
+% !TeX TS-program = pdflatex
+% !BIB program = biber
+% !TeX TXS-program:bibliography = txs:///biber
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  FUNDAMENTAL PACKAGES  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\usepackage[utf8]{inputenc}
+
+\usepackage[LGR, T1]{fontenc}  % LGR needed for sansserif math
+
+\usepackage[ngerman, american, USenglish]{babel}  % German and US English hyphenation and quotation marks
+\selectlanguage{USenglish}
+
+\usepackage{calc}  % Enables calculations for lengths
+\usepackage[nomessages]{fp}	 % Enables calculations in LaTeX
+
+\usepackage{etoolbox}  % Enables manipulating LaTeX commmands via \preto, \appto, \patchcmd, etc.
+\usepackage{xpatch}  % Enables manipulating LaTeX commmands via \xpatchcmd etc.
+
+\PassOptionsToPackage{cmyk}{xcolor}
+\definecolor{UBonnBlue}  {cmyk}{1.00, 0.70, 0.00, 0.00}
+\definecolor{UBonnYellow}{cmyk}{0.00, 0.20, 1.00, 0.00}
+\definecolor{UBonnGray}  {cmyk}{0.00, 0.00, 0.15, 0.55}
+\colorlet{SpotColor}{UBonnBlue}
+\definecolor{CMYKBlack}{cmyk}{0.00, 0.00, 0.00, 1.00}
+\colorlet{CMYKGray}{CMYKBlack!50!}
+\setbeamercolor{normal text}{fg = CMYKBlack}
+\setbeamercolor{alerted text}{fg = SpotColor}
+\setbeamerfont{alerted text}{family = \sffamily, series = \bfseries}
+
+\setbeamercolor{block alerted title}{bg = SpotColor, fg = white}
+\setbeamercolor{block body}{fg = CMYKBlack}
+
+\setbeamercolor{title in headline}{fg = SpotColor}
+\setbeamercolor{institute in headline}{fg = CMYKBlack}
+
+\hypersetup{
+	colorlinks = true,
+	allcolors = SpotColor
+}
+\urlstyle{same}
+\let \urlorig \url
+\renewcommand{\url}[1]{\textcolor{SpotColor}{\urlorig{#1}}}
+\let \hreforig \href
+\renewcommand{\href}[2]{\textcolor{SpotColor}{\hreforig{#1}{#2}}}
+\newcommand{\email}[1]{\href{mailto:#1}{\nolinkurl{#1}}}
+
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPboxrulesize}{1pt}
+\textblockrulecolor{SpotColor}
+
+\usepackage{ragged2e}
+
+% microtype enables ``hanging punctuation'' and other neat microtypographic features
+\ifxetex
+	\usepackage[protrusion = true, expansion = false]{microtype}
+\else
+	\usepackage[protrusion = true, expansion = false, kerning = true]{microtype}
+\fi
+
+% Use the bm (= boldmath) package for better support of setting math in bold ==>
+% Prevent the "Too many math fonts used" error:
+\newcommand{\bmmax}{0}
+\newcommand{\hmmax}{0}
+\usepackage{bm}
+% <==
+
+% Packages for creating better-looking tables
+
+\usepackage{tabularray}
+\UseTblrLibrary{booktabs, siunitx}
+\renewcommand{\lTblrDefaultHruleColorTl}{SpotColor}
+\renewcommand{\lTblrDefaultVruleColorTl}{SpotColor}
+\addtolength{\abovesep}{25pt}
+\addtolength{\belowsep}{20pt}
+
+\setlength{\cmidrulewidth}{0.67pt}
+\setlength{\lightrulewidth}{0.67pt}
+\setlength{\heavyrulewidth}{1pt}
+\addtolength{\aboverulesep}{5pt}  % Make tables a little more spacious
+\addtolength{\belowrulesep}{7.5pt}
+
+\sisetup{
+	%detect-all,
+	mode = match,
+	propagate-math-font = true,
+	reset-math-version = false,
+	reset-text-family = false,
+	reset-text-series = false,
+	reset-text-shape = false,
+	text-family-to-math = true,
+	text-series-to-math = true,
+	%round-integer-to-decimal = true,
+	%tight-spacing            = true,
+	%group-digits             = true,
+	%group-minimum-digits     = 5,
+	%group-separator          = {\kern 1pt},
+	table-align-text-before  = false,
+	table-align-text-after   = false,
+	%input-signs              = + -,
+	%input-symbols            = {*} {**} {***},
+	input-open-uncertainty   = ,
+	input-close-uncertainty  = ,
+	%table-align-text-post    = false,
+	retain-explicit-plus
+}
+\NewTblrColumnType{T}[2][]{S[table-format = {{**}#2{-**}}, #1]}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%  BEAMER SETTINGS  %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+% Use the beamerposter package for laying out the poster:
+% \usepackage[size = a0, scale = 1.1]{beamerposter}
+	% A0: 840 mm by 1188 mm in beamerposter
+\usepackage[size = custom, width = 84.1, height = 118.9, scale = 1.2]{beamerposter}
+	% 841 mm by 1189 mm: A0
+\beamertemplatenavigationsymbolsempty
+
+\usefonttheme{professionalfonts}
+
+\newcommand{\highlight}[1]{\alert{\textbf{#1}}}
+
+% Make itemize, enumerate, and description justified instead of flushleft
+% ==>
+\let\tempItemizeBeg\itemize
+\let\tempItemizeEnd\enditemize
+\renewenvironment{itemize}{\tempItemizeBeg\justifying}{\tempItemizeEnd}
+\let\tempEnumerateBeg\enumerate
+\let\tempEnumerateEnd\endenumerate
+\renewenvironment{enumerate}{\tempEnumerateBeg\justifying}{\tempEnumerateEnd}
+\let\tempDescriptionBeg\description
+\let\tempDescriptionEnd\enddescription
+\renewenvironment{description}{\tempDescriptionBeg\justifying}{\tempDescriptionEnd}
+% <==
+
+% Add white space before lists and between items inside lists
+% ==>
+\makeatletter
+\def\@listi{\leftmargin\leftmarginii
+	\topsep 0.333333\baselineskip % Spacing before lists
+	\parsep 0\p@ \@plus\p@
+	\itemsep 0.333333\baselineskip} % Spacing between items
+\makeatother
+% <==
+\setbeamersize{description width = 0.55\leftmarginii}
+
+\setbeamertemplate{enumerate item}{\textbf{\theenumi}}
+\setbeamertemplate{itemize item}{\raisebox{-1.5pt}{\textbf{\textbullet}}}
+\setbeamercolor{item}{fg = SpotColor}
+
+\setbeamerfont{structure}{family = \sffamily, shape = \upshape, series = \bfseries}
+
+\setbeamerfont{title}{series = \bfseries}
+\setbeamercolor{title}{fg = SpotColor}
+
+% Poster title
+\setbeamertemplate{headline}{}
+\setbeamertemplate{footline}{}
+\AtBeginDocument{%
+	\begin{textblock*}{\paperwidth-\leftmargin-\rightmargin}(\leftmargin, \topmargin)
+		\vspace{-12.5pt}\renewcommand{\baselinestretch}{0.85}%
+		\Huge\textbf{\textsf{\textcolor{SpotColor}{%
+			\strut\inserttitle\strut%
+		}}}\\[-40pt]
+		{\color{SpotColor}\rule{\linewidth}{1pt}\\[-13.5pt]}
+		\usebeamercolor{author in headline}{\Large\textsf{\strut\insertauthor\strut}}\\[-17.5pt]
+		\usebeamercolor{institute in headline}{\large\textsf{\strut\insertinstitute\strut}}
+	\end{textblock*}%
+}
+% Regular block definition
+\setbeamerfont{block title}{family = \sffamily, series = \bfseries}
+\setbeamercolor{block title}{fg = SpotColor}
+\setbeamertemplate{block begin}{
+	\par\vskip\medskipamount
+	\begin{beamercolorbox}[colsep* = 0ex, dp = 30pt, left]{block title}
+		\vskip-0.25cm
+		\usebeamerfont{block title}%
+		\large\strut\insertblocktitle\\[-20pt]
+		\rule{\linewidth}{1pt}\\[15pt]
+	\end{beamercolorbox}
+	{\parskip0pt\par}
+	\ifbeamercolorempty[bg]{block title}
+	{}
+	{\ifbeamercolorempty[bg]{block body}{}{\nointerlineskip\vskip-0.5pt}}
+	\usebeamerfont{block body}
+	\vskip-0.75cm
+	\begin{beamercolorbox}[colsep* = 0ex,vmode]{block body}
+		\setlength{\baselineskip}{36pt}%
+		\sloppypar\justifying%
+}
+\setbeamertemplate{block end}{
+	\end{beamercolorbox}
+	\vskip\smallskipamount
+}
+
+% \left(  block definition (with frame)
+\setbeamerfont{block alerted title}{parent = structure, series = \fontseries{\savesfbfseries}\selectfont}
+\newlength{\inboxwd}
+\newlength{\iinboxwd}
+\newlength{\inboxrule}
+\setbeamertemplate{block alerted begin}{%
+	\par
+	\begin{beamercolorbox}[sep = 25pt, rounded = false, dp = 2pt, leftskip = 12pt, rightskip = 12pt]{block alerted title}
+		\colorlet{codecolor}{SpotColor!25}%
+		\colorlet{SpotColor}{white}%
+		\vskip-2pt%
+		\usebeamerfont{block alerted title}%
+		{\sloppy\large\insertblocktitle}%
+	\end{beamercolorbox}
+	{\parskip0pt\par}
+	\usebeamerfont{block body}
+	\vskip-0.25in
+	\begin{beamercolorbox}[sep = 0.5cm, rounded = false, center]{block body}
+	\setlength{\inboxwd}{\linewidth}
+	\addtolength{\inboxwd}{-1cm}
+		\begin{beamercolorbox}[rounded = false, wd = {\inboxwd}, center]{block body}
+		\setlength{\iinboxwd}{\inboxwd}
+		\setlength{\inboxrule}{\inboxwd}
+		\addtolength{\iinboxwd}{-0.5cm}
+		\addtolength{\inboxrule}{0.5cm}
+		\begin{center}
+			\begin{minipage}{\iinboxwd}
+				\centering%
+				\sffamily%
+}
+\setbeamertemplate{block alerted end}{%
+				\end{minipage}
+			\end{center}
+		\end{beamercolorbox}
+	\end{beamercolorbox}
+	\vskip\smallskipamount%
+}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  BIBLIOGRAPHY SETTINGS  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%\usepackage{natbib}
+\newlength{\bibindent}
+\newlength{\bibitemsep}
+\newlength{\bibsep}
+
+\setbeamertemplate{bibliography item}{}
+\setbeamercolor{bibliography entry author}  {fg = SpotColor}
+\setbeamercolor{bibliography entry title}   {fg = SpotColor}
+\setbeamercolor{bibliography entry location}{fg = SpotColor}
+\setbeamercolor{bibliography entry note}    {fg = SpotColor}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%
+%%  MISCELLANEOUS  %%
+%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\affilindicator}[1]{\textsuperscript{\kern.75pt \textit{#1}}}
+\usepackage[math]{blindtext}  % For debugging only
+\makeatletter
+\def\blindtext@american{}
+\makeatother
+
+% Allow for fine-grained scaling of font sizes
+% ==>
+\usepackage{relsize}
+\renewcommand\RSpercentTolerance{1}
+% Enabling slightly reduced font for CAPS:
+\newcommand{\caps}[1]{\textscale{0.96}{\textls[35]{\MakeUppercase{#1}}}}
+% <==
+
+\colorlet{codecolor}{SpotColor!75}
+\newcommand{\code}[1]{\textcolor{codecolor}{\texttt{#1}}}
+
+\newcommand{\sidenote}[1]{{\color{gray}#1}}
+
+% Miscellaneous additional mathematical symbols etc. (e.g., \coloneqq)
+\usepackage{mathtools}
+\newcommand{\divslash}{{{\kern-0.15em}\mathbin{/}{\kern-0.2em}}}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%
+%%  DOCUMENT LAYOUT  %%
+%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\setlength{\leftmargin}{40.5mm}
+\setlength{\rightmargin}{\leftmargin}
+
+\newenvironment{parblock}[1]{%
+	\begin{block}{#1}%
+		\setlength{\parindent}{\baselinestretch\baselineskip}%
+		\noindent\strut\ignorespaces%
+}%
+{%
+	\end{block}%
+}
+
+\newcommand{\numcols}{3}
+\FPeval{\numcolsminusone}{\numcols-1}
+
+\newlength{\colsep}
+\setlength{\colsep}{15.5mm}
+\newlength{\totalcolsep}
+\setlength{\totalcolsep}{\numcolsminusone\colsep}
+
+\newlength{\colwidth}
+\setlength{\colwidth}{(\paperwidth-\leftmargin-\rightmargin-\totalcolsep)/\numcols}
+
+\setbeamersize{text margin left = \leftmargin, text margin right = \rightmargin}
+
+\setlength{\topmargin}{34.5mm}
+\setlength{\textheight}{\paperheight-2\topmargin}
+
+\setlength{\fboxsep}{0pt}%
+\setlength{\fboxrule}{1pt}%
+
+\frenchspacing
+
+\usepackage{tikz}
+\usetikzlibrary{calc}
+\usepackage{printlen}
+\uselengthunit{mm}
+
+\newcommand{\displaymargins}{%
+	\begin{tikzpicture}[remember picture, overlay, x = 1mm, y = 1mm]
+		\node[orange, anchor=west] at ($(current page.north west) + (\leftmargin, -\topmargin)$) {\textsf{\textbf{\printlength{\leftmargin}, \printlength{\topmargin}}}};
+		% Top margin
+		\draw[orange] ($(current page.north west) + (\leftmargin, -\topmargin)$) -- ($(current page.north east) + (-\rightmargin, -\topmargin)$);
+		% Left margin
+		\draw[orange] ($(current page.north west) + (\leftmargin, -\topmargin)$) -- ($(current page.south west) + (\leftmargin, \topmargin)$);
+		% Right margin
+		\draw[orange] ($(current page.north east) + (-\rightmargin, -\topmargin)$) -- ($(current page.south east) + (-\rightmargin, \topmargin)$);
+		% Bottom margin
+		\draw[orange] ($(current page.south west) + (\leftmargin, \topmargin)$) -- ($(current page.south east) + (-\rightmargin, \topmargin)$);
+	\end{tikzpicture}%
+}
+\newcommand{\displaygrid}{%
+	\begin{tikzpicture}[remember picture, overlay, x = 1mm, y = 1mm]
+		% Horizontal rules
+		\foreach \i in {0, 20, 40, 60, ..., 1120}{
+			\draw[magenta!50] ($(current page.north west) + (\leftmargin, -\topmargin) + (0, -\i)$) -- ($(current page.north east) + (-\rightmargin, -\topmargin) + (0, -\i)$);
+		}
+		% Vertical rules
+		\foreach \i in {0, 20, 40, 60, ..., 760}{
+			\draw[magenta!50] ($(current page.north west) + (\leftmargin, -\topmargin) + (\i, 0)$) -- ($(current page.south west) + (\leftmargin, \topmargin) + (\i, 0)$);
+		}
+	\end{tikzpicture}%
+}

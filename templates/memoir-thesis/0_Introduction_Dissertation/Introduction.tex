@@ -1,0 +1,36 @@
+% !TeX TS-program = pdflatex
+% !BIB program = biber
+
+
+
+\makeatletter
+\renewcommand{\@makefnmark}{{\sufigures\@makefnmarkorig}}
+\makeatother
+
+\blindtext[1]%
+\unskip\unskip\unskip\footnote{A~test footnote.}
+
+\knutext
+
+Let us cite some publications \citep{Andersen2008, Andreoni2012, Balakrishnan2016, Koszegi2013, Bursztyn2025}. With the options set for BibLaTeX in the preamble, citations in the body text are automatically sorted chronologically---irrespective of the order of the ``citekeys'' in your input. Of course, entries are sorted alphabetically by author surname in the list of references.
+
+%\begin{table}[t!]
+%	\caption{Characters Contained in the Serif Font: \savermdefaultfortext}
+%	\rmfamily
+%	\makeatletter
+%	\xfonttable{\f@encoding}{\f@family}{\f@series}{\f@shape}
+%	\makeatother
+%\end{table}
+%
+%\begin{table}[t!]
+%	\caption{Characters Contained in the Sans-Serif Font: \savesffamily}
+%	\sffamily
+%	\makeatletter
+%	\xfonttable{\f@encoding}{\f@family}{\f@series}{\f@shape}
+%	\makeatother
+%\end{table}
+
+\Blindtext
+
+\autoref{Ch1:diss:JMP} consists of my job market paper. I~enjoyed writing that paper a~lot. This also holds for the paper that makes up \autoref{Ch2:diss:MySecondPaper} of this dissertation. \autoref{Ch3:diss:MathTests} includes a~large variety of tests to judge the quality of the typesetting of mathematical formulas.
+% Make sure to include the chapter prefixes defined in the root document (Template_Dissertation.tex) in the cross-chapter references.

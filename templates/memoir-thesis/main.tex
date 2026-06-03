@@ -1,0 +1,388 @@
+% !TeX program = pdflatex
+% !TeX TS-program = pdflatex
+% !TeX TXS-program:compile = txs:///pdflatex/
+
+% !BIB program = biber
+% !BIB TS-program = biber
+% !TeX TXS-program:bibliography = txs:///biber
+
+
+
+
+%%%%%%%%%%%%%%%%
+%%  PREAMBLE  %%
+%%%%%%%%%%%%%%%%
+
+
+% To ``accept'' all changes in the document:
+%\PassOptionsToPackage{final}{changes}
+%\PassOptionsToPackage{disable}{todonotes}
+
+
+\documentclass[11pt, a4paper, twoside]{book}
+% Use option ``fleqn'' for left-aligned display formulae
+
+\newcommand{\dissafterdefense}{1}
+% See https://www.rsf.uni-bonn.de/dekanat/Formulare/vorgaben-pflichtexemplare-wiwi/:
+% Set to 1 for the final version AFTER the defense, because only after the defense is the second page (which lists the date of the defense and the names of the supervisors) to be included!
+% The same applies to the ``Tag der Promotion'' note on the title page.
+% Also the CV at the end of the disseration is to be included only after the defense.
+
+\newcommand{\disstitle}
+	{Essays in Theoretical Microeconomics and\unskip\nobreak\ Empirical\unskip\nobreak\ Macroecoconomics with\unskip\nobreak\ Implications for Social Policy All\unskip\nobreak\ Around\unskip\nobreak\ the\unskip\nobreak\ World}
+\newcommand{\dissauthor}
+	{\v{U}\H{o}~R.~B{\`e}ta \c{Z}\^ane-{\AA}l}
+\newcommand{\dissbornin}
+	{Summacumlaudeville}
+\newcommand{\disssubmitdate}
+	{December~2025}
+\newcommand{\dissdean}
+	{Prof.~Dr. Martin Böse}
+\newcommand{\dissfirstsupervisor}
+	{Lou~E. Vu{\"i}-T{\o}n}
+\newcommand{\disssecondsupervisor}
+	{Prof.~Dr. V\H{a}e-R\'ee Sm\k{a}rt}
+\newcommand{\dissyear}
+	{2025}
+\newcommand{\dissdatedefense}
+	{24.~Dezember~2025}
+
+\input    {0_0_Preamble/Preamble_Fundamental_packages}
+\hypersetup{pdftitle={\disstitle}, pdfauthor={\dissauthor}}
+\input    {0_0_Preamble/Preamble_Page_layout_dissertation}
+\input    {0_0_Preamble/Preamble_Page_layout_general}
+\subimport{0_0_Preamble/}{Preamble_Fonts_Charter_FiraSans}
+\input    {0_0_Preamble/Preamble_Sansserif_math}
+\input    {0_0_Preamble/Preamble_BibLaTeX_AER}  %\input{0_0_Preamble/Preamble_BibLaTeX_APA}
+\input    {0_0_Preamble/Preamble_Commenting_and_highlighting}
+\input    {0_0_Preamble/Preamble_Miscellaneous}
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%  LOAD THE .BIB FILE(S)  %%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%% If desired, set up deviations from the default bibliography settings:
+%\ExecuteBibliographyOptions{
+%	compresspages = false,
+%	uniquename = true, uniquelist = true, maxbibnames = 99
+%}
+%% % Full author list on first citation, ``et al.'' only from second citation onwards:
+%% See https://tex.stackexchange.com/questions/478750/biblatex-first-citation-all-names-after-that-et-al:
+%\AtEveryCitekey{%
+%  \ifciteseen
+%    {}
+%    {\defcounter{maxnames}{6}}%
+%}
+
+\bibliography{Library.bib}
+\addbibresource{biblatex-examples-ms.bib}
+
+
+
+
+%%%%%%%%%%%%
+%%  BODY  %%
+%%%%%%%%%%%%
+
+
+\begin{document}
+
+
+% Save original definitions of the referencing commands
+\makeatletter
+\let \labelorig \label
+\let \label@in@display@orig \label@in@display%
+\makeatother
+\let \reforig \ref
+\let \eqreforig \eqref
+\let \autoreforig \autoref
+\let \hyperreforig \hyperref
+\let \pagereforig \pageref
+
+
+\begin{refsection}
+
+\input{0_1_Frontmatter_Dissertation/Frontmatter}
+	% use \input here, because \subimport prevents generation of the ToC
+
+% Any citation occurring in a figure or table caption has to be included here!
+% Otherwise it will not appear correctly in the list of figures/tables.
+% ==>
+\nocite{Gerhardt2017}
+% <==
+
+\end{refsection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  INTRODUCTION  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\begin{refsection}
+
+\chapter*{Introduction}
+\label{diss:intro}
+\addcontentsline{toc}{chapter}{Introduction}
+\chaptermark{Introduction}
+
+\graphicspath{{0_Introduction_Dissertation/}}
+\input{0_Introduction_Dissertation/Introduction}
+
+\begin{refcontext}[sorting=nyt]
+	% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+	\phantomsection
+	\printbibliography[heading=subbibliography]
+\end{refcontext}
+
+\end{refsection}
+
+
+\NewTblrColumnType{E}{S[table-format = {\texteuro}2.2, table-align-text-before = true]}%
+\NewTblrColumnType{U}{S[table-format = {**}+1.3{-**}, round-mode = places, round-precision = 3]}%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 1  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\newcommand{\currentchapter}{Ch1}
+
+% Redefine the referencing commands to be chapter-specific in order to
+% avoid erroneous cross-references from one chapter to another ==>
+\makeatletter
+\renewcommand{\label}[1]{\labelorig{\currentchapter:#1}}
+% Based on https://tex.stackexchange.com/a/135995:
+\renewcommand{\label@in@display}[1]{\label@in@display@orig{\currentchapter:#1}}
+\makeatother
+\renewcommand{\ref}[1]{\reforig{\currentchapter:#1}}
+\renewcommand{\eqref}[1]{(\ref{#1})}
+\renewcommand{\autoref}[1]{\autoreforig{\currentchapter:#1}}
+\renewcommand{\hyperref}[2][]{\hyperreforig[\currentchapter:#1]{#2}}
+\renewcommand{\pageref}[1]{\pagereforig{\currentchapter:#1}}
+% <==
+% Extend \renewcommand{\label}{...} to figure environment
+\let \origfigure \figure
+\let \origendfigure \endfigure
+\renewenvironment{figure}[1][]{%
+	\origfigure[#1]%
+	\renewcommand{\label}[1]{%
+		\labelorig{\currentchapter:##1}%
+	}%
+}{\origendfigure}
+% Extend \renewcommand{\label}{...} to table environment
+\let \origtable \table
+\let \origendtable \endtable
+\renewenvironment{table}[1][]{%
+	\origtable[#1]%
+	\renewcommand{\label}[1]{%
+		\labelorig{\currentchapter:##1}%
+	}%
+}{\origendtable}
+
+\begin{refsection}
+
+% Save old footnote definition
+\makeatletter
+\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
+\makeatother
+\chapter
+	[My Job Market Paper]
+	{My Job Market Paper%
+	 \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
+	}
+\label{diss:JMP}
+% Use footnote symbols instead of numbers
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[1]{\:\protect\input{1_Example_Content/1_Introduction/Acknowledgments}}
+% Switch back to the original footnote definition
+\renewcommand{\thefootnote}{\thefootnoteorig}
+\makeatletter
+\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+\renewcommand{\@makefnmark}{\@makefnmarkorig}
+\makeatother
+\setcounter{footnote}{0}
+
+\graphicspath{{1_Example_Content/}}
+% \subimport enables execution of \input commands in subdocuments without having to adjust paths
+% Do not use \subimport*{...} (i.e., the asterisk version), since this will lead to
+% font issues.
+\subimport{1_Example_Content/1_Introduction/}{Introduction}
+\subimport{1_Example_Content/2_Methods/}{Design}
+\subimport{1_Example_Content/2_Methods/}{Predictions_dissertation}
+\subimport{1_Example_Content/3_Results/}{Results}
+\subimport{1_Example_Content/3_Results/}{Structural_Estimation}
+\subimport{1_Example_Content/4_Discussion/}{Discussion}
+\subimport{1_Example_Content/5_Conclusion/}{Conclusion}
+
+\FloatBarrier
+\clearpage
+
+\begin{subappendices}
+	\label{sec:appendix}
+	\subimport{1_Example_Content/9_Appendix/}{Attention}
+	\FloatBarrier
+	\clearpage
+	\subimport{1_Example_Content/9_Appendix/}{Additional_Figures}
+	\FloatBarrier
+	\clearpage
+	\subimport{1_Example_Content/9_Appendix/}{siunitx_Examples}
+	\clearpage
+	\FloatBarrier
+		% \clearpage must be issued INSIDE the subappendices environment
+		% for the pagestyle to be applied correctly
+\end{subappendices}
+
+\begin{refcontext}[sorting=nyt]
+	% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+	\phantomsection
+	\printbibliography[heading=subbibliography]
+\end{refcontext}
+
+\end{refsection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 2  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\currentchapter}{Ch2}
+
+\begin{refsection}
+
+% Save old footnote definition
+\makeatletter
+\renewcommand{\@makefntext}[1]{\@makefntextorig{#1}}
+\makeatother
+\chapter
+	[My Second Paper Has a~Long Title That\nolinebreak\  Spans Two Lines]
+	{My Second Paper Has a\nolinebreak\ Long Title That\nolinebreak\  Spans Two Lines%
+	 \setcounter{footnote}{1}\textsuperscript{\Large\fnsymbol{footnote}}%
+	}
+\label{diss:MySecondPaper}
+% Use footnote symbols instead of numbers
+\renewcommand{\thefootnote}{\fnsymbol{footnote}}
+\footnotetext[1]{\:\protect\input{1_Example_Content/1_Introduction/Acknowledgments}}
+% Switch back to the original footnote definition
+\renewcommand{\thefootnote}{\thefootnoteorig}
+\makeatletter
+\renewcommand{\@makefntext}[1]{\@makefntextcustom{#1}}
+\renewcommand{\@makefnmark}{\@makefnmarkorig}
+\makeatother
+\setcounter{footnote}{0}
+\vspace{-\bigskipamount}\textsf{\textit{Joint with Adam Smith, Janet Smith, and Jeremiah Smith}} \bigskip
+
+\graphicspath{{1_Example_Content/}}
+\subimport{1_Example_Content/1_Introduction/}{Introduction}
+\subimport{1_Example_Content/2_Methods/}{Design}
+\subimport{1_Example_Content/2_Methods/}{Predictions_dissertation}
+\subimport{1_Example_Content/3_Results/}{Results}
+\subimport{1_Example_Content/3_Results/}{Structural_Estimation}
+\subimport{1_Example_Content/4_Discussion/}{Discussion}
+\subimport{1_Example_Content/5_Conclusion/}{Conclusion}
+
+\FloatBarrier
+\clearpage
+
+\begin{subappendices}
+	\label{sec:appendix}
+	\FloatBarrier
+	\clearpage
+	\subimport{1_Example_Content/9_Appendix/}{Attention}
+	\FloatBarrier
+	\clearpage
+	\subimport{1_Example_Content/9_Appendix/}{Additional_Figures}
+	\FloatBarrier
+	\clearpage
+	\subimport{1_Example_Content/9_Appendix/}{siunitx_Examples}
+	\FloatBarrier
+	\clearpage
+		% \clearpage must be issued INSIDE the subappendices environment
+		% for the pagestyle to be applied correctly
+\end{subappendices}
+
+\begin{refcontext}[sorting=nyt]
+	% Sort BIBLIOGRAPHY by alphabet (while CITATIONS are sorted by year)
+	\phantomsection
+	\printbibliography[heading=subbibliography]
+\end{refcontext}
+
+\end{refsection}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  CHAPTER 3  %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\renewcommand{\currentchapter}{Ch3}
+
+%\begin{comment}
+
+\begin{refsection}
+
+\chapter{Math Tests}
+\label{diss:MathTests}
+
+{%
+	\setlength{\parindent}{0cm}
+	%\setlength{\mathindent}{0cm}  % Only for ``fleqn'' option
+
+	\input{2_Math_Tests/mathtest_defs}
+
+	\renewcommand{\showfamily}{{\color{magenta}%
+		Serif%
+	}}
+	{\rmfamily\mdseries%
+	 \input{2_Math_Tests/mathtest}%
+	 \subsection{Math ``Torture'' Test \showfamily}
+	 \input{2_Math_Tests/mathtest_TeXbook}%
+ 	}
+
+	\renewcommand{\showfamily}{{\color{magenta}%
+		Serif Bold%
+	}}
+	{\rmfamily\bfseries%
+	 \input{2_Math_Tests/mathtest}%
+	 \subsection{Math ``Torture'' Test \showfamily}
+	 \input{2_Math_Tests/mathtest_TeXbook}%
+ 	}
+
+	\renewcommand{\showfamily}{{\color{magenta}%
+		Sans Serif%
+	}}
+	{\sffamily\mdseries%
+	 \input{2_Math_Tests/mathtest}%
+	 \subsection{Math ``Torture'' Test \showfamily}
+	 \input{2_Math_Tests/mathtest_TeXbook}%
+	}
+
+	\renewcommand{\showfamily}{{\color{magenta}%
+		Sans Serif Bold%
+	}}
+	{\sffamily\bfseries%
+	 \input{2_Math_Tests/mathtest}%
+	 \subsection{Math ``Torture'' Test \showfamily}
+	 \input{2_Math_Tests/mathtest_TeXbook}%
+	}
+}
+
+\end{refsection}
+
+%\end{comment}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%  FORMAL STUFF  %%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\ifnum \dissafterdefense=1
+	\begin{refsection}
+		\selectlanguage{ngerman}
+		\chapter*{%
+			Lebenslauf%
+			%	\setcounter{footnote}{1}\textsuperscript{\fnsymbol{footnote}}
+		}
+		\input{9_Formal_Stuff/CV}
+	\end{refsection}
+\fi
+
+
+\end{document}
