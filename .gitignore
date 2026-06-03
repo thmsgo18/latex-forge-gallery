@@ -1,0 +1,24 @@
+# LaTeX build artifacts
+*.aux
+*.log
+*.toc
+*.out
+*.bbl
+*.blg
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.snm
+*.nav
+*.vrb
+*.idx
+*.ind
+*.ilg
+*.bcf
+*.run.xml
+*.synctex.gz
+*.xdv
+*.upa
+*.upb
+.DS_Store

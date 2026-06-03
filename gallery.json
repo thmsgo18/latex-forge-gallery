@@ -320,7 +320,7 @@
         "stage",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     },
     {
       "name": "project-report",
@@ -364,7 +364,7 @@
         "dark-theme",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     },
     {
       "name": "beamer-elegant",
@@ -480,7 +480,7 @@
         "academic",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     },
     {
       "name": "academic-poster",
@@ -512,7 +512,7 @@
     },
     {
       "name": "legrand-orange-book",
-      "description": "The Legrand Orange Book — a structured book template with color-coded chapters",
+      "description": "The Legrand Orange Book \u2014 a structured book template with color-coded chapters",
       "category": "book",
       "source_url": "https://www.latextemplates.com/template/the-legrand-orange-book",
       "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/legrand-orange-book",
@@ -597,7 +597,7 @@
         "ats-friendly",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     },
     {
       "name": "rover-resume",
@@ -806,7 +806,7 @@
         "modern",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     },
     {
       "name": "moderncv-letter",
@@ -837,7 +837,7 @@
         "modern",
         "pdflatex"
       ],
-      "engine": "pdflatex"
+      "engine": "xelatex"
     }
   ]
 }

@@ -1,152 +1,48 @@
-%% start of file `template_motivation.latex'.
-%% Copyright 2020 Quentin Leblanc (quentin2296@hotmail.fr)
-%
-% Template for motivation letter for pandoc users
-%
-% See README.md for more informations
-%
-% This work may be distributed and/or modified under the
-% conditions of the LaTeX Project Public License, either version 1.3
-% of this license or (at your option) any later version.
-% The latest version of this license is in
-%   http://www.latex-project.org/lppl.txt
-% and version 1.3 or later is part of all distributions of LaTeX
-% version 2005/12/01 or later.
-%
-% This work has the LPPL maintenance status `maintained'.
-% 
-% The Current Maintainer of this work is M. Y. Name.
-
-\documentclass[11pt, roman]{$if(beamer)$$documentclass$$else$$if(book)$scrbook$else$scrartcl$endif$$endif$}
-
-\usepackage{ragged2e}                               %package for text justification                               
-
-% character encoding
-\usepackage[utf8]{inputenc}                       % if you are not using xelatex ou lualatex, replace by the encoding you are using
-
-% adjust the page margins
+\documentclass[11pt, a4paper]{scrartcl}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \usepackage{geometry}
-\usepackage{geometry}
-\geometry{
- a4paper,
- total={170mm,257mm},
- left=30mm,
- right=30mm,
- top=25mm
-}
+\geometry{margin=2.5cm}
+\usepackage{parskip}
 
-% Language settings
-$if(lang)$
-  \usepackage[shorthands=off,$for(babel-otherlangs)$$babel-otherlangs$,$endfor$main=$babel-lang$]{babel}
-$if(babel-newcommands)$
-  $babel-newcommands$
-$endif$
-$else$
-  \usepackage{polyglossia}
-  \setmainlanguage[$polyglossia-lang.options$]{$polyglossia-lang.name$}
-$for(polyglossia-otherlangs)$
-  \setotherlanguage[$polyglossia-otherlangs.options$]{$polyglossia-otherlangs.name$}
-$endfor$
-$endif$
-
-
-\pagenumbering{gobble}
-
-%-----       Commands       --------------------------------------------------------
-
-\newcommand{\name}[2]{\def\names{#1}\def\surnames{#2}}
-\newcommand{\addressSender}[3]{\def\localizationSender{#1}\def\PCCitySender{#2}\def\CountrySender{#3}}
-\newcommand{\addressReceiver}[3]{\def\localizationReceiver{#1}\def\PCCityReceiver{#2}\def\CountryReceiver{#3}}
-\newcommand{\email}[1]{\def\email{#1}}
-\newcommand{\phone}[1]{\def\phone{#1}}
-\newcommand{\recipient}[2]{\def\receiver{#1}\def\company{#2}}
-
-\newcommand{\positionowner}{
-    \begin{FlushRight}
-    \large{\textbf{\names\hspace{0.1cm}\surnames}}\\
-    \localizationSender\\
-    \PCCitySender\\
-    \CountrySender\\
-    $if(yourPhone)$
-        tel: \phone\\
-    $endif$
-    $if(yourEmail)$
-        email: \email\\
-    $endif$
-    \vspace{0.1cm}
-    \today
-    \end{FlushRight}
-}
-
-\newcommand{\positionreceiver}{
-    \begin{FlushLeft}
-    \large{\textbf{\receiver}}\\
-    \company\\
-    \localizationReceiver\\
-    \PCCityReceiver\\
-    \CountryReceiver\\
-    \end{FlushLeft}
-}
-
-\newcommand{\makelettertitle}[1]{ 
-    \begin{FlushLeft}
-        \textbf{#1}
-        \vspace{0.5cm}
-    \end{FlushLeft}
-}
-
-
-\newcommand{\makeletterclosing}[1]{
-    \begin{FlushLeft}
-        \vspace{0.2cm}
-        {#1}\\[3em]
-        \vspace{0.5cm}
-        \names\hspace{0.1cm}\surnames
-    \end{FlushLeft}  
-}
-
-%-----       Vars       ---------------------------------------------------------
-
-\name{$yourNames$}{$yourSurnames$}
-
-\addressSender{$yourAddress$}{$yourPostalCode$, $yourCity$}{$yourCountry$}
-
-$if(yourPhone)$ 
-\phone{$yourPhone$}
-$endif$
-
-$if(yourEmail)$  
-\email{$yourEmail$}    
-$endif$
-
-\recipient{$receiver$}{$department$, $company$}
-\addressReceiver{$receiverAddress$}{$receiverPostalCode$, $receiverCity$}{$receiverCountry$}
-
-%----------------------------------------------------------------------------------
-%            content
-%----------------------------------------------------------------------------------
 \begin{document}
 
-%-----       Header       ---------------------------------------------------------
-\positionreceiver
-\positionowner
+\begin{flushright}
+  \textbf{John Doe} \\
+  123 Main Street \\
+  75001 Paris, France \\
+  john.doe@email.com \\
+  \today
+\end{flushright}
 
-\vspace{0.2cm}
+\vspace{1em}
 
-\makelettertitle{$subject$}
+\textbf{Hiring Manager} \\
+Company Name \\
+456 Business Ave \\
+City, Country
 
-%-----       letter       ---------------------------------------------------------
-% recipient data
-\begin{FlushLeft}
+\vspace{2em}
 
-$opening$,
+\textbf{Re: Application for [Position]}
 
-\vspace{0.5cm}
+\vspace{1em}
 
-$body$
+Dear Hiring Manager,
 
-\end{FlushLeft}
+I am writing to express my strong interest in the [Position] role at [Company]. With my background in [Field] and my experience in [Key Skills], I am confident that I would be a valuable asset to your team.
 
-\makeletterclosing{$closing$}
+During my previous role at [Previous Company], I successfully [Achievement 1] and [Achievement 2]. These experiences have equipped me with [Relevant Skills], which I am eager to apply in a dynamic environment like yours.
+
+I am particularly drawn to [Company] because of [Reason: mission, culture, products]. I believe my passion for [Domain] aligns perfectly with your organization's goals.
+
+I would welcome the opportunity to discuss how my skills and experience can contribute to your team. Thank you for considering my application.
+
+Yours sincerely,
+
+\vspace{2em}
+
+\textbf{John Doe}
 
 \end{document}
