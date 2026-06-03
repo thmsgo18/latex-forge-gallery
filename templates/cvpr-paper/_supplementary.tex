@@ -1,0 +1,23 @@
+\input{_constants}
+\review % \review OR \cameraready
+
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\input{cvpr_header}
+\myexternaldocument{_main}
+\begin{document}
+
+%% TITLE
+\title{\paperTitle}
+\author{\authorBlock}
+\maketitlesupplementary
+%%
+
+\appendix
+\input{12_appendix}
+
+{\small
+\bibliographystyle{ieeenat_fullname}
+\bibliography{11_references}
+}
+
+\end{document}

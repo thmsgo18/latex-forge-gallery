@@ -1,0 +1,31 @@
+\input{_constants}
+\cameraready % \review OR \arxiv OR \cameraready
+
+\pdfoutput=1
+\documentclass[10pt,twocolumn,letterpaper]{article}
+\input{cvpr_header}
+
+\unless\ifarxiv \myexternaldocument{_supplementary} \fi
+
+\begin{document}
+%% TITLE
+\title{\paperTitle}
+\author{\authorBlock}
+\maketitle
+
+\input{00_abstract}
+\input{01_intro}
+\input{02_related}
+
+\input{03_method}
+
+\input{10_conclusion}
+
+{\small
+\bibliographystyle{ieeenat_fullname}
+\bibliography{11_references}
+}
+
+\ifarxiv \clearpage \appendix \input{12_appendix} \fi
+
+\end{document}

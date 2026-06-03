@@ -1,0 +1,55 @@
+%% PACKAGES (also see cvpr_header.tex)
+
+\usepackage{graphicx}	
+\usepackage{amsmath}	
+\usepackage{amssymb}	
+\usepackage{booktabs}
+\usepackage{times}
+\usepackage{microtype}
+\usepackage{epsfig}
+\usepackage{caption}
+\usepackage{float}
+\usepackage{placeins}
+\usepackage{color, colortbl}
+\usepackage{stfloats}
+\usepackage{enumitem}
+\usepackage{tabularx}
+\usepackage{xstring}
+\usepackage{multirow}
+\usepackage{xspace}
+\usepackage{url}
+\usepackage{subcaption}
+\usepackage{xcolor}
+\usepackage[hang,flushmargin]{footmisc}
+
+% Unfortunately, this package interferes with arxiv's stamp
+\ifcamera \usepackage[accsupp]{axessibility} \fi
+
+%% MACROS
+
+% \newcommand{\authorname}[1]{{\textcolor{blue}{[Author: #1]}}}
+% ...
+
+% \newcommand{\commandname}{string\xspace}
+% \definecolor{colorname}{rgb}{0.92,0.49,0.19}
+
+% General
+
+\newcommand{\nbf}[1]{{\noindent \textbf{#1.}}}
+
+\newcommand{\supp}{supplemental material\xspace}
+\ifarxiv \renewcommand{\supp}{appendix\xspace} \fi
+
+\newcommand{\todo}[1]{{\textcolor{red}{[TODO: #1]}}}
+
+% Reviewer commands (1 to 5), e.g. \R{1}, \R{2}
+\newcommand{\R}[1]{{%
+    \textbf{%
+        \ifstrequal{#1}{1}{\textcolor{red}{R#1}}{%
+        \ifstrequal{#1}{2}{\textcolor{blue}{R#1}}{%
+        \ifstrequal{#1}{3}{\textcolor{magenta}{R#1}}{%
+        \ifstrequal{#1}{4}{\textcolor{teal}{R#1}}{%
+                           \textcolor{cyan}{R#1}%
+        }}}}%
+    }%
+}}
