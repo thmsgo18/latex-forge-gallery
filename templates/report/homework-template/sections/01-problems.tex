@@ -1,0 +1,107 @@
+\begin{homeworkProblem}
+    Give an appropriate positive constant \(c\) such that \(f(n) \leq c \cdot g(n)\) for all \(n > 1\).
+
+    \begin{enumerate}
+        \item \(f(n) = n^2 + n + 1\), \(g(n) = 2n^3\)
+        \item \(f(n) = n\sqrt{n} + n^2\), \(g(n) = n^2\)
+        \item \(f(n) = n^2 - n + 1\), \(g(n) = n^2 / 2\)
+    \end{enumerate}
+
+    \textbf{Solution}
+
+    We solve each algebraically to find a valid constant \(c\).
+
+    \textbf{Part One}
+    \[
+        \begin{split}
+            n^2 + n + 1 &\leq n^2 + n^2 + n^2 = 3n^2 \leq c \cdot 2n^3
+        \end{split}
+    \]
+    Thus \(c = 2\) is valid.
+
+    \textbf{Part Two}
+    \[
+        n^2 + n\sqrt{n} = n^2 + n^{3/2} \leq 2n^2 \leq c \cdot n^2
+    \]
+    Thus \(c = 2\).
+
+    \textbf{Part Three}
+    \[
+        n^2 - n + 1 \leq n^2 \leq c \cdot n^2/2
+    \]
+    Thus \(c = 2\).
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Let \(\Sigma = \{0, 1\}\). Construct a DFA \(A\) that recognizes binary numbers divisible by 5.
+
+    Let state \(q_k\) represent the remainder \(k \bmod 5\).
+
+    \begin{figure}[h]
+        \centering
+        \begin{tikzpicture}[shorten >=1pt,node distance=2cm,on grid,auto]
+            \node[state, accepting, initial] (q_0) {$q_0$};
+            \node[state] (q_1) [right=of q_0] {$q_1$};
+            \node[state] (q_2) [right=of q_1] {$q_2$};
+            \node[state] (q_3) [right=of q_2] {$q_3$};
+            \node[state] (q_4) [right=of q_3] {$q_4$};
+            \path[->]
+                (q_0) edge [loop above] node {0} (q_0)
+                      edge node {1} (q_1)
+                (q_1) edge node {0} (q_2)
+                      edge [bend right=-30] node {1} (q_3)
+                (q_2) edge [bend left] node {1} (q_0)
+                      edge [bend right=-30] node {0} (q_4)
+                (q_3) edge node {1} (q_2)
+                      edge [bend left] node {0} (q_1)
+                (q_4) edge node {0} (q_3)
+                      edge [loop below] node {1} (q_4);
+        \end{tikzpicture}
+        \caption{DFA recognizing binary multiples of 5.}
+        \label{fig:multiple5}
+    \end{figure}
+\end{homeworkProblem}
+
+\begin{homeworkProblem}
+    Write the pseudocode for \alg{Quick-Sort($list, start, end$)}.
+
+    \begin{algorithm}[]
+        \begin{algorithmic}[1]
+            \Function{Quick-Sort}{$list, start, end$}
+                \If{$start \geq end$}
+                    \State{} \Return{}
+                \EndIf{}
+                \State{} $mid \gets \Call{Partition}{list, start, end}$
+                \State{} \Call{Quick-Sort}{$list, start, mid - 1$}
+                \State{} \Call{Quick-Sort}{$list, mid + 1, end$}
+            \EndFunction{}
+        \end{algorithmic}
+        \caption{Quick-Sort}
+    \end{algorithm}
+\end{homeworkProblem}
+
+\pagebreak
+
+\begin{homeworkProblem}
+    Fit a line through the origin: \(Y_i = \beta_1 x_i + e_i\) with \(\E[e_i] = 0\) and \(\Var[e_i] = \sigma^2\).
+
+    \part
+    Find the least squares estimator \(\hat{\beta}_1\).
+
+    \solution
+
+    Minimising RSS gives:
+    \[
+        \hat{\beta}_1 = \frac{\sum x_i Y_i}{\sum x_i^2}
+    \]
+
+    \part
+    Compute the bias and variance of \(\hat{\beta}_1\).
+
+    \solution
+
+    \(\E[\hat{\beta}_1] = \beta_1\) (unbiased), \quad
+    \(\Var[\hat{\beta}_1] = \dfrac{\sigma^2}{\sum x_i^2}\).
+\end{homeworkProblem}
