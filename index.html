@@ -59,30 +59,12 @@
       background: linear-gradient(90deg, transparent, var(--green), transparent);
     }
 
-    .brand {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.75rem;
-      margin-bottom: 1.25rem;
+    .brand img {
+      width: 420px;
+      max-width: 90vw;
+      margin: 0 auto 0.5rem;
+      display: block;
     }
-
-    .terminal-icon {
-      font-family: 'JetBrains Mono', monospace;
-      font-size: 1.4rem;
-      color: var(--green);
-      line-height: 1;
-      text-shadow: 0 0 12px rgba(57,255,20,0.6);
-    }
-
-    .brand-name {
-      font-size: 2.75rem;
-      font-weight: 700;
-      letter-spacing: -0.03em;
-      line-height: 1;
-    }
-
-    .brand-name .w { color: var(--white); }
-    .brand-name .g { color: var(--green); text-shadow: 0 0 20px rgba(57,255,20,0.4); }
 
     .header-tagline {
       font-size: 1rem;
@@ -565,10 +547,7 @@
 <!-- ── HEADER ──────────────────────────────────────────── -->
 <header>
   <div class="brand">
-    <span class="terminal-icon">&gt;_</span>
-    <h1 class="brand-name">
-      <span class="w">LATEX&nbsp;</span><span class="g">FORGE</span>
-    </h1>
+    <img src="logo.png" alt="LaTeX Forge Gallery">
   </div>
   <p class="header-tagline">
     A curated collection of <strong>65 templates</strong> &mdash; install instantly with the latex-forge CLI.
