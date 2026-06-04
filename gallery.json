@@ -6,7 +6,7 @@
       "description": "Elegant CV template with colored sections and FontAwesome icons",
       "category": "cv",
       "source_url": "https://github.com/posquit0/Awesome-CV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/awesome-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/awesome-cv",
       "tags": [
         "cv",
         "resume",
@@ -21,7 +21,7 @@
       "description": "Two-column resume template with a clean, professional layout",
       "category": "cv",
       "source_url": "https://github.com/deedy/Deedy-Resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/deedy-resume",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/deedy-resume",
       "tags": [
         "cv",
         "resume",
@@ -35,7 +35,7 @@
       "description": "Another LaTeX CV template using TikZ for visual skill bars and timeline",
       "category": "cv",
       "source_url": "https://github.com/liantze/AltaCV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/altacv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/altacv",
       "tags": [
         "cv",
         "resume",
@@ -50,7 +50,7 @@
       "description": "A modern and highly customizable CV template with multiple styles",
       "category": "cv",
       "source_url": "https://github.com/moderncv/moderncv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/moderncv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/moderncv",
       "tags": [
         "cv",
         "resume",
@@ -64,7 +64,7 @@
       "description": "A hip and modern CV template with colorful sidebar design",
       "category": "cv",
       "source_url": "https://github.com/latex-ninja/hipster-cv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/hipster-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/hipster-cv",
       "tags": [
         "cv",
         "resume",
@@ -79,7 +79,7 @@
       "description": "CV template with a sidebar and skills display, designed to be skimmed in 20 seconds",
       "category": "cv",
       "source_url": "https://github.com/spagnuolocarmine/TwentySecondsCurriculumVitae-LaTex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/twenty-seconds-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/twenty-seconds-cv",
       "tags": [
         "cv",
         "resume",
@@ -94,7 +94,7 @@
       "description": "Clean academic CV template with automatic publication list from BibTeX",
       "category": "cv",
       "source_url": "https://github.com/jitinnair1/autoCV",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/developer-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/developer-cv",
       "tags": [
         "cv",
         "resume",
@@ -109,7 +109,7 @@
       "description": "Modern CV with a styled sidebar, based on the latexcv collection",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/sidebar-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/sidebar-cv",
       "tags": [
         "cv",
         "resume",
@@ -124,7 +124,7 @@
       "description": "A clean, simple, and elegant LaTeX style for thesis documents",
       "category": "thesis",
       "source_url": "https://github.com/derric/cleanthesis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/clean-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/clean-thesis",
       "tags": [
         "thesis",
         "dissertation",
@@ -138,7 +138,7 @@
       "description": "PhD thesis template for Cambridge University with extensive formatting options",
       "category": "thesis",
       "source_url": "https://github.com/kks32/phd-thesis-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/cambridge-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/cambridge-thesis",
       "tags": [
         "thesis",
         "phd",
@@ -154,7 +154,7 @@
       "description": "Professional dissertation template with polished typography and layout",
       "category": "thesis",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/memoir-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/memoir-thesis",
       "tags": [
         "thesis",
         "dissertation",
@@ -168,7 +168,7 @@
       "description": "Beautiful, pre-formatted templates for dissertations at Harvard, Princeton, and NYU",
       "category": "thesis",
       "source_url": "https://github.com/suchow/Dissertate",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/dissertate",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/dissertate",
       "tags": [
         "thesis",
         "dissertation",
@@ -182,7 +182,7 @@
       "description": "Book-style thesis template inspired by the elegant typography of Edward Tufte",
       "category": "thesis",
       "source_url": "https://github.com/Tufte-LaTeX/tufte-latex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/tufte-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/tufte-thesis",
       "tags": [
         "thesis",
         "book",
@@ -197,7 +197,7 @@
       "description": "Scientific paper template following modern academic conference standards",
       "category": "article",
       "source_url": "https://github.com/latextemplates/scientific-thesis-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/neurips-paper",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/neurips-paper",
       "tags": [
         "article",
         "paper",
@@ -212,7 +212,7 @@
       "description": "IEEE-style article template using the IEEEtran document class",
       "category": "article",
       "source_url": "https://github.com/latextemplates/IEEE",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/ieee-article",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/ieee-article",
       "tags": [
         "article",
         "ieee",
@@ -226,7 +226,7 @@
       "description": "LNCS/Springer-style academic article template for computer science conferences",
       "category": "article",
       "source_url": "https://github.com/latextemplates/LNCS",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/acm-article",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/acm-article",
       "tags": [
         "article",
         "acm",
@@ -242,7 +242,7 @@
       "description": "CVPR/ICCV conference paper template, up-to-date for CVPR 2026",
       "category": "article",
       "source_url": "https://github.com/apoorvkh/cvpr-latex-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/cvpr-paper",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/cvpr-paper",
       "tags": [
         "article",
         "cvpr",
@@ -257,7 +257,7 @@
       "description": "Clean arXiv-style preprint template with a modern look",
       "category": "article",
       "source_url": "https://github.com/kourgeorge/arxiv-style",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/arxiv-template",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/arxiv-template",
       "tags": [
         "article",
         "arxiv",
@@ -271,7 +271,7 @@
       "description": "Elsevier CAS journal article template for submitting to Elsevier publications",
       "category": "article",
       "source_url": "https://github.com/oyoycr/els-cas-templates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/elsarticle",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/elsarticle",
       "tags": [
         "article",
         "elsevier",
@@ -285,7 +285,7 @@
       "description": "Clean and elegant report template with bibliography support",
       "category": "report",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/elegant-report",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/elegant-report",
       "tags": [
         "report",
         "elegant",
@@ -299,7 +299,7 @@
       "description": "Professional technical/term paper template suitable for bachelor and master theses",
       "category": "report",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/technical-report",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/technical-report",
       "tags": [
         "report",
         "technical",
@@ -313,7 +313,7 @@
       "description": "UTBM-style internship report template with professional formatting",
       "category": "report",
       "source_url": "https://github.com/Juknum/UTBM-Internship-Report",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/internship-report",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/internship-report",
       "tags": [
         "report",
         "internship",
@@ -327,7 +327,7 @@
       "description": "Academic project report template with certificate and acknowledgement pages",
       "category": "report",
       "source_url": "https://github.com/k4rtik/latex-project-report-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/project-report",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/project-report",
       "tags": [
         "report",
         "project",
@@ -341,7 +341,7 @@
       "description": "A modern, minimal Beamer theme with a clean aesthetic (CC BY-SA 4.0)",
       "category": "presentation",
       "source_url": "https://github.com/matze/mtheme",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-metropolis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-metropolis",
       "tags": [
         "presentation",
         "beamer",
@@ -356,7 +356,7 @@
       "description": "Minimalist Beamer presentation theme with an elegant dark color scheme (MIT)",
       "category": "presentation",
       "source_url": "https://github.com/anishathalye/auriga",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-focus",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-focus",
       "tags": [
         "presentation",
         "beamer",
@@ -371,7 +371,7 @@
       "description": "Elegant Beamer presentation template with clean slides and figure support",
       "category": "presentation",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-elegant",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-elegant",
       "tags": [
         "presentation",
         "beamer",
@@ -385,7 +385,7 @@
       "description": "Professional Beamer presentation template with configurable colors and plots",
       "category": "presentation",
       "source_url": "https://github.com/klb2/beamer-presentation-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-corporate",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-corporate",
       "tags": [
         "presentation",
         "beamer",
@@ -400,7 +400,7 @@
       "description": "Simple, straightforward Beamer template with a focus on content",
       "category": "presentation",
       "source_url": "https://github.com/klingtnet/beamer-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-simple",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-simple",
       "tags": [
         "presentation",
         "beamer",
@@ -415,7 +415,7 @@
       "description": "Modern cover letter template with clean typography",
       "category": "letter",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/cover-letter-modern",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/letter/cover-letter-modern",
       "tags": [
         "letter",
         "cover-letter",
@@ -429,7 +429,7 @@
       "description": "Journal-style cover letter template with professional formatting (CC BY-SA 4.0)",
       "category": "letter",
       "source_url": "https://github.com/firefly-cpp/cover-letter-latex",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/formal-letter",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/letter/formal-letter",
       "tags": [
         "letter",
         "formal",
@@ -444,7 +444,7 @@
       "description": "Motivation letter template with LPPL license for academic and job applications",
       "category": "letter",
       "source_url": "https://github.com/MiraiKami/MotivationLetterLatexTemplate",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/motivation-letter",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/letter/motivation-letter",
       "tags": [
         "letter",
         "motivation",
@@ -458,7 +458,7 @@
       "description": "Landscape academic poster template built with Beamer",
       "category": "poster",
       "source_url": "https://github.com/HolgerGerhardt/TeXTemplates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/beamerposter-landscape",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/poster/beamerposter-landscape",
       "tags": [
         "poster",
         "beamer",
@@ -473,7 +473,7 @@
       "description": "Academic poster template using TikZposter with Lund University styling",
       "category": "poster",
       "source_url": "https://github.com/DavidGillsjo/LU-tikzposter",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/tikzposter",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/poster/tikzposter",
       "tags": [
         "poster",
         "tikz",
@@ -487,7 +487,7 @@
       "description": "Gemini-themed academic conference poster with modern design",
       "category": "poster",
       "source_url": "https://github.com/sleepymalc/LaTeX-Template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/academic-poster",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/poster/academic-poster",
       "tags": [
         "poster",
         "gemini",
@@ -502,7 +502,7 @@
       "description": "Elegant LaTeX book template with beautiful typography and chapter styling",
       "category": "book",
       "source_url": "https://github.com/ElegantLaTeX/ElegantBook",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/elegantbook",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/book/elegantbook",
       "tags": [
         "book",
         "elegant",
@@ -515,7 +515,7 @@
       "description": "The Legrand Orange Book — a structured book template with color-coded chapters",
       "category": "book",
       "source_url": "https://www.latextemplates.com/template/the-legrand-orange-book",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/book/legrand-orange-book",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/book/legrand-orange-book",
       "tags": [
         "book",
         "orange",
@@ -529,7 +529,7 @@
       "description": "Minimalist math notes template with theorem environments and custom macros",
       "category": "report",
       "source_url": "https://github.com/kcajc/math-notes-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/math-notes",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/math-notes",
       "tags": [
         "notes",
         "math",
@@ -544,7 +544,7 @@
       "description": "A4 version of the stylish Friggeri CV template with colored section bars and BibTeX publication support",
       "category": "cv",
       "source_url": "https://github.com/depressiveRobot/friggeri-cv-a4",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/friggeri-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/friggeri-cv",
       "tags": [
         "cv",
         "resume",
@@ -559,7 +559,7 @@
       "description": "A single-page, minimalist resume template using open-source fonts (MIT)",
       "category": "cv",
       "source_url": "https://github.com/sb2nov/resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/resume-openfont",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/resume-openfont",
       "tags": [
         "cv",
         "resume",
@@ -574,7 +574,7 @@
       "description": "Elegant bilingual (English/Chinese) resume template with FontAwesome icons (MIT, 10k+ stars)",
       "category": "cv",
       "source_url": "https://github.com/billryan/resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/billryan-resume",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/billryan-resume",
       "tags": [
         "cv",
         "resume",
@@ -589,7 +589,7 @@
       "description": "McDowell-style CV template inspired by the book Cracking the Coding Interview (MIT, 2.6k stars)",
       "category": "cv",
       "source_url": "https://github.com/dnl-blkv/mcdowell-cv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/mcdowell-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/mcdowell-cv",
       "tags": [
         "cv",
         "resume",
@@ -604,7 +604,7 @@
       "description": "ATS-friendly resume template with a unique look, built from scratch (CC BY 4.0)",
       "category": "cv",
       "source_url": "https://github.com/subidit/rover-resume",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/rover-resume",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/rover-resume",
       "tags": [
         "cv",
         "resume",
@@ -619,7 +619,7 @@
       "description": "Traditional single-column CV layout with a classic professional style (from latexcv, MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/classic-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/classic-cv",
       "tags": [
         "cv",
         "resume",
@@ -634,7 +634,7 @@
       "description": "Two-column CV with photo support and QR code, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/two-column-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/two-column-cv",
       "tags": [
         "cv",
         "resume",
@@ -649,7 +649,7 @@
       "description": "Infographic-style CV with visual skill bars and icons, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/infographic-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/infographic-cv",
       "tags": [
         "cv",
         "resume",
@@ -664,7 +664,7 @@
       "description": "Ultra-minimalist single-page CV with clean typography, from the latexcv collection (MIT)",
       "category": "cv",
       "source_url": "https://github.com/jankapunkt/latexcv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/cv/minimalist-cv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/minimalist-cv",
       "tags": [
         "cv",
         "resume",
@@ -679,7 +679,7 @@
       "description": "Beautiful minimalist thesis template with elegant typography (MIT, 1.2k stars)",
       "category": "thesis",
       "source_url": "https://github.com/Pseudomanifold/latex-mimosis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/mimosis-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/mimosis-thesis",
       "tags": [
         "thesis",
         "dissertation",
@@ -694,7 +694,7 @@
       "description": "PhD thesis template for the University of Oxford with ociamthesis class (MIT)",
       "category": "thesis",
       "source_url": "https://github.com/mcmanigle/OxThesis",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/oxford-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/oxford-thesis",
       "tags": [
         "thesis",
         "phd",
@@ -709,7 +709,7 @@
       "description": "Official TU Darmstadt thesis and report templates following corporate design (LPPL-1.3c)",
       "category": "thesis",
       "source_url": "https://github.com/tudace/tuda_latex_templates",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/thesis/tuda-thesis",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/thesis/tuda-thesis",
       "tags": [
         "thesis",
         "university",
@@ -723,7 +723,7 @@
       "description": "Enhanced Springer Lecture Notes in Computer Science (LNCS) article template (0BSD)",
       "category": "article",
       "source_url": "https://github.com/latextemplates/lncs-enhanced",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/springer-lncs",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/springer-lncs",
       "tags": [
         "article",
         "springer",
@@ -739,7 +739,7 @@
       "description": "Elegant working paper and preprint template with theorem support (LPPL-1.3c)",
       "category": "article",
       "source_url": "https://github.com/ElegantLaTeX/ElegantPaper",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/article/elegantpaper",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/elegantpaper",
       "tags": [
         "article",
         "paper",
@@ -754,7 +754,7 @@
       "description": "Beautiful note-taking template from ElegantLaTeX with theorem environments (LPPL-1.3c)",
       "category": "report",
       "source_url": "https://github.com/ElegantLaTeX/ElegantNote",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/elegant-notes",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/elegant-notes",
       "tags": [
         "notes",
         "elegant",
@@ -768,7 +768,7 @@
       "description": "Clean university homework and assignment template with problem/solution environments (MIT, 1.2k stars)",
       "category": "report",
       "source_url": "https://github.com/jdavis/latex-homework-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/homework-template",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/homework-template",
       "tags": [
         "report",
         "homework",
@@ -783,7 +783,7 @@
       "description": "Laboratory report template in article style for physics and engineering courses (MIT)",
       "category": "report",
       "source_url": "https://github.com/Sneaker679/lab-report-latex-template",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/report/lab-report",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/lab-report",
       "tags": [
         "report",
         "lab",
@@ -798,7 +798,7 @@
       "description": "Dark-themed Beamer presentation template with a modern, polished look (MIT, 400 stars)",
       "category": "presentation",
       "source_url": "https://github.com/anishathalye/auriga",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/presentation/beamer-auriga",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/presentation/beamer-auriga",
       "tags": [
         "presentation",
         "beamer",
@@ -813,7 +813,7 @@
       "description": "Cover letter template using the moderncv class with classic style and professional formatting (LPPL)",
       "category": "letter",
       "source_url": "https://github.com/moderncv/moderncv",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/letter/moderncv-letter",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/letter/moderncv-letter",
       "tags": [
         "letter",
         "cover-letter",
@@ -828,7 +828,7 @@
       "description": "Gemini-themed LaTeX poster template with beamerposter, clean and modern design (MIT, 1.2k stars)",
       "category": "poster",
       "source_url": "https://github.com/anishathalye/gemini",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/poster/gemini-poster",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/poster/gemini-poster",
       "tags": [
         "poster",
         "beamer",
@@ -844,7 +844,7 @@
       "description": "Cahier des charges pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-cahier-des-charges",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-cahier-des-charges",
       "tags": [
         "report",
         "french",
@@ -860,7 +860,7 @@
       "description": "Rapport final de projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-rapport-final",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-rapport-final",
       "tags": [
         "report",
         "french",
@@ -876,7 +876,7 @@
       "description": "Conception détaillée pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-conception-detaillee",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-conception-detaillee",
       "tags": [
         "report",
         "french",
@@ -892,7 +892,7 @@
       "description": "Manuel d'installation pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-manuel-installation",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-manuel-installation",
       "tags": [
         "report",
         "french",
@@ -908,7 +908,7 @@
       "description": "Manuel d'utilisation pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-manuel-utilisation",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-manuel-utilisation",
       "tags": [
         "report",
         "french",
@@ -924,7 +924,7 @@
       "description": "Rapport de tests pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-rapport-tests",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-rapport-tests",
       "tags": [
         "report",
         "french",
@@ -940,7 +940,7 @@
       "description": "Documentation technique interne pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-documentation-technique",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-documentation-technique",
       "tags": [
         "report",
         "french",
@@ -956,7 +956,7 @@
       "description": "Cahier de recette pour projet informatique L3 (Université Paris Cité)",
       "category": "project-upc",
       "source_url": "",
-      "install_url": "https://github.com/thmsgo18/latex-toolbox-gallery/tree/main/templates/project-upc/upc-cahier-recette",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/upc-cahier-recette",
       "tags": [
         "report",
         "french",
