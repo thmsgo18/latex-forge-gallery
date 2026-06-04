@@ -1,0 +1,809 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>LaTeX Forge — Template Gallery</title>
+  <meta name="description" content="65 curated LaTeX templates, ready to install with latex-forge.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    :root {
+      --bg:         #000000;
+      --bg2:        #0a0a0a;
+      --card:       #0f0f0f;
+      --border:     #1e1e1e;
+      --green:      #39ff14;
+      --green-soft: #22c55e;
+      --green-glow: rgba(57, 255, 20, 0.12);
+      --white:      #ffffff;
+      --text:       #d4d4d4;
+      --muted:      #5a5a5a;
+      --radius:     10px;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: var(--bg);
+      color: var(--text);
+      font-family: 'Space Grotesk', system-ui, sans-serif;
+      min-height: 100vh;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ── HEADER ──────────────────────────────────────── */
+    header {
+      position: relative;
+      padding: 4rem 2rem 3rem;
+      text-align: center;
+      border-bottom: 1px solid var(--border);
+      overflow: hidden;
+    }
+
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse 70% 50% at 50% -10%, rgba(57,255,20,0.09) 0%, transparent 65%);
+      pointer-events: none;
+    }
+
+    header::after {
+      content: '';
+      position: absolute;
+      bottom: 0; left: 50%; transform: translateX(-50%);
+      width: 200px; height: 1px;
+      background: linear-gradient(90deg, transparent, var(--green), transparent);
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.75rem;
+      margin-bottom: 1.25rem;
+    }
+
+    .terminal-icon {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 1.4rem;
+      color: var(--green);
+      line-height: 1;
+      text-shadow: 0 0 12px rgba(57,255,20,0.6);
+    }
+
+    .brand-name {
+      font-size: 2.75rem;
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1;
+    }
+
+    .brand-name .w { color: var(--white); }
+    .brand-name .g { color: var(--green); text-shadow: 0 0 20px rgba(57,255,20,0.4); }
+
+    .header-tagline {
+      font-size: 1rem;
+      color: var(--muted);
+      line-height: 1.6;
+    }
+
+    .header-tagline strong { color: var(--green-soft); font-weight: 600; }
+
+    .header-actions {
+      margin-top: 1.75rem;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 0.75rem;
+      flex-wrap: wrap;
+    }
+
+    .btn-ghost {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-family: inherit;
+      font-weight: 500;
+      color: var(--muted);
+      text-decoration: none;
+      background: transparent;
+      cursor: pointer;
+      transition: border-color 0.2s, color 0.2s, background 0.2s;
+    }
+
+    .btn-ghost:hover { border-color: var(--green); color: var(--green); background: var(--green-glow); }
+
+    .btn-solid {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.45rem;
+      padding: 0.45rem 1.1rem;
+      border: 1px solid var(--green);
+      border-radius: 8px;
+      font-size: 0.82rem;
+      font-family: inherit;
+      font-weight: 600;
+      color: #000;
+      background: var(--green);
+      text-decoration: none;
+      cursor: pointer;
+      transition: opacity 0.15s, box-shadow 0.2s;
+    }
+
+    .btn-solid:hover { opacity: 0.88; box-shadow: 0 0 16px rgba(57,255,20,0.35); }
+
+    /* ── CONTROLS ────────────────────────────────────── */
+    .controls {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(0,0,0,0.82);
+      backdrop-filter: blur(14px);
+      -webkit-backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+      padding: 0.9rem 2rem;
+    }
+
+    .controls-inner {
+      max-width: 1440px;
+      margin: 0 auto;
+      display: flex;
+      flex-direction: column;
+      gap: 0.75rem;
+    }
+
+    .search-wrap {
+      position: relative;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 0.85rem;
+      top: 50%;
+      transform: translateY(-50%);
+      color: var(--muted);
+      pointer-events: none;
+    }
+
+    #search {
+      width: 100%;
+      padding: 0.55rem 1rem 0.55rem 2.3rem;
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      color: var(--white);
+      font-size: 0.88rem;
+      font-family: inherit;
+      outline: none;
+      transition: border-color 0.2s, box-shadow 0.2s;
+    }
+
+    #search::placeholder { color: var(--muted); }
+
+    #search:focus {
+      border-color: var(--green);
+      box-shadow: 0 0 0 3px var(--green-glow);
+    }
+
+    .filters {
+      display: flex;
+      gap: 0.45rem;
+      flex-wrap: wrap;
+    }
+
+    .filter-btn {
+      padding: 0.28rem 0.85rem;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: transparent;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+
+    .filter-btn:hover { border-color: var(--green-soft); color: var(--green-soft); }
+
+    .filter-btn.active {
+      background: var(--green);
+      border-color: var(--green);
+      color: #000;
+      font-weight: 700;
+    }
+
+    /* ── MAIN WRAPPER ────────────────────────────────── */
+    .main-wrap {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 1.5rem 2rem 5rem;
+    }
+
+    .stats {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-bottom: 1.25rem;
+    }
+
+    .stats em { color: var(--green-soft); font-style: normal; font-weight: 600; }
+
+    /* ── GRID ────────────────────────────────────────── */
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+      gap: 1.1rem;
+    }
+
+    /* ── CARD ────────────────────────────────────────── */
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      cursor: pointer;
+      transition: border-color 0.2s, box-shadow 0.22s, transform 0.22s;
+    }
+
+    .card:hover {
+      border-color: rgba(57, 255, 20, 0.35);
+      box-shadow: 0 0 28px rgba(57, 255, 20, 0.07);
+      transform: translateY(-3px);
+    }
+
+    .card-thumb {
+      position: relative;
+      aspect-ratio: 1 / 1.414;
+      background: #080808;
+      overflow: hidden;
+    }
+
+    .card-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: top center;
+      display: block;
+      transition: transform 0.35s ease;
+    }
+
+    .card:hover .card-thumb img { transform: scale(1.04); }
+
+    .card-overlay {
+      position: absolute;
+      inset: 0;
+      background: linear-gradient(to top, rgba(0,0,0,0.75) 0%, rgba(0,0,0,0.2) 60%, transparent 100%);
+      display: flex;
+      align-items: flex-end;
+      justify-content: center;
+      padding-bottom: 1rem;
+      opacity: 0;
+      transition: opacity 0.2s;
+    }
+
+    .card:hover .card-overlay { opacity: 1; }
+
+    .btn-peek {
+      padding: 0.4rem 1rem;
+      background: var(--green);
+      color: #000;
+      border: none;
+      border-radius: 6px;
+      font-weight: 700;
+      font-size: 0.78rem;
+      font-family: inherit;
+      letter-spacing: 0.03em;
+      cursor: pointer;
+      transition: box-shadow 0.15s;
+    }
+
+    .btn-peek:hover { box-shadow: 0 0 14px rgba(57,255,20,0.5); }
+
+    .card-body {
+      padding: 0.9rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      flex: 1;
+    }
+
+    .card-badges {
+      display: flex;
+      gap: 0.35rem;
+      flex-wrap: wrap;
+    }
+
+    .badge {
+      padding: 0.12rem 0.5rem;
+      border-radius: 4px;
+      font-size: 0.68rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+    }
+
+    .badge-cat {
+      background: rgba(57,255,20,0.08);
+      color: var(--green-soft);
+      border: 1px solid rgba(57,255,20,0.18);
+    }
+
+    .badge-eng {
+      background: rgba(255,255,255,0.04);
+      color: var(--muted);
+      border: 1px solid rgba(255,255,255,0.07);
+    }
+
+    .card-name {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.88rem;
+      font-weight: 500;
+      color: var(--white);
+    }
+
+    .card-desc {
+      font-size: 0.78rem;
+      color: var(--muted);
+      line-height: 1.55;
+      flex: 1;
+    }
+
+    .card-install {
+      display: flex;
+      align-items: center;
+      gap: 0.4rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.38rem 0.45rem 0.38rem 0.65rem;
+      margin-top: 0.2rem;
+    }
+
+    .card-install code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.64rem;
+      color: var(--green-soft);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      flex: 1;
+    }
+
+    .copy-btn {
+      flex-shrink: 0;
+      padding: 0.22rem 0.55rem;
+      background: transparent;
+      border: 1px solid var(--border);
+      border-radius: 4px;
+      color: var(--muted);
+      font-size: 0.66rem;
+      font-family: inherit;
+      font-weight: 500;
+      cursor: pointer;
+      transition: border-color 0.15s, color 0.15s, background 0.15s;
+    }
+
+    .copy-btn:hover { border-color: var(--green); color: var(--green); }
+    .copy-btn.copied { border-color: var(--green); color: var(--green); background: var(--green-glow); }
+
+    /* ── EMPTY STATE ─────────────────────────────────── */
+    .empty {
+      grid-column: 1 / -1;
+      text-align: center;
+      padding: 5rem 2rem;
+      color: var(--muted);
+    }
+
+    .empty-symbol {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 2rem;
+      color: var(--border);
+      margin-bottom: 1rem;
+    }
+
+    .empty h3 { color: var(--text); font-size: 1rem; margin-bottom: 0.3rem; }
+    .empty p  { font-size: 0.85rem; }
+
+    /* ── MODAL ───────────────────────────────────────── */
+    .modal-backdrop {
+      position: fixed;
+      inset: 0;
+      background: rgba(0,0,0,0.88);
+      backdrop-filter: blur(6px);
+      -webkit-backdrop-filter: blur(6px);
+      z-index: 100;
+      display: none;
+      align-items: center;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-backdrop.open { display: flex; }
+
+    .modal {
+      background: var(--card);
+      border: 1px solid rgba(57,255,20,0.25);
+      border-radius: 14px;
+      box-shadow: 0 0 60px rgba(57,255,20,0.08), 0 20px 60px rgba(0,0,0,0.7);
+      width: 100%;
+      max-width: 780px;
+      max-height: 92vh;
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    .modal-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 1rem 1.2rem;
+      border-bottom: 1px solid var(--border);
+      gap: 1rem;
+    }
+
+    .modal-header-left {
+      display: flex;
+      align-items: center;
+      gap: 0.75rem;
+      overflow: hidden;
+    }
+
+    .modal-header-title {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.9rem;
+      color: var(--white);
+      white-space: nowrap;
+      overflow: hidden;
+      text-overflow: ellipsis;
+    }
+
+    .modal-header-badges {
+      display: flex;
+      gap: 0.35rem;
+      flex-shrink: 0;
+    }
+
+    .modal-close {
+      background: none;
+      border: 1px solid var(--border);
+      color: var(--muted);
+      font-size: 0.85rem;
+      cursor: pointer;
+      padding: 0.25rem 0.6rem;
+      border-radius: 6px;
+      transition: border-color 0.15s, color 0.15s;
+      flex-shrink: 0;
+      font-family: inherit;
+    }
+
+    .modal-close:hover { border-color: var(--white); color: var(--white); }
+
+    .modal-body {
+      flex: 1;
+      overflow-y: auto;
+      background: #080808;
+      display: flex;
+      align-items: flex-start;
+      justify-content: center;
+      padding: 1.5rem;
+    }
+
+    .modal-body img {
+      max-width: 100%;
+      max-height: 65vh;
+      object-fit: contain;
+      border-radius: 4px;
+      box-shadow: 0 4px 30px rgba(0,0,0,0.6);
+    }
+
+    .modal-footer {
+      padding: 0.8rem 1.2rem;
+      border-top: 1px solid var(--border);
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      flex-wrap: wrap;
+    }
+
+    .modal-install {
+      flex: 1;
+      min-width: 0;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--bg2);
+      border: 1px solid var(--border);
+      border-radius: 6px;
+      padding: 0.4rem 0.5rem 0.4rem 0.75rem;
+    }
+
+    .modal-install code {
+      font-family: 'JetBrains Mono', monospace;
+      font-size: 0.72rem;
+      color: var(--green-soft);
+      flex: 1;
+      overflow: hidden;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+    }
+
+    /* ── FOOTER ──────────────────────────────────────── */
+    footer {
+      border-top: 1px solid var(--border);
+      padding: 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.78rem;
+      color: var(--muted);
+    }
+
+    footer a { color: var(--green-soft); text-decoration: none; }
+    footer a:hover { color: var(--green); }
+
+    /* ── RESPONSIVE ──────────────────────────────────── */
+    @media (max-width: 640px) {
+      header     { padding: 2.5rem 1rem 2rem; }
+      .controls  { padding: 0.75rem 1rem; }
+      .main-wrap { padding: 1rem 1rem 3rem; }
+      .brand-name { font-size: 2rem; }
+      .modal-backdrop { padding: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ── HEADER ──────────────────────────────────────────── -->
+<header>
+  <div class="brand">
+    <span class="terminal-icon">&gt;_</span>
+    <h1 class="brand-name">
+      <span class="w">LATEX&nbsp;</span><span class="g">FORGE</span>
+    </h1>
+  </div>
+  <p class="header-tagline">
+    A curated collection of <strong>65 templates</strong> &mdash; install instantly with the latex-forge CLI.
+  </p>
+  <div class="header-actions">
+    <a class="btn-ghost" href="https://github.com/thmsgo18/latex-forge" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      latex-forge CLI
+    </a>
+    <a class="btn-solid" href="https://github.com/thmsgo18/latex-forge-gallery" target="_blank" rel="noopener">
+      <svg width="14" height="14" viewBox="0 0 16 16" fill="currentColor"><path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"/></svg>
+      View on GitHub
+    </a>
+  </div>
+</header>
+
+<!-- ── CONTROLS ─────────────────────────────────────────── -->
+<div class="controls">
+  <div class="controls-inner">
+    <div class="search-wrap">
+      <svg class="search-icon" width="14" height="14" viewBox="0 0 20 20" fill="none" stroke="currentColor" stroke-width="2.2"><circle cx="9" cy="9" r="6"/><path d="m15 15 4 4"/></svg>
+      <input id="search" type="text" placeholder="Search templates…" autocomplete="off" spellcheck="false">
+    </div>
+    <div class="filters" id="filters"></div>
+  </div>
+</div>
+
+<!-- ── MAIN ─────────────────────────────────────────────── -->
+<div class="main-wrap">
+  <p class="stats" id="stats"></p>
+  <div class="grid" id="grid"></div>
+</div>
+
+<!-- ── MODAL ────────────────────────────────────────────── -->
+<div class="modal-backdrop" id="modal-backdrop" role="dialog" aria-modal="true">
+  <div class="modal">
+    <div class="modal-header">
+      <div class="modal-header-left">
+        <span class="modal-header-title" id="modal-title"></span>
+        <div class="modal-header-badges" id="modal-badges"></div>
+      </div>
+      <button class="modal-close" id="modal-close" aria-label="Close">✕ Close</button>
+    </div>
+    <div class="modal-body">
+      <img id="modal-img" src="" alt="Template preview">
+    </div>
+    <div class="modal-footer">
+      <div class="modal-install">
+        <code id="modal-cmd"></code>
+        <button class="copy-btn" id="modal-copy">Copy</button>
+      </div>
+      <a class="btn-solid" id="modal-pdf" href="#" target="_blank" rel="noopener">PDF ↗</a>
+      <a class="btn-ghost" id="modal-source" href="#" target="_blank" rel="noopener">Source ↗</a>
+    </div>
+  </div>
+</div>
+
+<!-- ── FOOTER ───────────────────────────────────────────── -->
+<footer>
+  <p>
+    <a href="https://github.com/thmsgo18/latex-forge" target="_blank" rel="noopener">latex-forge</a>
+    &nbsp;·&nbsp;
+    <a href="https://github.com/thmsgo18/latex-forge-gallery" target="_blank" rel="noopener">Contribute a template</a>
+  </p>
+</footer>
+
+<script>
+const LABELS = {
+  cv:           'CV / Resume',
+  thesis:       'Thesis',
+  article:      'Article',
+  report:       'Report',
+  presentation: 'Presentation',
+  letter:       'Letter',
+  poster:       'Poster',
+  book:         'Book',
+  'project-upc':'Projet UPC',
+};
+
+const CAT_ORDER = ['cv','thesis','article','report','presentation','letter','poster','book','project-upc'];
+
+let templates    = [];
+let activecat    = 'all';
+let query        = '';
+let activeTpl    = null;
+
+// ── Bootstrap ──────────────────────────────────────────────────────────────────
+fetch('./gallery.json')
+  .then(r => r.json())
+  .then(d => { templates = d.templates; buildFilters(); render(); });
+
+// ── Filters ────────────────────────────────────────────────────────────────────
+function buildFilters() {
+  const wrap = document.getElementById('filters');
+  wrap.appendChild(filterBtn('all', 'All (' + templates.length + ')', true));
+  CAT_ORDER
+    .filter(c => templates.some(t => t.category === c))
+    .forEach(c => {
+      const n = templates.filter(t => t.category === c).length;
+      wrap.appendChild(filterBtn(c, (LABELS[c] || c) + ' (' + n + ')', false));
+    });
+}
+
+function filterBtn(val, label, active) {
+  const b = document.createElement('button');
+  b.className = 'filter-btn' + (active ? ' active' : '');
+  b.textContent = label;
+  b.dataset.cat = val;
+  b.addEventListener('click', () => {
+    activecat = val;
+    document.querySelectorAll('.filter-btn')
+      .forEach(x => x.classList.toggle('active', x.dataset.cat === val));
+    render();
+  });
+  return b;
+}
+
+// ── Search ─────────────────────────────────────────────────────────────────────
+document.getElementById('search').addEventListener('input', e => {
+  query = e.target.value.toLowerCase().trim();
+  render();
+});
+
+// ── Render ─────────────────────────────────────────────────────────────────────
+function render() {
+  const list = templates.filter(t => {
+    if (activecat !== 'all' && t.category !== activecat) return false;
+    if (query) {
+      const hay = [t.name, t.description, t.category, ...(t.tags || [])].join(' ').toLowerCase();
+      if (!hay.includes(query)) return false;
+    }
+    return true;
+  });
+
+  const grid = document.getElementById('grid');
+  grid.innerHTML = '';
+
+  document.getElementById('stats').innerHTML =
+    'Showing <em>' + list.length + '</em> of <em>' + templates.length + '</em> templates';
+
+  if (!list.length) {
+    grid.innerHTML =
+      '<div class="empty">' +
+        '<div class="empty-symbol">∅</div>' +
+        '<h3>No templates found</h3>' +
+        '<p>Try a different search or category.</p>' +
+      '</div>';
+    return;
+  }
+
+  list.forEach(t => grid.appendChild(makeCard(t)));
+}
+
+function cmd(t) {
+  return 'latex-forge template install ' + t.install_url;
+}
+
+// ── Card ───────────────────────────────────────────────────────────────────────
+function makeCard(t) {
+  const el = document.createElement('article');
+  el.className = 'card';
+  el.innerHTML =
+    '<div class="card-thumb">' +
+      '<img src="' + t.preview_png + '" alt="' + t.name + ' preview" loading="lazy">' +
+      '<div class="card-overlay"><button class="btn-peek">Preview</button></div>' +
+    '</div>' +
+    '<div class="card-body">' +
+      '<div class="card-badges">' +
+        '<span class="badge badge-cat">' + (LABELS[t.category] || t.category) + '</span>' +
+        '<span class="badge badge-eng">' + t.engine + '</span>' +
+      '</div>' +
+      '<h3 class="card-name">' + t.name + '</h3>' +
+      '<p class="card-desc">' + t.description + '</p>' +
+      '<div class="card-install">' +
+        '<code>' + cmd(t) + '</code>' +
+        '<button class="copy-btn" data-copy>Copy</button>' +
+      '</div>' +
+    '</div>';
+
+  el.querySelector('.btn-peek').addEventListener('click', e => {
+    e.stopPropagation();
+    openModal(t);
+  });
+
+  el.querySelector('[data-copy]').addEventListener('click', e => {
+    e.stopPropagation();
+    copyText(cmd(t), e.currentTarget);
+  });
+
+  el.addEventListener('click', () => openModal(t));
+  return el;
+}
+
+// ── Copy ───────────────────────────────────────────────────────────────────────
+function copyText(text, btn) {
+  navigator.clipboard.writeText(text).then(() => {
+    const orig = btn.textContent;
+    btn.textContent = 'Copied!';
+    btn.classList.add('copied');
+    setTimeout(() => { btn.textContent = orig; btn.classList.remove('copied'); }, 1800);
+  });
+}
+
+// ── Modal ──────────────────────────────────────────────────────────────────────
+function openModal(t) {
+  activeTpl = t;
+  document.getElementById('modal-title').textContent = t.name;
+  document.getElementById('modal-img').src = t.preview_png;
+  document.getElementById('modal-img').alt = t.name + ' preview';
+  document.getElementById('modal-cmd').textContent = cmd(t);
+  document.getElementById('modal-pdf').href = t.preview_pdf;
+  document.getElementById('modal-source').href = t.source_url;
+  document.getElementById('modal-badges').innerHTML =
+    '<span class="badge badge-cat">' + (LABELS[t.category] || t.category) + '</span>' +
+    '<span class="badge badge-eng">' + t.engine + '</span>';
+  document.getElementById('modal-backdrop').classList.add('open');
+  document.body.style.overflow = 'hidden';
+}
+
+function closeModal() {
+  document.getElementById('modal-backdrop').classList.remove('open');
+  document.getElementById('modal-img').src = '';
+  document.body.style.overflow = '';
+  activeTpl = null;
+}
+
+document.getElementById('modal-close').addEventListener('click', closeModal);
+document.getElementById('modal-backdrop').addEventListener('click', e => {
+  if (e.target === e.currentTarget) closeModal();
+});
+document.addEventListener('keydown', e => { if (e.key === 'Escape') closeModal(); });
+document.getElementById('modal-copy').addEventListener('click', e => {
+  if (activeTpl) copyText(cmd(activeTpl), e.currentTarget);
+});
+</script>
+
+</body>
+</html>

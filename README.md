@@ -1,6 +1,6 @@
 # LaTeX Toolbox Gallery
 
-A curated collection of 57 high-quality LaTeX templates, ready to install with [latex-forge](https://github.com/thmsgo18/latex-forge).
+A curated collection of 65 high-quality LaTeX templates, ready to install with [latex-forge](https://github.com/thmsgo18/latex-forge).
 
 ## Installation
 
@@ -112,6 +112,23 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 |------|-------------|--------|--------------|
 | `elegantbook` | Elegant book template with beautiful chapter styling | XeLaTeX | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/book/elegantbook` |
 | `legrand-orange-book` | Structured book template with color-coded chapters | XeLaTeX | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/book/legrand-orange-book` |
+
+### Projet Informatique L3 — Université Paris Cité
+
+Suite de 8 templates pour les documents standard du Projet Informatique L3 à l'Université Paris Cité. Charte graphique UPC, entièrement en français, compilables avec pdfLaTeX.
+
+| Nom | Description | Installation |
+|-----|-------------|--------------|
+| `upc-cahier-des-charges` | Cahier des charges | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/cahier-des-charges` |
+| `upc-rapport-final` | Rapport final | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/rapport-final` |
+| `upc-conception-detaillee` | Conception détaillée | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/conception-detaillee` |
+| `upc-manuel-installation` | Manuel d'installation | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/manuel-installation` |
+| `upc-manuel-utilisation` | Manuel d'utilisation | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/manuel-utilisation` |
+| `upc-rapport-tests` | Rapport de tests | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/rapport-tests` |
+| `upc-documentation-technique` | Documentation technique interne | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/documentation-technique` |
+| `upc-cahier-recette` | Cahier de recette | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/cahier-recette` |
+
+> **Personnalisation rapide :** modifier les commandes `\renewcommand` en haut de chaque `main.tex` (groupe, encadrant, auteurs, version, résumé).
 
 ## Sources
 
@@ -228,20 +245,3 @@ To suggest a new template, open an issue or pull request. Templates must:
 - Have a `main.tex` at the root of their directory
 - Be licensed under MIT, Apache, LPPL, or a Creative Commons license
 - Compile successfully with a standard LaTeX distribution
-
-### Projet Informatique L3 — Université Paris Cité
-
-Suite de 8 templates pour les documents standard du Projet Informatique L3 à l'Université Paris Cité. Charte graphique UPC, entièrement en français, compilables avec pdfLaTeX.
-
-| Nom | Description | Installation |
-|-----|-------------|--------------|
-| `upc-cahier-des-charges` | Cahier des charges | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/cahier-des-charges` |
-| `upc-rapport-final` | Rapport final | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/rapport-final` |
-| `upc-conception-detaillee` | Conception détaillée | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/conception-detaillee` |
-| `upc-manuel-installation` | Manuel d'installation | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/manuel-installation` |
-| `upc-manuel-utilisation` | Manuel d'utilisation | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/manuel-utilisation` |
-| `upc-rapport-tests` | Rapport de tests | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/rapport-tests` |
-| `upc-documentation-technique` | Documentation technique interne | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/documentation-technique` |
-| `upc-cahier-recette` | Cahier de recette | `latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/project-upc/cahier-recette` |
-
-> **Personnalisation rapide :** modifier les commandes `\renewcommand` en haut de chaque `main.tex` (groupe, encadrant, auteurs, version, résumé).
