@@ -25,13 +25,8 @@
     footskip=30pt
 }
 
-% Variables
-\def\notetitle{MATH 101}
-\def\noteauthor{
-    \textbf{Professor} \\ 
-    {\LaTeX} by Joe\\
-    University}
-\def\notedate{Semester}
+% Metadata
+\input{frontmatter/metadata.tex}
 
 % The theorem system and user-defined commands
 \input{theorems.tex}
@@ -43,7 +38,7 @@
 \title{\textbf{
     \LARGE{\notetitle} \vspace*{10\baselineskip}}
     }
-\author{\noteauthor}
+\author{\noteauthor \\ \noteuniversity \\ \noteprogram}
 \date{\notedate}
 
 \maketitle
@@ -54,64 +49,6 @@
 
 % ------------------------------------------------------------------------------
 
-\chapter{Examples}
-
-\section{Theorem System}
-
-\defn{Definition Name}{
-    A defintion.
-}
-
-\thmr{Theorem Name}{mybigthm}{
-    A theorem.
-}
-
-\lem{Lemma Name}{
-    A lemma.
-}
-
-\fact{
-    A fact.
-}
-
-\cor{
-    A corollary.
-}
-
-\prop{
-    A proposition.
-}
-
-\clmp{}{
-    A claim.
-}{
-    A reference to Theorem~\ref{thm:mybigthm}
-}
-
-\pf{
-    Veniam velit incididunt deserunt est proident consectetur non velit ipsum voluptate nulla quis. Ea ullamco consequat non ad amet cupidatat cupidatat aliquip tempor sint ea nisi elit dolore dolore. 
-
-    Laboris labore magna dolore eiusmod ea ex et eiusmod laboris. Et aliquip cupidatat reprehenderit id officia pariatur. 
-}
-
-\ex{
-    Nostrud esse occaecat Lorem dolore laborum exercitation adipisicing eu sint sunt et. Excepteur voluptate consectetur qui ex amet esse sunt ut nostrud qui proident non. Ipsum nostrud ut elit dolor. Incididunt voluptate esse et est labore cillum proident duis.
-}
-
-\rmk{
-    Some remark.
-}
-
-\rmkb{
-    Some more remark.
-}
-
-\section{Pictures}
-
-\begin{figure}[H]
-    \center
-    \includegraphics[scale=0.1]{img/loo.jpg}
-    \caption{Waterloo, ON}
-\end{figure}
+\input{sections/01-theorems-and-examples.tex}
 
 \end{document}
