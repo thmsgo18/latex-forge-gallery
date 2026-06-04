@@ -1096,6 +1096,171 @@
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-recette.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-recette.pdf"
+    },
+    {
+      "name": "modern-cv",
+      "description": "Modern CV with colored sidebar and skill bars from the latexcv collection",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/modern-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "modern",
+        "sidebar",
+        "xelatex"
+      ],
+      "engine": "xelatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/modern-cv.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/modern-cv.pdf"
+    },
+    {
+      "name": "rows-cv",
+      "description": "Row-based CV layout with clean horizontal sections from the latexcv collection",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/rows-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "rows",
+        "minimal",
+        "xelatex"
+      ],
+      "engine": "xelatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rows-cv.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rows-cv.pdf"
+    },
+    {
+      "name": "sidebarleft-cv",
+      "description": "CV with left-aligned sidebar and icon-based contact info from the latexcv collection",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/sidebarleft-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "sidebar",
+        "xelatex"
+      ],
+      "engine": "xelatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.pdf"
+    },
+    {
+      "name": "infographics2-cv",
+      "description": "Second infographic-style CV with visual skill bars and timeline from the latexcv collection",
+      "category": "cv",
+      "source_url": "https://github.com/jankapunkt/latexcv",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/infographics2-cv",
+      "tags": [
+        "cv",
+        "resume",
+        "infographic",
+        "tikz",
+        "xelatex"
+      ],
+      "engine": "xelatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.pdf"
+    },
+    {
+      "name": "cheatsheet",
+      "description": "Compact multi-column cheatsheet template for quick reference cards",
+      "category": "cheatsheet",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cheatsheet/cheatsheet",
+      "tags": [
+        "cheatsheet",
+        "reference",
+        "multicol",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cheatsheet/cheatsheet.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cheatsheet/cheatsheet.pdf"
+    },
+    {
+      "name": "invoice-simple",
+      "description": "Clean single-page invoice template using the scrlttr2 class",
+      "category": "misc",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/misc/invoice-simple",
+      "tags": [
+        "invoice",
+        "business",
+        "letter",
+        "scrlttr2",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-simple.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-simple.pdf"
+    },
+    {
+      "name": "invoice-multipage",
+      "description": "Multi-page invoice template with itemized table and totals",
+      "category": "misc",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/misc/invoice-multipage",
+      "tags": [
+        "invoice",
+        "business",
+        "multipage",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-multipage.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-multipage.pdf"
+    },
+    {
+      "name": "timesheet",
+      "description": "Monthly timesheet template with daily hours tracking table",
+      "category": "misc",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/misc/timesheet",
+      "tags": [
+        "timesheet",
+        "business",
+        "table",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/timesheet.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/timesheet.pdf"
+    },
+    {
+      "name": "poem",
+      "description": "Elegant poem typesetting template with verse environments",
+      "category": "misc",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/misc/poem",
+      "tags": [
+        "poem",
+        "creative",
+        "verse",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.pdf"
+    },
+    {
+      "name": "essay-collection",
+      "description": "Multi-essay collection report with individual abstracts and bibliography",
+      "category": "report",
+      "source_url": "https://github.com/cmichi/latex-template-collection",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/essay-collection",
+      "tags": [
+        "essay",
+        "collection",
+        "report",
+        "bibliography",
+        "pdflatex"
+      ],
+      "engine": "pdflatex",
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.pdf"
     }
   ]
 }

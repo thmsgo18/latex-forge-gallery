@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Parcourez et installez 65 templates LaTeX soigneusement sélectionnés en une seule commande.
+  Parcourez et installez 75 templates LaTeX soigneusement sélectionnés en une seule commande.
 </p>
 
 <p align="center">
   <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/galerie-en%20ligne-39ff14?style=for-the-badge" alt="Galerie en ligne"></a>
   <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/nécessite-latex--forge-blue?style=for-the-badge" alt="Nécessite latex-forge"></a>
-  <img src="https://img.shields.io/badge/templates-65-39ff14?style=for-the-badge" alt="65 templates">
+  <img src="https://img.shields.io/badge/templates-75-39ff14?style=for-the-badge" alt="65 templates">
   <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT%20%26%20autres-green?style=for-the-badge" alt="Licence"></a>
 </p>
 
@@ -62,6 +62,10 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `two-column-cv` | CV deux colonnes avec photo et QR code | pdfLaTeX |
 | `infographic-cv` | CV infographique avec barres de compétences visuelles | XeLaTeX |
 | `minimalist-cv` | CV ultra-minimaliste une page | pdfLaTeX |
+| `modern-cv` | CV moderne avec barre latérale colorée et barres de compétences | XeLaTeX |
+| `rows-cv` | CV en lignes horizontales avec sections épurées | XeLaTeX |
+| `sidebarleft-cv` | CV avec barre latérale gauche et contacts iconographiques | XeLaTeX |
+| `infographics2-cv` | Deuxième variante de CV infographique avec frise chronologique | XeLaTeX |
 
 ### Thèse / Mémoire
 
@@ -101,6 +105,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `elegant-notes` | Template de prise de notes avec environnements de théorèmes | pdfLaTeX |
 | `homework-template` | Template de devoirs universitaires avec environnements problème/solution | pdfLaTeX |
 | `lab-report` | Template de compte rendu de TP en style article | pdfLaTeX |
+| `essay-collection` | Recueil d'essais avec résumés individuels et bibliographie | pdfLaTeX |
 
 ### Présentation Beamer
 
@@ -137,6 +142,21 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 |-----|-------------|--------|
 | `elegantbook` | Template de livre élégant avec un style de chapitres soigné | XeLaTeX |
 | `legrand-orange-book` | Template de livre structuré avec chapitres codés par couleur | XeLaTeX |
+
+### Cheatsheet
+
+| Nom | Description | Moteur |
+|-----|-------------|--------|
+| `cheatsheet` | Template de cheatsheet multi-colonnes compact pour fiches de référence | pdfLaTeX |
+
+### Divers
+
+| Nom | Description | Moteur |
+|-----|-------------|--------|
+| `invoice-simple` | Facture simple une page avec la classe scrlttr2 | pdfLaTeX |
+| `invoice-multipage` | Facture multi-pages avec tableau détaillé et totaux | pdfLaTeX |
+| `timesheet` | Feuille de temps mensuelle avec suivi des heures journalières | pdfLaTeX |
+| `poem` | Template élégant de composition poétique avec environnements de vers | pdfLaTeX |
 
 ### Projet Informatique L3 — Université Paris Cité
 

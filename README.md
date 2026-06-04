@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Browse and install 65 curated LaTeX templates in one command.
+  Browse and install 75 curated LaTeX templates in one command.
 </p>
 
 <p align="center">
   <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/gallery-online-39ff14?style=for-the-badge" alt="Gallery online"></a>
   <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/requires-latex--forge-blue?style=for-the-badge" alt="Requires latex-forge"></a>
-  <img src="https://img.shields.io/badge/templates-65-39ff14?style=for-the-badge" alt="65 templates">
+  <img src="https://img.shields.io/badge/templates-75-39ff14?style=for-the-badge" alt="75 templates">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT%20%26%20others-green?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -62,6 +62,10 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `two-column-cv` | Two-column CV with photo and QR code | pdfLaTeX |
 | `infographic-cv` | Infographic-style CV with visual skill bars | XeLaTeX |
 | `minimalist-cv` | Ultra-minimalist single-page CV | pdfLaTeX |
+| `modern-cv` | Modern CV with colored sidebar and skill bars | XeLaTeX |
+| `rows-cv` | Row-based CV layout with clean horizontal sections | XeLaTeX |
+| `sidebarleft-cv` | CV with left-aligned sidebar and icon-based contact info | XeLaTeX |
+| `infographics2-cv` | Second infographic-style CV with visual skill bars and timeline | XeLaTeX |
 
 ### Thesis / Dissertation
 
@@ -101,6 +105,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `elegant-notes` | Beautiful note-taking template with theorem environments | pdfLaTeX |
 | `homework-template` | Clean university homework template with problem/solution environments | pdfLaTeX |
 | `lab-report` | Laboratory report template in article style | pdfLaTeX |
+| `essay-collection` | Multi-essay collection report with individual abstracts and bibliography | pdfLaTeX |
 
 ### Beamer Presentation
 
@@ -137,6 +142,21 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 |------|-------------|--------|
 | `elegantbook` | Elegant book template with beautiful chapter styling | XeLaTeX |
 | `legrand-orange-book` | Structured book template with color-coded chapters | XeLaTeX |
+
+### Cheatsheet
+
+| Name | Description | Engine |
+|------|-------------|--------|
+| `cheatsheet` | Compact multi-column cheatsheet template for quick reference cards | pdfLaTeX |
+
+### Miscellaneous
+
+| Name | Description | Engine |
+|------|-------------|--------|
+| `invoice-simple` | Clean single-page invoice template using the scrlttr2 class | pdfLaTeX |
+| `invoice-multipage` | Multi-page invoice template with itemized table and totals | pdfLaTeX |
+| `timesheet` | Monthly timesheet template with daily hours tracking table | pdfLaTeX |
+| `poem` | Elegant poem typesetting template with verse environments | pdfLaTeX |
 
 ### Projet Informatique L3 — Université Paris Cité
 
