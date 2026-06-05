@@ -21,32 +21,46 @@
 % Just compile this file using pdflatex after making all required changes.
 
 \documentclass[12pt,a4paper]{report}
-\usepackage[pdftex]{graphicx} %for embedding images
-\usepackage{url} %for proper url entries
-\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}, pdftitle={<pdf title here>}, pdfauthor={<author's name here>}, pdfsubject={<subject here>}, pdfkeywords={<keywords here>}]{hyperref} %for creating links in the pdf version and other additional pdf attributes, no effect on the printed document
-%\usepackage[final]{pdfpages} %for embedding another pdf, remove if not required
+\usepackage[pdftex]{graphicx}
+\usepackage{url}
+\usepackage[bookmarks, colorlinks=false, pdfborder={0 0 0}]{hyperref}
+
+\input{frontmatter/metadata.tex}
 
 \begin{document}
-\renewcommand\bibname{References} %Renames "Bibliography" to "References" on ref page
+\renewcommand\bibname{References}
 
-%include other pages
-\input{./title.tex}
-\input{./certificate.tex}
-\input{./abstract.tex}
+%% Title page
+\begin{titlepage}
+\begin{center}
+    \Large\textbf{\reportuniversity}\\[0.5cm]
+    \large\reportdepartment\\[1.5cm]
+    \LARGE\textbf{\reporttitle}\\[1cm]
+    \large Submitted by:\\[0.3cm]
+    \textbf{\reportauthor}\\[1cm]
+    Under the guidance of\\
+    \textbf{\reportguide}\\[2cm]
+    \includegraphics[width=0.18\textwidth]{images/nitc-logo}\\[0.3cm]
+    \normalsize\textsc{\reportuniversity}\\
+    \reportyear
+\end{center}
+\end{titlepage}
 
-\pagenumbering{roman} %numbering before main content starts
+\input{sections/01-abstract.tex}
+
+\pagenumbering{roman}
 \tableofcontents
 \listoffigures
 
 \newpage
-\pagenumbering{arabic} %reset numbering to normal for the main content
+\pagenumbering{arabic}
 
-\input{./prob-definition.tex} %objective changed to problem definition
-\input{./introduction.tex} %literature survey included in this
-\input{./work-done.tex}
-\input{./future-work.tex}
-\input{./conclusion.tex}
-\input{./acknow.tex}
-\input{./ref.tex}
+\input{sections/02-introduction.tex}
+\input{sections/03-problem.tex}
+\input{sections/04-work-done.tex}
+\input{sections/05-future-work.tex}
+\input{sections/06-conclusion.tex}
+\input{backmatter/acknowledgments.tex}
+\input{backmatter/bibliography.tex}
 
 \end{document}
