@@ -6,31 +6,10 @@
 \usepackage[T1]{fontenc}
 \usepackage[scale=0.75]{geometry}
 
-% Personal data
-\firstname{John}
-\familyname{Smith}
-\address{123 Main Street}{Springfield, IL 62701}
-\phone{(555) 123-4567}
-\email{john.smith@example.com}
+\input{frontmatter/metadata}
 
 \begin{document}
 
-% Recipient data
-\recipient{Hiring Manager}{Acme Corporation\\456 Business Ave\\New York, NY 10001}
-\date{\today}
-\subject{Application for Software Engineer Position}
-\opening{Dear Hiring Manager,}
-\closing{Sincerely,}
-\enclosure[Attached]{curriculum vit\ae{}}
-
-\makelettertitle
-
-I am writing to express my strong interest in the Software Engineer position at Acme Corporation. With my background in computer science and my passion for building reliable software systems, I am confident that I would be a valuable addition to your team.
-
-During my career, I have developed extensive experience in software design, implementation, and testing. I am comfortable working in agile environments and have consistently delivered high-quality results on time and within budget.
-
-I would welcome the opportunity to discuss how my skills and experience can contribute to Acme Corporation's continued success. Thank you for considering my application.
-
-\makeletterclosing
+\input{sections/01-letter}
 
 \end{document}
