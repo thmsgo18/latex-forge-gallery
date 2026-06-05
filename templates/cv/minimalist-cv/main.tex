@@ -1,7 +1,7 @@
 %-------------------------------------------------------------------------------
 %	The MIT License (MIT)
 %
-%	Copyright (c) 2025 - Today Jan Küster <info@jankuester.com>
+%	Copyright (c) 2025 - Today \cvname <\cvemail>
 %
 %	https://github.com/jankapunkt/latexcv
 %
@@ -282,6 +282,8 @@
 %
 %
 %============================================================================%
+\input{frontmatter/metadata}
+
 \begin{document}
 
 
@@ -304,7 +306,7 @@
 \vspace{-48pt}
 \textcolor{softcol}{\hrule}
 \colorbox{white}{\makebox[1\linewidth][c]{
-	\HUGE \textsc{Jan Küster} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{M.Sc.}
+	\HUGE \textsc{\cvname} \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \textsc{M.Sc.}
 }}
 
 \begin{center}
@@ -318,8 +320,8 @@
 %	META SECTION
 %----------------------------------------------------------------------------------------
 \begin{center}
-\icontext{MapMarker}{Bremen, Germany}
-\href{mailto:info@jankuester.com}{\icontext{Envelope}{info@jankuester.com}}
+\icontext{MapMarker}{\cvuniversity}
+\href{mailto:\cvemail}{\icontext{Envelope}{\cvemail}}
 \icontext{Mobile}{+49 170 123 456 789}
 \\[10pt]
 \href{https://jankuester.com}{\icontext{MousePointer}{jankuester.com}}

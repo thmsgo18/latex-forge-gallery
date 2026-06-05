@@ -1,7 +1,7 @@
 %-----------------------------------------------------------------------------------------------------------------------------------------------%
 %	The MIT License (MIT)
 %
-%	Copyright (c) 2015 Jan Küster
+%	Copyright (c) 2015 \cvname
 %
 %	Permission is hereby granted, free of charge, to any person obtaining a copy
 %	of this software and associated documentation files (the "Software"), to deal
@@ -91,7 +91,7 @@
 
 %customize entries left, center and right
 %\lhead{}
-%\chead{ \small{Jan Küster  $\cdot$ Consultant and Software Engineer $\cdot$  Bremen, Germany  $\cdot$  \textcolor{sectcol}{\textbf{info@jankuester.com}}  $\cdot$ +49 176 313 *** **}}
+%\chead{ \small{\cvname  $\cdot$ \cvposition $\cdot$  \cvuniversity  $\cdot$  \textcolor{sectcol}{\textbf{\cvemail}}  $\cdot$ +49 176 313 *** **}}
 %\rhead{}
 
 
@@ -315,6 +315,8 @@
 %
 %
 %============================================================================%
+\input{frontmatter/metadata}
+
 \begin{document}
 \fcolorbox{white}{white}{\begin{minipage}[c][0.95\textheight][t]{0.69\linewidth}
 
@@ -324,12 +326,12 @@
 %----------------------------------------------------------------------------------------
 \vspace{-3pt}
 % use this for multiple words like working titles etc.
-%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\uppercase{M.Sc. Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
+%\hspace{-0.25\linewidth}\colorbox{bgcol}{\makebox[1.5\linewidth][c]{\hspace{46pt}\HUGE{\textcolor{white}{\uppercase{M.Sc. \cvname}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \parbox[b]{5cm}{   \large{ \textcolor{white}{{IT Consultant}}}\\
 % \large{ \textcolor{white}{{JS Fullstack Engineer}}}}
 %}}
 
 % use this for single words, e.g. CV or RESUME etc.
-\colorbox{bgcol}{\makebox[\mpwidth][c]{\HUGE{\textcolor{white}{\uppercase{Jan Küster}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\uppercase{Resume}} } }}
+\colorbox{bgcol}{\makebox[\mpwidth][c]{\HUGE{\textcolor{white}{\uppercase{\cvname}} } \textcolor{sectcol}{\rule[-1mm]{1mm}{0.9cm}} \HUGE{\textcolor{white}{\uppercase{Resume}} } }}
 
 %----------------------------------------------------------------------------------------
 %	HEADER IMAGE
@@ -431,10 +433,10 @@ JavaScript fullstack engineer, M.Sc. Digital Media, focuses on education and hea
 
 \begin{metasection}{Contact}
 
-    \icontext{MapMarker}{12}{Bremen, Germany}{white}\\[6pt]
+    \icontext{MapMarker}{12}{\cvuniversity}{white}\\[6pt]
     \icontext{MobilePhone}{12}{+49 176 313 *** **}{white}\\[6pt]
-    \iconemail{Send}{12}{info@jankuester.com}{info@jankuester.com}{white}\\[6pt]
-    \iconhref{MousePointer}{12}{http://jankuester.com/}{www.jankuester.com}{white}\\[6pt]
+    \iconemail{Send}{12}{\cvemail}{\cvemail}{white}\\[6pt]
+    \iconhref{MousePointer}{12}{http://jankuester.com/}{\cvuniversity}{white}\\[6pt]
     \iconhref{Github}{12}{https://github.com/jankapunkt}{https://github.com/jankapunkt}{white}\\[6pt]
     \iconhref{Twitter}{12}{@Kuester\_Jan}{https://twitter.com/kuester_jan?lang=en}{white}\\[6pt]
 
