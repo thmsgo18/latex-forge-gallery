@@ -1,0 +1,810 @@
+\section{Structure of the Thesis\slash Term Paper}% Note: \slash typesets a slash after which a line break may happen
+\label{sec:structure}
+
+\subsection{Parts of the Manuscript}
+
+A~thesis generally consists of the following parts:
+\begin{enumerate}
+	\item a~title page,
+	\item a~table of contents,
+	\item optionally, a~list of abbreviations, tables, and/or figures (these are generally unnecessary for theses and more relevant for books),
+	\item the main text (body),
+	\item a~bibliography,
+	\item optionally, an appendix, and
+	\item a~written declaration of authorship.
+\end{enumerate}
+It may make sense to place the bibliography after potential appendices. Please ask your supervisor for their preference. The parts before the main text are called ``front matter.''
+
+\subsection{Structure of the Main Text}
+
+For the main text of theses, two basic outlines are very common:
+\begin{itemize}
+	\item Three-part structure: This structure divides an academic paper (including theses) into the three parts
+		\begin{enumerate}
+			\item introduction,
+			\item main text, and
+			\item discussion/concluding remarks.
+		\end{enumerate}
+	\item Four-part structure/``IMRaD''\footnote{For detailed information, see \url{https://en.wikipedia.org/wiki/IMRAD} and \url{https://skillsearthsciences.sites.uu.nl/writing/structure/imrad/}.}: This structure divides an academic paper (including theses) into the four parts
+		\begin{enumerate}
+			\item introduction,
+			\item methods,
+			\item results, and
+			\item discussion (conclusion).
+		\end{enumerate}
+\end{itemize}
+
+The IMRaD structure is very common in the natural sciences and life sciences. It is also generally suited for manuscripts in economics. Economists, however, usually do not call the methods section ``Methods'' but give it a~different name or even split it up into a~sequence of sections, such as ``Theoretical Model''\slash ``Theoretical Predictions,'' followed by ``Empirical Strategy'' and ``Data''\slash ``Dataset'' (or the other way round) or by ``Experimental Design'' in the case that the paper features an experiment. Similarly, economists frequently split the results section into a~sequence of sections, such as ``Treatment Effect,'' followed by ``Analysis of Heterogeneity,'' ``Evidence on Mechanisms'' and\slash or ``Robustness Checks.'' And some theoretical papers have the structure ``Model,'' ``Results,'' ``Applications.'' None, however, do away with the ``Introduction'' and ``Discussion''\slash ``Conclusion'' section. It is also not uncommon---but by no means the standard---in economics to have a~dedicated ``Related Literature'' section after the intro\-duction.
+
+Other structures are possible, of course. Please consult with your advisor to find a~good structure for your manuscript.
+
+\subsection{Structuring Introduction and Discussion: ``Funnel'' and ``Reverse Funnel''}
+
+\begingroup
+
+\SetTblrTemplate{contfoot}{empty}
+\SetTblrTemplate{conthead}{empty}
+\SetTblrOuter[longtblr]{
+	entry = none,
+	label = none,
+	postsep = 0.5\baselinedist plus 10ex,
+	presep = 0.5\baselinedist plus 10ex,
+}
+\SetTblrInner[longtblr]{
+	colspec = {X[1.9] X[l]},
+	column{1} = {
+		bg = UBonnBlue!5, font = \rmfamily\small, leftsep = 3ex,
+	},
+	column{2} = {
+		bg = UBonnBlue!5, font = \sffamily\footnotesize\setlength{\baselineskip}{2.75ex}\RaggedRight, rightsep = 3ex
+	},
+	hborder{1-Z} = {abovespace = 0pt, belowspace = 0pt},
+	hborder{1} = {belowspace = 2.25ex},
+	hborder{Z} = {abovespace = 2.25ex},
+	hline{1-Z} = {0pt},
+	vborder{2} = {rightspace+ = 0.5em},
+	width = \linewidth,
+}
+\let \longtblrOrig \longtblr
+\renewcommand{\longtblr}{%
+	\fontsize{\fsnormal}{\smalllinespacing}\selectfont%
+	\longtblrOrig%
+}
+
+A~general structure that can be found in many research papers is the so-called X-shaped or ``hourglass'' structure.\footnote{See \url{https://skillsearthsciences.sites.uu.nl/writing/structure/\#attachment_2387}, Fig.\,1, and \url{https://pmc.ncbi.nlm.nih.gov/articles/PMC5405644/pdf/JHRS-10-3.pdf}, Figure~1.} This structure is brought about when the so-called ``funnel'' technique is used to write the introduction,\footnote{See  \url{https://read.aupress.ca/read/read-think-write/section/9e945e9b-62cf-4dbb-b8cd-823549ede292\#fig1401}, Figure~14.1, and \url{https://kib.ki.se/en/write-cite/academic-writing/structure-academic-texts}} and when a~``reverse funnel'' or ``upside-down funnel'' is used to write the discussion\slash concluding section:\footnote{See \url{https://read.aupress.ca/read/read-think-write/section/9e945e9b-62cf-4dbb-b8cd-823549ede292\#fig1402}, Figure~14.2, and \url{https://kib.ki.se/en/write-cite/academic-writing/writing-conclusion}.}
+\begin{enumerate}
+	\item The paper starts with a~\emph{broad} perspective at the beginning of the introduction, which becomes \emph{narrower} with every sentence, leading to the paper's narrow research question.
+	\item The \emph{narrowest} part is when the exact research question is posed, the research methodology is described in detail, and the results are derived\slash presented.
+	\item When the results are discussed and related to the literature in the concluding section, the perspective becomes \emph{broad} again.
+\end{enumerate}
+
+Let us take a~look at the ``Introduction'' section from \citet{sigfridsson} to see the funneling approach at work:%
+\footnote{The full text of the article by \citet{sigfridsson} is available at \url{https://lucris.lub.lu.se/ws/portalfiles/portal/135489685/25_charges.pdf}.}
+\begin{longtblr}{}
+	Molecular simulation methods have become an important technique in many areas of chemistry through the recent advent of effective and wide-spread software for molecular mechanics, molecular dynamics, and Monte Carlo simulations, and procedures for the estimation of free energy differences. In all such methods, a~proper description of the electrostatic interactions within the simulated system is of key importance, \textellipsis\ However, in most implementations, \textellipsis, the simplest possible solution is used, \textellipsis\ Thus, most classical simulation methods need a~point-charge parameterisation of the molecules of interest.
+	&
+	{%
+		\textit{Paragraph~1} \\
+		\textmd{Broad introduction with general description of the research field (``many areas of
+		chemistry''), research topic (``molecular simulation methods''), and recent development (``through the recent advent of \textellipsis''). Followed by a~more detailed description of crucial aspects in this context (``In all such methods, a~proper description \textellipsis\ is of key importance'') and of shortcomings of existing methods.}
+	}
+	\\
+	\hspace{\smalllinespacing}Unfortunately, atomic charges are not observables, i.e. they cannot unambiguously be determined by experiments or quantum chemical calculations. Therefore, a~large number of methods have been suggested for the estimation of point charges [1]. Several groups have tried to derive the charges directly from experimental quantities, \textellipsis\ Yet, relevant data is usually missing or too scarce to allow a determination of all charges in interesting molecules. Instead, most techniques derive atomic charges from quantum chemical calculations.
+	&
+	{%
+		\textit{Paragraph~2} \\
+		Narrowing down the topic: Description of the state of the art and of issues and limitations observed in the literature.%
+	}
+	\\
+	{%
+		\hspace{\smalllinespacing}The simplest way to determine quantum chemical charges is the Mulliken population
+		analysis. \textellipsis\ Although, Mulliken charges are known to strongly depend on the basis set [6] and to reproduce electrostatic moments poorly [1], they are still widely used due to their simplicity. Several other \textellipsis\ methods have been devised to cure the problems of the Mulliken charges [1], \textellipsis
+		\\
+		\null\hspace{\smalllinespacing}\textellipsis
+	}
+	&
+	{%
+		\textit{Paragraph 3} \\
+		Further description of the state of the art: strengths and weaknesses of existing approaches. \\
+		\strut \\[2ex]
+		\textit{Paragraphs 4--6} \\
+		Further description of unresolved issues.
+	}
+	\\
+	\hspace{\smalllinespacing}In this paper, we make a critical analysis of the four most popular potential-based point-charge methods, \textellipsis\ It is shown that these methods may give widely different results and possible explanations for this are discussed. Two alternative methods for deriving atomic charges are suggested, which avoid the arbitrariness in the selection of potential points, and their performance is judged using \textellipsis
+	&
+	{%
+		\textit{Paragraph~7} \\
+		Narrow description of the specific contribution of this paper: Identification of undesirable arbitrary variation in simulation results of existing methods, which inspired development of an ``alternative methods'' that avoids this issue.
+	}
+\end{longtblr}
+
+Let us now inspect the ``Concluding Remarks'' subsection from \citet{sigfridsson} to see the ``reverse funneling'' approach at work:
+\begin{longtblr}{}
+	Potential-based charges strongly depend on the way the potential points are selected. We have presented and tested a~new method that avoids such a~dependence, \caps{CHELMO}. It fits the charges directly to the electrostatic moments and it performs as well, or better, as the best electrostatic potential method judging from the calculated electrostatic potential and moments. \textellipsis\ The major disadvantage of the method is that it cannot be used for large molecules, since there is a~limited number of moments. No more than 25~independent charges in a~molecule can be determined if all moments up to hexadecapole moments are used. In practice it should not be used for molecules with more than about 20 atoms since otherwise the higher moments may be poorly reproduced \textellipsis\ This could be remedied if moments higher than hexadecapole moments are calculated but such moments are not included in the output of normal quantum chemical packages.
+	&
+	{%
+		\textit{Paragraph~1} \\
+		Narrow recap of the first contribution of the paper: brief description of the issue and how it was solved by the new method. Followed by description of the limitations of the new method. Outlook how these limitations could be overcome.
+	}
+	\\
+	\hspace{\smalllinespacing}In order to get a~method that can be used for larger system, we constructed the \caps{CHELP-BOW} method, which estimates the charges from a Boltzmann-weighted fit to the electrostatic potential. It has the advantage over the other \textellipsis\ methods that \textellipsis\ The present implementation of the \caps{CHELP-BOW} method is very simplified, but in a future publication we will refine and thoroughly test the method. However, the results are conclusive enough to show that the method \textellipsis\ has the desired behaviour. \textellipsis\ Clearly, this is the method we recommend for general use.
+	&
+	{%
+		\textit{Paragraph~2} \\
+		Narrow recap of the central contribution of the paper and how it relates to the literature: how existing methods were further improved upon by the second method proposed in this paper. Followed by outlook on future advances and recommendation for researchers in the field.
+	}
+	\\
+	\hspace{\smalllinespacing}An important advantage of the methods developed in this paper is that they are general, i.e. they can be used with any quantum chemical program and they can use experimental data (\textellipsis\!) as well. The only thing that has to be changed is the input section of the programs. Thus any quantum chemical basis sets can be used, and any level of theory that gives a~wave function may be employed. Furthermore, the methods can easily be adapted to \textellipsis
+	&
+	{%
+		\textit{Paragraph~3} \\
+		Broader implications due to the generality of the new method.
+	}
+	\\
+	\hspace{\smalllinespacing}Finally, a comment on the traditional electrostatic potential methods. \textellipsis\ Thus, we cannot see any justification to use \caps{CHELP} charges except for backward comparisons.
+	&
+	{%
+		\textit{Paragraph~4} \\
+		Other broader implications.
+	}
+\end{longtblr}
+
+\endgroup
+
+\subsection{Some Questions That May Help You Guide Writing Your Thesis}
+
+You may find the following list of questions helpful as a~guide to making sure that your manu\-script covers all important aspects. The questions are primarily intended for doctoral and advanced researchers, but they may also be helpful to students writing term papers and theses.
+
+Your introduction might answer the following questions (not necessarily in this order, but this order will give rise to a~``funnel'' structure):
+\begin{enumerate}[labelindent = \parindent, leftmargin = 2\parindent]
+	\item What do we already know?
+	\item What do we not know yet (the ``knowledge gap'')?
+	\item Why is it interesting\slash relevant to close the gap?
+	\item \emph{What is the research question? [R]}
+	\item Why is it interesting to answer the research question?
+	\item How do we contribute to closing the knowledge gap: How do we answer the research question? (Which method do we use?)
+	\item Why is the chosen method (more) suitable (than alternative methods) for answering the research question?
+\end{enumerate}
+
+And your conclusion/discussion might answer the following questions (again, not necessarily in this order, but this order will give rise to a~``reverse funnel'' structure):
+\begin{enumerate}[resume, labelindent = \parindent, leftmargin = 2\parindent]
+	\item What was the knowledge gap before the current study? [Similar to the introduction.]
+	\item \emph{How did we contribute to closing that gap, and what did we find? [A]} (Which method\slash dataset did we use, and what are the results?---Recap and take-home message.)
+	\item How do our results relate to (confirm\slash contradict\slash complement\slash extend) the results from previous and other contemporaneous studies?
+	\item What part of the gap is still open? (Phrased a~bit more negatively: What are the limitations of our approach?)
+	\item Next steps\slash avenues for future research: How could we go about closing the remaining knowledge gap (by removing the limitations of our current approach)?\footnote{John Cochrane might do away with question~12. See his ``Writing Tips for Ph.D. Students,'' \url{https://www.fma.org/assets/docs/membercontent/writing_cochrane.pdf}.}
+\end{enumerate}
+
+In her book \textit{The Little Book of Research Writing},\footnote{For a quick summary of the book, see \url{https://mauve-porcupine-8992.squarespace.com/s/Chaubey_Research_Writing-bxdd.pdf}. See also \url{https://www.econscribe.org/about} and \url{https://arxiv.org/pdf/2012.07787}.} Varanya Chaubey proposes a~simpler list of only three items---the ``RAP method'':
+\begin{itemize}
+	\item The ``R'' stands for ``research question.''
+	\item The ``A'' stands for ``answer'' (to the research question, of course).
+	\item The ``P'' stands for ``positioning statement.'' (How does our manuscript relate to the literature: Does it corroborate or extend or contradict others' findings?)
+\end{itemize}
+
+Relating the ``RAP'' approach to the the list of questions above, question~4 is the ``R,'' the answer to question~9 is the ``A,'' and the remaining questions spell out the ``P.''
+
+\subsection{Structuring Paragraphs in Academic Manuscripts}
+
+\begingroup
+
+\setul{0.3ex}{0.5ex}
+
+\SetTblrTemplate{contfoot}{empty}
+\SetTblrTemplate{conthead}{empty}
+\SetTblrOuter[longtblr]{
+	entry = none,
+	label = none,
+	postsep = 0.75\baselinedist plus 10ex,
+	presep = 0.75\baselinedist plus 10ex,
+}
+\SetTblrInner[longtblr]{
+	colspec = {X[2.15] X[l]},
+	column{1} = {
+		bg = UBonnBlue!5,
+		font = \fontsize{\fsnormal}{\smalllinespacing}\rmfamily,
+		leftsep = 3ex,
+		rightsep = 1.5ex,
+	},
+	column{2} = {
+		bg = UBonnBlue!5,
+		font = \sffamily\footnotesize\setlength{\baselineskip}{2.75ex}\bfseries\RaggedRight,
+		leftsep = 1.5ex,
+		rightsep = 3ex,
+	},
+	hborder{1-Z} = {abovespace = 0pt, belowspace = 0pt},
+	hborder{1} = {belowspace = 2.25ex},
+	hborder{Z} = {abovespace = 2.25ex},
+	hline{1-Z} = {0pt},
+	width = \linewidth,
+}
+\let \longtblrOrig \longtblr
+\renewcommand{\longtblr}{%
+	\fontsize{\fsnormal}{\smalllinespacing}\selectfont%
+	\longtblrOrig%
+}
+
+Obviously, there is no single ``right'' way of constructing paragraphs. However, a~few basic rules can help you write paragraphs that are \emph{easy to comprehend} by your readers. A~common approach is to compose sentences such that they reflect the following functional sequence:\footnote{See \url{https://libguides.newcastle.edu.au/writing-paragraphs/structure}, \url{https://www.une.edu.au/library/students/academic-writing/write-paragraphs/paragraphs/Academic-paragraphs_v2.pdf}, \url{https://learningessentials.auckland.ac.nz/writing-effectively/paragraph/}}
+\begin{enumerate}
+	\item \emph{topic sentence (\caps{TS})}---which, if necessary, connects to the previous paragraph;
+	\item \emph{supporting sentences (\caps{SS})}---which elaborate on the topic sentence; and
+	\item \emph{concluding sentence or connecting sentence (\caps{CS})}---which refers back to the topic sentence and\slash or provides a~link to the subsequent paragraph.
+\end{enumerate}
+
+There are various ways in which the supporting sentences can be filled with content. The University of Sheffield suggests\footnote{See \url{https://sheffield.ac.uk/study-skills/writing/academic/paragraph}.} that the supporting sentences could consist of
+\begin{enumerate}
+	\item ``explanation or definitions (optional),''
+	\item ``evidence and examples,'' and
+	\item ``comment'' (an interpretation and evaluation of the evidence by you).
+\end{enumerate}
+The University of Hull and Newcastle University (\caps{UK}) consider the mnemonic ``\caps{PEEL}'' helpful, although they define its meaning in slightly different ways: ``Point, Evidence, Explanation, Link''\footnote{See \url{https://libguides.hull.ac.uk/writing/paras}.} versus ``Point, Evidence, Evaluation, Link''\footnote{See \url{https://www.ncl.ac.uk/academic-skills-kit/writing/academic-writing/paragraphing/}}. One may view ``Explanation''---``why the point is important and how it helps with your overall argument''---as narrower than ``Evaluation''---which is a~general critical reflection on the informativeness of the evidence and can include an explanation of its importance. ``\caps{PEEL}'' relates to \caps{TS}\slash \caps{SS}\slash \caps{CS} as follows:
+\begin{enumerate}
+	\item ``P,'' the Point, corresponds to the topic sentence.
+	\item ``E,'' Evidence, is the first part of the supporting sentences.
+	\item ``E,'' Evaluation/Explanation, forms the second part of the supporting sentences.
+	\item ``L,'' Link, refers to the connecting sentence that links to the next paragraph.
+\end{enumerate}
+
+The Wilfrid Laurier University (Canada) suggests a~different mnemonic: ``\caps{MEAL}.''\footnote{See \url{https://students.wlu.ca/academics/support-and-advising/student-success/assets/resources/writing/how-to-structure-an-academic-paragraph.html}.}
+\begin{enumerate}
+	\item ``M: Main Point Sentence'' corresponds to the topic sentence.
+	\item ``E: Evidence'' is the first part of the supporting sentences.
+	\item ``A: Analysis/Synthesis'' forms the second part of the supporting sentences.
+	\item ``L: Linking-Back Sentence'' refers to the concluding sentence that summarizes the paragraph and links back to the topic sentence or even the topic of the entire paper.
+\end{enumerate}
+
+The first three components are largely identical according to these approaches. A~difference exists in the meaning of ``L'': While ``\caps{PEEL}'' stresses the link to the \emph{next} step in the chain of thought, ``\caps{MEAL}'' stresses underscoring the message of the \emph{current} paragraph. That is, the latter advocates \emph{closure}: summarizing the paragraph and linking \emph{back} to the topic sentence.
+
+Yet slightly different is the approach put forth by Academic Writing \caps{UK}:\footnote{See \url{https://academic-englishuk.com/paragraphing/}.}
+\begin{enumerate}
+	\item Topic sentence---key topic in this paragraph.
+	\item Development---the main idea\slash topic discussed in more detail.
+	\item Example---support\slash evidence\slash data\slash statistics that show your development is valid\slash credible.
+	\item Summary---overall main point summarized\slash evaluated.
+\end{enumerate}
+
+It is perfectly fine to mix the different approaches. For some paragraphs, a~closer explanation of the topic sentence (``development'') may be necessary, while it is unnecessary for others. And in some paragraphs, you may want underscore the central message by reiterating it in the final sentence (concluding sentence), while for other paragraphs, you will use the final sentence to set the stage for the next step in your chain of reasoning (connecting sentence).
+
+One thing that \emph{all} these suggestions have in common is, however, that they start with a~\emph{topic sentence} and end with a~\emph{concluding\slash connecting sentence}. Hence, no matter how you fill the supporting sentences, it is probably best to start a~paragraph with a~topic sentence and end with a~concluding\slash connecting sentence.
+
+Let us illustrate the ``\caps{MEAL}''\slash``\caps{PEEL}'' structure, with an optional explanation\slash def\-i\-ni\-tion included, through some example sentences from \citet{sigfridsson}:
+
+\begingroup
+	\microtypesetup{protrusion = false}%
+	\begin{longtblr}{}
+		\textellipsis\ {\setulcolor{DarkOrchid3!67}\ul{Thus, most classical simulation methods need a~point-charge parameterisation of the molecules of interest.}}
+		&
+		\textcolor{DarkOrchid3}{L: Concluding sentence}
+		\\
+		\hspace{\smalllinespacing}{\setulcolor{Purple4!67}\ul{Unfortunately, atomic charges are not observables,}}
+		{\setulcolor{RoyalBlue4!67}\ul{i.e. they cannot unambiguously be determined by experiments or quantum chemical calculations.}}
+		{\setulcolor{DeepPink4!67}\ul{Therefore, a~large number of methods have been suggested for the estimation of point charges [1].}}
+		{\setulcolor{Teal!67}\ul{Several groups have tried to derive the charges directly from experimental quantities, e.g. dipole moments, electrostatic potentials, or free energy differences [2--4]. Yet, relevant data is usually missing or too scarce to allow a determination of all charges in interesting molecules.}}
+		{\setulcolor{DarkOrchid3!67}\ul{Instead, most techniques derive atomic charges from quantum chemical calculations.}}%
+		&
+		{%
+			\textcolor{Purple4}{M/P: Topic sentence} \\
+			\textcolor{Purple4}{\textmd{(reference to previous paragraph)}} \\
+			\strut \\
+			\textcolor{RoyalBlue4}{Optional explanation/definition} \\
+			\strut \\
+			Supporting sentences: \\
+			\textcolor{DeepPink4}{E: Evidence} \\
+			\textcolor{Teal}{A/E: Analysis/Evaluation} \\
+			\strut \\
+			\textcolor{DarkOrchid3}{L: Connecting sentence} \\
+			\textcolor{DarkOrchid3}{\textmd{(link to next paragraph)}}%
+		}
+		\\
+		\hspace{\smalllinespacing}{\setulcolor{Purple4!67}\ul{The simplest way to determine quantum chemical charges is the Mulliken population analysis.}} \textellipsis
+		&
+		{%
+			\textcolor{Purple4}{M/P: Topic sentence} \\
+			\textcolor{Purple4}{\textmd{(reference to previous paragraph)}}%
+		}
+\end{longtblr}
+\endgroup
+
+The rule to finish a~paragraph with a~concluding sentence entails, in particular, that a~theoretical or empirical finding should never be the last thing that you mention in a~paragraph. An ``evidence'' sentence should always be followed by an interpretation in which you tell the reader what we learn from that finding. Here is an example from \citet{sigfridsson}:
+
+\begingroup
+	\microtypesetup{protrusion = false}%
+	\begin{longtblr}{}
+		\textellipsis\ {\setulcolor{DeepPink4!67}\ul{With these radii, the charges almost coincide with those obtained by the \mbox{\caps{CHELPG}} method (within ${0.02\,e}$).}}
+		{\setulcolor{DarkOrchid3!67}\ul{Thus, we can conclude that the main difference between the Merz--Kollman and the \mbox{\caps{CHELPG}} method is the 1.4~times larger effective radii of the former method, whereas the sampling schemes are almost equivalent.}}
+		&
+		{%
+			\textcolor{DeepPink4}{Evidence:} \\
+			\textcolor{DeepPink4}{Supporting sentence with} \\
+			\textcolor{DeepPink4}{empirical finding} \\
+			\strut \\
+			\textcolor{DarkOrchid3}{Concluding sentence with} \\
+			\textcolor{DarkOrchid3}{interpretation of that finding}%
+		}
+	\end{longtblr}
+\endgroup
+
+To reiterate, there is no single ``right'' way of constructing paragraphs. However, keeping the \caps{TS}/\caps{SS}/\caps{CS} structure in mind as a~guideline is bound to help you produce a~text that enables readers to follow your chain of reasoning.
+
+\endgroup
+
+\subsection{Additional Online Resources on Effective Writing in Economics}
+
+Additional useful recommendations and tips can be found in Plamen Nikolov's ``Writing Tips for Crafting Effective Economics Research Papers -- 2023-2024 Edition'' (\url{https://docs.iza.org/dp16276.pdf}) and in John~H. Cochrane's ``Writing Tips for Ph.D. Students'' (\url{https://www.fma.org/assets/docs/membercontent/writing_cochrane.pdf}).
+
+
+\section{Layout and Design of the Thesis}
+\label{sec:layout}
+
+\begingroup
+
+\SetTblrTemplate{contfoot}{empty}
+\SetTblrTemplate{conthead}{empty}
+\SetTblrOuter[longtblr]{
+	entry = none,
+	label = none,
+	postsep = 0.75\baselinedist plus 10ex,
+	presep = 0.75\baselinedist plus 10ex,
+}
+\SetTblrInner[longtblr]{
+	colspec = {X},
+	column{1} = {
+		bg = UBonnBlue!5, font = \fontsize{\fsnormal}{\smalllinespacing}\rmfamily, leftsep = 3ex, rightsep = 3ex,
+	},
+	hborder{1-Z} = {abovespace = 0pt, belowspace = 0pt},
+	hborder{1} = {belowspace = 2.25ex},
+	hborder{Z} = {abovespace = 2.25ex},
+	hline{1-Z} = {0pt},
+	width = \linewidth,
+}
+\let \longtblrOrig \longtblr
+\renewcommand{\longtblr}{%
+	\fontsize{\fsnormal}{\smalllinespacing}\selectfont%
+	\longtblrOrig%
+}
+
+\subsection{Introductory Remark}
+The following recommendations are based on the official guidelines%
+\footnote{See \url{https://www.econ.uni-bonn.de/examinations/de/informationen/bachelor/bachelorarbeit/dokumente/ba-merkblatt-2016-05-23.pdf} and \url{https://www.econ.uni-bonn.de/examinations/en/information/master-economics/master-thesis/documents/ma-master-thesis-style-guide-2014-06-10.pdf}.}
+of the examination office of the Department of Economics at the University of Bonn.
+
+\subsection{Typeface and Font Sizes}
+This template uses the Times typeface by default for the body text. Alternatively, you can choose a~typeface of equal size. Equal size here means that the same amount of text (or less) fits on a~page with the layout---the page size, margins, and line spacing---defined below.
+
+It is probably a~good choice to use a~serif font. This is because papers and theses in economics often feature mathematical formulas and equations. With serif fonts, characters can usually be disambiguated relatively well, and often better than with sans-serif fonts (compare: Al/AI, {\relscale{0.90}\fontfamily{phv}\selectfont Al/AI}). Here are some examples of glyphs that are easy to confuse in particular fonts:
+
+\begin{longtblr}{}
+	Digit 1, lowercase l, uppercase I, vertical bar |: \\
+	\small%
+	{\fontfamily{ntxtlf}\selectfont Times: 1\,l\,I\,|} \quad
+	{\relscale{0.92}\fontfamily{XCharter-TLF}\selectfont Charter: 1\,l\,I\,|} \quad
+	{\relscale{0.85}\fontfamily{pag}\selectfont Avant Garde: 1\,l\,I\,|} \quad
+	{\relscale{0.88}\fontfamily{phv}\selectfont Helvetica: 1\,l\,I\,|} \quad {\relscale{1.05}\fontfamily{FiraSans-TLF}\selectfont Fira Sans: 1\,l\,I\,|}
+	\par
+	\normalsize%
+	Lowercase o, digit 0, uppercase O: \\
+	\small%
+	{\fontfamily{ntxtlf}\selectfont Times: o\,0\,O}\quad
+	{\relscale{0.90}\fontfamily{Cabin-TLF}\selectfont Cabin: o\,0\,O}\quad
+	{\relscale{0.95}\fontfamily{AlegreyaSans-OsF}\selectfont Alegreya Sans: o\,0\,O}\quad
+	{\relscale{1.00}\fontfamily{FiraMono-TLF}\selectfont Fira Mono: o\,0\,O}\quad
+	{\relscale{0.81}\fontfamily{CascadiaCode-TLF}\fontseries{sl}\selectfont Cascadia Code: o\,0\,O}
+	\par
+	\normalsize%
+	Italic Latin a, p, u, v, y, Y vs. italic Greek $\upalpha$, $\uprho$, $\upupsilon$, $\upnu$, $\upgamma$, $\upUpsilon$: \\
+	\small%
+	Times: $a \, \alpha$, $p \, \rho$, $u \, \upsilon$, $v \, \nu$, $y \, \gamma$, $Y \, \mathit{\Upsilon}$
+	\quad
+	{\relscale{1.05}\fontfamily{FiraSans-TLF}\selectfont Fira Sans: {\itshape a\,{\fontencoding{LGR}\selectfont a}}, {\itshape p\,{\fontencoding{LGR}\selectfont r}}, {\itshape u\,{\fontencoding{LGR}\selectfont u}}, {\itshape v\,{\fontencoding{LGR}\selectfont n}}, {\itshape y\,{\fontencoding{LGR}\selectfont g}}, {\itshape Y\,{\fontencoding{LGR}\selectfont U}}}
+\end{longtblr}
+
+When using Times or Times New Roman as the typeface, the following font sizes apply:
+\begin{itemize}
+	\item The font size is \printlength{\fsnormal} for body text.
+	\item The font sizes, font weights, and font shapes for headings are as follows:
+		\begin{itemize}
+			\item Level-1 headings (\verb|\section|): \printlength{\fsLarge}, boldface.
+			\item Level-2 headings (\verb|\subsection|): \printlength{\fslarge}, boldface.
+			\item Level-3 headings (\verb|\subsubsection|): \printlength{\fsnormal} (like body text), italic.
+			\item Level-4 headings (\verb|\paragraph|): \printlength{\fsnormal}, upright (like body text). (Level-4 headings are usually unnecessary in documents that have the scope of theses.)
+		\end{itemize}
+	\item The font size is \printlength{\fssmall} for tables (not including the table of contents), table titles, figure captions, list of references, and appendix.
+	\item The font size is \printlength{\fsfootnote} for footnotes, table notes, and figure notes.
+\end{itemize}
+
+If you use a different typeface, adjust the font sizes such that the same amount of text fits on a page as if you had used Times New Roman with the font sizes mentioned above.
+
+\subsection{Page Size and Page Margins}
+
+The examination office's guidelines require that bachelor's and master's theses be printed on A4~paper (29.7~cm width, 21.0~cm height).
+
+\makeatletter
+\ifdim \f@size pt < 11.5pt
+	The following margins are required when using a~font size of \printlength{\fsnormal} to give about the same amount of text per page as it is produced when following the guidelines to the letter:
+	\begin{itemize}
+		\item The sum of the left and right margin has to equal 6.5~cm (default: 2.5~cm left margin, 4.0~cm right margin; the latter is relatively wide in order to provide space for annotations by reviewers). Consequently, the text width amounts to 14.5~cm.
+		\item The sum of the top and bottom margin has to equal 5.6 cm (default: 2.8~cm top margin, 2.8~cm bottom margin). Consequently, the text height amounts to 24.1~cm.
+	\end{itemize}
+\else
+	The guidelines specify the following margins when using a~font size of \printlength{\fsnormal}:
+	\begin{itemize}
+		\item The sum of the left and right margin has to equal 5~cm (default: 3~cm left margin, 2~cm right margin). Consequently, the text width amounts to 16~cm.
+		\item The sum of the top and bottom margin has to equal 4 cm (default: 2~cm top margin, 2~cm bottom margin). Consequently, the text height amounts to 25.7~cm.
+	\end{itemize}
+\fi
+\makeatother
+
+\subsection{Line Spacing}
+
+\begin{itemize}
+	\item Line spacing is \printlength{\baselinedist} for the body text. The reason for the generous---but not particularly aesthetic---line spacing is that many reviewers like to place annotations in-between the lines of text. Apart from that, manuscripts in economics often include mathematical expressions with fractions, subscripts, superscripts, sums, integrals, etc. which all require generous line spacing.
+	\item This results in 35~lines of text per page
+		\makeatletter%
+		\ifdim \f@size pt < 11.5pt%
+			(${35 \times 19.5\textup{~pt}} = 682.5\textup{~pt} = 24.08\textup{~cm}$)%
+		\else%
+			(${35 \times 20.7\textup{~pt}} = 724.5\textup{~pt} = 25.56\textup{~cm}$)%
+		\fi%
+		\makeatother%
+		, as ``one-and-a-half line spacing'' would produce in Microsoft Word.
+	\item There is no additional vertical space between paragraphs. Paragraphs that do not follow a~heading should have a~first-line indent (that corresponds to the line height of \printlength{\baselinedist}).
+	\item The line spacing for headings is also \printlength{\baselinedist}, in combination with vertical space above and below as follows:
+		\newlength{\baselinedistDouble}
+		\setlength{\baselinedistDouble}{2\baselinedist}
+		\newlength{\baselinedistHalf}
+		\setlength{\baselinedistHalf}{0.5\baselinedist}
+		\begin{itemize}
+			\item Level-1 headings (\verb|\section|) are spaced \printlength{\baselinedistDouble} above and \printlength{\baselinedist} below.
+			\item Level-2 headings (\verb|\subsection|) are spaced \printlength{\baselinedist} above and \printlength{\baselinedist} below.
+			\item Level-3 headings (\verb|\subsubsection|) are spaced \makeatletter\SI[round-mode = places, round-precision = 2]{\strip@pt\baselinedistHalf}{pt}\makeatother\ above and \makeatletter\SI[round-mode = places, round-precision = 2]{\strip@pt\baselinedistHalf}{pt}\makeatother\ below.
+			\item Level-4 headings (\verb|\paragraph|) are spaced \makeatletter\SI[round-mode = places, round-precision = 2]{\strip@pt\baselinedistHalf}{pt}\makeatother\ above and 0~pt below. (Level-4 headings are usually unnecessary in documents that have the scope of theses.)
+		\end{itemize}
+	\item The line spacing is \printlength{\smalllinespacing} for tables (including table of contents), table titles, figure captions, list of references, and appendix.
+	\item The line spacing is \printlength{\footnotelinespacing} for footnotes, table notes, and figure notes.
+\end{itemize}
+
+\subsection{Page Numbering}
+
+Page numbering starts with the first page of the main text. The main text is numbered using Arabic numerals. (After the main text, page numbering can be continued with Arabic numerals. For appendices, a~prefix like ``A'' can be added to the page numbers.)
+
+For the front matter, page numbers can be omitted, or Roman numerals can be used. In this case, the (Roman) numbering starts with the cover page. (However, no page number is printed on the cover page itself, as it is evident that it is the first page.)
+
+
+\section{Citing Other Authors and Sources}
+\label{sec:citations}
+
+\subsection{In-Text Citations}
+
+\subsubsection{General Rules}
+
+Both literal citations from other texts as well as the paraphrasing of other authors' ideas must be identified as such. The cited author(s) is (are) indicated right before or after the citation, including the year of the manuscript that you are citing/paraphrasing.
+
+\subsubsection{Paraphrasing Other Authors' Thoughts}
+
+Here is an example of a~paraphrasing in-text citation:
+\begin{longtblr}{}
+	\cite{sarfraz} suggest an algorithm to automatically capture the outlines of fonts.
+\end{longtblr}
+\noindent The author's name/authors' names can be embedded in the sentence, as in the example above, or surrounded by parentheses:
+\begin{longtblr}{}
+	Many researchers in computer science have worked on the problem of converting the outlines of objects to mathematically describable curves, such as B\'{e}zier curves (see, e.g., \citealp{sarfraz}).
+\end{longtblr}
+\noindent Paraphrasing citations of this type usually start with ``see.''
+
+\subsubsection{Literal Citations}
+
+Literal citations must be indicated via quotation marks. Use double quotation marks for this purpose. For quotes within direct quotes, use single quotation marks. For literal citations, the page number must also be provided, if possible. Here is an example of a~literal citation:
+\begin{longtblr}{}
+	\cite[795]{sarfraz} state that ``another major difference lies in the curve model for the description of the design curve. The outline capturing technique, instead of traditional B\'{e}zier cubics, is based upon a~generalized Hermite cubic.'' They conclude (p.\,796): ``Accordingly, the design curve will be $GC^1$ continuous.''
+\end{longtblr}
+
+Omissions must be indicated by ellipses (``\textellipsis\!''), as in the following example:
+\begin{longtblr}{}
+	\cite[795]{sarfraz} state: ``Another major difference lies in the curve model for the description of the design curve. The outline capturing technique, \textellipsis, is based upon a~generalized Hermite cubic.''
+\end{longtblr}
+
+Changes must be placed in square brackets, as in the following example:
+\begin{longtblr}{}
+	\cite[377]{sigfridsson} find that the ``\caps{CHELMO} [Charges from Electrostatic Moments] method gives the best multipole moments for small and medium-sized polar systems.''
+\end{longtblr}
+
+Longer quotations---as a~rule of thumb, anything that spans more than two lines of text---should be formatted as block quotations:
+\begin{longtblr}{}
+	\begin{minipage}{\linewidth}%
+		\strut\noindent%
+		\cite[377]{sigfridsson} summarize their findings as follows:
+		\begin{quote}\vspace{-\smallskipamount}%
+			The \caps{CHELMO} method gives the best multipole moments for small and medium-sized polar systems, whereas the \caps{CHELP-BOW} charges reproduce best the total interaction energy in actual simulations. Among the standard methods, the Merz--Kollman charges give the best moments and potentials, but they show an appreciable dependence on the orientation of the molecule.%
+			\strut
+		\end{quote}
+	\end{minipage}
+\end{longtblr}
+\noindent Even longer quotations---which span more than one paragraph---are typeset as block quotations with additional first-line indent from the second quoted paragraph on:
+\begin{longtblr}{}
+	\begin{minipage}{\linewidth}
+		\strut\noindent%
+		\cite[801]{sarfraz} describe the results of their approach as follows:
+		\begin{quotation}\vspace{-\smallskipamount}%
+			The scheme and the algorithm has been implemented and tested for various shapes. Visually quite elegant results have been observed. \par
+			The algorithm has been tested for four fonts in Figs. 4(a), 5(a), 6(a) and (7a). The fonts in Figs. 4(a) and 5(a) are Arabic, whereas the images in Figs. 6(a) and 7(a) are Greek and Kanji characters respectively. \par
+			Fig.~4(b) is the outline of Fig.~4(a) using modified Avrahami and Pratt algorithm~[24]. Fig. 4(c) displays the initial characteristic points in Fig. 4(b) using the method of Davis~[23]. Figs. 4(d) and (e) demonstrate the initial characteristic points as well as the intermediate characteristic points which have been obtained after minimizing the errors between the original outline and the computed outline.%
+			\strut
+		\end{quotation}
+	\end{minipage}
+\end{longtblr}
+
+\subsection{List of References}
+
+All works referenced in the manuscript---and only those---must be included in the list of references. It is either placed right after the main text, before the appendix, or at the very end, following all appendices. The publications should be arranged by author (or editor) in alphabetical order. Some examples of entries in the reference list can be found at the end of this guide. If you refer to Internet sources, the complete web address and the date on which you accessed it should be mentioned in the reference list.
+
+I~recommend generating citations following the guidelines of the \textit{Chicago Manual of Style}. The reasons for this recommendation are as follows:
+\begin{itemize}
+	\item The citation styles of several economics journals (such as the \href{https://www.aeaweb.org/journals/aer}{\textit{American Economic Review}} and the \href{https://www.journals.uchicago.edu/journal/jpe}{\textit{Journal of Political Economy}}) are based on the \textit{\caps{CMOS}} citation style.
+	\item The \textit{\caps{CMOS}} citation style is very well documented online.\footnote{\url{https://www.chicagomanualofstyle.org/tools_citationguide/citation-guide-2.html}.}
+	\item The \textit{\caps{CMOS}} citation style is implemented in both Zotero and BibLaTeX.\footnote{See \url{https://www.zotero.org/styles?q=chicago} and \url{https://ctan.org/pkg/biblatex-chicago}, respectively.}
+\end{itemize}
+
+The \textit{\caps{CMOS}} style posits that titles of books and journals be italicized, while titles of journal articles and newspaper articles be placed in double quotation marks.
+
+\subsection{Additional Recommendations Regarding Citations and Formatting}
+
+\subsubsection{Citations Embedded in a~Sentence}
+
+The settings in this document output citations as they would be generated by the popular \texttt{natbib} package. That is, \verb|\cite|, \verb|\citet|, and \verb|\textcite| yield the same result:
+\begin{longtblr}{}
+	\cite{sarfraz}, \citet{sarfraz}, \textcite{sarfraz}
+\end{longtblr}
+\noindent Citing the same author multiple times:
+\begin{longtblr}{}
+	\cite{aristotle:anima, aristotle:physics, aristotle:poetics} \textellipsis
+\end{longtblr}
+
+If a~citation includes a~``von'' part and occurs at the beginning of a~sentence, it has to be capitalized, which is done via the \verb|\Citet| command:
+\begin{longtblr}{}
+	\Citet{vangennep} \textellipsis, \citet{vangennep} \textellipsis
+\end{longtblr}
+
+Citing a~work with more than three authors via \verb|\cite|, \verb|\citep|, \verb|\citet|, etc. abbreviates the author list to first author plus ``et~al.'' by default:
+\begin{longtblr}{}
+	The book \citetitle{gerhardt} \citep{gerhardt} has a~single author.
+	The report \citetitle{chiu} \citep{chiu} has two authors.
+	The \citetitle{companion} \citep{companion} has three authors.
+	The article \citetitle{murray} \citep{murray} has many authors and was published in \mkbibemph{\citefield{murray}{journaltitle}}.
+\end{longtblr}
+\noindent The full list of author names is printed when using the starred commands \verb|\citep*|, \verb|\citet*|, etc:
+\begin{longtblr}{}
+	The article \citetitle{murray} \citep*{murray} has many authors and was published in \mkbibemph{\citefield{murray}{journaltitle}}.
+\end{longtblr}
+
+\subsubsection{Citations Included in Parentheses}
+
+A~citation in parentheses:
+\begin{longtblr}{}
+	This process has been described in the literature in detail \citep[see][and the references therein]{gerhardt}.
+\end{longtblr}
+\noindent An alternative way to include additional text in the parentheses is the following:
+\begin{longtblr}{}
+	Its properties are covered in publications and reports from various disciplines (for instance, \citealp{chiu, markey, padhye, sarfraz} are of relevance).
+\end{longtblr}
+
+\subsubsection{Citing Only Parts of Works}
+To cite particular pieces of information of a~work, several commands are available, such as \verb|\citeauthor|, \verb|\citeyear|, \verb|\citetitle|, etc.:
+\begin{longtblr}{}
+	The book \citetitle{knuth:ct:a}, written by Donald~E. \citeauthor{knuth:ct:a}, was published in \citeyear{knuth:ct:a}. It is available online via  \url{https://ctan.org/pkg/texbook}.%
+\end{longtblr}
+
+
+\section{Recommendations for Typesetting Mathematical Expressions}
+\label{sec:math}
+
+\subsection{Equations and Equation Numbering}
+Short equations can be typeset in-line:
+\begin{longtblr}{}
+	Let $\pi(x) = p(x)\,x - c(x)$ denote the profit of a~monopolist, where $c(x)$ is the cost of producing quantity~$x$.
+\end{longtblr}
+
+Equations that are taller than a~normal line of text and important equations should be typeset as display equations:
+\begin{longtblr}{}
+	\begin{minipage}{\linewidth}\noindent%
+		\begin{equation}
+			(x+a)^n= \sum_{k=0}^n \binom{n}{k} \, x^k a^{n-k}
+		\end{equation}%
+	\end{minipage}\vspace{0.333\smallskipamount}
+\end{longtblr}
+
+All display equations should be numbered because this makes it easier to refer to them:
+\begin{longtblr}{}
+	\begin{minipage}{\linewidth}\noindent%
+		\begin{equation}
+			\label{eq:series}
+			(1+x)^n = 1 + \frac{n\,x}{1!} + \frac{n\,(n-1)\,x^2}{2!} + \cdots
+		\end{equation}\par
+		Equation~\eqref{eq:series} posits that \textellipsis%
+		\strut
+	\end{minipage}
+\end{longtblr}
+\noindent Some authors prefer to number only those equations that they actually reference in the body text. This practice is dubious, however, since the very purpose of the numbering is to make an equation easy to find. When encountering an unnumbered equation, one does not know whether the numbered equation that one is looking for can be found above or below the unnumbered equation. Hence, please number \emph{all} equations. (In the same vein, we also numbers \emph{all} pages and all sections in our document. Selectively numbering only some pages or some sections would make little sense.)
+
+\pagebreak
+
+\subsection{Italic Shape for Variables}
+All variables should be consistently italicized. This makes it easier to identify them and to com\-pre\-hend the text. In LaTeX, this is achieved by using math mode (e.g., \verb|$x$| or \verb|\(x\)| to produce~$x$):
+\begin{longtblr}{X}
+	Let $p$ denote the price, and $c$ marginal cost.
+\end{longtblr}
+
+\subsection{Upright Shape for Mathematical Constants and Functions with Established Meaning}
+In line with \caps{ISO} norm 80000-2:2019(E), functions, numerical constants, and operators with an established, ``well-defined'' meaning should \emph{not} be italicized but set upright to disambiguate them from variables. ``Well-defined'' here refers to the meaning being the same across contexts. This applies to, for instance, the exponential function ($\exp$) and the logarithmic function ($\log$, $\ln$), to Euler's constant ($\mathrm{e}$) and the circular constant ($\uppi$), as well as to the symbols for the differential ($\mathrm{d}$) and the expected value ($\operatorfont{E}$). The \caps{ISO}~80000-2:2019(E) standard%
+\footnote{See \url{https://cdn.standards.iteh.ai/samples/64973/329519100abd447ea0d49747258d1094/ISO-80000-2-2019.pdf},~p.\,1. See also the descriptions and discussions in \url{https://tug.org/tugboat/tb18-1/tb54becc.pdf} and in \url{https://nhigham.com/2016/01/28/typesetting-mathematics-according-to-the-iso-standard/}.}%
+\textsuperscript{,\kern0.04em}%
+\footnote{Note that the decimal separator used by the \caps{ISO} is a~comma (as it is standard, e.g., in German texts) rather than a~period (as it is standard in, e.g., English texts). The \caps{ISO}~80000-1 standard permits both.}
+states:
+
+\begin{quotation}
+	\sloppy%
+	\textbf{4\quad Variables, functions and operators}\par\vskip 0.25\baselineskip
+	\noindent It is customary to use different sorts of letters for different sorts of entities, e.g. $x$, $y$, $\dots$ for numbers or elements of some given set, $f$, $g$ for functions, etc. This makes formulas more readable and helps in setting up an appropriate context. \par
+	Variables such as $x$, $y$, etc., and running numbers, such as $i$ in $\sum_i x_i$ are printed in italic type. Parameters, such as $a$, $b$, etc., which may be considered as constant in a~particular context, are printed in italic type. The same applies to functions in general, e.g. $f$, $g$. \par
+	An explicitly defined function not depending on the context is, however, printed in upright type, e.g. $\sin$, $\exp$, $\ln$, $\upGamma$. Mathematical constants, the values of which never change, are printed in upright type, e.g. ${\mathrm{e} = 2{,}718\,281\,828\dots}$; ${\uppi = 3{,}141\,592\dots}$; ${\mathrm{i}^2 = -1}$. Well-defined operators are also printed in upright type, e.g. $\mathbf{div}$, $\updelta$ in $\updelta x$ and each~$\dd$ in ${\dd f \divslash \dd x}$. Some transforms use special capital letters (\textellipsis\!). \par
+	Numbers expressed in the form of digits are always printed in upright type, e.g. $351\,204$; $1{,}32$; $7/8$. \par
+	Binary operators, for example $+$, $-$, $/$, shall be preceded and followed by thin spaces. This rule does not apply in case of unary operators, as in $-17{,}3$. \par
+	The argument of a~function is written in parentheses after the symbol for the function, without a~space between the symbol for the function and the first parenthesis, e.g. $f(x)$, ${\cos(\omega\,t + \phi)}$. If the symbol for the function consists of two or more letters and the argument contains no operation symbol, such as $+$, $-$, $\times$, or $/$, the parentheses around the argument may be omitted. In these cases, there shall be a~thin space between the symbol for the function and the argument, e.g. $\operatorname{int} 2{,}4$; $\sin n{\kern 0.1em}\uppi$; $\operatorname{arcosh} 2A$; $\operatorname{Ei} x$. \par
+	If there is any risk of confusion, parentheses should always be inserted. For example, write $\cos(x) + y$; do not write $\cos x + y$, which could be mistaken for $\cos(x + y)$. \par
+	A comma, semicolon or other appropriate symbol can be used as a~separator between numbers or expressions. The comma is generally preferred, except when numbers with a~decimal comma are used. \par
+	If an expression or equation must be split into two or more lines, the following method shall be used:
+	\begin{itemize}[leftmargin = \baselineskip, labelsep = 0.25\baselineskip]
+		\item[---] Place the line breaks immediately before one of the symbols $=$, $+$, $-$, $\pm$, or $\mp$, or, if necessary, immediately before one of the symbols $\times$, $\cdot$, or $/$.
+	\end{itemize}
+	The symbol shall not be given twice around the line break; two minus signs could for example give rise to sign errors. If possible, the line break should not be inside of an expression in parentheses.
+\end{quotation}
+
+Here are some examples:
+
+\begin{longtblr}{}
+	Profit $\pi$ (variable) vs.\ radial constant $\uppi$ (numerical constant). \\
+	Effort $e$ (variable) vs.\ Euler's number $\mathrm{e}$ (numerical constant). \\
+	Expected value $\operatorname{E}[X]$, variance $\operatorname{Var}[X]$, covariance $\mathrm{Cov}[X, Y]$, probability $\Pr[{X \le x}]$. \\
+	Exponential function and logarithm: $\exp x$, $\log y$, $\lg y$, $\ln y$. \\
+	\begin{minipage}{\linewidth}\noindent%
+		Sine and cosine function: $\sin \theta$, $\cos \theta$.
+		\begin{equation}
+			f(x) = a_0 + \sum_{n=1}^\infty \left(a_n \cos \frac{n \uppi x}{L} + b_n \sin \frac{n \uppi x}{L} \right).
+		\end{equation}
+	\end{minipage} \\
+	\begin{minipage}{\linewidth}\noindent%
+		Variable $d$ vs.\ differential $\dd$, difference operator $\upDelta$, limit $\lim$.
+		\begin{equation}
+			\mathrm{E}[X] \coloneq \int_{-\infty}^{\infty} x\,f(x)\,\dd x; \quad
+			f'(x) \coloneq \frac{\dd f(x)}{\dd x} \coloneq \lim_{\upDelta x \to 0} \frac{f(x + \upDelta x) - f(x)}{\upDelta x}.
+		\end{equation}
+	\end{minipage}\vspace{0.333\smallskipamount}
+\end{longtblr}
+
+Following the \caps{ISO} recommendations, vectors and matrices should be typeset using boldface. Also for vectors and matrices, italics should be used when they denote variables, and upright font should be used for vector-\slash matrix-valued operators and functions with a~``well-defined'' meaning:
+\begin{longtblr}{}
+	\begin{minipage}{\linewidth}\noindent%
+		A multivariate random variable $\bm{X}$ has the expected value $\mathbf{E}[\boldsymbol{X}]$ (a~vector of scalar expected values). The variance--covariance matrix $\bm{\Sigma}$ is a~symmetric ${(n \times n)}$ matrix with the following entries:
+		\vspace{-0.75\smallskipamount}%
+		\begin{equation}
+			\bm{\Sigma} = \mathbf{Cov}[\bm{X}] =
+			\left[\;\begin{matrix}
+				\mathrm{Var}[X_1] & \mathrm{Cov}[X_1, X_2] & \cdots & \mathrm{Cov}[X_1, X_n] \\
+				\mathrm{Cov}[X_2, X_1] & \mathrm{Var}[X_2] & \cdots & \mathrm{Cov}[X_2, X_n]
+				\\
+				\vdots & & \ddots & \vdots \\
+				\mathrm{Cov}[X_n, X_1] & \mathrm{Cov}[X_n, X_2] & \cdots & \mathrm{Var}[X_n]
+			\end{matrix}\;\right].
+		\end{equation}
+	\end{minipage}\vspace{0.1\smallskipamount}
+\end{longtblr}
+
+Descriptive subscripts and superscripts should be printed upright so that they can be disambiguated from exponential operations etc.:
+\begin{longtblr}{}
+	In the expression ${\hat{\bm{\beta}} = (\bm{X}^\mathrm{T}\bm{X})^{-1}\bm{X}^\mathrm{T}\bm{y}}$, the upright uppercase $\mathrm{T}$ denotes the matrix transpose. By contrast, in the expression ${\bm{X} = (\bm{x}_t)_{t = 1}^T}$, the italic uppercase $T$ denotes the total number of observations, with individual observations being indexed by lowercase~$t$.
+\end{longtblr}
+
+\endgroup
+
+
+\section{Portability}
+
+\subsection{Compatibility with Other Typesetting Software}
+\label{sec:portability:compatibility}
+
+The settings in this template regarding the font family (by default, Times), font sizes, and line spacing were chosen such that a~virtually identical layout can be achieved with other typesetting software such as Microsoft Word and Apple Pages and the open-source alternatives Libre\-Office Writer (\url{https://www.libreoffice.org}) and Typst (\url{https://typst.app}). This means taking into account, for instance, that Word restricts font sizes to multiples of 0.5~pt.
+
+\subsection{Clean Code/Semantic Coding: Separating Content and Formatting}
+
+All written texts are structured into words and sentences. If they are long enough, texts are also structured into paragraphs. Academic texts, in addition, feature sections, subsections, and often subsubsections, as well as figures, tables, lists of references, and potentially appendices. These structural elements are associated with headings\slash titles and captions.
+
+\pagebreak[1]
+
+The structure of a~document is conveyed to the reader through \emph{formatting}. Effective formatting of academic documents, thus, requires that all elements of a~particular type---say, section headings---be identifiable as such. Identifiability is achieved through styling that is \emph{consistent within type} and \emph{distinct across types}. For example, all section headings must be formatted identically, and at the same time, they must look different from subsection headings.
+
+As a~consequence, one should refrain from using manual, discretionary formatting whenever possible. In line with this principle, the source code of this template refers to the document's structure as much as possible. This is also called ``semantic coding'': using code that describes the \emph{meaning} of the content and not \emph{how} those elements should look.
+\begin{itemize}
+	\item Examples for \emph{semantic} commands are \verb|\author|, \verb|\title|, \verb|\section|,  \verb|\emph|, \verb|\url|, \verb|\cite|, \verb|\begin{figure}| \textellipsis\ \verb|\end{figure}|, \verb|\caption|, \verb|\begin{quote}| \textellipsis\ \verb|\end{quote}|.
+	\item Examples for LaTeX commands that are \emph{not semantic}---and should be avoided---are \verb|\textbf|, \verb|\textit|, \verb|\newpage|, \verb|\pagebreak|, \verb|\linebreak|, \verb|\\|, \verb|\noindent|, \verb|\smallskip|, \verb|\centering|, \verb|\noindent|, \verb|\hspace|, \verb|\vspace|, \verb|\cellcolor|, \verb|\multirow|.
+\end{itemize}
+
+The reason why one should stick to using semantic commands is that they keep the code \emph{portable}: Semantic code can be \emph{reused} across documents without any changes (or at least without major adjustments). This is not then case when code includes manual formatting instructions: Instructions like \verb|\bigskip|, \verb|\hspace|, \verb|\\| (even worse, \verb|\\ \\|), etc. may result in decent formatting in a~particular document but are bound to lead to undesirable formatting in another document. Moreover, manual formatting is error-prone, as it easily leads to inconsistent styling.
+
+This entails two things: First, the formatting should be determined, as much as possible, in the \emph{preamble} of the LaTeX document. This comes at the cost, of course, of a~rather long preamble. Second, instead of defining custom commands, one should \emph{redefine} standard LaTeX commands or use (widely adopted) packages that are available on \caps{CTAN} (\url{https://ctan.org}).
+
+This template follows the above principles, resulting in clean, portable code: The source code of the body of this template (apart from the boxes with examples) consists almost completely of semantic, basic LaTeX,
+%\footnote{The many boxes with examples in Sections~\ref{sec:structure}--\ref{sec:math} made it necessary to include a~few manual page breaks via \texttt{\textbackslash pagebreak}.}
+with a~few commands from popular packages on top. And while the preamble of this document is rather long---to achieve the formatting described in \autoref{sec:portability:compatibility}---the packages that are absolutely necessary for successful compilation are few:
+\begin{itemize}
+	\item \verb|amsmath|,
+	\item \verb|amsthm|,
+	\item \verb|babel| with options \verb|USenglish| and \verb|ngerman|,
+	\item \verb|biblatex-chicago| with options \verb|authordate|, \verb|backend = biber|, and \verb|natbib|;
+	\item \verb|bm|,
+	\item \verb|enumitem|,
+	\item \verb|fontenc| with options \verb|LGR| and \verb|T1|,
+	\item \verb|hyperref|,
+	\item \verb|isodate|,
+	\item \verb|listings|,
+	\item \verb|mathtools|,
+	\item \verb|microtype|,
+	\item \verb|newtxmath| and \verb|newtxtext|,
+	\item \verb|printlen|,
+	\item \verb|ragged2e|,
+	\item \verb|relsize|,
+	\item \verb|soul|,
+	\item \verb|tabularray| with \verb|\UseTblrLibrary{booktabs, siunitx}|,
+	\item \verb|tikz| with \verb|\usetikzlibrary{calc}|,
+	\item \verb|titlecaps|,
+	\item \verb|xcolor| with options \verb|svgnames| and \verb|x11names|.
+\end{itemize}
+
+\subsection{Using BibLaTeX (Rather Than BibTeX)}
+
+This template uses the modern BibLaTeX framework (the \textit{biblatex-chicago} package, \url{https://ctan.org/pkg/biblatex-chicago}, to be precise) instead of the vintage BibTeX framework to manage the references included in the document. The reason for this choice is that BibLaTeX is much more flexible than BibTeX and also handles multi-language references much better.
+
+Moreover, in line with the principle describe above, BibLaTeX permits much better separation of a~document's content (in this case, the \textit{.bib} file) and its formatting (of the citations and the bibliography) than BibTeX. In particular, suppressing output of information that is present in a~\textit{.bib} file is cumbersome with BibTeX: It amounts to editing the ``bibliography style'' \textit{.bst} file, and \textit{.bst} files have a~syntax that is completely different from LaTeX and difficult to learn. It is usually easier to just remove the information from the \textit{.bib} file. This, however, impacts the portability of the \textit{.bib} file: In other circumstances one might want that very information to be present. BibLaTeX simplifies skipping information that is present in the \textit{.bib} file.
+
+An example: Researchers frequently present their research in the form of posters. Space on posters is usually quite limited. Hence, one might not want authors' first names to be abbreviated on a~poster. In the associated paper, however, the names should be printed in full to minimize ambiguity. With BibTeX, this requires time-consuming adjustments of the \textit{.bst} file. With BibLaTeX, it is much easier: In the \textit{.tex} file for the poster, one can include the command
+\begin{quote}
+	\verb|\ExecuteBibliographyOptions{giveninits = true}|
+\end{quote}
+
+Similarly, in a~paper, the list of references should include \caps{URL}s or \caps{DOI}s (digital object identifiers) whenever they exist, to make it easy for readers to locate a~cited work. On a~poster, by contrast, one might want to suppress \caps{DOI}s and \caps{URL}s. With BibTeX, this would require time-consuming adjustments of the \textit{.bst} file. With BibLaTeX, one can simply do, for instance,
+\begin{quote}
+\begin{verbatim}
+\AtEveryBibitem{%
+  \ifentrytype{article}{\clearfield{doi}\clearfield{url}}{}%
+}
+\end{verbatim}
+\end{quote}
+
+Using BibLaTeX requires using the program \verb|biber| instead of \verb|bibtex| for compiling the bibliography. When using the Overleaf online service, using \verb|biber| instead of \verb|bibtex| is as simple as it gets: Overleaf automatically chooses \verb|biber| to compile the bibliography when it encounters BibLaTeX's \verb|backend = biber| option.\footnote{This applies to the commercial version (\url{https://www.overleaf.com}) as well as to free versions \url{https://overleaf-students.astro.uni-bonn.de/} and \url{https://uni-bonn.sciebo.de/apps/overleaf_nextcloud/launcher/launch}.} And when using the TeXstudio editor (\url{https://texstudio.org}), an easy way to make this happen is to include the ``magic comment''
+\begin{quote}
+	\verb|% !BIB program = biber|
+\end{quote}
+at the beginning of the \textit{.tex} file.
+
+\subsection{Using the \mbox{\textit{tabularray}} Package (Rather Than \mbox{\textit{tabularx}}\slash \mbox{\textit{tabulary}}\slash \mbox{\textit{tabu}}, \mbox{\textit{booktabs}}, \mbox{\textit{longtable}}, \mbox{\textit{xltabular}}, \mbox{\textit{multirow}}, \mbox{\textit{makecell}}, \mbox{\textit{colortbl}}, \mbox{\textit{parnotes}}, \mbox{\textit{threeparttable}}, \textellipsis\!)}
+
+\subsubsection{General Idea}
+The principle of separating the content from its formatting as much as possible can also be applied to tables. The \mbox{\textit{tabularray}} package (\url{https://ctan.org/pkg/tabularray}) allows you to do just that. \mbox{\textit{tabularray}} has been around since May 2021, so it is relatively new---but it has already matured into a~package that is extremely useful. \mbox{\textit{tabularray}} replaces (or loads) all the other table-related LaTeX packages that you may have used so far---like \mbox{\textit{tabularx}}\slash\mbox{\textit{tabulary}}\slash\mbox{\textit{tabu}}, \mbox{\textit{longtable}}, \mbox{\textit{xltabular}}, \mbox{\textit{multirow}}, \mbox{\textit{makecell}}, \mbox{\textit{booktabs}}, \mbox{\textit{colortbl}}, \mbox{\textit{threeparttable}}, \textellipsis
+
+Separating the contents of a~table from its formatting means that no formatting instructions whatsoever need to be placed in the table cells---neither for drawing rules between table rows nor for highlighting entries nor for increasing spacing nor for changing alignment, and so on. Instead, the placement of rules at the top and bottom of a~table or between particular rows, the specification of column widths, the specification of font sizes and cell alignment, desired highlighting via boldface or a~background color, etc., can all be coded as arguments to the table environment. This is beneficial in at least three aspects:
+\begin{itemize}
+	\item The source code of the table's contents is very clean. This particularly applies to animated Beamer presentations: no need to put \verb|\pause|\slash \verb|\only|\slash \verb|\cellcolor|\slash\textellipsis in table cells.
+	\item  It makes table contents \emph{portable}: A~table's contents can be reused easily across multiple documents that are formatted in different ways.
+	\item  It also drastically simplifies the inclusion of table contents that are produced by an external program such as Python, R, or Stata.
+\end{itemize}
+
+Further additional helpful features of \mbox{\textit{tabularray}} are:
+\begin{itemize}
+	\item \mbox{\textit{tabularray}} makes it easy to bottom-align or top-align particular table rows or individual cells entries, while keeping a~different alignment for the other rows\slash cells.
+	\item Table entries that consist of multiple lines of text become easy to produce: Just enclose them in curly braces, like in this example: \verb|... & {Line 1 \\ Line 2} & ... \\|. No~need to use \verb|\multirow| or \verb|\makecell| any more.
+	\item You can set document-wide formatting defaults to achieve consistent formatting of all tables. For instance, you can set defaults such that all tables feature the same top and bottom rules. Or, you could make all column heads be typeset in boldface document-wide.
+\end{itemize}
+
+\subsubsection{In Conjunction with the \textit{siunitx} Package}
+When using \verb|\UseTblrLibrary{siunitx}|, \mbox{\textit{tabularray}} loads the \mbox{\textit{siunitx}} package. This is another useful package which permits separating content from formatting. In particular, the \verb|S|~column type is able to round numbers to a~specified precision. This means that one can include table content produced by an external program with as many decimal digits as that program produces and have LaTeX take care of the rounding. See \autoref{tab:siunitx-rounding} for an illustration.
+
+
