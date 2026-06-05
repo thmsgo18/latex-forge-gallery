@@ -1,10 +1,6 @@
 % !TEX encoding = UTF-8 Unicode
 \documentclass{report}
 
-\title{FKR Collection}
-\author{Michael Müller}
-\date{\today}
-	
 % big font for sections
 \usepackage{sectsty}
 \sectionfont{\LARGE}
@@ -15,8 +11,6 @@
 \usepackage{subcaption}
 \usepackage{listings}
 \usepackage{hyperref}
-
-% \begin{comment} ... \end{comment{}
 \usepackage{verbatim}
 
 \setlength{\parskip}{0pt}
@@ -27,7 +21,7 @@
     {\z@}{1.25ex \@plus 1ex \@minus .2ex}{-1em}
       {\normalfont\normalsize\bfseries}
       }
-      \makeatother
+\makeatother
 
 \usepackage[
 	sorting=none,
@@ -36,43 +30,28 @@
 	block=space,
 	backend=biber
 ]{biblatex}
-\bibliography{publications}
-
+\addbibresource{bibliography/references.bib}
 
 \usepackage{parskip}
-
 \usepackage{lipsum}
+
+\input{frontmatter/metadata.tex}
 
 \begin{document}
 
-\newpage
-
 \maketitle
-
 \newpage
 
 \renewcommand{\contentsname}{Table of Content}
 \tableofcontents
 
+\input{sections/01-introduction.tex}
+\input{sections/02-main-essay.tex}
+\input{sections/03-conclusion.tex}
 
-%=================
-\include{sections/introduction}
-\include{sections/nulla-ullamcorper}
-\include{sections/nulla-ullamcorper}
-
-% we use input to include the conclusion, in order to
-% get the bibliography and conclusion on the same page
-\input{sections/conclusion}
-
-
-%=================
 \section{Bibliography}
 \label{bib}
-
-% \nocite is used to display all references from publications.bib -- even
-% if they were not cited. 
-\nocite{*} 
-
-\printbibliography[heading=none]
+\nocite{*}
+\input{backmatter/bibliography.tex}
 
 \end{document}
