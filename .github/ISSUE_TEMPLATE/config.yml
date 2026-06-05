@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Gallery website
+    url: https://thmsgo18.github.io/latex-forge-gallery/
+    about: Browse and install templates
+  - name: latex-forge CLI
+    url: https://github.com/thmsgo18/latex-forge
+    about: Issues with the latex-forge CLI tool itself

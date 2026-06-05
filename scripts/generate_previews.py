@@ -17,14 +17,49 @@ TEMPLATES_DIR = ROOT / "templates"
 PREVIEWS_DIR = ROOT / "previews"
 GALLERY_JSON = ROOT / "gallery.json"
 
-LATEX_BIN = Path("/Library/TeX/texbin")
-PDFTOPPM = Path("/opt/homebrew/bin/pdftoppm")
-
 BUILD_ARTIFACTS = {
     ".aux", ".log", ".toc", ".out", ".bbl", ".blg", ".lof", ".lot",
     ".fls", ".fdb_latexmk", ".snm", ".nav", ".vrb", ".idx", ".ind",
     ".ilg", ".bcf", ".run.xml", ".synctex.gz", ".xdv",
 }
+
+# ---------------------------------------------------------------------------
+# Tool discovery — works on macOS (TeX Live + Homebrew), Linux, Windows WSL
+# ---------------------------------------------------------------------------
+
+def _find_tool(name: str, extra_dirs: list[str] | None = None) -> str:
+    """Return the absolute path to *name*, or raise FileNotFoundError."""
+    found = shutil.which(name)
+    if found:
+        return found
+    for d in (extra_dirs or []):
+        candidate = Path(d) / name
+        if candidate.is_file():
+            return str(candidate)
+    raise FileNotFoundError(
+        f"'{name}' not found in PATH.\n"
+        f"  macOS:  install TeX Live via https://tug.org/mactex/\n"
+        f"  Linux:  sudo apt install texlive-full poppler-utils\n"
+        f"  Check that the TeX Live bin directory is in your PATH."
+    )
+
+
+# Common extra locations tried when the tool is not on PATH
+_EXTRA_LATEX = [
+    "/Library/TeX/texbin",           # macOS MacTeX
+    "/usr/local/texlive/2026/bin/universal-darwin",
+    "/usr/local/texlive/2025/bin/universal-darwin",
+    "/usr/local/texlive/2024/bin/universal-darwin",
+    "/usr/local/texlive/2026/bin/x86_64-linux",
+    "/usr/local/texlive/2025/bin/x86_64-linux",
+    "/usr/bin",
+    "/usr/local/bin",
+]
+_EXTRA_POPPLER = [
+    "/opt/homebrew/bin",             # macOS Homebrew (Apple Silicon)
+    "/usr/local/bin",                # macOS Homebrew (Intel)
+    "/usr/bin",
+]
 
 
 def load_gallery() -> dict:
@@ -51,7 +86,7 @@ def needs_biber(template_dir: Path) -> bool:
 
 def compile(template_dir: Path, engine: str) -> tuple[Path | None, str]:
     """Compile main.tex with optional biber pass. Returns (pdf, error_msg)."""
-    exe = str(LATEX_BIN / engine)
+    exe = _find_tool(engine, _EXTRA_LATEX)
     # No -halt-on-error: some templates have non-fatal warnings treated as errors;
     # we check for PDF output to determine success.
     latex_cmd = [exe, "-interaction=nonstopmode", "main.tex"]
@@ -68,12 +103,10 @@ def compile(template_dir: Path, engine: str) -> tuple[Path | None, str]:
     if pdf_exists() is None and code != 0:
         return None, "Pass 1 failed (no PDF):\n" + "\n".join(log.splitlines()[-25:])
 
-    # Biber pass if needed (prefer Homebrew biber, fallback to TeX Live)
-    BIBER = Path("/opt/homebrew/bin/biber")
-    if not BIBER.exists():
-        BIBER = LATEX_BIN / "biber"
+    # Biber pass if needed
     if needs_biber(template_dir) and (template_dir / "main.bcf").exists():
-        code, blog = run_cmd([str(BIBER), "main"], template_dir, timeout=60)
+        biber_exe = _find_tool("biber", _EXTRA_LATEX)
+        code, blog = run_cmd([biber_exe, "main"], template_dir, timeout=60)
         # Only fail if biber produced no .bbl output at all (warnings are OK)
         if code != 0 and not (template_dir / "main.bbl").exists():
             return None, "Biber failed:\n" + "\n".join(blog.splitlines()[-15:])
@@ -94,9 +127,10 @@ def compile(template_dir: Path, engine: str) -> tuple[Path | None, str]:
 
 def pdf_to_png(pdf: Path, png: Path) -> bool:
     """Convert first page of pdf to png via pdftoppm."""
+    pdftoppm_exe = _find_tool("pdftoppm", _EXTRA_POPPLER)
     prefix = str(png.with_suffix(""))
     r = subprocess.run(
-        [str(PDFTOPPM), "-r", "150", "-png", "-singlefile", str(pdf), prefix],
+        [pdftoppm_exe, "-r", "150", "-png", "-singlefile", str(pdf), prefix],
         capture_output=True,
     )
     return r.returncode == 0 and png.exists()

@@ -1,0 +1,96 @@
+name: Template request
+description: Suggest a LaTeX template to add to the gallery
+title: "[Template request] <template-name>"
+labels: ["template request"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for suggesting a template! Please fill in the details below.
+
+  - type: input
+    id: source
+    attributes:
+      label: Source repository
+      description: Link to the original GitHub repository of the template.
+      placeholder: https://github.com/author/repo
+    validations:
+      required: true
+
+  - type: input
+    id: name
+    attributes:
+      label: Suggested template name
+      description: Lowercase, hyphenated (e.g. `my-thesis`). Must be unique in the gallery.
+      placeholder: my-template
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Category
+      options:
+        - article
+        - book
+        - cheatsheet
+        - cv
+        - letter
+        - misc
+        - poster
+        - presentation
+        - report
+        - thesis
+    validations:
+      required: true
+
+  - type: dropdown
+    id: engine
+    attributes:
+      label: LaTeX engine
+      options:
+        - pdflatex
+        - xelatex
+        - lualatex
+    validations:
+      required: true
+
+  - type: dropdown
+    id: license
+    attributes:
+      label: License
+      description: The original template's license. Only permissive licenses are accepted.
+      options:
+        - MIT
+        - Apache 2.0
+        - LPPL
+        - CC BY 4.0
+        - CC BY-SA 4.0
+        - CC BY-NC-SA 4.0
+        - Other permissive
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: Why should this template be added?
+      description: What makes it useful or unique? Who is it for?
+      placeholder: This template is great for...
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Pre-submission checklist
+      options:
+        - label: The template compiles with a standard TeX Live distribution
+          required: true
+        - label: The source repository is publicly accessible on GitHub
+          required: true
+        - label: The license is permissive (MIT, Apache, LPPL, or CC BY/BY-SA/BY-NC-SA)
+          required: true
+        - label: The template does not require commercial fonts or proprietary packages
+          required: true

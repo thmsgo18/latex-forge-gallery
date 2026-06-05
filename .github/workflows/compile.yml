@@ -1,0 +1,55 @@
+name: Compile templates (manual)
+
+on:
+  workflow_dispatch:
+    inputs:
+      template:
+        description: "Template name (e.g. awesome-cv). Leave empty to compile all."
+        required: false
+        default: ""
+      category:
+        description: "Category filter (e.g. cv). Leave empty to compile all."
+        required: false
+        default: ""
+
+jobs:
+  compile:
+    name: Compile & generate previews
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v3
+        with:
+          packages: >
+            scheme-full
+
+      - name: Install poppler-utils
+        run: sudo apt-get install -y poppler-utils
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile templates
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.template }}" ]; then
+            ARGS="$ARGS --only ${{ github.event.inputs.template }}"
+          fi
+          if [ -n "${{ github.event.inputs.category }}" ]; then
+            ARGS="$ARGS --category ${{ github.event.inputs.category }}"
+          fi
+          python3 scripts/generate_previews.py $ARGS
+
+      - name: Upload previews as artifact
+        uses: actions/upload-artifact@v4
+        with:
+          name: previews
+          path: previews/
+          retention-days: 7

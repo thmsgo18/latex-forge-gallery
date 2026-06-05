@@ -1,0 +1,32 @@
+name: Validate templates
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - "templates/**"
+      - "gallery.json"
+      - "scripts/validate.py"
+  pull_request:
+    branches: [main]
+    paths:
+      - "templates/**"
+      - "gallery.json"
+      - "scripts/validate.py"
+
+jobs:
+  validate:
+    name: Structure & consistency check
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Run validate.py
+        run: python3 scripts/validate.py

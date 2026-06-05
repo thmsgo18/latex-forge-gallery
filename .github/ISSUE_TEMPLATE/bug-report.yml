@@ -1,0 +1,68 @@
+name: Bug report
+description: Report a broken template or a problem with the gallery
+title: "[Bug] <template-name or topic>"
+labels: ["bug"]
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for taking the time to report a problem!
+
+  - type: input
+    id: template
+    attributes:
+      label: Template name (if applicable)
+      description: Leave empty if the issue is about the gallery website or tooling.
+      placeholder: awesome-cv
+    validations:
+      required: false
+
+  - type: dropdown
+    id: type
+    attributes:
+      label: Type of problem
+      options:
+        - Template does not compile
+        - Preview image is wrong or missing
+        - Wrong engine specified
+        - Gallery website issue
+        - Script (generate_previews.py / validate.py) issue
+        - Other
+    validations:
+      required: true
+
+  - type: textarea
+    id: description
+    attributes:
+      label: What happened?
+      description: Describe the problem clearly. Include error messages if any.
+    validations:
+      required: true
+
+  - type: textarea
+    id: steps
+    attributes:
+      label: Steps to reproduce
+      placeholder: |
+        1. Install the template with latex-forge
+        2. Run pdflatex main.tex
+        3. Error: ...
+    validations:
+      required: false
+
+  - type: input
+    id: os
+    attributes:
+      label: Operating system
+      placeholder: macOS 14 / Ubuntu 22.04 / Windows 11
+    validations:
+      required: false
+
+  - type: input
+    id: texlive
+    attributes:
+      label: TeX Live version
+      placeholder: TeX Live 2024
+    validations:
+      required: false
