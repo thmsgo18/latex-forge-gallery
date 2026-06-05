@@ -23,6 +23,10 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `two-column-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
 | `infographic-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
 | `minimalist-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
+| `modern-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
+| `rows-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
+| `sidebarleft-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
+| `infographics2-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
 
 ### Thesis / Dissertation
 
@@ -62,6 +66,7 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `elegant-notes` | [ElegantLaTeX/ElegantNote](https://github.com/ElegantLaTeX/ElegantNote) | LPPL-1.3c |
 | `homework-template` | [jdavis/latex-homework-template](https://github.com/jdavis/latex-homework-template) | MIT |
 | `lab-report` | [Sneaker679/lab-report-latex-template](https://github.com/Sneaker679/lab-report-latex-template) | MIT |
+| `essay-collection` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
 
 ### Beamer Presentation
 
@@ -98,6 +103,21 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 |----------|--------|---------|
 | `elegantbook` | [ElegantLaTeX/ElegantBook](https://github.com/ElegantLaTeX/ElegantBook) | CC BY-NC-SA 4.0 |
 | `legrand-orange-book` | [latextemplates.com](https://www.latextemplates.com/template/the-legrand-orange-book) | CC BY-NC-SA 3.0 |
+
+### Cheatsheet
+
+| Template | Source | License |
+|----------|--------|---------|
+| `cheatsheet` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
+
+### Miscellaneous
+
+| Template | Source | License |
+|----------|--------|---------|
+| `invoice-simple` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
+| `invoice-multipage` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
+| `timesheet` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
+| `poem` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
 
 ### Projet Informatique L3 — Université Paris Cité
 
