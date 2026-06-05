@@ -1,25 +1,12 @@
 \documentclass[11pt]{elegantbook}
 
-\title{An Elegant \LaTeX\ Template for Books}
-\subtitle{Classic Elegant\LaTeX\ Template}
-
-\author{Ethan Deng, Liam Huang, syvshc, sikouhjw \& Osbert Wang}
-\institute{Elegant\LaTeX\ Program}
-\date{May 1, 2026}
-\version{4.7}
-\bioinfo{Bio}{Information}
-
-\extrainfo{\textcolor{red}{\bfseries Caution: This template will no longer be maintained since January 1st, 2023. However, due to its large user base, maintenance has resumed and the template has been re-released as of 2026.}}
-
-\logo{logo-blue.png}
-\cover{cover.jpg}
-
-% modify the color in the middle of titlepage
 \definecolor{customcolor}{RGB}{32,178,170}
 \colorlet{coverlinecolor}{customcolor}
 \usepackage{cprotect}
 
-\addbibresource[location=local]{reference.bib} % bib
+\addbibresource[location=local]{bibliography/references.bib}
+
+\input{frontmatter/metadata}
 
 \begin{document}
 

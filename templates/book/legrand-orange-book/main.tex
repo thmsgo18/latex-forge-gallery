@@ -48,6 +48,8 @@
 
 \input{structure} % Insert the commands.tex file which contains the majority of the structure behind the template
 
+\input{frontmatter/metadata}
+
 \begin{document}
 
 %----------------------------------------------------------------------------------------
@@ -61,9 +63,9 @@
 \node at (current page.north west)
 {\begin{tikzpicture}[remember picture,overlay]
 \node[anchor=north west,inner sep=0pt] at (0,0) {\includegraphics[width=\paperwidth]{background}}; % Background image
-\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering The Search for a Title\\[15pt] % Book title
-{\Large A Profound Subtitle}\\[20pt] % Subtitle
-{\huge Dr. John Smith}}}; % Author name
+\draw[anchor=north] (midpoint) node [fill=ocre!30!white,fill opacity=0.6,text opacity=1,inner sep=1cm]{\Huge\centering\bfseries\sffamily\parbox[c][][t]{\paperwidth}{\centering \bookTitle\\[15pt] % Book title
+{\Large \bookSubtitle}\\[20pt] % Subtitle
+{\huge \bookAuthor}}}; % Author name
 \end{tikzpicture}};
 \end{tikzpicture}
 \vfill
@@ -77,9 +79,9 @@
 ~\vfill
 \thispagestyle{empty}
 
-\noindent Copyright \copyright\ 2013 John Smith\\ % Copyright notice
+\noindent Copyright \copyright\ \bookYear\ \bookAuthor\\ % Copyright notice
 
-\noindent \textsc{Published by Publisher}\\ % Publisher
+\noindent \textsc{Published by \bookPublisher}\\ % Publisher
 
 \noindent \textsc{book-website.com}\\ % URL
 
