@@ -179,10 +179,9 @@ Every template contains a `main.tex` at the root of its directory, making it ful
 
 ## Contributing
 
-To suggest a new template, open an issue or pull request. Templates must:
-- Have a `main.tex` at the root of their directory
-- Be licensed under MIT, Apache, LPPL, or a Creative Commons license
-- Compile successfully with a standard LaTeX distribution
+Want to add a template? Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — it covers the required directory structure, standard placeholders, engine declaration, `gallery.json` format, and how to generate previews.
+
+In short: your template needs a `main.tex`, a `frontmatter/metadata.tex` with standard placeholders, and a `latexforge.toml` if it doesn't use LuaLaTeX.
 
 ## Sources
 
@@ -190,7 +189,8 @@ All templates are sourced from publicly available GitHub repositories with permi
 
 ## License
 
-Each template retains its original license. This gallery only includes templates with permissive licenses (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
+The gallery structure, scripts, and tooling are licensed under the [MIT License](LICENSE).  
+Each template retains its original license (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
 
 ---
 
