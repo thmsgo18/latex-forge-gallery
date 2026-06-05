@@ -1,0 +1,32 @@
+% =====================================================================
+%  Invoice Multipage — Sender Information
+%  Edit this file to personalise your invoice.
+% =====================================================================
+
+\setkomavar{fromname}{Example University}
+\setkomavar{fromphone}{+33 (0) 1 00 00 00 00}
+\setkomavar{fromaddress}{123 Main Street \\ F-75001 Paris}
+\setkomavar{frombank}{Example Bank \\ IBAN: FR00 0000 0000 0000 0000}
+
+\firstfoot{
+	\parbox[t]{\textwidth}{\footnotesize
+
+	\begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Sender:}\\
+		 Example University\\
+		 123 Main Street, F-75001 Paris\\ \\
+		 Tel: \usekomavar{fromphone} \\
+		 E-Mail: firstname.lastname@example.edu \\
+	\end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{Legal information:}\\
+		 Registration: 000000\\
+		 VAT: FR00 000000000\\ \\
+	 \end{tabular}
+	 \hfill{}
+	 \begin{tabular}[t]{l@{}}
+		 \multicolumn{1}{@{}l@{}}{\usekomavar*{frombank}:}\\
+		 \usekomavar{frombank}
+	 \end{tabular}
+ }}

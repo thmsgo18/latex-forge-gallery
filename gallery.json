@@ -1241,7 +1241,7 @@
         "verse",
         "pdflatex"
       ],
-      "engine": "pdflatex",
+      "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.pdf"
     },
