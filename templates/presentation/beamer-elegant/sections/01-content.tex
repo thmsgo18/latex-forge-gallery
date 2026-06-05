@@ -1,0 +1,45 @@
+\begin{frame}
+    \titlepage
+\end{frame}
+
+\begin{frame}{Table of Content}
+    \tableofcontents[hideallsubsections]
+\end{frame}
+
+\AtBeginSubsection[]{\begin{frame}\frametitle{Table of Content}\tableofcontents[currentsection,currentsubsection,subsectionstyle=show/shaded/hide]\end{frame}}
+
+\section{Useful Environments}
+\subsection{Standard Environments}
+\begin{frame}{\texttt{itemize} and \texttt{enumerate}}
+    \begin{itemize}
+        \item Item 1
+        \item Item 2
+        \item Item 3
+    \end{itemize}
+
+    \begin{enumerate}
+        \item Item 1
+        \item Item 2
+        \item Item 3
+    \end{enumerate}
+\end{frame}
+
+\subsection{Custom Environments}
+
+\begin{frame}{Theorems and Examples}
+    All common environments are available:
+    \begin{itemize}
+        \item \emph{Theorem}-related: \texttt{lemma}, \texttt{theorem}, \texttt{corollary}.
+        \item \emph{Common}: \texttt{definition}, \texttt{example}, \texttt{problem}.
+    \end{itemize}
+
+    \begin{example}[A demonstration]
+        This is an \texttt{example} environment.
+    \end{example}
+\end{frame}
+
+\section{References}
+
+\begin{frame}{References}
+    \printbibliography
+\end{frame}

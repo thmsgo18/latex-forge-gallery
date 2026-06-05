@@ -6,48 +6,10 @@
 \setbeamertemplate{navigation symbols}{}
 \setbeamertemplate{footline}[frame number]
 
-\title{Presentation Title}
-\subtitle{A Subtitle}
-\author{Author Name}
-\institute{University / Organization}
-\date{\today}
+\input{frontmatter/metadata}
 
 \begin{document}
 
-\begin{frame}
-  \titlepage
-\end{frame}
-
-\begin{frame}{Outline}
-  \tableofcontents
-\end{frame}
-
-\section{Introduction}
-
-\begin{frame}{Introduction}
-  \begin{itemize}
-    \item First point
-    \item Second point
-    \item Third point
-  \end{itemize}
-\end{frame}
-
-\section{Main Content}
-
-\begin{frame}{Main Content}
-  Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-  \begin{block}{Definition}
-    A block with highlighted content.
-  \end{block}
-\end{frame}
-
-\section{Conclusion}
-
-\begin{frame}{Conclusion}
-  \begin{itemize}
-    \item Summary point 1
-    \item Summary point 2
-  \end{itemize}
-\end{frame}
+\input{sections/01-content}
 
 \end{document}

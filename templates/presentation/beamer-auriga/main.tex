@@ -1,1 +1,44 @@
-\input{presentation}
+% Auriga theme
+% https://github.com/anishathalye/auriga
+
+\documentclass[14pt,aspectratio=169]{beamer}
+\usepackage{pgfpages}
+\usepackage{fancyvrb}
+\usepackage{tikz}
+\usepackage{pgfplots}
+
+\ifnotes
+\setbeamertemplate{note page}[plain]
+\setbeameroption{show notes on second screen=right}
+\fi
+
+\usetheme{auriga}
+\usecolortheme{auriga}
+
+% define some colors for a consistent theme across slides
+\definecolor{red}{RGB}{181, 23, 0}
+\definecolor{blue}{RGB}{0, 118, 186}
+\definecolor{gray}{RGB}{146, 146, 146}
+
+\input{frontmatter/metadata}
+
+\begin{document}
+
+{
+  \setbeamercolor{page number in head/foot}{fg=white}
+  \input{sections/01-title-slide}
+}
+
+}
+
+\input{sections/bullets}
+\input{sections/split}
+\input{sections/figure}
+\input{sections/centered}
+\input{sections/monospace}
+\input{sections/brackets}
+\input{sections/link}
+
+
+
+\end{document}
