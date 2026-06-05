@@ -1,0 +1,66 @@
+\begin{abstract}
+Write your abstract here. Summarise the problem, the approach, the main results, and the conclusions in a few sentences.
+\end{abstract}
+
+\keywords{First keyword \and Second keyword}
+
+
+\section{Introduction}
+\lipsum[2]
+\lipsum[3]
+
+
+\section{Headings: first level}
+\label{sec:headings}
+
+\lipsum[4] See Section~\ref{sec:headings}.
+
+\subsection{Headings: second level}
+\lipsum[5]
+\begin{equation}
+	\xi_{ij}(t) = \frac{\alpha_i(t)\, a_{ij}\, \beta_j(t+1)\, b_j(y_{t+1})}
+	                   {\sum_{i'}\sum_{j'} \alpha_{i'}(t)\, a_{i'j'}\, \beta_{j'}(t+1)\, b_{j'}(y_{t+1})}
+\end{equation}
+
+\subsubsection{Headings: third level}
+\lipsum[6]
+
+\paragraph{Paragraph}
+\lipsum[7]
+
+
+\section{Examples of citations, figures, tables}
+\label{sec:others}
+
+\subsection{Citations}
+Some people thought a thing \citep{kour2014real, keshet2016prediction} but other people thought something else \citep{kour2014fast}. Many people have speculated that if we knew exactly why \citet{kour2014fast} thought this\dots
+
+\subsection{Figures}
+\lipsum[10]
+\begin{figure}
+	\centering
+	\fbox{\rule[-.5cm]{4cm}{4cm} \rule[-.5cm]{4cm}{0cm}}
+	\caption{Sample figure caption.}
+	\label{fig:fig1}
+\end{figure}
+
+\subsection{Tables}
+\begin{table}
+	\caption{Sample table title}
+	\centering
+	\begin{tabular}{lll}
+		\toprule
+		\multicolumn{2}{c}{Part} \\
+		\cmidrule(r){1-2}
+		Name     & Description     & Size ($\mu$m) \\
+		\midrule
+		Dendrite & Input terminal  & $\sim$100     \\
+		Axon     & Output terminal & $\sim$10      \\
+		Soma     & Cell body       & up to $10^6$  \\
+		\bottomrule
+	\end{tabular}
+	\label{tab:table}
+\end{table}
+
+\bibliographystyle{unsrtnat}
+\bibliography{bibliography/references}

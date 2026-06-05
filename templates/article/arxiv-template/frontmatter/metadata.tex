@@ -1,0 +1,31 @@
+% =====================================================================
+%  arXiv Template — Metadata
+%  Edit this file to personalise your paper.
+% =====================================================================
+
+\title{A template for the \emph{arxiv} style}
+
+\newif\ifuniqueAffiliation
+\uniqueAffiliationtrue % Comment out to use multiple-affiliations variant
+
+\ifuniqueAffiliation
+\author{FirstName LASTNAME\thanks{Corresponding author.} \\
+	Department of Computer Science\\
+	Example University\\
+	\texttt{firstname.lastname@example.edu}}
+\else
+\usepackage{authblk}
+\renewcommand\Authfont{\bfseries}
+\setlength{\affilsep}{0em}
+\author[1]{FirstName LASTNAME\thanks{\texttt{firstname.lastname@example.edu}}}
+\affil[1]{Department of Computer Science, Example University}
+\fi
+
+\renewcommand{\shorttitle}{\textit{arXiv} Template}
+
+\hypersetup{
+  pdftitle={A template for the arxiv style},
+  pdfsubject={cs.LG},
+  pdfauthor={FirstName LASTNAME},
+  pdfkeywords={First keyword, Second keyword},
+}

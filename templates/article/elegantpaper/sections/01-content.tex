@@ -1,0 +1,53 @@
+\begin{abstract}
+This documentation illustrates the usage of the \href{https://github.com/ElegantLaTeX/ElegantPaper}{ElegantPaper} template. This template is based on the standard \LaTeX\ article class, which is designed for working paper writing. With this template, you can get rid of all the worries about the format and merely focus on writing.
+\par
+\keywords{Elegant\LaTeX{}, Working Paper, Template}
+\end{abstract}
+
+\section{Introduction}
+
+This template is based on the standard \LaTeX\ article class, hence the arguments of article class are acceptable (\lstinline{a4paper}, \lstinline{10pt} and etc.). Alternative engines are \hologo{pdfLaTeX} and \hologo{XeLaTeX}.
+
+\subsection{Global Options}
+Language mode option \lstinline{lang} allows two alternative inputs, \lstinline{lang=en} (default) for English or \lstinline{lang=cn} for Chinese.
+
+\subsection{Bibliography}
+
+This template uses biblatex to generate the bibliography, the default citestyle and bibliography style are both \lstinline{numeric}. Let's take a glance at the citation effect. ~\cite{en1} use data from a major peer-to-peer lending \cite{en3} marketplace in China to study whether female and male investors evaluate loan performance differently \parencite{en2}.
+
+\section{Math and Fonts}
+
+\subsection{Math Fonts}
+
+This template defines a new option (\lstinline{math}), with three options:
+
+\begin{enumerate}
+  \item \lstinline{math=cm} (default), use \LaTeX\ default math font (recommended).
+  \item \lstinline{math=newtx}, use \lstinline{newtxmath} math font.
+  \item \lstinline{math=mtpro2}, use \lstinline{mtpro2} package.
+\end{enumerate}
+
+Example equation:
+\begin{equation}
+\int_{\mathbb{R}^q} f(x,y)\, \mathrm{d}y
+\end{equation}
+
+\section{FAQ}
+
+\begin{enumerate}[label=\arabic*).]
+  \item \textit{How to remove the information of version?}\\
+  Please comment \lstinline|\version{x.xx}|.
+  \item \textit{How to remove the information of date?}\\
+  Please type in \lstinline|\date{}|.
+  \item \textit{How to add several authors?}\\
+  Use \lstinline{\and} in \lstinline{\author} and use \lstinline{\\} to start a new line.
+\end{enumerate}
+
+\section{Acknowledgement}
+
+Thank the ElegantLaTeX community for maintaining this template.
+
+\printbibliography[heading=bibintoc, title=\ebibname]
+
+\appendix
+\addappheadtotoc

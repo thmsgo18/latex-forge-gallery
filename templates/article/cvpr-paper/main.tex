@@ -1,4 +1,4 @@
-\input{_constants}
+\input{frontmatter/metadata}
 \cameraready % \review OR \arxiv OR \cameraready
 
 \pdfoutput=1
@@ -13,19 +13,19 @@
 \author{\authorBlock}
 \maketitle
 
-\input{00_abstract}
-\input{01_intro}
-\input{02_related}
+\input{sections/00-abstract}
+\input{sections/01-intro}
+\input{sections/02-related}
 
-\input{03_method}
+\input{sections/03-method}
 
-\input{10_conclusion}
+\input{sections/10-conclusion}
 
 {\small
 \bibliographystyle{ieeenat_fullname}
-\bibliography{11_references}
+\bibliography{bibliography/references}
 }
 
-\ifarxiv \clearpage \appendix \input{12_appendix} \fi
+\ifarxiv \clearpage \appendix \input{sections/12-appendix} \fi
 
 \end{document}
