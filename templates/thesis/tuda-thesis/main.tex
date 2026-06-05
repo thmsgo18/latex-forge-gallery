@@ -1,1 +1,50 @@
-\input{examples/DEMO-TUDaThesis}
+% !TeX program = lualatex
+
+% Enable PDF/A via pdfmanagement
+\RequirePackage{pdfmanagement}
+\SetKeys[document/metadata]{
+	pdfstandard=a-2b,
+	pdfversion=1.7,
+	lang=en,
+}
+
+\documentclass[
+	english,
+	accentcolor=9c,
+	ruledheaders=section,
+	class=report,
+	thesis={type=bachelor},
+	fontsize=11pt,
+	parskip=half-,
+	custommargins=true,
+	marginpar=false,
+	accept-missing-logos=true,
+]{tudapub}
+
+%%%%%%%%%%%%%%%%%%%
+% Language setup
+%%%%%%%%%%%%%%%%%%%
+\usepackage[english]{babel}
+\usepackage{microtype}
+\usepackage[autostyle]{csquotes}
+
+%%%%%%%%%%%%%%%%%%%
+% Bibliography
+%%%%%%%%%%%%%%%%%%%
+\usepackage{biblatex}
+\addbibresource{bibliography/references.bib}
+
+%%%%%%%%%%%%%%%%%%%
+% Metadata (title, author, department…)
+%%%%%%%%%%%%%%%%%%%
+\input{frontmatter/metadata}
+
+\begin{document}
+
+\maketitle
+
+\tableofcontents
+
+\input{sections/01-introduction}
+
+\end{document}
