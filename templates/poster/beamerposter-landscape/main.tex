@@ -27,7 +27,7 @@
 \AtEveryBibitem{\clearfield{url}}
 \AtEveryBibitem{\clearfield{eprint}}
 
-\bibliography{Library}
+\bibliography{bibliography/references}
 
 
 
@@ -48,19 +48,8 @@
 \setlength{\blockThree}{71.00cm}
 \setlength{\blockFour} {99.50cm}
 
-\title{The Title of This Poster Can Be Rather Long}
-\author{%
-	Adam Smith,\affilindicator{a,\,c}
-	% Set the name of the presenting coauthor in boldface:
-	{\bfseries Janet Smith},\affilindicator{b,\,c} and
-	Jeremiah Smith\affilindicator{a}
-} % Author(s)
-\institute{%
-	\affilindicator{a}\,University of Bonn, Germany;
-	\affilindicator{b}\,University of Cologne, Germany (\email{janet.smith@example.org});
-	\affilindicator{c}\,Cluster of Excellence ECONtribute%
-} % Institution(s)
-\date{}
+\input{frontmatter/metadata}
+
 
 \usepackage{xspace}
 \newcommand{\balA}[1][1]{BAL$^\mathup{I}_{#1:#1}$\xspace}
@@ -449,7 +438,7 @@
 	%% Only when using BibTeX instead of BibLaTeX ==>
 	%\bibliographystyle{0_0_Preamble/aea_doi_initials}
 	%\renewcommand{\harvardand}{\&}
-	%\bibliography{Library}
+	%\bibliography{bibliography/references}
 	%% <==
 \end{parblock}
 

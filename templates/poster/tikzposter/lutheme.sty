@@ -66,25 +66,28 @@ titleinnersep=1cm, bodyinnersep=1cm
 \RequirePackage{mathtools}
 \RequirePackage{mathspec}
 \RequirePackage{fontspec}
-\setmathfont(Digits,Latin,Symbols)[Path=fonts/]{AGaramondPro-Regular.otf}
-\setmathrm[Path=fonts/, BoldFont=AGaramondPro-Semibold]{AGaramondPro-Regular.otf}
-\setmainfont{AGaramondPro-Regular.otf}[
+\setmathfont[Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/tex-gyre-math/]{texgyrepagella-math.otf}
+\setmainfont{texgyrepagella-regular.otf}[
   Scale=MatchLowercase,
-  ItalicFont=AGaramondPro-Italic.otf,
-  BoldFont=AGaramondPro-Semibold.otf,
-  Path=fonts/
+  ItalicFont=texgyrepagella-italic.otf,
+  BoldFont=texgyrepagella-bold.otf,
+  BoldItalicFont=texgyrepagella-bolditalic.otf,
+  Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/tex-gyre/
   ]
-\setsansfont{FrutigerLTStd-Light.otf}[
+\setsansfont{texgyreheros-regular.otf}[
   Scale=MatchLowercase,
-  ItalicFont=FrutigerLTStd-LightItalic.otf,
-  Path=fonts/
+  ItalicFont=texgyreheros-italic.otf,
+  BoldFont=texgyreheros-bold.otf,
+  Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/tex-gyre/
   ]
-\newfontfamily\titlefont{AGaramondPro-Semibold.otf}[
-  BoldFont=AGaramondPro-Semibold.otf,
+\newfontfamily\titlefont{texgyrepagella-bold.otf}[
   Scale=1.2,
-  Path=fonts/
+  Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/tex-gyre/
   ]
-\newfontfamily\subtitlefont{FrutigerLTStd-Bold.otf}[Scale=1.0, Path=fonts/]
+\newfontfamily\subtitlefont{texgyreheros-bold.otf}[
+  Scale=1.0,
+  Path=/usr/local/texlive/2026/texmf-dist/fonts/opentype/public/tex-gyre/
+  ]
 
 %%Hack to use specific fonts
 \makeatletter
