@@ -21,4 +21,12 @@
 *.xdv
 *.upa
 *.upb
+
+# OS / editor cruft
 .DS_Store
+Thumbs.db
+
+# Local tool configuration (Claude Code, editors, etc. — never project-relevant)
+.claude/
+.vscode/
+.idea/
