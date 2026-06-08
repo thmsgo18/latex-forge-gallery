@@ -70,8 +70,8 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `homework-template` | [jdavis/latex-homework-template](https://github.com/jdavis/latex-homework-template) | MIT |
 | `lab-report` | [Sneaker679/lab-report-latex-template](https://github.com/Sneaker679/lab-report-latex-template) | MIT |
 | `essay-collection` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
-| `rapport-projet-en` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
-| `rapport-projet-fr` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
+| `project-report-en` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
+| `project-report-fr` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
 
 ### Beamer Presentation
 

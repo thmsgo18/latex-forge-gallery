@@ -1263,11 +1263,11 @@
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.pdf"
     },
     {
-      "name": "rapport-projet-en",
+      "name": "project-report-en",
       "description": "ISO/IEEE university project report — requirements, architecture, testing, bibliography",
       "category": "report",
       "source_url": "https://github.com/thmsgo18/latex-forge",
-      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/rapport-projet-en",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/project-report-en",
       "tags": [
         "report",
         "university",
@@ -1277,15 +1277,15 @@
         "academic"
       ],
       "engine": "lualatex",
-      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/rapport-projet-en.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/rapport-projet-en.pdf"
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-en.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-en.pdf"
     },
     {
-      "name": "rapport-projet-fr",
+      "name": "project-report-fr",
       "description": "Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests, bibliographie",
       "category": "report",
       "source_url": "https://github.com/thmsgo18/latex-forge",
-      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/rapport-projet-fr",
+      "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/project-report-fr",
       "tags": [
         "report",
         "university",
@@ -1295,8 +1295,8 @@
         "academic"
       ],
       "engine": "lualatex",
-      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/rapport-projet-fr.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/rapport-projet-fr.pdf"
+      "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-fr.png",
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-fr.pdf"
     },
     {
       "name": "research",

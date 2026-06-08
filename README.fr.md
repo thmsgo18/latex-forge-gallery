@@ -109,8 +109,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `homework-template` | Template de devoirs universitaires avec environnements problème/solution | pdfLaTeX |
 | `lab-report` | Template de compte rendu de TP en style article | pdfLaTeX |
 | `essay-collection` | Recueil d'essais avec résumés individuels et bibliographie | pdfLaTeX |
-| `rapport-projet-en` | Rapport de projet universitaire ISO/IEEE en anglais — requirements, architecture, tests, bibliographie | LuaLaTeX |
-| `rapport-projet-fr` | Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests, bibliographie | LuaLaTeX |
+| `project-report-en` | Rapport de projet universitaire ISO/IEEE en anglais — requirements, architecture, tests, bibliographie | LuaLaTeX |
+| `project-report-fr` | Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests, bibliographie | LuaLaTeX |
 
 ### Présentation Beamer
 
