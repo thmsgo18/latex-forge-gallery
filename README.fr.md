@@ -66,8 +66,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `rows-cv` | CV en lignes horizontales avec sections épurées | XeLaTeX |
 | `sidebarleft-cv` | CV avec barre latérale gauche et contacts iconographiques | XeLaTeX |
 | `infographics2-cv` | Deuxième variante de CV infographique avec frise chronologique | XeLaTeX |
-| `cv-en` | CV moderne en anglais avec icônes FontAwesome — formation, expérience, projets, compétences | LuaLaTeX |
-| `cv-fr` | CV moderne en français avec icônes FontAwesome | LuaLaTeX |
+| `cv-en` | CV moderne en anglais par thmsgo18 avec icônes FontAwesome, sections formation, expérience, projets et compétences | LuaLaTeX |
+| `cv-fr` | CV moderne en français par thmsgo18 avec icônes FontAwesome | LuaLaTeX |
 
 ### Thèse / Mémoire
 
@@ -94,7 +94,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `elsarticle` | Template d'article pour les journaux Elsevier CAS | pdfLaTeX |
 | `springer-lncs` | Template Springer LNCS amélioré pour les conférences CS | pdfLaTeX |
 | `elegantpaper` | Template élégant pour working papers et prépublications | pdfLaTeX |
-| `research` | Article de recherche académique en deux colonnes — related work, méthodologie, expériences | LuaLaTeX |
+| `research` | Article de recherche académique en deux colonnes par thmsgo18, avec related work, méthodologie et expériences | LuaLaTeX |
 
 ### Rapport
 
@@ -109,8 +109,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `homework-template` | Template de devoirs universitaires avec environnements problème/solution | pdfLaTeX |
 | `lab-report` | Template de compte rendu de TP en style article | pdfLaTeX |
 | `essay-collection` | Recueil d'essais avec résumés individuels et bibliographie | pdfLaTeX |
-| `project-report-en` | Rapport de projet universitaire ISO/IEEE en anglais — requirements, architecture, tests, bibliographie | LuaLaTeX |
-| `project-report-fr` | Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests, bibliographie | LuaLaTeX |
+| `project-report-en` | Rapport de projet universitaire en anglais par thmsgo18, avec requirements, architecture, tests et bibliographie (style ISO/IEEE) | LuaLaTeX |
+| `project-report-fr` | Rapport de projet universitaire en français par thmsgo18, avec cahier des charges, architecture, tests et bibliographie (style AFNOR/ISO) | LuaLaTeX |
 
 ### Présentation Beamer
 

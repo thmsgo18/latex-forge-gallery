@@ -66,8 +66,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `rows-cv` | Row-based CV layout with clean horizontal sections | XeLaTeX |
 | `sidebarleft-cv` | CV with left-aligned sidebar and icon-based contact info | XeLaTeX |
 | `infographics2-cv` | Second infographic-style CV with visual skill bars and timeline | XeLaTeX |
-| `cv-en` | Modern English CV with FontAwesome icons — education, experience, projects, skills | LuaLaTeX |
-| `cv-fr` | CV moderne en français avec icônes FontAwesome | LuaLaTeX |
+| `cv-en` | Modern English CV by thmsgo18 with FontAwesome icons, covering education, experience, projects and skills | LuaLaTeX |
+| `cv-fr` | Modern French CV by thmsgo18 with FontAwesome icons | LuaLaTeX |
 
 ### Thesis / Dissertation
 
@@ -94,7 +94,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `elsarticle` | Elsevier CAS journal article template | pdfLaTeX |
 | `springer-lncs` | Enhanced Springer LNCS article template for CS conferences | pdfLaTeX |
 | `elegantpaper` | Elegant working paper and preprint template | pdfLaTeX |
-| `research` | Two-column academic research article — related work, methodology, experiments | LuaLaTeX |
+| `research` | Two-column academic research article by thmsgo18, with related work, methodology and experiments | LuaLaTeX |
 
 ### Report
 
@@ -109,8 +109,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `homework-template` | Clean university homework template with problem/solution environments | pdfLaTeX |
 | `lab-report` | Laboratory report template in article style | pdfLaTeX |
 | `essay-collection` | Multi-essay collection report with individual abstracts and bibliography | pdfLaTeX |
-| `project-report-en` | ISO/IEEE university project report — requirements, architecture, testing, bibliography | LuaLaTeX |
-| `project-report-fr` | Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests | LuaLaTeX |
+| `project-report-en` | University project report by thmsgo18, with requirements, architecture, testing and bibliography (ISO/IEEE style) | LuaLaTeX |
+| `project-report-fr` | University project report in French by thmsgo18, with specs, architecture and tests (AFNOR/ISO style) | LuaLaTeX |
 
 ### Beamer Presentation
 

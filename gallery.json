@@ -1264,7 +1264,7 @@
     },
     {
       "name": "project-report-en",
-      "description": "ISO/IEEE university project report — requirements, architecture, testing, bibliography",
+      "description": "University project report by thmsgo18, with requirements, architecture, testing and bibliography (ISO/IEEE style)",
       "category": "report",
       "source_url": "https://github.com/thmsgo18/latex-forge",
       "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/project-report-en",
@@ -1282,7 +1282,7 @@
     },
     {
       "name": "project-report-fr",
-      "description": "Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests, bibliographie",
+      "description": "Rapport de projet universitaire par thmsgo18, avec cahier des charges, architecture, tests et bibliographie (style AFNOR/ISO)",
       "category": "report",
       "source_url": "https://github.com/thmsgo18/latex-forge",
       "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/report/project-report-fr",
@@ -1300,7 +1300,7 @@
     },
     {
       "name": "research",
-      "description": "Two-column academic research article — related work, methodology, experiments, bibliography",
+      "description": "Two-column academic research article by thmsgo18, with related work, methodology, experiments and bibliography",
       "category": "article",
       "source_url": "https://github.com/thmsgo18/latex-forge",
       "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/article/research",
@@ -1317,7 +1317,7 @@
     },
     {
       "name": "cv-en",
-      "description": "Modern English CV/résumé with FontAwesome icons — education, experience, projects, skills",
+      "description": "Modern English CV by thmsgo18 with FontAwesome icons, covering education, experience, projects and skills",
       "category": "cv",
       "source_url": "https://github.com/thmsgo18/latex-forge",
       "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/cv-en",
@@ -1335,7 +1335,7 @@
     },
     {
       "name": "cv-fr",
-      "description": "CV moderne en français avec icônes FontAwesome — formation, expérience, projets, compétences",
+      "description": "CV moderne en français par thmsgo18 avec icônes FontAwesome, couvrant formation, expérience, projets et compétences",
       "category": "cv",
       "source_url": "https://github.com/thmsgo18/latex-forge",
       "install_url": "https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/cv-fr",
