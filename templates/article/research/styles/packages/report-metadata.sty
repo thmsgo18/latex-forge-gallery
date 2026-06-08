@@ -1,0 +1,76 @@
+\NeedsTeXFormat{LaTeX2e}
+\ProvidesPackage{report-metadata}[2026/06/02 Shared metadata helpers for project reports]
+
+\RequirePackage{etoolbox}
+\RequirePackage{xparse}
+
+\newcommand{\authorrows}{}
+\newcommand{\teacherrows}{}
+\newcommand{\projectlinkrows}{}
+
+\newcommand{\resetauthors}{\gdef\authorrows{}}
+\newcommand{\resetteachers}{\gdef\teacherrows{}}
+\newcommand{\resetprojectlinks}{\gdef\projectlinkrows{}}
+
+\newcommand{\contributorslabel}{Students}
+\newcommand{\teacherslabel}{Teachers}
+
+% \addauthor{Name}{Role}[github_username]
+% Role and github_username are optional (leave empty or omit).
+\DeclareDocumentCommand{\addauthor}{m m O{}}{%
+  \ifstrempty{#3}{%
+    \ifstrempty{#2}{%
+      \gappto\authorrows{#1 & \\}%
+    }{%
+      \gappto\authorrows{#1 & \textit{(#2)} \\}%
+    }%
+  }{%
+    \ifstrempty{#2}{%
+      \gappto\authorrows{#1 & \\}%
+      \gappto\authorrows{{\footnotesize\href{https://github.com/#3}{\texttt{github.com/#3}}} & \\}%
+    }{%
+      \gappto\authorrows{#1 & \textit{(#2)} \\}%
+      \gappto\authorrows{{\footnotesize\href{https://github.com/#3}{\texttt{github.com/#3}}} & \\}%
+    }%
+  }%
+}
+
+\newcommand{\addteacher}[2]{%
+  \ifstrempty{#2}{%
+    \gappto\teacherrows{#1 & \\}%
+  }{%
+    \gappto\teacherrows{#1 & \textit{(#2)} \\}%
+  }%
+}
+
+\newcommand{\addprojectlink}[2]{%
+  \gappto\projectlinkrows{\textbf{#1:} & \href{#2}{\texttt{#2}} \\}%
+}
+
+\newcommand{\addprojectdisplaylink}[3]{%
+  \gappto\projectlinkrows{\textbf{#1:} & \href{#2}{\texttt{#3}} \\}%
+}
+
+\newcommand{\authorlist}{%
+  \begin{tabular}[t]{@{}l l@{}}
+    \authorrows
+  \end{tabular}%
+}
+
+\newcommand{\teacherlist}{%
+  \begin{tabular}[t]{@{}l l@{}}
+    \teacherrows
+  \end{tabular}%
+}
+
+\newcommand{\insertteacherrows}{%
+  \ifstrempty{\teacherrows}{}{%
+    \textbf{\teacherslabel:} & \teacherlist \\
+  }%
+}
+
+\newcommand{\insertprojectlinks}{%
+  \ifstrempty{\projectlinkrows}{}{%
+    \projectlinkrows
+  }%
+}

@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Browse and install 75 curated LaTeX templates in one command.
+  Browse and install 80 curated LaTeX templates in one command.
 </p>
 
 <p align="center">
   <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/gallery-online-39ff14?style=for-the-badge" alt="Gallery online"></a>
   <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/requires-latex--forge-blue?style=for-the-badge" alt="Requires latex-forge"></a>
-  <img src="https://img.shields.io/badge/templates-75-39ff14?style=for-the-badge" alt="75 templates">
+  <img src="https://img.shields.io/badge/templates-80-39ff14?style=for-the-badge" alt="80 templates">
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT%20%26%20others-green?style=for-the-badge" alt="License"></a>
 </p>
 
@@ -66,6 +66,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `rows-cv` | Row-based CV layout with clean horizontal sections | XeLaTeX |
 | `sidebarleft-cv` | CV with left-aligned sidebar and icon-based contact info | XeLaTeX |
 | `infographics2-cv` | Second infographic-style CV with visual skill bars and timeline | XeLaTeX |
+| `cv-en` | Modern English CV with FontAwesome icons — education, experience, projects, skills | LuaLaTeX |
+| `cv-fr` | CV moderne en français avec icônes FontAwesome | LuaLaTeX |
 
 ### Thesis / Dissertation
 
@@ -92,6 +94,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `elsarticle` | Elsevier CAS journal article template | pdfLaTeX |
 | `springer-lncs` | Enhanced Springer LNCS article template for CS conferences | pdfLaTeX |
 | `elegantpaper` | Elegant working paper and preprint template | pdfLaTeX |
+| `research` | Two-column academic research article — related work, methodology, experiments | LuaLaTeX |
 
 ### Report
 
@@ -106,6 +109,8 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 | `homework-template` | Clean university homework template with problem/solution environments | pdfLaTeX |
 | `lab-report` | Laboratory report template in article style | pdfLaTeX |
 | `essay-collection` | Multi-essay collection report with individual abstracts and bibliography | pdfLaTeX |
+| `rapport-projet-en` | ISO/IEEE university project report — requirements, architecture, testing, bibliography | LuaLaTeX |
+| `rapport-projet-fr` | Rapport de projet universitaire AFNOR/ISO — cahier des charges, architecture, tests | LuaLaTeX |
 
 ### Beamer Presentation
 

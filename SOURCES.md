@@ -27,6 +27,8 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `rows-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
 | `sidebarleft-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
 | `infographics2-cv` | [jankapunkt/latexcv](https://github.com/jankapunkt/latexcv) | MIT |
+| `cv-en` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
+| `cv-fr` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
 
 ### Thesis / Dissertation
 
@@ -53,6 +55,7 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `elsarticle` | [oyoycr/els-cas-templates](https://github.com/oyoycr/els-cas-templates) | LPPL |
 | `springer-lncs` | [latextemplates/lncs-enhanced](https://github.com/latextemplates/lncs-enhanced) | 0BSD |
 | `elegantpaper` | [ElegantLaTeX/ElegantPaper](https://github.com/ElegantLaTeX/ElegantPaper) | LPPL-1.3c |
+| `research` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
 
 ### Report / Notes
 
@@ -67,6 +70,8 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `homework-template` | [jdavis/latex-homework-template](https://github.com/jdavis/latex-homework-template) | MIT |
 | `lab-report` | [Sneaker679/lab-report-latex-template](https://github.com/Sneaker679/lab-report-latex-template) | MIT |
 | `essay-collection` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
+| `rapport-projet-en` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
+| `rapport-projet-fr` | [thmsgo18/latex-forge](https://github.com/thmsgo18/latex-forge) | MIT |
 
 ### Beamer Presentation
 
