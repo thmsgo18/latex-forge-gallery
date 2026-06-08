@@ -118,28 +118,24 @@
 \newcommand{\projetResume}{Insérer le résumé du projet ici.}
 
 % =============================================================================
-% LOGO UPC (approximation TikZ)
-% Remplacer par \includegraphics{logo-upc} si disponible
+% LOGOS UPC
+% Trois logos officiels sont fournis dans images/ :
+%   - logo-upc-rvb.png   : logo couleur de l'Université Paris Cité (PAR DÉFAUT)
+%   - logo-upc-noir.png  : version noir & blanc du logo de l'université
+%   - logo-ufr-info.png  : logo de l'UFR Mathématiques et Informatique
+%
+% Pour changer le logo affiché dans les en-têtes et sur la page de garde,
+% il suffit de modifier la définition de \upclogo ci-dessous : remplacez
+% \upclogoUniv par \upclogoUnivNoir ou \upclogoUFR.
 % =============================================================================
-\newcommand{\upclogoshape}{%
-  \begin{tikzpicture}[baseline=-3pt, scale=0.48]
-    % A stylisé : deux jambes + barre
-    \fill[upcred]
-      (0.00, 0.00) -- (0.25, 0.00) -- (0.65, 0.95) -- (1.05, 0.00)
-      -- (1.30, 0.00) -- (0.65, 1.55) -- cycle;
-    % Triangle blanc intérieur
-    \fill[white]
-      (0.40, 0.42) -- (0.65, 0.90) -- (0.90, 0.42) -- cycle;
-  \end{tikzpicture}%
-}
+\newcommand{\upclogoheight}{1.05cm}
 
-\newcommand{\upclogo}{%
-  \upclogoshape\kern4pt
-  \begin{minipage}[b]{1.9cm}
-    \linespread{1.0}\selectfont
-    \footnotesize\bfseries Université\\[-1pt]Paris Cité
-  \end{minipage}%
-}
+\newcommand{\upclogoUniv}{\includegraphics[height=\upclogoheight]{images/logo-upc-rvb.png}}
+\newcommand{\upclogoUnivNoir}{\includegraphics[height=\upclogoheight]{images/logo-upc-noir.png}}
+\newcommand{\upclogoUFR}{\includegraphics[height=\upclogoheight]{images/logo-ufr-info.png}}
+
+% Logo utilisé par défaut : logo couleur officiel de l'université
+\newcommand{\upclogo}{\upclogoUniv}
 
 % =============================================================================
 % STYLES DE PAGE
@@ -197,16 +193,16 @@
 }
 
 % =============================================================================
-% FORMATAGE DES SECTIONS (modernisé : numéro en rouge)
+% FORMATAGE DES SECTIONS (titres en noir, filet en accent bordeaux)
 % =============================================================================
 \titleformat{\section}
   {\large\bfseries}
-  {\textcolor{upcred}{\thesection}}{0.7em}{}
+  {\thesection}{0.7em}{}
   [\vspace{2pt}{\color{upcred!40}\hrule height 0.6pt}\vspace{2pt}]
 
 \titleformat{\subsection}
   {\normalsize\bfseries}
-  {\textcolor{upcred}{\thesubsection}}{0.7em}{}
+  {\thesubsection}{0.7em}{}
 
 \titleformat{\subsubsection}
   {\normalsize\bfseries}
