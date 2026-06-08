@@ -23,9 +23,21 @@
 
 % --- Couleurs ----------------------------------------------------------------
 \RequirePackage{xcolor}
-\definecolor{upcred}{RGB}{155, 27, 48}      % Couleur principale UPC
-\definecolor{upclight}{RGB}{248, 240, 242}  % Fond léger crimson
-\definecolor{tabhead}{RGB}{155, 27, 48}     % En-tête de tableau
+
+% Couleur de marque officielle de l'Université Paris Cité (bordeaux), conservée
+% pour celles et ceux qui souhaitent personnaliser leur document avec la
+% charte graphique de l'université.
+\definecolor{upcred}{RGB}{155, 27, 48}
+
+% Couleur d'accent utilisée dans tout le document : titres, filets, listes,
+% tableaux, encadrés, liens, code, etc.
+% Par défaut, le document est entièrement en noir et blanc (aucune couleur).
+% -> Pour adopter la charte bordeaux de l'université, remplacez simplement
+%    la ligne ci-dessous par : \colorlet{upcaccent}{upcred}
+\colorlet{upcaccent}{black}
+
+\colorlet{upclight}{upcaccent!8}            % Fond clair (encadrés "remarque")
+\colorlet{tabhead}{upcaccent}               % Fond des en-têtes de tableau
 \definecolor{codebg}{RGB}{248, 248, 248}    % Fond bloc de code
 \definecolor{coderule}{RGB}{200, 200, 200}
 
@@ -38,9 +50,9 @@
 \RequirePackage{hyperref}
 \hypersetup{
   colorlinks=true,
-  linkcolor=upcred,
-  urlcolor=upcred,
-  citecolor=upcred,
+  linkcolor=upcaccent,
+  urlcolor=upcaccent,
+  citecolor=upcaccent,
   pdfborder={0 0 0},
 }
 
@@ -69,7 +81,7 @@
 \RequirePackage{listings}
 \lstset{
   basicstyle   = \ttfamily\small,
-  keywordstyle = \color{upcred}\bfseries,
+  keywordstyle = \color{upcaccent}\bfseries,
   commentstyle = \color{gray}\itshape,
   stringstyle  = \color{blue!70!black},
   backgroundcolor = \color{codebg},
@@ -99,7 +111,7 @@
   \begin{tcolorbox}[
     title       = #1,
     colback     = upclight,
-    colframe    = upcred,
+    colframe    = upcaccent,
     fonttitle   = \bfseries\small,
     left=6pt, right=6pt, top=4pt, bottom=4pt,
     breakable
@@ -148,7 +160,7 @@
   \fancyhead[R]{\small\itshape Projet Informatique L3}
   \renewcommand{\headrulewidth}{0.8pt}
   \renewcommand{\headrule}{%
-    \color{upcred}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
+    \color{upcaccent}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
   \fancyfoot{}
 }
 
@@ -158,7 +170,7 @@
   \fancyhead[R]{\small\itshape\projetGroupe\ --\ \projetNom}
   \renewcommand{\headrulewidth}{0.8pt}
   \renewcommand{\headrule}{%
-    \color{upcred}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
+    \color{upcaccent}\hrule width\headwidth height\headrulewidth \vspace{-\headrulewidth}}
   \fancyfoot[C]{\small\thepage\ /\ \pageref{LastPage}}
 }
 
@@ -193,12 +205,12 @@
 }
 
 % =============================================================================
-% FORMATAGE DES SECTIONS (titres en noir, filet en accent bordeaux)
+% FORMATAGE DES SECTIONS (titres et filets dans la couleur d'accent \upcaccent)
 % =============================================================================
 \titleformat{\section}
   {\large\bfseries}
   {\thesection}{0.7em}{}
-  [\vspace{2pt}{\color{upcred!40}\hrule height 0.6pt}\vspace{2pt}]
+  [\vspace{2pt}{\color{upcaccent!40}\hrule height 0.6pt}\vspace{2pt}]
 
 \titleformat{\subsection}
   {\normalsize\bfseries}
@@ -216,7 +228,7 @@
 % LISTES
 % =============================================================================
 \setlist[itemize,1]{
-  label    = {\textcolor{upcred}{$\blacktriangleright$}},
+  label    = {\textcolor{upcaccent}{$\blacktriangleright$}},
   leftmargin = 1.6em,
   itemsep  = 2pt,
   topsep   = 4pt,
@@ -290,5 +302,5 @@
 % =============================================================================
 % COMMANDES UTILITAIRES
 % =============================================================================
-\newcommand{\todo}[1]{\textcolor{upcred}{\textbf{[TODO: #1]}}}
+\newcommand{\todo}[1]{\textcolor{upcaccent}{\textbf{[TODO: #1]}}}
 \newcommand{\version}[3]{\textbf{v#1} & #2 & #3 \\}
