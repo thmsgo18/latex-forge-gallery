@@ -168,7 +168,7 @@ def check_gallery_json(data: dict) -> list[str]:
     templates = data.get("templates", [])
 
     required_fields = {"name", "description", "category", "source_url", "install_url",
-                       "tags", "engine", "preview_png", "preview_pdf"}
+                       "tags", "engine", "preview_png", "preview_pdf", "version"}
 
     names_seen: set[str] = set()
 
@@ -210,6 +210,11 @@ def check_gallery_json(data: dict) -> list[str]:
         # Tags should be a list
         if not isinstance(t.get("tags"), list):
             issues.append(f"gallery.json/{name}: 'tags' must be a list")
+
+        # Version must be semver (x.y.z)
+        ver = t.get("version", "")
+        if not re.match(r"^\d+\.\d+\.\d+$", str(ver)):
+            issues.append(f"gallery.json/{name}: 'version' must be semver (e.g. 1.0.0), got '{ver}'")
 
     return issues
 

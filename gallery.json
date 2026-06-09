@@ -1,5 +1,5 @@
 {
-  "version": "1.0.0",
+  "version": "2.0",
   "templates": [
     {
       "name": "awesome-cv",
@@ -16,7 +16,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/awesome-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/awesome-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/awesome-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "deedy-resume",
@@ -32,7 +33,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/deedy-resume.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/deedy-resume.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/deedy-resume.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "altacv",
@@ -49,7 +51,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/altacv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/altacv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/altacv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "moderncv",
@@ -65,7 +68,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/moderncv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/moderncv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/moderncv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "hipster-cv",
@@ -82,7 +86,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/hipster-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/hipster-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/hipster-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "twenty-seconds-cv",
@@ -99,7 +104,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/twenty-seconds-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/twenty-seconds-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/twenty-seconds-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "developer-cv",
@@ -116,7 +122,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/developer-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/developer-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/developer-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "sidebar-cv",
@@ -133,7 +140,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebar-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebar-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebar-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "clean-thesis",
@@ -149,7 +157,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/clean-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/clean-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/clean-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cambridge-thesis",
@@ -167,7 +176,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/cambridge-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/cambridge-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/cambridge-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "memoir-thesis",
@@ -183,7 +193,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/memoir-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/memoir-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/memoir-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "dissertate",
@@ -199,7 +210,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/dissertate.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/dissertate.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/dissertate.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "tufte-thesis",
@@ -216,7 +228,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tufte-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tufte-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tufte-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "neurips-paper",
@@ -233,7 +246,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/neurips-paper.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/neurips-paper.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/neurips-paper.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "ieee-article",
@@ -249,7 +263,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/ieee-article.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/ieee-article.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/ieee-article.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "acm-article",
@@ -267,7 +282,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/acm-article.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/acm-article.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/acm-article.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cvpr-paper",
@@ -284,7 +300,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/cvpr-paper.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/cvpr-paper.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/cvpr-paper.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "arxiv-template",
@@ -300,7 +317,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/arxiv-template.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/arxiv-template.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/arxiv-template.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "elsarticle",
@@ -316,7 +334,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elsarticle.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elsarticle.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elsarticle.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "elegant-report",
@@ -332,7 +351,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-report.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-report.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-report.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "technical-report",
@@ -348,7 +368,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/technical-report.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/technical-report.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/technical-report.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "internship-report",
@@ -364,7 +385,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/internship-report.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/internship-report.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/internship-report.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "project-report",
@@ -380,7 +402,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-metropolis",
@@ -397,7 +420,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-metropolis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-metropolis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-metropolis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-focus",
@@ -414,7 +438,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-focus.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-focus.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-focus.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-elegant",
@@ -430,7 +455,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-elegant.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-elegant.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-elegant.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-corporate",
@@ -447,7 +473,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-corporate.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-corporate.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-corporate.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-simple",
@@ -464,7 +491,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-simple.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-simple.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-simple.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cover-letter-modern",
@@ -480,7 +508,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/cover-letter-modern.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/cover-letter-modern.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/cover-letter-modern.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "formal-letter",
@@ -497,7 +526,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/formal-letter.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/formal-letter.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/formal-letter.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "motivation-letter",
@@ -513,7 +543,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/motivation-letter.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/motivation-letter.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/motivation-letter.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamerposter-landscape",
@@ -530,7 +561,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/beamerposter-landscape.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/beamerposter-landscape.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/beamerposter-landscape.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "tikzposter",
@@ -546,7 +578,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/tikzposter.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/tikzposter.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/tikzposter.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "academic-poster",
@@ -563,7 +596,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/academic-poster.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/academic-poster.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/academic-poster.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "elegantbook",
@@ -578,7 +612,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/elegantbook.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/elegantbook.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/elegantbook.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "legrand-orange-book",
@@ -594,7 +629,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/legrand-orange-book.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/legrand-orange-book.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/book/legrand-orange-book.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "math-notes",
@@ -611,7 +647,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/math-notes.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/math-notes.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/math-notes.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "friggeri-cv",
@@ -628,7 +665,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/friggeri-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/friggeri-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/friggeri-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "resume-openfont",
@@ -645,7 +683,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/resume-openfont.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/resume-openfont.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/resume-openfont.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "billryan-resume",
@@ -662,7 +701,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/billryan-resume.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/billryan-resume.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/billryan-resume.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "mcdowell-cv",
@@ -679,7 +719,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/mcdowell-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/mcdowell-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/mcdowell-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "rover-resume",
@@ -696,7 +737,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rover-resume.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rover-resume.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rover-resume.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "classic-cv",
@@ -713,7 +755,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/classic-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/classic-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/classic-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "two-column-cv",
@@ -730,7 +773,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/two-column-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/two-column-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/two-column-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "infographic-cv",
@@ -747,7 +791,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographic-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographic-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographic-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "minimalist-cv",
@@ -764,7 +809,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/minimalist-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/minimalist-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/minimalist-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "mimosis-thesis",
@@ -781,7 +827,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/mimosis-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/mimosis-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/mimosis-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "oxford-thesis",
@@ -798,7 +845,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/oxford-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/oxford-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/oxford-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "tuda-thesis",
@@ -814,7 +862,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tuda-thesis.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tuda-thesis.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/thesis/tuda-thesis.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "springer-lncs",
@@ -832,7 +881,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/springer-lncs.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/springer-lncs.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/springer-lncs.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "elegantpaper",
@@ -849,7 +899,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elegantpaper.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elegantpaper.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/elegantpaper.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "elegant-notes",
@@ -865,7 +916,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-notes.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-notes.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/elegant-notes.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "homework-template",
@@ -882,7 +934,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/homework-template.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/homework-template.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/homework-template.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "lab-report",
@@ -899,7 +952,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/lab-report.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/lab-report.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/lab-report.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "beamer-auriga",
@@ -916,7 +970,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-auriga.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-auriga.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-auriga.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "moderncv-letter",
@@ -933,7 +988,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/moderncv-letter.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/moderncv-letter.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/moderncv-letter.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "gemini-poster",
@@ -951,7 +1007,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/gemini-poster.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/gemini-poster.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/poster/gemini-poster.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-cahier-des-charges",
@@ -969,7 +1026,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-des-charges.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-des-charges.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-des-charges.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-rapport-final",
@@ -987,7 +1045,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-final.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-final.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-final.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-conception-detaillee",
@@ -1005,7 +1064,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-conception-detaillee.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-conception-detaillee.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-conception-detaillee.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-manuel-installation",
@@ -1023,7 +1083,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-installation.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-installation.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-installation.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-manuel-utilisation",
@@ -1041,7 +1102,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-utilisation.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-utilisation.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-manuel-utilisation.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-rapport-tests",
@@ -1059,7 +1121,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-tests.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-tests.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-rapport-tests.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-documentation-technique",
@@ -1077,7 +1140,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-documentation-technique.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-documentation-technique.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-documentation-technique.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "upc-cahier-recette",
@@ -1095,7 +1159,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-recette.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-recette.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/project-upc/upc-cahier-recette.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "modern-cv",
@@ -1112,7 +1177,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/modern-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/modern-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/modern-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "rows-cv",
@@ -1129,7 +1195,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rows-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rows-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/rows-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "sidebarleft-cv",
@@ -1145,7 +1212,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "infographics2-cv",
@@ -1162,7 +1230,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cheatsheet",
@@ -1178,7 +1247,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cheatsheet/cheatsheet.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cheatsheet/cheatsheet.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cheatsheet/cheatsheet.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "invoice-simple",
@@ -1195,7 +1265,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-simple.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-simple.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-simple.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "invoice-multipage",
@@ -1211,7 +1282,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-multipage.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-multipage.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/invoice-multipage.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "timesheet",
@@ -1227,7 +1299,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/timesheet.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/timesheet.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/timesheet.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "poem",
@@ -1243,7 +1316,8 @@
       ],
       "engine": "xelatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/misc/poem.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "essay-collection",
@@ -1260,7 +1334,8 @@
       ],
       "engine": "pdflatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/essay-collection.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "project-report-en",
@@ -1278,7 +1353,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-en.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-en.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-en.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "project-report-fr",
@@ -1296,7 +1372,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-fr.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-fr.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/project-report-fr.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "research",
@@ -1313,7 +1390,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/research.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/research.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/article/research.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cv-en",
@@ -1331,7 +1409,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-en.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-en.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-en.pdf",
+      "version": "1.0.0"
     },
     {
       "name": "cv-fr",
@@ -1349,7 +1428,8 @@
       ],
       "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-fr.png",
-      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-fr.pdf"
+      "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/cv-fr.pdf",
+      "version": "1.0.0"
     }
   ]
 }
