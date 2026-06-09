@@ -740,24 +740,35 @@ function cmd(t) {
   return 'latex-forge template install ' + t.install_url;
 }
 
+// Escapes a gallery.json value before it is interpolated into innerHTML,
+// so a malicious field in a contributed template cannot inject markup.
+function esc(value) {
+  return String(value ?? '')
+    .replace(/&/g, '&amp;')
+    .replace(/</g, '&lt;')
+    .replace(/>/g, '&gt;')
+    .replace(/"/g, '&quot;')
+    .replace(/'/g, '&#039;');
+}
+
 // ── Card ───────────────────────────────────────────────────────────────────────
 function makeCard(t) {
   const el = document.createElement('article');
   el.className = 'card';
   el.innerHTML =
     '<div class="card-thumb">' +
-      '<img src="' + t.preview_png + '" alt="' + t.name + ' preview" loading="lazy">' +
+      '<img src="' + esc(t.preview_png) + '" alt="' + esc(t.name) + ' preview" loading="lazy">' +
       '<div class="card-overlay"><button class="btn-peek">Preview</button></div>' +
     '</div>' +
     '<div class="card-body">' +
       '<div class="card-badges">' +
-        '<span class="badge badge-cat">' + (LABELS[t.category] || t.category) + '</span>' +
-        '<span class="badge badge-eng">' + t.engine + '</span>' +
+        '<span class="badge badge-cat">' + esc(LABELS[t.category] || t.category) + '</span>' +
+        '<span class="badge badge-eng">' + esc(t.engine) + '</span>' +
       '</div>' +
-      '<h3 class="card-name">' + t.name + '</h3>' +
-      '<p class="card-desc">' + t.description + '</p>' +
+      '<h3 class="card-name">' + esc(t.name) + '</h3>' +
+      '<p class="card-desc">' + esc(t.description) + '</p>' +
       '<div class="card-install">' +
-        '<code>' + cmd(t) + '</code>' +
+        '<code>' + esc(cmd(t)) + '</code>' +
         '<button class="copy-btn" data-copy>Copy</button>' +
       '</div>' +
     '</div>';
@@ -796,8 +807,8 @@ function openModal(t) {
   document.getElementById('modal-pdf').href = t.preview_pdf;
   document.getElementById('modal-source').href = t.source_url;
   document.getElementById('modal-badges').innerHTML =
-    '<span class="badge badge-cat">' + (LABELS[t.category] || t.category) + '</span>' +
-    '<span class="badge badge-eng">' + t.engine + '</span>';
+    '<span class="badge badge-cat">' + esc(LABELS[t.category] || t.category) + '</span>' +
+    '<span class="badge badge-eng">' + esc(t.engine) + '</span>';
   document.getElementById('modal-backdrop').classList.add('open');
   document.body.style.overflow = 'hidden';
 }
