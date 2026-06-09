@@ -3,22 +3,26 @@
 %  Edit this file to personalise your paper.
 % =====================================================================
 
+\newcommand{\authorname}{FirstName LASTNAME}
+\newcommand{\universityname}{Example University}
+\newcommand{\authoremail}{firstname.lastname@example.edu}
+
 \title{A template for the \emph{arxiv} style}
 
 \newif\ifuniqueAffiliation
 \uniqueAffiliationtrue % Comment out to use multiple-affiliations variant
 
 \ifuniqueAffiliation
-\author{FirstName LASTNAME\thanks{Corresponding author.} \\
+\author{\authorname\thanks{Corresponding author.} \\
 	Department of Computer Science\\
-	Example University\\
-	\texttt{firstname.lastname@example.edu}}
+	\universityname\\
+	\texttt{\authoremail}}
 \else
 \usepackage{authblk}
 \renewcommand\Authfont{\bfseries}
 \setlength{\affilsep}{0em}
-\author[1]{FirstName LASTNAME\thanks{\texttt{firstname.lastname@example.edu}}}
-\affil[1]{Department of Computer Science, Example University}
+\author[1]{\authorname\thanks{\texttt{\authoremail}}}
+\affil[1]{Department of Computer Science, \universityname}
 \fi
 
 \renewcommand{\shorttitle}{\textit{arXiv} Template}
@@ -26,6 +30,6 @@
 \hypersetup{
   pdftitle={A template for the arxiv style},
   pdfsubject={cs.LG},
-  pdfauthor={FirstName LASTNAME},
+  pdfauthor={\authorname},
   pdfkeywords={First keyword, Second keyword},
 }
