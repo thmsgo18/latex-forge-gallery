@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>LaTeX Forge — Template Gallery</title>
-  <meta name="description" content="80 curated LaTeX templates, ready to install with latex-forge.">
+  <meta name="description" id="meta-description" content="Curated LaTeX templates, ready to install with latex-forge.">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
   <style>
@@ -550,7 +550,7 @@
     <img src="logo.png" alt="LaTeX Forge Gallery">
   </div>
   <p class="header-tagline">
-    A curated collection of <strong>80 templates</strong> &mdash; install instantly with the latex-forge CLI.
+    A curated collection of <strong id="tagline-count">templates</strong> &mdash; install instantly with the latex-forge CLI.
   </p>
   <div class="header-actions">
     <a class="btn-ghost" href="https://github.com/thmsgo18/latex-forge" target="_blank" rel="noopener">
@@ -624,10 +624,16 @@ const LABELS = {
   letter:       'Letter',
   poster:       'Poster',
   book:         'Book',
+  cheatsheet:   'Cheatsheet',
+  misc:         'Misc',
   'project-upc':'Projet UPC',
 };
 
-const CAT_ORDER = ['cv','thesis','article','report','presentation','letter','poster','book','project-upc'];
+// Preferred display order for known categories. Anything present in
+// gallery.json that ISN'T in this list still shows up (appended, alphabetically,
+// with an auto-generated label) — so a brand-new category never gets silently
+// dropped just because this list wasn't updated.
+const CAT_ORDER = ['cv','thesis','article','report','presentation','letter','poster','book','cheatsheet','misc','project-upc'];
 
 let templates    = [];
 let activecat    = 'all';
@@ -637,18 +643,47 @@ let activeTpl    = null;
 // ── Bootstrap ──────────────────────────────────────────────────────────────────
 fetch('./gallery.json')
   .then(r => r.json())
-  .then(d => { templates = d.templates; buildFilters(); render(); });
+  .then(d => {
+    templates = d.templates;
+    updateMeta();
+    buildFilters();
+    render();
+  });
+
+// ── Meta / tagline (count is derived live from gallery.json — never hardcoded) ──
+function updateMeta() {
+  const total = templates.length;
+  const word  = total === 1 ? 'template' : 'templates';
+
+  const countEl = document.getElementById('tagline-count');
+  if (countEl) countEl.textContent = total + ' ' + word;
+
+  const metaDesc = document.getElementById('meta-description');
+  if (metaDesc) {
+    metaDesc.setAttribute('content',
+      total + ' curated LaTeX templates, ready to install with latex-forge.');
+  }
+}
 
 // ── Filters ────────────────────────────────────────────────────────────────────
+// Turns an unknown category slug like "lab-notes" into "Lab Notes" so it still
+// reads nicely even before LABELS is updated for it.
+function prettyLabel(cat) {
+  return cat.split('-').map(w => w.charAt(0).toUpperCase() + w.slice(1)).join(' ');
+}
+
 function buildFilters() {
   const wrap = document.getElementById('filters');
   wrap.appendChild(filterBtn('all', 'All (' + templates.length + ')', true));
-  CAT_ORDER
-    .filter(c => templates.some(t => t.category === c))
-    .forEach(c => {
-      const n = templates.filter(t => t.category === c).length;
-      wrap.appendChild(filterBtn(c, (LABELS[c] || c) + ' (' + n + ')', false));
-    });
+
+  const present = [...new Set(templates.map(t => t.category))];
+  const known   = CAT_ORDER.filter(c => present.includes(c));
+  const unknown = present.filter(c => !CAT_ORDER.includes(c)).sort();
+
+  known.concat(unknown).forEach(c => {
+    const n = templates.filter(t => t.category === c).length;
+    wrap.appendChild(filterBtn(c, (LABELS[c] || prettyLabel(c)) + ' (' + n + ')', false));
+  });
 }
 
 function filterBtn(val, label, active) {

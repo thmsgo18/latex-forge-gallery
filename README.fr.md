@@ -5,13 +5,13 @@
 </p>
 
 <p align="center">
-  Parcourez et installez 80 templates LaTeX soigneusement sélectionnés en une seule commande.
+  Parcourez et installez des templates LaTeX soigneusement sélectionnés en une seule commande.
 </p>
 
 <p align="center">
   <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/galerie-en%20ligne-39ff14?style=for-the-badge" alt="Galerie en ligne"></a>
   <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/nécessite-latex--forge-blue?style=for-the-badge" alt="Nécessite latex-forge"></a>
-  <img src="https://img.shields.io/badge/templates-80-39ff14?style=for-the-badge" alt="80 templates">
+  <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fthmsgo18%2Flatex-forge-gallery%2Fmain%2Fgallery.json&query=%24.templates.length&label=templates&color=39ff14&style=for-the-badge" alt="Nombre de templates">
   <a href="LICENSE"><img src="https://img.shields.io/badge/licence-MIT%20%26%20autres-green?style=for-the-badge" alt="Licence"></a>
 </p>
 
