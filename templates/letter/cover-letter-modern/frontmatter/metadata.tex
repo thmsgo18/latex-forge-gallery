@@ -3,16 +3,21 @@
 %  Edit this file to personalise your letter.
 % =====================================================================
 
-\def\name{FirstName LASTNAME,\\
+\newcommand{\authorname}{FirstName LASTNAME}
+\newcommand{\authoremail}{firstname.lastname@example.edu}
+\newcommand{\authorphone}{(+33) 6 00 00 00 00}
+\newcommand{\universityname}{Example University}
+
+\def\name{\authorname,\\
 Master's Degree -- Computer Science,\\
-Example University
+\universityname
 }
 
-\def\Where{\hspace{-1.2mm}Master's Degree -- Computer Science,\\Example University}
+\def\Where{\hspace{-1.2mm}Master's Degree -- Computer Science,\\\universityname}
 \def\Address{123 Main Street}
 \def\CityZip{Paris, France, 75001}
-\def\Email{\textbf{E-mail}: \href{mailto:firstname.lastname@example.edu}{firstname.lastname@example.edu}}
-\def\TEL{\textbf{Phone}: (+33) 6 00 00 00 00}
+\def\Email{\textbf{E-mail}: \href{mailto:\authoremail}{\authoremail}}
+\def\TEL{\textbf{Phone}: \authorphone}
 \def\school{Recipient Organization\\Attention: Hiring Manager\\456 Business Avenue,\\City, Country}
 
 \signature{\name{}}

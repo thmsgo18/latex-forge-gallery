@@ -3,7 +3,9 @@
 %  Edit this file to personalise your invoice.
 % =====================================================================
 
-\setkomavar{fromname}{Example University}
+\newcommand{\authorname}{FirstName LASTNAME}
+
+\setkomavar{fromname}{\authorname}
 \setkomavar{fromphone}{+33 (0) 1 00 00 00 00}
 \setkomavar{fromaddress}{123 Main Street \\ F-75001 Paris}
 \setkomavar{frombank}{Example Bank \\ IBAN: FR00 0000 0000 0000 0000}
@@ -13,7 +15,7 @@
 
 	\begin{tabular}[t]{l@{}}
 		 \multicolumn{1}{@{}l@{}}{Sender:}\\
-		 Example University\\
+		 \authorname\\
 		 123 Main Street, F-75001 Paris\\ \\
 		 Tel: \usekomavar{fromphone} \\
 		 E-Mail: firstname.lastname@example.edu \\
