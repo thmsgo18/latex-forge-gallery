@@ -1,9 +1,22 @@
 % awesome-cv — Personal Information
 
-\name{FirstName}{LASTNAME}
-\position{Master\'s Degree{{\enskip\cdotp\enskip}}Example University}
-\address{Example University, Paris, France}
+% --- Standard profile fields (injected automatically) ----------------
+\newcommand{\cvname}{FirstName LASTNAME}
+\newcommand{\cvfirstname}{FirstName}
+\newcommand{\cvlastname}{LASTNAME}
+\newcommand{\cvposition}{Master\'s Degree -- Computer Science}
+\newcommand{\cvuniversity}{Example University}
+\newcommand{\cvphone}{(+33) 6 00 00 00 00}
+\newcommand{\cvemail}{firstname.lastname@example.edu}
+\newcommand{\cvgithub}{username}
+\newcommand{\cvlinkedin}{username}
 
-\mobile{(+33) 6 00 00 00 00}
-
-\email{firstname.lastname@example.edu}
+% --- Class configuration (awesome-cv class setters) ------------------
+% \name takes two separate args: {first}{last}
+\name{\cvfirstname}{\cvlastname}
+\position{\cvposition{\enskip\cdotp\enskip}\cvuniversity}
+\address{\cvuniversity, Paris, France}
+\mobile{\cvphone}
+\email{\cvemail}
+\github{\cvgithub}
+\linkedin{\cvlinkedin}

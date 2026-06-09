@@ -1,6 +1,17 @@
 % moderncv — Personal Information
 
-\name{FirstName}{LASTNAME}
-\address{Example University}{Paris, France}{}
-\phone[mobile]{+33~6~00~00~00~00}
-\email{firstname.lastname@example.edu}
+% --- Standard profile fields (injected automatically) ----------------
+\newcommand{\cvname}{FirstName LASTNAME}
+\newcommand{\cvfirstname}{FirstName}
+\newcommand{\cvlastname}{LASTNAME}
+\newcommand{\cvposition}{Master\'s Degree -- Computer Science}
+\newcommand{\cvuniversity}{Example University}
+\newcommand{\cvphone}{+33~6~00~00~00~00}
+\newcommand{\cvemail}{firstname.lastname@example.edu}
+
+% --- Class configuration (moderncv class setters) --------------------
+% \name takes two separate args: {first}{last}
+\name{\cvfirstname}{\cvlastname}
+\address{\cvuniversity}{Paris, France}{}
+\phone[mobile]{\cvphone}
+\email{\cvemail}

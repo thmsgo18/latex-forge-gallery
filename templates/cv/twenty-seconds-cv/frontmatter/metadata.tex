@@ -1,12 +1,24 @@
 % =====================================================================
 %  Twenty Seconds CV — Personal Information
 %  Edit this file to personalise your CV.
-%  These commands are defined in twentysecondcv.cls.
 % =====================================================================
 
-\cvname{FirstName LASTNAME}
-\cvjobtitle{Master's Degree -- Computer Science}
-\cvaddress{Example University, Paris, France}
-\cvnumberphone{+33 6 00 00 00 00}
-\cvmail{firstname.lastname@example.edu}
+% --- Standard profile fields (injected automatically) ----------------
+% Note: twentysecondcv.cls already defines \cvname as a 1-arg setter.
+% We save that setter, then redefine \cvname as a 0-arg holder so the
+% profile system can inject into it, and forward the value to the class.
+\let\@twentycv@setname\cvname
+\renewcommand{\cvname}{FirstName LASTNAME}
+\@twentycv@setname{\cvname}
+
+\newcommand{\cvposition}{Master's Degree -- Computer Science}
+\newcommand{\cvuniversity}{Example University}
+\newcommand{\cvphone}{+33 6 00 00 00 00}
+\newcommand{\cvemail}{firstname.lastname@example.edu}
+
+% --- Class configuration (forwards to sidebar layout engine) ---------
+\cvjobtitle{\cvposition}
+\cvaddress{\cvuniversity, Paris, France}
+\cvnumberphone{\cvphone}
+\cvmail{\cvemail}
 \cvsite{https://example.edu}
