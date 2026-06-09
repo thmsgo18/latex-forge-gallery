@@ -183,7 +183,7 @@ def process_template(name: str, info: dict, skip_existing: bool) -> str:
     return "ok"
 
 
-def main() -> None:
+def main() -> int:
     parser = argparse.ArgumentParser(description="Generate template previews")
     parser.add_argument("--only", nargs="+", metavar="NAME", help="Only compile these templates")
     parser.add_argument("--skip-existing", action="store_true", help="Skip templates that already have a preview.png")
@@ -225,7 +225,11 @@ def main() -> None:
             print(f"    ✗ {name}: {first_line}")
     print()
 
+    # Non-zero exit on failure so this script can be used as a CI gate
+    # (e.g. to verify that a newly contributed template actually compiles).
+    return 1 if failed else 0
+
 
 if __name__ == "__main__":
     os.chdir(ROOT)
-    main()
+    sys.exit(main())

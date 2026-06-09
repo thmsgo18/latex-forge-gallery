@@ -56,6 +56,48 @@ templates/<category>/<template-name>/
 | `bibliography/references.bib` | Required if the template uses `\bibliography` or `\addbibresource` |
 | `images/.gitkeep` | Required if the images/ directory would otherwise be empty |
 
+### Splitting long documents into one file per section
+
+`main.tex` must stay a clean **entry point** — document class, packages, the
+`\input{frontmatter/metadata}` call, and (for long-form documents) a short
+list of `\input`/`\include` calls. It must **not** be a multi-hundred-line
+monolithic file containing the entire body of the document.
+
+**When to split:**
+
+- Long-form documents — theses, books, multi-chapter reports, papers with
+  several major parts — must have their body content broken up into one file
+  per chapter/section under `sections/` (or `chapters/` for books), each
+  `\input`/`\include`d from `main.tex`:
+
+  ```latex
+  % main.tex
+  \documentclass{report}
+  % ... packages ...
+  \input{frontmatter/metadata}
+
+  \begin{document}
+  \input{sections/01-introduction}
+  \input{sections/02-related-work}
+  \input{sections/03-methodology}
+  \input{sections/04-results}
+  \input{sections/05-conclusion}
+  \end{document}
+  ```
+
+  Name section files so their order is obvious at a glance (`01-...`,
+  `02-...`), and give each one a short header comment describing its content.
+
+- **Short, single-purpose documents** — CVs, cover letters, posters,
+  cheatsheets, single-page invoices, timesheets — are fine as a single
+  `main.tex`; splitting a one-page document into files would only add
+  friction. Use your judgement: if `main.tex` is pushing past ~150 lines of
+  body content and covers more than one logical section, split it.
+
+This keeps templates easy to navigate, easy to diff, and easy to reuse
+section-by-section — which is the whole point of curating them here rather
+than just linking to the original repository.
+
 ### Categories
 
 Choose the most appropriate category for your template:
@@ -208,6 +250,13 @@ Add an entry to `gallery.json` under the `"templates"` array:
 
 ## Generating a preview
 
+**A PNG of the first page and the compiled sample PDF are mandatory for every
+template.** This isn't just a recommendation: `scripts/validate.py` (run
+automatically in CI on every push/PR — see `.github/workflows/validate.yml`)
+hard-fails if `previews/<category>/<name>.png` or `previews/<category>/<name>.pdf`
+is missing for any template listed in `gallery.json`. A PR that doesn't include
+both files for a new template cannot pass validation.
+
 Previews are a single PNG (first page) and the compiled PDF, stored in `previews/<category>/`.
 
 Use the provided script:
@@ -251,15 +300,35 @@ rm -f *.aux *.log *.bbl *.bcf *.blg *.fls *.fdb_latexmk *.out *.run.xml \
 ## Submitting a pull request
 
 1. **Fork** this repository and create a branch: `add/<template-name>`
-2. Add your template under `templates/<category>/<template-name>/`
+2. Add your template under `templates/<category>/<template-name>/`, following
+   the [structure rules above](#template-structure) — including splitting
+   long documents into one file per section/chapter under `sections/`
 3. Add the entry to `gallery.json`
-4. Generate the preview files in `previews/<category>/`
-5. Open a pull request with:
+4. Generate the preview files in `previews/<category>/` (PNG of the first
+   page **and** the compiled PDF — both are required, see
+   [Generating a preview](#generating-a-preview))
+5. Run `python3 scripts/validate.py` locally and make sure it passes
+6. Open a pull request with:
    - A brief description of the template
    - A link to the original source repository
    - Confirmation that it compiles cleanly
 
 Please do **not** include compilation artifacts (`.aux`, `.log`, `.pdf` inside `templates/`, etc.) in your PR.
+
+### What CI checks automatically
+
+Every PR that touches `templates/**` or `gallery.json` is checked by two
+GitHub Actions workflows — you don't need to trigger them yourself:
+
+| Workflow | What it does | Result if it fails |
+|----------|--------------|--------------------|
+| `validate.yml` | Runs `scripts/validate.py`: required files, `\input{frontmatter/metadata}` wiring, engine consistency, no committed build artifacts, **PNG + PDF previews present**, `gallery.json` completeness | PR cannot be merged |
+| `compile-pr.yml` | Compiles every template you added or modified with the declared engine and verifies it actually produces a PDF | PR cannot be merged |
+
+The "one file per section" convention itself is enforced through review
+(it's a structural/style convention, not something a script can fully judge —
+some templates are legitimately single-file). But in practice a badly-split
+document usually fails to compile too, which `compile-pr.yml` will catch.
 
 ---
 

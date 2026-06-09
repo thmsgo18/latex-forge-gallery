@@ -24,22 +24,25 @@
 ### Structure
 
 - [ ] Template is under `templates/<category>/<name>/`
-- [ ] `main.tex` is present and compiles cleanly
+- [ ] `main.tex` is present, compiles cleanly, and stays a clean entry point (document class, packages, `\input{frontmatter/metadata}`, and `\input`/`\include` calls — not the whole document body inline)
+- [ ] **Long/multi-section documents** (thesis, book, multi-chapter report, multi-part article, …) have their body **split into one file per section/chapter** under `sections/` (or `chapters/`), each `\input`/`\include`d from `main.tex` — see [CONTRIBUTING.md § Splitting long documents](../CONTRIBUTING.md#splitting-long-documents-into-one-file-per-section). *(Short single-purpose documents — CV, cover letter, poster, cheatsheet, invoice — may stay single-file.)*
 - [ ] `frontmatter/metadata.tex` exists with standard placeholders (`FirstName LASTNAME`, `Example University`, `Master's Degree -- Computer Science`)
 - [ ] `\input{frontmatter/metadata}` is present in `main.tex` (or its delegated file)
 - [ ] `latexforge.toml` added with correct `engine` (only if not lualatex)
 - [ ] `bibliography/references.bib` added if the template uses a bibliography
 - [ ] `images/.gitkeep` added if the images/ directory is empty
 
-### Gallery
+### Gallery & previews
 
 - [ ] Entry added to `gallery.json` (all fields filled: `name`, `description`, `category`, `source_url`, `install_url`, `tags`, `engine`, `preview_png`, `preview_pdf`)
-- [ ] Preview files generated: `previews/<category>/<name>.png` and `.pdf`
+- [ ] **PNG preview of the first page** generated and committed: `previews/<category>/<name>.png`
+- [ ] **Sample-rendering PDF** generated and committed: `previews/<category>/<name>.pdf`
 - [ ] No build artifacts committed (`.aux`, `.log`, `.pdf` inside `templates/`, etc.)
 
 ### Validation
 
-- [ ] `python3 scripts/validate.py` passes with no errors
+- [ ] `python3 scripts/validate.py` passes with no errors locally
+- [ ] CI is green: `validate` (structure, previews, gallery.json) and `Compile changed templates` (the template actually compiles to a PDF) both pass
 
 ---
 

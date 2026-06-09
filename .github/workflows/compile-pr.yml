@@ -1,0 +1,60 @@
+name: Compile changed templates (PR check)
+
+# Automatically compiles any template added or modified in a pull request and
+# verifies it actually produces a PDF. This is the automated counterpart to
+# the manual "Compile templates" workflow: it runs on every PR that touches
+# templates/, so a contribution that doesn't compile (e.g. a missing
+# \input{sections/...} file, a broken split into modular files, a missing
+# image, etc.) is caught before merge — independently of the human review of
+# the preview PNG/PDF and the structure checklist.
+
+on:
+  pull_request:
+    paths:
+      - "templates/**"
+
+jobs:
+  compile-changed:
+    name: Compile & verify changed templates
+    runs-on: ubuntu-latest
+    timeout-minutes: 90
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Detect changed templates
+        id: changed
+        run: |
+          BASE="${{ github.event.pull_request.base.sha }}"
+          HEAD="${{ github.event.pull_request.head.sha }}"
+          NAMES=$(git diff --name-only "$BASE" "$HEAD" -- 'templates/**' \
+            | awk -F/ 'NF>=3 {print $3}' | sort -u | tr '\n' ' ' | sed 's/ *$//')
+          echo "names=$NAMES" >> "$GITHUB_OUTPUT"
+          if [ -n "$NAMES" ]; then
+            echo "Changed templates: $NAMES"
+          else
+            echo "No template directories changed — nothing to compile."
+          fi
+
+      - name: Install TeX Live
+        if: steps.changed.outputs.names != ''
+        uses: zauguin/install-texlive@v3
+        with:
+          packages: scheme-full
+
+      - name: Install poppler-utils
+        if: steps.changed.outputs.names != ''
+        run: sudo apt-get install -y poppler-utils
+
+      - name: Set up Python
+        if: steps.changed.outputs.names != ''
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Compile changed templates and verify PDF output
+        if: steps.changed.outputs.names != ''
+        run: python3 scripts/generate_previews.py --only ${{ steps.changed.outputs.names }}
