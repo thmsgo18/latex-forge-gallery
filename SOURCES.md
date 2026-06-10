@@ -124,8 +124,8 @@ All templates are sourced from publicly available GitHub repositories. Full cred
 | `timesheet` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
 | `poem` | [cmichi/latex-template-collection](https://github.com/cmichi/latex-template-collection) | MIT |
 
-### Projet Informatique L3 — Université Paris Cité
+### Projet Informatique L3 (Université Paris Cité)
 
 | Template | Source | License |
 |----------|--------|---------|
-| `upc-*` | Original — [thmsgo18/latex-forge-gallery](https://github.com/thmsgo18/latex-forge-gallery) | MIT |
+| `upc-*` | Original: [thmsgo18/latex-forge-gallery](https://github.com/thmsgo18/latex-forge-gallery) | MIT |

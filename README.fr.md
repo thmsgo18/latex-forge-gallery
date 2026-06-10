@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>Plus de 80 templates LaTeX sélectionnés — avec aperçus, testés, installables en une commande.</b>
+  <b>Plus de 80 templates LaTeX sélectionnés, avec aperçus, testés, installables en une commande.</b>
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 
 ## C'est quoi ?
 
-C'est le registre officiel de templates de l'écosystème [LaTeX Forge](https://github.com/thmsgo18/latex-forge). Chaque template est sélectionné, compile du premier coup, et suit la même structure (`main.tex` à la racine) — chacun d'eux devient un projet prêt à écrire en quelques secondes.
+C'est le registre officiel de templates de l'écosystème [LaTeX Forge](https://github.com/thmsgo18/latex-forge). Chaque template est sélectionné, compile du premier coup, et suit la même structure (`main.tex` à la racine), donc chacun d'eux devient un projet prêt à écrire en quelques secondes.
 
 | | |
 |---|---|
@@ -42,7 +42,7 @@ C'est le registre officiel de templates de l'écosystème [LaTeX Forge](https://
 
 ## Utiliser un template
 
-**Depuis le terminal** — installez une fois, créez autant de projets que vous voulez :
+**Depuis le terminal** : installez une fois, créez autant de projets que vous voulez :
 
 <p align="center">
   <img src="docs/assets/demo-install.gif" alt="Installation d'un template de la galerie" width="900">
@@ -53,7 +53,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 latex-forge create --name mon-cv --template awesome-cv
 ```
 
-**Sans terminal** — installez l'[extension VS Code](https://marketplace.visualstudio.com/items?itemName=thmsgo18.latex-forge-vscode), ouvrez **LaTeX Forge: Browse Template Gallery**, et cliquez **Install & Create** sur n'importe quelle carte.
+**Sans terminal** : installez l'[extension VS Code](https://marketplace.visualstudio.com/items?itemName=thmsgo18.latex-forge-vscode), ouvrez **LaTeX Forge: Browse Template Gallery**, et cliquez **Install & Create** sur n'importe quelle carte.
 
 Gardez vos templates à jour avec `latex-forge template update`.
 
@@ -181,7 +181,7 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | `timesheet` | Feuille de temps mensuelle avec suivi des heures journalières | pdfLaTeX |
 | `poem` | Template élégant de composition poétique avec environnements de vers | pdfLaTeX |
 
-### Projet Informatique L3 — Université Paris Cité
+### Projet Informatique L3 (Université Paris Cité)
 
 Suite de 8 templates pour les documents standard du Projet Informatique L3 à l'Université Paris Cité. Charte graphique UPC, entièrement en français, compilables avec pdfLaTeX.
 
@@ -200,17 +200,17 @@ Suite de 8 templates pour les documents standard du Projet Informatique L3 à l'
 
 ## Compatibilité
 
-Chaque template contient un `main.tex` à la racine de son répertoire, un `frontmatter/metadata.tex` avec des placeholders standards (pré-remplis par votre [profil latex-forge](https://github.com/thmsgo18/latex-forge/blob/main/README.fr.md#votre-profil)), et déclare son moteur dans `latexforge.toml` — ce qui le rend entièrement compatible avec `latex-forge create`.
+Chaque template contient un `main.tex` à la racine de son répertoire, un `frontmatter/metadata.tex` avec des placeholders standards (pré-remplis par votre [profil latex-forge](https://github.com/thmsgo18/latex-forge/blob/main/README.fr.md#votre-profil)), et déclare son moteur dans `latexforge.toml`, ce qui le rend entièrement compatible avec `latex-forge create`.
 
 ## Contribuer un template
 
-Vous souhaitez ajouter un template ? Consultez [CONTRIBUTING.md](CONTRIBUTING.md) — structure requise, placeholders standards, déclaration du moteur, format `gallery.json` et génération des previews. Lancez `python3 scripts/validate.py` avant d'ouvrir une PR.
+Vous souhaitez ajouter un template ? Consultez [CONTRIBUTING.md](CONTRIBUTING.md) : structure requise, placeholders standards, déclaration du moteur, format `gallery.json` et génération des previews. Lancez `python3 scripts/validate.py` avant d'ouvrir une PR.
 
 Le GIF de démo se régénère avec [vhs](https://github.com/charmbracelet/vhs) : `./docs/demo/record.sh`.
 
 ## Sources et licences
 
-Tous les templates sont issus de dépôts publics avec des licences permissives — tout le crédit revient à leurs auteurs originaux, listés dans [SOURCES.md](SOURCES.md). La structure de la galerie, les scripts et les outils sont sous [licence MIT](LICENSE) ; chaque template conserve sa licence d'origine (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
+Tous les templates sont issus de dépôts publics avec des licences permissives ; tout le crédit revient à leurs auteurs originaux, listés dans [SOURCES.md](SOURCES.md). La structure de la galerie, les scripts et les outils sont sous [licence MIT](LICENSE) ; chaque template conserve sa licence d'origine (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
 
 ---
 

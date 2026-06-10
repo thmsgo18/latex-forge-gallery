@@ -5,7 +5,7 @@
 </p>
 
 <p align="center">
-  <b>80+ curated LaTeX templates — previewed, tested, and installable in one command.</b>
+  <b>80+ curated LaTeX templates, previewed, tested, and installable in one command.</b>
 </p>
 
 <p align="center">
@@ -32,7 +32,7 @@
 
 ## What is this?
 
-This is the official template registry for the [LaTeX Forge](https://github.com/thmsgo18/latex-forge) ecosystem. Every template is curated, compiles out of the box, and follows the same structure (`main.tex` at the root) — so any of them turns into a ready-to-write project in seconds.
+This is the official template registry for the [LaTeX Forge](https://github.com/thmsgo18/latex-forge) ecosystem. Every template is curated, compiles out of the box, and follows the same structure (`main.tex` at the root), so any of them turns into a ready-to-write project in seconds.
 
 | | |
 |---|---|
@@ -42,7 +42,7 @@ This is the official template registry for the [LaTeX Forge](https://github.com/
 
 ## How to use a template
 
-**From the terminal** — install once, then create as many projects as you want:
+**From the terminal**: install once, then create as many projects as you want:
 
 <p align="center">
   <img src="docs/assets/demo-install.gif" alt="Installing a gallery template" width="900">
@@ -53,7 +53,7 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 latex-forge create --name my-cv --template awesome-cv
 ```
 
-**Without a terminal** — install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=thmsgo18.latex-forge-vscode), open **LaTeX Forge: Browse Template Gallery**, and click **Install & Create** on any card.
+**Without a terminal**: install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=thmsgo18.latex-forge-vscode), open **LaTeX Forge: Browse Template Gallery**, and click **Install & Create** on any card.
 
 Keep templates up to date with `latex-forge template update`.
 
@@ -181,7 +181,7 @@ Keep templates up to date with `latex-forge template update`.
 | `timesheet` | Monthly timesheet template with daily hours tracking table | pdfLaTeX |
 | `poem` | Elegant poem typesetting template with verse environments | pdfLaTeX |
 
-### Projet Informatique L3 — Université Paris Cité
+### Projet Informatique L3 (Université Paris Cité)
 
 8 templates for the standard documents of the L3 Computer Science Project at Université Paris Cité. UPC visual identity, fully in French, compiled with pdfLaTeX.
 
@@ -198,17 +198,17 @@ Keep templates up to date with `latex-forge template update`.
 
 ## Compatibility
 
-Every template contains a `main.tex` at the root of its directory, a `frontmatter/metadata.tex` with standard placeholders (auto-filled by your [latex-forge profile](https://github.com/thmsgo18/latex-forge#your-profile)), and declares its engine in `latexforge.toml` — making it fully compatible with `latex-forge create`.
+Every template contains a `main.tex` at the root of its directory, a `frontmatter/metadata.tex` with standard placeholders (auto-filled by your [latex-forge profile](https://github.com/thmsgo18/latex-forge#your-profile)), and declares its engine in `latexforge.toml`, making it fully compatible with `latex-forge create`.
 
 ## Contributing a template
 
-Want to add a template? Read [CONTRIBUTING.md](CONTRIBUTING.md) — it covers the required structure, standard placeholders, engine declaration, `gallery.json` format, and preview generation. Run `python3 scripts/validate.py` before opening a PR.
+Want to add a template? Read [CONTRIBUTING.md](CONTRIBUTING.md): it covers the required structure, standard placeholders, engine declaration, `gallery.json` format, and preview generation. Run `python3 scripts/validate.py` before opening a PR.
 
 The demo GIF is regenerated with [vhs](https://github.com/charmbracelet/vhs): `./docs/demo/record.sh`.
 
 ## Sources & licenses
 
-All templates come from publicly available repositories with permissive licenses — full credit goes to their original authors, listed in [SOURCES.md](SOURCES.md). The gallery structure, scripts, and tooling are [MIT](LICENSE); each template retains its original license (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
+All templates come from publicly available repositories with permissive licenses; full credit goes to their original authors, listed in [SOURCES.md](SOURCES.md). The gallery structure, scripts, and tooling are [MIT](LICENSE); each template retains its original license (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
 
 ---
 
