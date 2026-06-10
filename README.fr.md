@@ -216,6 +216,7 @@ Tous les templates sont issus de dépôts publics avec des licences permissives 
 
 - [**latex-forge**](https://github.com/thmsgo18/latex-forge) : la CLI qui transforme ces templates en projets prêts à écrire
 - [**latex-forge-vscode**](https://github.com/thmsgo18/latex-forge-vscode) : l'extension VS Code avec une galerie intégrée
+- [**latex-forge-skill**](https://github.com/thmsgo18/latex-forge-skill) : un skill Claude qui choisit des templates dans cette galerie et pilote tout le workflow depuis une conversation
 
 ## Auteur
 
