@@ -212,6 +212,11 @@ Le GIF de démo se régénère avec [vhs](https://github.com/charmbracelet/vhs) 
 
 Tous les templates sont issus de dépôts publics avec des licences permissives ; tout le crédit revient à leurs auteurs originaux, listés dans [SOURCES.md](SOURCES.md). La structure de la galerie, les scripts et les outils sont sous [licence MIT](LICENSE) ; chaque template conserve sa licence d'origine (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
 
----
+## Projets liés
+
+- [**latex-forge**](https://github.com/thmsgo18/latex-forge) : la CLI qui transforme ces templates en projets prêts à écrire
+- [**latex-forge-vscode**](https://github.com/thmsgo18/latex-forge-vscode) : l'extension VS Code avec une galerie intégrée
+
+## Auteur
 
 Réalisé par [thmsgo18](https://github.com/thmsgo18)
