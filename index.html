@@ -599,6 +599,7 @@
         <code id="modal-cmd"></code>
         <button class="copy-btn" id="modal-copy">Copy</button>
       </div>
+      <a class="btn-solid" id="modal-vscode" href="#">Open in VS Code</a>
       <a class="btn-solid" id="modal-pdf" href="#" target="_blank" rel="noopener">PDF ↗</a>
       <a class="btn-ghost" id="modal-source" href="#" target="_blank" rel="noopener">Source ↗</a>
     </div>
@@ -740,6 +741,11 @@ function cmd(t) {
   return 'latex-forge template install ' + t.install_url;
 }
 
+function vscodeUri(t) {
+  return 'vscode://thmsgo18.latex-forge-vscode/install?template=' +
+    encodeURIComponent(t.name) + '&installUrl=' + encodeURIComponent(t.install_url);
+}
+
 // Escapes a gallery.json value before it is interpolated into innerHTML,
 // so a malicious field in a contributed template cannot inject markup.
 function esc(value) {
@@ -804,6 +810,7 @@ function openModal(t) {
   document.getElementById('modal-img').src = t.preview_png;
   document.getElementById('modal-img').alt = t.name + ' preview';
   document.getElementById('modal-cmd').textContent = cmd(t);
+  document.getElementById('modal-vscode').href = vscodeUri(t);
   document.getElementById('modal-pdf').href = t.preview_pdf;
   document.getElementById('modal-source').href = t.source_url;
   document.getElementById('modal-badges').innerHTML =
