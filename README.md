@@ -1,43 +1,61 @@
-# LaTeX Forge Gallery
+<p align="right"><b>English</b> | <a href="./README.fr.md">Français</a></p>
 
 <p align="center">
-  <img src="logo.png" alt="LaTeX Forge Gallery" width="480">
+  <img src="logo.png" alt="LaTeX Forge Gallery" width="420">
 </p>
 
 <p align="center">
-  Browse and install curated LaTeX templates in one command.
+  <b>80+ curated LaTeX templates — previewed, tested, and installable in one command.</b>
 </p>
 
 <p align="center">
-  <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/gallery-online-39ff14?style=for-the-badge" alt="Gallery online"></a>
-  <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/requires-latex--forge-blue?style=for-the-badge" alt="Requires latex-forge"></a>
+  <a href="https://thmsgo18.github.io/latex-forge-gallery/"><img src="https://img.shields.io/badge/▶_browse_the_gallery-online-39ff14?style=for-the-badge" alt="Browse the gallery"></a>
   <img src="https://img.shields.io/badge/dynamic/json?url=https%3A%2F%2Fraw.githubusercontent.com%2Fthmsgo18%2Flatex-forge-gallery%2Fmain%2Fgallery.json&query=%24.templates.length&label=templates&color=39ff14&style=for-the-badge" alt="Number of templates">
+  <a href="https://github.com/thmsgo18/latex-forge"><img src="https://img.shields.io/badge/works_with-latex--forge-blue?style=for-the-badge" alt="Works with latex-forge"></a>
   <a href="LICENSE"><img src="https://img.shields.io/badge/license-MIT%20%26%20others-green?style=for-the-badge" alt="License"></a>
-</p>
-
-<p align="center">
-  <a href="./README.fr.md">Lire en français</a>
 </p>
 
 ---
 
-LaTeX Forge Gallery is the official template registry for [latex-forge](https://github.com/thmsgo18/latex-forge). Each template is curated, tested, and structured with a `main.tex` at its root — ready to install and compile immediately.
+<p align="center">
+  <a href="https://thmsgo18.github.io/latex-forge-gallery/">
+    <img src="previews/cv/awesome-cv.png" alt="awesome-cv" width="135">
+    <img src="previews/thesis/clean-thesis.png" alt="clean-thesis" width="135">
+    <img src="previews/presentation/beamer-metropolis.png" alt="beamer-metropolis" width="135">
+    <img src="previews/article/arxiv-template.png" alt="arxiv-template" width="135">
+    <img src="previews/poster/tikzposter.png" alt="tikzposter" width="135">
+    <img src="previews/book/elegantbook.png" alt="elegantbook" width="135">
+  </a>
+  <br>
+  <a href="https://thmsgo18.github.io/latex-forge-gallery/"><b>→ Browse all templates with previews</b></a>
+</p>
 
-Browse the full gallery at **[thmsgo18.github.io/latex-forge-gallery](https://thmsgo18.github.io/latex-forge-gallery/)**.
+## What is this?
 
-## Installation
+This is the official template registry for the [LaTeX Forge](https://github.com/thmsgo18/latex-forge) ecosystem. Every template is curated, compiles out of the box, and follows the same structure (`main.tex` at the root) — so any of them turns into a ready-to-write project in seconds.
 
-Install any template in one command:
+| | |
+|---|---|
+| 🌐 [**Gallery website**](https://thmsgo18.github.io/latex-forge-gallery/) | Browse, filter, and preview every template |
+| ⌨️ [**latex-forge CLI**](https://github.com/thmsgo18/latex-forge) | Install templates and create projects from the terminal |
+| 🧩 [**VS Code extension**](https://github.com/thmsgo18/latex-forge-vscode) | Browse this gallery and install templates **without any terminal** |
 
-```bash
-latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/<category>/<template-name>
-```
+## How to use a template
 
-**Example:**
+**From the terminal** — install once, then create as many projects as you want:
+
+<p align="center">
+  <img src="docs/assets/demo-install.gif" alt="Installing a gallery template" width="900">
+</p>
 
 ```bash
 latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tree/main/templates/cv/awesome-cv
+latex-forge create --name my-cv --template awesome-cv
 ```
+
+**Without a terminal** — install the [VS Code extension](https://marketplace.visualstudio.com/items?itemName=thmsgo18.latex-forge-vscode), open **LaTeX Forge: Browse Template Gallery**, and click **Install & Create** on any card.
+
+Keep templates up to date with `latex-forge template update`.
 
 ## Templates
 
@@ -180,22 +198,17 @@ latex-forge template install https://github.com/thmsgo18/latex-forge-gallery/tre
 
 ## Compatibility
 
-Every template contains a `main.tex` at the root of its directory, making it fully compatible with [latex-forge](https://github.com/thmsgo18/latex-forge).
+Every template contains a `main.tex` at the root of its directory, a `frontmatter/metadata.tex` with standard placeholders (auto-filled by your [latex-forge profile](https://github.com/thmsgo18/latex-forge#your-profile)), and declares its engine in `latexforge.toml` — making it fully compatible with `latex-forge create`.
 
-## Contributing
+## Contributing a template
 
-Want to add a template? Read [CONTRIBUTING.md](CONTRIBUTING.md) for the full guide — it covers the required directory structure, standard placeholders, engine declaration, `gallery.json` format, and how to generate previews.
+Want to add a template? Read [CONTRIBUTING.md](CONTRIBUTING.md) — it covers the required structure, standard placeholders, engine declaration, `gallery.json` format, and preview generation. Run `python3 scripts/validate.py` before opening a PR.
 
-In short: your template needs a `main.tex`, a `frontmatter/metadata.tex` with standard placeholders, and a `latexforge.toml` if it doesn't use LuaLaTeX.
+The demo GIF is regenerated with [vhs](https://github.com/charmbracelet/vhs): `./docs/demo/record.sh`.
 
-## Sources
+## Sources & licenses
 
-All templates are sourced from publicly available GitHub repositories with permissive licenses. Full credit goes to their original authors. See [SOURCES.md](SOURCES.md) for the complete list.
-
-## License
-
-The gallery structure, scripts, and tooling are licensed under the [MIT License](LICENSE).  
-Each template retains its original license (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
+All templates come from publicly available repositories with permissive licenses — full credit goes to their original authors, listed in [SOURCES.md](SOURCES.md). The gallery structure, scripts, and tooling are [MIT](LICENSE); each template retains its original license (MIT, Apache 2.0, LPPL, CC BY/BY-SA/BY-NC-SA).
 
 ---
 
