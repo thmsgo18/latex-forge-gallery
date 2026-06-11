@@ -13,6 +13,9 @@ on:
     paths:
       - "templates/**"
 
+permissions:
+  contents: read
+
 jobs:
   compile-changed:
     name: Compile & verify changed templates

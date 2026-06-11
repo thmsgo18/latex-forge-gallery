@@ -14,6 +14,9 @@ on:
       - "gallery.json"
       - "scripts/validate.py"
 
+permissions:
+  contents: read
+
 jobs:
   validate:
     name: Structure & consistency check
