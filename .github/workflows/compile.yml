@@ -48,7 +48,7 @@ jobs:
           python3 scripts/generate_previews.py $ARGS
 
       - name: Upload previews as artifact
-        uses: actions/upload-artifact@v5
+        uses: actions/upload-artifact@v7
         with:
           name: previews
           path: previews/
