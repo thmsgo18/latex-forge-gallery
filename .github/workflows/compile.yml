@@ -20,7 +20,7 @@ jobs:
 
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
+        uses: actions/checkout@v5
 
       - name: Install TeX Live
         uses: zauguin/install-texlive@v3
@@ -32,7 +32,7 @@ jobs:
         run: sudo apt-get install -y poppler-utils
 
       - name: Set up Python
-        uses: actions/setup-python@v5
+        uses: actions/setup-python@v6
         with:
           python-version: "3.11"
 
@@ -48,7 +48,7 @@ jobs:
           python3 scripts/generate_previews.py $ARGS
 
       - name: Upload previews as artifact
-        uses: actions/upload-artifact@v4
+        uses: actions/upload-artifact@v5
         with:
           name: previews
           path: previews/
