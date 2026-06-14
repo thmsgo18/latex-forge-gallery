@@ -49,16 +49,6 @@ VALID_CATEGORIES = {
 # Helpers
 # ---------------------------------------------------------------------------
 
-def error(msg: str) -> None:
-    print(f"  ✗  {msg}", flush=True)
-
-def warn(msg: str) -> None:
-    print(f"  ⚠  {msg}", flush=True)
-
-def ok(msg: str) -> None:
-    print(f"  ✓  {msg}", flush=True)
-
-
 def contains_metadata_input(path: Path) -> bool:
     """Return True if *path* contains \\input{frontmatter/metadata}."""
     try:
