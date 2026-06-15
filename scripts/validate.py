@@ -64,8 +64,8 @@ def find_delegated_file(main: Path) -> Path | None:
     Return the delegated file if so, otherwise None.
     """
     try:
-        lines = [l.strip() for l in main.read_text(errors="replace").splitlines()
-                 if l.strip() and not l.strip().startswith("%")]
+        lines = [line.strip() for line in main.read_text(errors="replace").splitlines()
+                 if line.strip() and not line.strip().startswith("%")]
     except OSError:
         return None
 
@@ -261,13 +261,13 @@ def main() -> int:
     all_issues += tmpl_issues
 
     # --- previews ---
-    print(f"\n[3/4] Checking preview files …")
+    print("\n[3/4] Checking preview files …")
     issues = check_previews(templates)
     sections["previews"] = issues
     all_issues += issues
 
     # --- root artifacts ---
-    print(f"\n[4/4] Checking for stray artifacts at repo root …")
+    print("\n[4/4] Checking for stray artifacts at repo root …")
     root_artifacts = [
         p.name for p in ROOT.iterdir()
         if p.suffix in ARTIFACT_SUFFIXES and p.is_file()

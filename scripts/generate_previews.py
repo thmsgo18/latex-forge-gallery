@@ -211,7 +211,7 @@ def main() -> int:
             print("already exists, skipped")
             skipped.append(name)
         else:
-            print(f"FAILED")
+            print("FAILED")
             print(f"    {result[:300]}")
             failed.append((name, result))
 
