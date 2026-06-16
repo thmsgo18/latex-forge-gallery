@@ -79,6 +79,11 @@
 \RequirePackage{url}
 \RequirePackage{amssymb}
 \RequirePackage{mathspec}
+% Register fonts from the TeX Live tree so fontspec can find them on all
+% platforms without system-level font installation.
+\RequirePackage{ebgaramond}
+\RequirePackage{lato}
+\RequirePackage{sourcecodepro}
 \setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
 \setmathrm{EB Garamond}
 \AtBeginEnvironment{tabular}{\addfontfeature{RawFeature=+tnum}}
