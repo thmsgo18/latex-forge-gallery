@@ -229,6 +229,35 @@ def check_disk_vs_gallery(data: dict) -> list[str]:
 
     return issues
 
+def check_doc_engines(data: dict) -> list[str]:
+    """Verify the engine column of the README tables matches gallery.json.
+
+    The README tables are maintained by hand, so they drift from gallery.json
+    (the source of truth that drives the CLI). This catches that drift before
+    it ships — e.g. a template listed as pdfLaTeX in the README but xelatex in
+    gallery.json, which misleads users about how it actually compiles.
+    """
+    issues: list[str] = []
+    engine_of = {t["name"]: t["engine"].lower() for t in data["templates"]}
+    valid = {"pdflatex", "xelatex", "lualatex"}
+    # | `name` | description | Engine |
+    row = re.compile(r'^\|\s*`([a-z0-9-]+)`\s*\|[^|]*\|\s*([A-Za-z]+)\s*\|', re.M)
+
+    for readme in ("README.md", "README.fr.md"):
+        path = ROOT / readme
+        if not path.exists():
+            continue
+        text = path.read_text(encoding="utf-8")
+        for name, raw in row.findall(text):
+            doc_engine = raw.strip().lower()
+            if name in engine_of and doc_engine in valid and doc_engine != engine_of[name]:
+                issues.append(
+                    f"{readme}: '{name}' listed as {doc_engine}, "
+                    f"but gallery.json says {engine_of[name]}"
+                )
+    return issues
+
+
 # ---------------------------------------------------------------------------
 # Main
 # ---------------------------------------------------------------------------
@@ -245,14 +274,14 @@ def main() -> int:
     sections: dict[str, list[str]] = {}
 
     # --- gallery.json integrity ---
-    print("\n[1/4] Checking gallery.json …")
+    print("\n[1/5] Checking gallery.json …")
     issues = check_gallery_json(data)
     issues += check_disk_vs_gallery(data)
     sections["gallery.json"] = issues
     all_issues += issues
 
     # --- per-template checks ---
-    print(f"\n[2/4] Checking {len(templates)} templates …")
+    print(f"\n[2/5] Checking {len(templates)} templates …")
     tmpl_issues: list[str] = []
     for t in templates:
         issues = check_template(t["name"], t["category"], t.get("engine", "lualatex"))
@@ -261,13 +290,19 @@ def main() -> int:
     all_issues += tmpl_issues
 
     # --- previews ---
-    print("\n[3/4] Checking preview files …")
+    print("\n[3/5] Checking preview files …")
     issues = check_previews(templates)
     sections["previews"] = issues
     all_issues += issues
 
+    # --- README ↔ gallery.json engine consistency ---
+    print("\n[4/5] Checking README engine tables …")
+    issues = check_doc_engines(data)
+    sections["doc engines"] = issues
+    all_issues += issues
+
     # --- root artifacts ---
-    print("\n[4/4] Checking for stray artifacts at repo root …")
+    print("\n[5/5] Checking for stray artifacts at repo root …")
     root_artifacts = [
         p.name for p in ROOT.iterdir()
         if p.suffix in ARTIFACT_SUFFIXES and p.is_file()

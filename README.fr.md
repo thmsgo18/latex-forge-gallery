@@ -67,14 +67,14 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | `deedy-resume` | CV deux colonnes avec une mise en page claire et professionnelle | XeLaTeX |
 | `altacv` | CV avec barres de compétences TikZ et frise chronologique | LuaLaTeX |
 | `moderncv` | CV hautement personnalisable avec plusieurs styles | pdfLaTeX |
-| `hipster-cv` | CV avec barre latérale colorée | XeLaTeX |
+| `hipster-cv` | CV avec barre latérale colorée | LuaLaTeX |
 | `twenty-seconds-cv` | CV barre latérale conçu pour être parcouru en 20 secondes | pdfLaTeX |
 | `developer-cv` | CV académique avec liste de publications BibTeX automatique | pdfLaTeX |
 | `sidebar-cv` | CV moderne avec barre latérale stylisée | pdfLaTeX |
 | `friggeri-cv` | CV A4 élégant avec barres de section colorées et publications | XeLaTeX |
 | `resume-openfont` | CV minimaliste une page avec polices open source | pdfLaTeX |
 | `billryan-resume` | CV bilingue anglais/chinois avec FontAwesome | XeLaTeX |
-| `mcdowell-cv` | CV compatible ATS, style McDowell | pdfLaTeX |
+| `mcdowell-cv` | CV compatible ATS, style McDowell | XeLaTeX |
 | `rover-resume` | CV compatible ATS avec style unique | pdfLaTeX |
 | `classic-cv` | CV classique une colonne | pdfLaTeX |
 | `two-column-cv` | CV deux colonnes avec photo et QR code | pdfLaTeX |
@@ -82,8 +82,8 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | `minimalist-cv` | CV ultra-minimaliste une page | pdfLaTeX |
 | `modern-cv` | CV moderne avec barre latérale colorée et barres de compétences | XeLaTeX |
 | `rows-cv` | CV en lignes horizontales avec sections épurées | XeLaTeX |
-| `sidebarleft-cv` | CV avec barre latérale gauche et contacts iconographiques | XeLaTeX |
-| `infographics2-cv` | Deuxième variante de CV infographique avec frise chronologique | XeLaTeX |
+| `sidebarleft-cv` | CV avec barre latérale gauche et contacts iconographiques | LuaLaTeX |
+| `infographics2-cv` | Deuxième variante de CV infographique avec frise chronologique | LuaLaTeX |
 | `cv-en` | CV moderne en anglais par thmsgo18 avec icônes FontAwesome, sections formation, expérience, projets et compétences | LuaLaTeX |
 | `cv-fr` | CV moderne en français par thmsgo18 avec icônes FontAwesome | LuaLaTeX |
 
@@ -120,7 +120,7 @@ Gardez vos templates à jour avec `latex-forge template update`.
 |-----|-------------|--------|
 | `elegant-report` | Rapport propre et élégant avec support bibliographique | pdfLaTeX |
 | `technical-report` | Rapport technique / papier de cours professionnel | pdfLaTeX |
-| `internship-report` | Rapport de stage au format UTBM | pdfLaTeX |
+| `internship-report` | Rapport de stage au format UTBM | LuaLaTeX |
 | `project-report` | Rapport de projet académique avec pages de certification | pdfLaTeX |
 | `math-notes` | Notes de cours minimalistes avec environnements de théorèmes | pdfLaTeX |
 | `elegant-notes` | Template de prise de notes avec environnements de théorèmes | pdfLaTeX |
@@ -135,17 +135,17 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | Nom | Description | Moteur |
 |-----|-------------|--------|
 | `beamer-metropolis` | Thème Beamer moderne et minimaliste | XeLaTeX |
-| `beamer-focus` | Thème Beamer minimaliste avec palette de couleurs sombres | pdfLaTeX |
+| `beamer-focus` | Thème Beamer minimaliste avec palette de couleurs sombres | LuaLaTeX |
 | `beamer-elegant` | Slides Beamer élégantes avec support des figures | pdfLaTeX |
 | `beamer-corporate` | Slides Beamer professionnelles avec couleurs configurables | pdfLaTeX |
 | `beamer-simple` | Template Beamer simple centré sur le contenu | pdfLaTeX |
-| `beamer-auriga` | Présentation Beamer au style moderne et soigné | pdfLaTeX |
+| `beamer-auriga` | Présentation Beamer au style moderne et soigné | LuaLaTeX |
 
 ### Lettre
 
 | Nom | Description | Moteur |
 |-----|-------------|--------|
-| `cover-letter-modern` | Lettre de motivation moderne avec une typographie claire | XeLaTeX |
+| `cover-letter-modern` | Lettre de motivation moderne avec une typographie claire | LuaLaTeX |
 | `formal-letter` | Lettre de motivation au format journal, présentation professionnelle | pdfLaTeX |
 | `motivation-letter` | Lettre de motivation pour candidatures académiques et emploi | pdfLaTeX |
 | `moderncv-letter` | Lettre de motivation utilisant la classe moderncv | pdfLaTeX |
@@ -155,9 +155,9 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | Nom | Description | Moteur |
 |-----|-------------|--------|
 | `beamerposter-landscape` | Poster académique en format paysage avec Beamer | pdfLaTeX |
-| `tikzposter` | Poster académique avec TikZposter | pdfLaTeX |
+| `tikzposter` | Poster académique avec TikZposter | XeLaTeX |
 | `academic-poster` | Poster de conférence académique au thème Gemini | pdfLaTeX |
-| `gemini-poster` | Template beamerposter Gemini, design épuré et moderne | pdfLaTeX |
+| `gemini-poster` | Template beamerposter Gemini, design épuré et moderne | XeLaTeX |
 
 ### Livre
 
@@ -179,7 +179,7 @@ Gardez vos templates à jour avec `latex-forge template update`.
 | `invoice-simple` | Facture simple une page avec la classe scrlttr2 | pdfLaTeX |
 | `invoice-multipage` | Facture multi-pages avec tableau détaillé et totaux | pdfLaTeX |
 | `timesheet` | Feuille de temps mensuelle avec suivi des heures journalières | pdfLaTeX |
-| `poem` | Template élégant de composition poétique avec environnements de vers | pdfLaTeX |
+| `poem` | Template élégant de composition poétique avec environnements de vers | XeLaTeX |
 
 ### Projet Informatique L3 (Université Paris Cité)
 

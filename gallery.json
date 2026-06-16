@@ -84,7 +84,7 @@
         "sidebar",
         "xelatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/hipster-cv.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/hipster-cv.pdf",
       "version": "1.0.0"
@@ -383,7 +383,7 @@
         "stage",
         "pdflatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/internship-report.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/internship-report.pdf",
       "version": "1.0.0"
@@ -436,7 +436,7 @@
         "dark-theme",
         "pdflatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-focus.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-focus.pdf",
       "version": "1.0.0"
@@ -506,7 +506,7 @@
         "modern",
         "xelatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/cover-letter-modern.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/letter/cover-letter-modern.pdf",
       "version": "1.0.0"
@@ -968,7 +968,7 @@
         "modern",
         "pdflatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-auriga.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/presentation/beamer-auriga.pdf",
       "version": "1.0.0"
@@ -1210,7 +1210,7 @@
         "sidebar",
         "xelatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/sidebarleft-cv.pdf",
       "version": "1.0.0"
@@ -1228,7 +1228,7 @@
         "tikz",
         "xelatex"
       ],
-      "engine": "xelatex",
+      "engine": "lualatex",
       "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.png",
       "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/cv/infographics2-cv.pdf",
       "version": "1.0.0"

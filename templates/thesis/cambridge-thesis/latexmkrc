@@ -1,0 +1,18 @@
+# latex-forge build compiles with -outdir=build. This template \include's
+# files from sub-directories (Chapter1/chapter1, Abstract/abstract, ...), which
+# makes LaTeX write the corresponding .aux files under build/Chapter1/ etc.
+# latexmk does not create those nested output directories, so the compile fails
+# with "I can't write on file `Chapter1/chapter1.aux'". Pre-create them here:
+# latexmkrc runs from the project root before compilation. The sub-directories
+# are discovered from the \include statements in main.tex, so this keeps working
+# if chapters are added or removed.
+use File::Path qw(make_path);
+if (open(my $fh, '<', 'main.tex')) {
+    while (my $line = <$fh>) {
+        next if $line =~ /^\s*%/;                  # skip commented-out \include lines
+        if ($line =~ /\\include\{([^}]+)\//) {
+            make_path("build/$1");
+        }
+    }
+    close($fh);
+}

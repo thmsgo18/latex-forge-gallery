@@ -61,3 +61,11 @@ jobs:
       - name: Compile changed templates and verify PDF output
         if: steps.changed.outputs.names != ''
         run: python3 scripts/generate_previews.py --only ${{ steps.changed.outputs.names }}
+
+      # generate_previews.py invokes the engine directly; this additionally
+      # compiles via `latexmk -<engine> -outdir=build`, exactly what
+      # `latex-forge build` runs, so a template that previews fine but fails
+      # for end users (wrong declared engine, \include subdirs, etc.) is caught.
+      - name: Verify changed templates build through the CLI path (latexmk)
+        if: steps.changed.outputs.names != ''
+        run: python3 scripts/verify_build.py --only ${{ steps.changed.outputs.names }}

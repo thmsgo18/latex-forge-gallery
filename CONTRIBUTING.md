@@ -230,7 +230,8 @@ Add an entry to `gallery.json` under the `"templates"` array:
   "tags": ["report", "academic", "english"],
   "engine": "pdflatex",
   "preview_png": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/my-template.png",
-  "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/my-template.pdf"
+  "preview_pdf": "https://raw.githubusercontent.com/thmsgo18/latex-forge-gallery/main/previews/report/my-template.pdf",
+  "version": "1.0.0"
 }
 ```
 
@@ -245,6 +246,7 @@ Add an entry to `gallery.json` under the `"templates"` array:
 | `engine` | `"pdflatex"`, `"xelatex"`, or `"lualatex"`. Must match `latexforge.toml`. |
 | `preview_png` | Raw GitHub URL: `previews/<category>/<name>.png` |
 | `preview_pdf` | Raw GitHub URL: `previews/<category>/<name>.pdf` |
+| `version` | Semver (`x.y.z`), starting at `1.0.0`. **Bump it whenever you change the template's files** — `latex-forge template update` compares this value against the user's installed version, so an unbumped version means users never receive your fix. |
 
 ---
 

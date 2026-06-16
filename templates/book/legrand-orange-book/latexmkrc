@@ -1,3 +1,11 @@
+# When latexmk compiles into an output directory (e.g. `latex-forge build`,
+# which passes -outdir=build), it chdir's into that directory before running
+# makeindex, so the index style file kept in the project root is no longer on
+# makeindex's search path ("Index style file StyleInd.ist not found"). Add the
+# project root to INDEXSTYLE so `-s StyleInd.ist` resolves regardless of cwd.
+use Cwd;
+$ENV{'INDEXSTYLE'} = getcwd() . (defined $ENV{'INDEXSTYLE'} ? ':' . $ENV{'INDEXSTYLE'} : '');
+
 $makeindex  = 'makeindex -s StyleInd.ist %O -o %D %S';
 
 # support for the glossaries package:
