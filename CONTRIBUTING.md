@@ -10,6 +10,7 @@ Thank you for your interest in contributing! This guide explains how to add a ne
 - [Template structure](#template-structure)
 - [frontmatter/metadata.tex: standard placeholders](#frontmattermetadatatex-standard-placeholders)
 - [latexforge.toml: engine declaration](#latexforgetoml-engine-declaration)
+  - [tex_packages: the TeX Live packages a template needs](#tex_packages-the-tex-live-packages-a-template-needs)
 - [gallery.json: registry entry](#galleryjson-registry-entry)
 - [Generating a preview](#generating-a-preview)
 - [Submitting a pull request](#submitting-a-pull-request)
@@ -34,7 +35,7 @@ Every template must follow this directory layout:
 ```
 templates/<category>/<template-name>/
 ├── main.tex                        # Entry point, must compile standalone
-├── latexforge.toml                 # Engine declaration (omit if lualatex)
+├── latexforge.toml                 # Engine (omit if lualatex) + generated tex_packages
 ├── frontmatter/
 │   ├── metadata.tex                # Standard placeholders (see below)
 │   └── ...                        # Other preamble files if needed
@@ -213,6 +214,24 @@ engine = "pdflatex"   # or "xelatex"
 | `lualatex` | Default, do not create `latexforge.toml` |
 | `pdflatex` | Template uses pdflatex-only packages or doesn't use `fontspec` |
 | `xelatex` | Template uses `fontspec` or OpenType fonts but doesn't need luatex |
+
+### tex_packages: the TeX Live packages a template needs
+
+`latexforge.toml` can also list the exact TeX Live packages the template needs.
+latex-forge installs the missing ones in one go when someone creates a project on a
+lightweight (TinyTeX) setup; without the list it has to discover them through test
+compiles, which is slower and can miss packages loaded optionally (`\IfFileExists`).
+
+Don't write it by hand: it's generated from a real compile on a full TeX Live.
+
+```bash
+python3 scripts/compute_tex_packages.py --only my-template --write
+```
+
+or run the **Compute TeX packages** workflow (Actions tab), which does the same in CI for
+one template, a category, or the whole gallery, and uploads the updated tomls. Re-run it
+whenever the template starts loading different packages. A template that uses lualatex
+and has a `tex_packages` list does need a `latexforge.toml`, with no `engine` line.
 
 ---
 

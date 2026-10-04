@@ -1,0 +1,76 @@
+name: Compute TeX packages (manual)
+
+# Compiles templates on a full TeX Live and records, in each template's
+# latexforge.toml, the exact TeX Live packages it needs (tex_packages).
+# latex-forge uses that list to install everything up front when someone
+# creates a project on a lightweight (TinyTeX) setup. Run it after adding a
+# template or changing the packages one loads, then commit the updated tomls
+# from the artifact (or the job summary's diff).
+
+on:
+  workflow_dispatch:
+    inputs:
+      template:
+        description: "Template name(s), space-separated (e.g. awesome-cv). Leave empty for all."
+        required: false
+        default: ""
+      category:
+        description: "Category filter (e.g. cv). Leave empty for all."
+        required: false
+        default: ""
+
+permissions:
+  contents: read
+
+jobs:
+  compute:
+    name: Compute tex_packages
+    runs-on: ubuntu-latest
+    timeout-minutes: 180
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6
+
+      - name: Install TeX Live
+        uses: zauguin/install-texlive@v4
+        with:
+          packages: >
+            scheme-full
+
+      - name: Set up Python
+        uses: actions/setup-python@v6
+        with:
+          python-version: "3.11"
+
+      - name: Compute and write tex_packages
+        run: |
+          ARGS=""
+          if [ -n "${{ github.event.inputs.template }}" ]; then
+            ARGS="$ARGS --only ${{ github.event.inputs.template }}"
+          fi
+          if [ -n "${{ github.event.inputs.category }}" ]; then
+            ARGS="$ARGS --category ${{ github.event.inputs.category }}"
+          fi
+          python3 scripts/compute_tex_packages.py --write $ARGS
+
+      - name: Validate
+        run: python3 scripts/validate.py
+
+      - name: Summarise changes
+        if: always()
+        run: |
+          {
+            echo '### latexforge.toml changes'
+            echo '```diff'
+            git diff -- 'templates/**/latexforge.toml' | head -c 60000
+            echo '```'
+          } >> "$GITHUB_STEP_SUMMARY"
+
+      - name: Upload updated latexforge.toml files
+        if: always()
+        uses: actions/upload-artifact@v7
+        with:
+          name: latexforge-tomls
+          path: templates/**/latexforge.toml
+          retention-days: 14

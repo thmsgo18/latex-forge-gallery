@@ -200,7 +200,7 @@ Suite de 8 templates pour les documents standard du Projet Informatique L3 à l'
 
 ## Compatibilité
 
-Chaque template contient un `main.tex` à la racine de son répertoire, un `frontmatter/metadata.tex` avec des placeholders standards (pré-remplis par votre [profil latex-forge](https://github.com/thmsgo18/latex-forge/blob/main/README.fr.md#votre-profil)), et déclare son moteur dans `latexforge.toml`, ce qui le rend entièrement compatible avec `latex-forge create`.
+Chaque template contient un `main.tex` à la racine de son répertoire, un `frontmatter/metadata.tex` avec des placeholders standards (pré-remplis par votre [profil latex-forge](https://github.com/thmsgo18/latex-forge/blob/main/README.fr.md#votre-profil)), et déclare son moteur dans `latexforge.toml` (ainsi que, une fois générée, la liste exacte des paquets TeX Live dont il a besoin, pour que latex-forge les installe d'avance sur un TinyTeX léger), ce qui le rend entièrement compatible avec `latex-forge create`.
 
 ## Contribuer un template
 

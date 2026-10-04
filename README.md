@@ -198,7 +198,7 @@ Keep templates up to date with `latex-forge template update`.
 
 ## Compatibility
 
-Every template contains a `main.tex` at the root of its directory, a `frontmatter/metadata.tex` with standard placeholders (auto-filled by your [latex-forge profile](https://github.com/thmsgo18/latex-forge#your-profile)), and declares its engine in `latexforge.toml`, making it fully compatible with `latex-forge create`.
+Every template contains a `main.tex` at the root of its directory, a `frontmatter/metadata.tex` with standard placeholders (auto-filled by your [latex-forge profile](https://github.com/thmsgo18/latex-forge#your-profile)), and declares its engine in `latexforge.toml` (plus, once generated, the exact TeX Live packages it needs, so latex-forge can install them up front on a lightweight TinyTeX), making it fully compatible with `latex-forge create`.
 
 ## Contributing a template
 

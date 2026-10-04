@@ -87,6 +87,32 @@ def read_toml_engine(toml_path: Path) -> str:
     m = re.search(r'engine\s*=\s*"([^"]+)"', toml_path.read_text())
     return m.group(1) if m else "lualatex"
 
+_TEX_PACKAGES = re.compile(r"^tex_packages\s*=\s*\[([^\]]*)\]", re.MULTILINE)
+_TEX_PACKAGE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.+-]*$")
+
+
+def check_tex_packages(toml_path: Path, label: str) -> list[str]:
+    """Validate the optional ``tex_packages`` array: a non-empty list of package names."""
+    if not toml_path.exists():
+        return []
+    text = toml_path.read_text()
+    if "tex_packages" not in text:
+        return []
+    match = _TEX_PACKAGES.search(text)
+    if not match:
+        return [f"{label}: tex_packages must be a TOML array of strings"]
+    body = re.sub(r"#[^\n]*", "", match.group(1))
+    names = re.findall(r'"([^"]*)"', body)
+    leftovers = re.sub(r'"[^"]*"', "", body).replace(",", "").split()
+    issues = []
+    if leftovers or not names:
+        issues.append(f"{label}: tex_packages must be a non-empty array of quoted package names")
+    bad = [n for n in names if not _TEX_PACKAGE_NAME.match(n)]
+    if bad:
+        issues.append(f"{label}: invalid TeX Live package name(s) in tex_packages: {', '.join(bad)}")
+    return issues
+
+
 # ---------------------------------------------------------------------------
 # Checks
 # ---------------------------------------------------------------------------
@@ -126,6 +152,9 @@ def check_template(name: str, cat: str, gallery_engine: str) -> list[str]:
             f"{cat}/{name}: engine mismatch — gallery.json={gallery_engine}, "
             f"latexforge.toml={toml_engine}"
         )
+
+    # 4b. Optional tex_packages list (see scripts/compute_tex_packages.py)
+    issues.extend(check_tex_packages(tmpl / "latexforge.toml", f"{cat}/{name}"))
 
     # 5. latexforge.toml required for non-lualatex engines
     if gallery_engine != "lualatex" and not (tmpl / "latexforge.toml").exists():
