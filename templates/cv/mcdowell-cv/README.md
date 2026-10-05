@@ -11,7 +11,7 @@ The class is based on `article` class. The paper format is set to U.S. letterpap
 - A great tool making it easy to build CVs: https://latexresu.me/.
 
 ## Class Options
- - `calibri` - sets calibri as the main font. Otherwise the default font is Times New Roman since version 1.1.0.
+ - `calibri` - sets calibri as the main font. Otherwise the default font is Times New Roman since version 1.1.0. Where these fonts are not installed (Linux, for instance), their metric-compatible clones from TeX Live are used instead: Carlito for Calibri, TeX Gyre Termes for Times New Roman.
 
 ## Commands
 The class features the following commands:

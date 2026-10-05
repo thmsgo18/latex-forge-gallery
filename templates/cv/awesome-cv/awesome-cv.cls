@@ -81,9 +81,22 @@
 \defaultfontfeatures{
   Renderer=HarfBuzz,
 }
-\setmainfont{Source Sans 3}
-\setsansfont{Source Sans 3}
-\newfontfamily\roboto{Source Sans 3}
+% Source Sans 3 is loaded by file name from TeX Live (package sourcesans), so
+% the CV compiles on any system without installing the font. The light faces
+% back \headerfontlight and \bodyfontlight (\fontseries{l}).
+\defaultfontfeatures[SourceSans3]{
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt,
+  FontFace={l}{n}{*-Light},
+  FontFace={l}{it}{*-LightIt},
+  FontFace={l}{sl}{*-LightIt},
+}
+\setmainfont{SourceSans3}
+\setsansfont{SourceSans3}
+\newfontfamily\roboto{SourceSans3}
 % Needed for the photo ID
 \RequirePackage[skins]{tcolorbox}
 % Needed to deal a paragraphs

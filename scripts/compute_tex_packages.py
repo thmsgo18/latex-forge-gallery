@@ -216,6 +216,20 @@ def packages_from_build(build_dir: Path, stem: str, root: Path,
     return packages
 
 
+def first_error(log: Path) -> str:
+    """The first LaTeX error in *log*, to make a failure actionable in CI."""
+    if not log.exists():
+        return ""
+    lines = log.read_text(encoding="utf-8", errors="replace").splitlines()
+    for i, line in enumerate(lines):
+        # -file-line-error prints errors as "./file.tex:12: message"; package
+        # errors continue on the next lines.
+        if line.startswith("! ") or re.match(r"^\.?/?[^:\s]+\.\w+:\d+: ", line):
+            message = re.sub(r"\s+", " ", " ".join(lines[i:i + 3])).strip()
+            return f" — {message[:200]}"
+    return ""
+
+
 def compute_one(src: Path, main: str, engine: str, root: Path,
                 index: dict[str, str]) -> tuple[list[str] | None, str]:
     """Compile *src* in a throwaway copy. Returns (packages or None, detail)."""
@@ -238,7 +252,7 @@ def compute_one(src: Path, main: str, engine: str, root: Path,
         stem = Path(main).stem
         build_dir = work / "build"
         if not (build_dir / f"{stem}.pdf").exists():
-            return None, "no PDF produced — fix the template before computing its packages"
+            return None, "no PDF produced" + first_error(build_dir / f"{stem}.log")
         if not (build_dir / f"{stem}.fls").exists():
             return None, "latexmk did not write a .fls recorder file"
         return sorted(packages_from_build(build_dir, stem, root, index, engine)), ""

@@ -79,23 +79,40 @@
 \RequirePackage{url}
 \RequirePackage{amssymb}
 \RequirePackage{mathspec}
-% Register fonts from the TeX Live tree so fontspec can find them on all
-% platforms without system-level font installation.
-\RequirePackage{ebgaramond}
-\RequirePackage{lato}
-\RequirePackage{sourcecodepro}
-\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EB Garamond}
-\setmathrm{EB Garamond}
+% EB Garamond, Lato and Source Code Pro are loaded by file name from TeX Live
+% (packages ebgaramond, lato and sourcecodepro): XeTeX only finds fonts by
+% family name when they are installed system-wide, so this keeps the thesis
+% compiling on any system.
+\defaultfontfeatures[EBGaramond]{
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic}
+\defaultfontfeatures[Lato]{
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic}
+\defaultfontfeatures[SourceCodePro]{
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularIt,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldIt}
+\setmathsfont(Digits,Latin,Greek)[Numbers={Proportional}]{EBGaramond}
+\setmathrm{EBGaramond}
 \AtBeginEnvironment{tabular}{\addfontfeature{RawFeature=+tnum}}
 \widowpenalty=300
 \clubpenalty=300
-\setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0]{EB Garamond}
-\newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EB Garamond}
-\setsansfont[Scale=MatchLowercase, BoldFont={Lato Bold}]{Lato Regular}
-\setmonofont[Scale=MatchLowercase]{Source Code Pro}
+\setromanfont[Numbers=OldStyle, Ligatures={Common, TeX}, Scale=1.0]{EBGaramond}
+\newfontfamily{\smallcaps}[RawFeature={+c2sc,+scmp}]{EBGaramond}
+\setsansfont[Scale=MatchLowercase]{Lato}
+\setmonofont[Scale=MatchLowercase]{SourceCodePro}
 \RequirePackage[labelfont={bf,sf,footnotesize,singlespacing},
                 textfont={sf,footnotesize,singlespacing},
-                justification={justified,RaggedRight},
+                justification=RaggedRight,
                 singlelinecheck=false,
                 margin=0pt,
                 figurewithin=chapter,
@@ -128,6 +145,11 @@
 \RequirePackage[super,comma,numbers]{natbib}
 \renewcommand{\bibnumfmt}[1]{[#1]}
 \RequirePackage[palatino]{quotchap}
+% quotchap's Palatino has no Unicode (XeTeX) version: set the chapter numbers
+% in TeX Gyre Pagella, its OpenType clone from TeX Live.
+\newfontface\chapnumfamily{texgyrepagella-bold.otf}
+\renewcommand*{\chapnumfont}{%
+  \chapnumfamily\fontsize{100}{130}\selectfont\color{chaptergrey}}
 \renewcommand*{\chapterheadstartvskip}{\vspace*{-0.5\baselineskip}}
 \renewcommand*{\chapterheadendvskip}{\vspace{1.3\baselineskip}}
 

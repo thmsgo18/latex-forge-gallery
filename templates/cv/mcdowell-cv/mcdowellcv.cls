@@ -22,12 +22,21 @@
 
 \ProvidesClass{mcdowellcv}[2022/03/18 v1.2.0 McDowell CV class]
 
-% Set up the fonts according to options
+% Set up the fonts according to options. Times New Roman and Calibri ship
+% with macOS and Windows but not with Linux or TeX Live; there, their
+% metric-compatible clones from TeX Live are used instead (TeX Gyre Termes,
+% Carlito), loaded by file name so they are found on any system.
 \def\mainfontsize{11pt}
 \def\mainfontface{Times New Roman}
+\newcommand*{\mcdowell@fallbackfont}{%
+  \setmainfont{texgyretermes}[Extension=.otf, UprightFont=*-regular,
+    ItalicFont=*-italic, BoldFont=*-bold, BoldItalicFont=*-bolditalic]}
 
 \DeclareOption{calibri}{%
   \def\mainfontface{Calibri}
+  \renewcommand*{\mcdowell@fallbackfont}{%
+    \setmainfont{Carlito}[Extension=.ttf, UprightFont=*-Regular,
+      ItalicFont=*-Italic, BoldFont=*-Bold, BoldItalicFont=*-BoldItalic]}
 }
 
 % Set up papersize according to options, default to US letter
@@ -54,8 +63,11 @@
 
 % Set font face
 \usepackage{fontspec}
-\setmainfont[SmallCapsFeatures={Renderer=Basic},
-Ligatures={TeX, NoCommon, NoDiscretionary}]{\mainfontface}
+\defaultfontfeatures[\rmfamily]{SmallCapsFeatures={Renderer=Basic},
+Ligatures={TeX, NoCommon, NoDiscretionary}}
+\IfFontExistsTF{\mainfontface}
+  {\setmainfont{\mainfontface}}
+  {\mcdowell@fallbackfont}
 
 % Remove paragraph indentation
 \usepackage[parfill]{parskip}

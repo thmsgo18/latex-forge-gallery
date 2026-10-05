@@ -15,6 +15,22 @@
 % Fonts
 % ====================
 
+% Raleway and Lato are loaded by file name from TeX Live (packages raleway
+% and lato): XeTeX only finds fonts by family name when they are installed
+% system-wide, so this keeps the poster compiling on any system.
+\defaultfontfeatures[Raleway]{
+  Extension=.otf,
+  UprightFont=*-Regular,
+  ItalicFont=*-RegularItalic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic}
+\defaultfontfeatures[Lato]{
+  Extension=.ttf,
+  UprightFont=*-Regular,
+  ItalicFont=*-Italic,
+  BoldFont=*-Bold,
+  BoldItalicFont=*-BoldItalic}
+
 \newfontfamily\Raleway[Ligatures=TeX]{Raleway}
 \newfontfamily\Lato[Ligatures=TeX]{Lato}
 

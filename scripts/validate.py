@@ -7,6 +7,7 @@ Checks every template for:
   - \\input{frontmatter/metadata} wired in main.tex or its delegated file
   - Engine consistency between gallery.json and latexforge.toml
   - No committed LaTeX build artifacts
+  - No absolute font paths (fontspec Path=)
   - Preview files (PNG + PDF) present in previews/
   - gallery.json completeness and URL consistency
 
@@ -89,6 +90,7 @@ def read_toml_engine(toml_path: Path) -> str:
 
 _TEX_PACKAGES = re.compile(r"^tex_packages\s*=\s*\[([^\]]*)\]", re.MULTILINE)
 _TEX_PACKAGE_NAME = re.compile(r"^[A-Za-z0-9][A-Za-z0-9_.+-]*$")
+_ABSOLUTE_FONT_PATH = re.compile(r"\bPath\s*=\s*(/|~|[A-Za-z]:[\\/])")
 
 
 def check_tex_packages(toml_path: Path, label: str) -> list[str]:
@@ -159,6 +161,17 @@ def check_template(name: str, cat: str, gallery_engine: str) -> list[str]:
     # 5. latexforge.toml required for non-lualatex engines
     if gallery_engine != "lualatex" and not (tmpl / "latexforge.toml").exists():
         issues.append(f"{cat}/{name}: engine={gallery_engine} but latexforge.toml is missing")
+
+    # 5b. No font paths tied to one machine (fontspec's Path=/usr/local/texlive/...):
+    # fonts from the TeX tree are found by file name on every system.
+    for src in sorted(tmpl.rglob("*")):
+        if src.suffix in {".tex", ".sty", ".cls"} and src.is_file():
+            text = src.read_text(encoding="utf-8", errors="replace")
+            if _ABSOLUTE_FONT_PATH.search(text):
+                issues.append(
+                    f"{cat}/{name}: {src.relative_to(tmpl)} sets an absolute font Path= "
+                    "(load the font by file name instead)"
+                )
 
     # 6. No committed build artifacts
     artifacts = [

@@ -215,6 +215,24 @@ engine = "pdflatex"   # or "xelatex"
 | `pdflatex` | Template uses pdflatex-only packages or doesn't use `fontspec` |
 | `xelatex` | Template uses `fontspec` or OpenType fonts but doesn't need luatex |
 
+### Fonts under xelatex: load them by file name
+
+XeLaTeX only finds a font by its family name (`\setmainfont{EB Garamond}`)
+when it is installed system-wide. Such a template works on a machine that
+happens to have the font, then fails everywhere else (CI included), even
+though the font ships with TeX Live. Load fonts from the TeX tree by file
+name instead, and never hardcode a `Path=` (validate.py rejects absolute ones):
+
+```latex
+\setmainfont{EBGaramond}[
+  Extension=.otf,
+  UprightFont=*-Regular, ItalicFont=*-Italic,
+  BoldFont=*-Bold, BoldItalicFont=*-BoldItalic]
+```
+
+`kpsewhich EBGaramond-Regular.otf` tells you whether a file is in TeX Live.
+LuaLaTeX finds TeX Live fonts by family name, so this only concerns xelatex.
+
 ### tex_packages: the TeX Live packages a template needs
 
 `latexforge.toml` can also list the exact TeX Live packages the template needs.
@@ -343,7 +361,7 @@ GitHub Actions workflows; you don't need to trigger them yourself:
 
 | Workflow | What it does | Result if it fails |
 |----------|--------------|--------------------|
-| `validate.yml` | Runs `scripts/validate.py`: required files, `\input{frontmatter/metadata}` wiring, engine consistency, no committed build artifacts, **PNG + PDF previews present**, `gallery.json` completeness | PR cannot be merged |
+| `validate.yml` | Runs `scripts/validate.py`: required files, `\input{frontmatter/metadata}` wiring, engine consistency, no committed build artifacts, no absolute font `Path=`, **PNG + PDF previews present**, `gallery.json` completeness | PR cannot be merged |
 | `compile-pr.yml` | Compiles every template you added or modified with the declared engine and verifies it actually produces a PDF | PR cannot be merged |
 
 The "one file per section" convention itself is enforced through review

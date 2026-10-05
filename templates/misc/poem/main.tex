@@ -10,7 +10,11 @@
 \usepackage[usenames,dvipsnames]{xcolor}
 \definecolor{light-gray}{gray}{0.35}
 
-\setmainfont[Ligatures = {Common, Rare}]{EB Garamond}
+% EB Garamond is loaded by file name from TeX Live (package ebgaramond), so
+% the poem compiles without installing the font system-wide.
+\setmainfont[Ligatures = {Common, Rare}, Extension = .otf,
+  UprightFont = *-Regular, ItalicFont = *-Italic,
+  BoldFont = *-Bold, BoldItalicFont = *-BoldItalic]{EBGaramond}
 \parindent0mm
 
 \input{frontmatter/metadata}
