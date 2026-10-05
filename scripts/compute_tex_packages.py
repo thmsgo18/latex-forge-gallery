@@ -131,6 +131,10 @@ def latexmk_command(engine: str, main: str) -> list[str]:
 _FONT_SUFFIXES = (".otf", ".ttf", ".ttc", ".pfb")
 _BASEFONT = re.compile(rb"/BaseFont\s*/([A-Za-z0-9+\-_.,#]+)")
 _STREAM = re.compile(rb"stream\r?\n(.*?)\r?\nendstream", re.DOTALL)
+# fontspec logs each face it sets up as an NFSS spec: <->"[EBGaramond-Regular.otf]/OT:..."
+_LOG_FONT_FILE = re.compile(r'"\[([^\]"]+\.(?:otf|ttf|ttc))\]', re.IGNORECASE)
+# TeX wraps log lines at this many characters.
+_LOG_LINE_WIDTH = 79
 
 
 def _normalise(name: str) -> str:
@@ -183,11 +187,37 @@ def font_packages(font_names: set[str], index: dict[str, str]) -> set[str]:
     return found
 
 
+def log_font_files(log: Path) -> set[str]:
+    """Font files fontspec set up, by file name, according to the log.
+
+    This catches faces a class declares but the sample document never uses:
+    they are absent from the PDF, yet fontspec still opens them when the class
+    loads, so they must be installed.
+    """
+    if not log.exists():
+        return set()
+    # Undo TeX's hard wrapping so a file name split across lines still matches.
+    text = ""
+    for line in log.read_text(encoding="utf-8", errors="replace").splitlines():
+        text += line if len(line) == _LOG_LINE_WIDTH else line + "\n"
+    return {name.rsplit("/", 1)[-1] for name in _LOG_FONT_FILE.findall(text)}
+
+
+def font_file_packages(files: set[str], index: dict[str, str]) -> set[str]:
+    """Map font file names to the packages shipping them."""
+    wanted = {name.lower() for name in files}
+    return {
+        pkg for path, pkg in index.items()
+        if path.lower().endswith(_FONT_SUFFIXES) and path.rsplit("/", 1)[-1].lower() in wanted
+    }
+
+
 def packages_from_build(build_dir: Path, stem: str, root: Path,
                         index: dict[str, str], engine: str) -> set[str]:
     """Attribute every file the compile read (per the .fls) to a package."""
     packages = set(ENGINE_PACKAGES.get(engine, [])) | {"latexmk"}
     packages |= font_packages(pdf_font_names(build_dir / f"{stem}.pdf"), index)
+    packages |= font_file_packages(log_font_files(build_dir / f"{stem}.log"), index)
 
     fls = build_dir / f"{stem}.fls"
     root_prefix = str(root.resolve()).rstrip("/") + "/"
