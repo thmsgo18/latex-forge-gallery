@@ -81,8 +81,11 @@ Ligatures={TeX, NoCommon, NoDiscretionary}}
 % Suppress page numbers
 \pagestyle{empty}
 
-% Flexible tables
-\usepackage{tabu}
+% Flexible tables (tabularx: tabu is unmaintained and breaks with recent
+% versions of the array package)
+\usepackage{tabularx}
+% An X column taking #1 times the average width, aligned with #2
+\newcolumntype{Y}[2]{>{\hsize=#1\hsize\linewidth=\hsize#2\arraybackslash}X}
 
 % For custom margins
 \usepackage{changepage}
@@ -196,12 +199,16 @@ Ligatures={TeX, NoCommon, NoDiscretionary}}
 
 \makeatletter
 \newcommand\makeheader{
+  % The two offsets keep the spacing the header had when it was set with tabu
+  \vspace*{-6.77pt}
   \begin{center}
-    \begin{tabu} to 1\textwidth { X[l,m] X[2,c,m] X[r,m] }
+    % Widths 1:2:1, vertically centred
+    \renewcommand{\tabularxcolumn}[1]{m{##1}}
+    \begin{tabularx}{\textwidth}{Y{0.75}{\raggedright} Y{1.5}{\centering} Y{0.75}{\raggedleft}}
       \printaddress & \printname & \printcontacts \\
-    \end{tabu}
+    \end{tabularx}
   \end{center}
-  \vspace*{\afterheaderspace}
+  \vspace*{\dimexpr\afterheaderspace-3.8pt\relax}
 }
 \makeatother
 
@@ -235,9 +242,9 @@ Ligatures={TeX, NoCommon, NoDiscretionary}}
   \notblank{#3}{\toggletrue{centertitledefined}}{}
   \notblank{#4}{\toggletrue{righttitledefined}}{}
   \ifboolexpr{togl {lefttitledefined} or togl {centertitledefined} or togl {righttitledefined}}{
-    \begin{tabu} to 1\textwidth { X[l,p] X[c,p] X[r,p] }
+    \begin{tabularx}{\textwidth}{Y{1}{\raggedright} Y{1}{\centering} Y{1}{\raggedleft}}
       \textbf{#2} & \textbf{#3} & \textbf{#4} \\
-    \end{tabu}
+    \end{tabularx}
     % Add space according to the specidied number of lines
     \ifnumcomp{#1}{=}{1}{\vspace*{\aftersinglelinesubsectionheaderspace}}{
       \ifnumcomp{#1}{=}{2}{\vspace*{\afterdoublelinesubsectionheaderspace}}{
