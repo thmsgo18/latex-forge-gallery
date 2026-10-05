@@ -136,8 +136,9 @@ def pdf_to_png(pdf: Path, png: Path) -> bool:
 
 
 def cleanup_artifacts(template_dir: Path) -> None:
-    for p in template_dir.iterdir():
-        if p.suffix in BUILD_ARTIFACTS:
+    # Recursive: \include'd chapters in sub-folders leave their own .aux files.
+    for p in template_dir.rglob("*"):
+        if p.suffix in BUILD_ARTIFACTS and p.is_file():
             p.unlink(missing_ok=True)
     # Remove main.pdf from template dir (we copied it to previews/)
     (template_dir / "main.pdf").unlink(missing_ok=True)
