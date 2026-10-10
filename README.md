@@ -40,6 +40,10 @@ This is the official template registry for the [LaTeX Forge](https://github.com/
 | ⌨️ [**latex-forge CLI**](https://github.com/thmsgo18/latex-forge) | Install templates and create projects from the terminal |
 | 🧩 [**VS Code extension**](https://github.com/thmsgo18/latex-forge-vscode) | Browse this gallery and install templates **without any terminal** |
 
+## See it in action
+
+https://github.com/user-attachments/assets/24b4b492-e271-4a96-a629-db1df27909cb
+
 ## How to use a template
 
 **From the terminal**: install once, then create as many projects as you want:
