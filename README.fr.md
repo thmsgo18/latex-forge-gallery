@@ -40,6 +40,10 @@ C'est le registre officiel de templates de l'écosystème [LaTeX Forge](https://
 | ⌨️ [**CLI latex-forge**](https://github.com/thmsgo18/latex-forge) | Installer des templates et créer des projets depuis le terminal |
 | 🧩 [**Extension VS Code**](https://github.com/thmsgo18/latex-forge-vscode) | Parcourir cette galerie et installer des templates **sans aucun terminal** |
 
+## L'extension en action
+
+https://github.com/user-attachments/assets/24b4b492-e271-4a96-a629-db1df27909cb
+
 ## Utiliser un template
 
 **Depuis le terminal** : installez une fois, créez autant de projets que vous voulez :
